@@ -237,7 +237,7 @@
     <main class="main-content">
         <div class="header">
             <div>
-                <a href="index.html" class="back-btn">&larr; HOME</a>
+                <a href="dashboard.html" class="back-btn">&larr; DASHBOARD</a>
                 <h1 id="activeTopicTitle">Select a Topic</h1>
             </div>
             <div style="text-align: right;">
@@ -510,14 +510,1292 @@
                     output: "Paste result here..."
                 }
             ],
-            "DML Commands": [],
-            "DQL: Select": [],
-            "Where & Order By": [],
-            "Pattern Matching": [],
-            "Grouping & Having": [],
-            "Subqueries": [],
-            "Scalar Functions": [],
-            "SQL Joins": [],
+            "DML Commands": [
+                {
+                    question: "1. Insert a record into STUDENT table with values: SID = 101, SNAME = 'RAHUL', AGE = 20, COURSE = 'MCA'.",
+                    sql: "<b>INSERT INTO</b> STUDENT (SID, SNAME, AGE, COURSE) <b>VALUES</b> (101, 'RAHUL', 20, 'MCA');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Insert a record into EMPLOYEE table with EID = 201, ENAME = 'ANITA', SALARY = 45000, DEPTNO = 10.",
+                    sql: "<b>INSERT INTO</b> EMPLOYEE (EID, ENAME, SALARY, DEPTNO) <b>VALUES</b> (201, 'ANITA', 45000, 10);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Insert a new department into DEPT table; DEPTNO = 50, DNAME = 'TRAINING', LOC = 'DELHI'",
+                    sql: "<b>INSERT INTO</b> DEPT (DEPTNO, DNAME, LOC) <b>VALUES</b> (50, 'TRAINING', 'DELHI');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Insert a record into BOOK table with only BOOK_ID, TITLE, and PRICE.",
+                    sql: "<b>INSERT INTO</b> BOOK (BOOK_ID, TITLE, PRICE) <b>VALUES</b> (501, 'SQL Guide', 750);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Insert multiple rows into COURSE table.",
+                    sql: "<b>INSERT ALL INTO</b> COURSE (CID, CNAME, DURATION) <b>VALUES</b> (1, 'Java', 6) <b>INTO</b> COURSE (CID, CNAME, DURATION) <b>VALUES</b> (2, 'Python', 4) <b>SELECT</b> * <b>FROM</b> DUAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Insert data into EMP_COPY table from the EMP table.",
+                    sql: "<b>INSERT INTO</b> EMP_COPY <b>SELECT</b> * <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Insert employees from EMP whose salary is greater than 3000 into EMP_HIGH_SAL.",
+                    sql: "<b>INSERT INTO</b> EMP_HIGH_SAL <b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 3000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Insert employees hired after 1981 into EMP_NEW_HIRE.",
+                    sql: "<b>INSERT INTO</b> EMP_NEW_HIRE <b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE > '31-DEC-1981';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Insert department numbers and names from DEPT into a table called DEPT_BACKUP.",
+                    sql: "<b>INSERT INTO</b> DEPT_BACKUP (DEPTNO, DNAME) <b>SELECT</b> DEPTNO, DNAME <b>FROM</b> DEPT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Insert employee names and salaries into a table EMP_SALARY_RECORD.",
+                    sql: "<b>INSERT INTO</b> EMP_SALARY_RECORD (ENAME, SAL) <b>SELECT</b> ENAME, SAL <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Update the salary of employee SMITH to 2000.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = 2000 <b>WHERE</b> ENAME = 'SMITH';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Increase salary of all employees by 10%.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL * 1.10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Update the department number of employee ALLEN to 20.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> DEPTNO = 20 <b>WHERE</b> ENAME = 'ALLEN';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Update commission of SALESMAN to 500.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> COMM = 500 <b>WHERE</b> JOB = 'SALESMAN';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Update job of employee MILLER to MANAGER.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> JOB = 'MANAGER' <b>WHERE</b> ENAME = 'MILLER';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Increase salary of employees in department 10 by 20%.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL * 1.20 <b>WHERE</b> DEPTNO = 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Update salary of employees whose job is CLERK to 1500.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = 1500 <b>WHERE</b> JOB = 'CLERK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Update location of department 30 to MUMBAI.",
+                    sql: "<b>UPDATE</b> DEPT <b>SET</b> LOC = 'MUMBAI' <b>WHERE</b> DEPTNO = 30;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Update commission of employees who have NULL commission to 100.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> COMM = 100 <b>WHERE</b> COMM <b>IS NULL</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Update salary of employees who earn less than average salary.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL + 500 <b>WHERE</b> SAL < (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Delete employee SMITH from EMP table.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> ENAME = 'SMITH';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Delete all employees working in department 30.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> DEPTNO = 30;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Delete employees whose salary is less than 1000.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> SAL < 1000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Delete employees hired before 1981.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> HIREDATE < '01-JAN-1981';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Delete employees who do not receive commission.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> COMM <b>IS NULL OR</b> COMM = 0;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Delete departments located in CHICAGO.",
+                    sql: "<b>DELETE FROM</b> DEPT <b>WHERE</b> LOC = 'CHICAGO';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Delete employees whose job is CLERK.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> JOB = 'CLERK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Delete employees earning the minimum salary.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MIN</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Delete employees working in departments located in NEW YORK.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'NEW YORK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Delete employees whose manager number is NULL.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> MGR <b>IS NULL</b>;",
+                    output: "Paste result here..."
+                }
+            ],
+            "DQL: Select": [
+                {
+                    question: "1. Display all columns of the EMP table.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display EMPNO, ENAME, and SAL of all employees from the EMP table.",
+                    sql: "<b>SELECT</b> EMPNO, ENAME, SAL <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display unique job titles from the EMP table.",
+                    sql: "<b>SELECT DISTINCT</b> JOB <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employee names along with their department numbers from the EMP table.",
+                    sql: "<b>SELECT</b> ENAME, DEPTNO <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display all department details from the DEPT table.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display distinct department numbers from the EMP table.",
+                    sql: "<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employee name and annual salary (SAL × 12) from the EMP table.",
+                    sql: "<b>SELECT</b> ENAME, SAL * 12 <b>AS</b> ANNUAL_SAL <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employee name, salary, and commission from the EMP table.",
+                    sql: "<b>SELECT</b> ENAME, SAL, COMM <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display job and salary of all employees from the EMP table.",
+                    sql: "<b>SELECT</b> JOB, SAL <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display employees along with their manager numbers from the EMP table.",
+                    sql: "<b>SELECT</b> ENAME, MGR <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                }
+            ],
+            "Where & Order By": [
+                {
+                    question: "1. Display employees whose salary is greater than 3000.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 3000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employees working in department 10.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display employees whose job is 'CLERK'.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employees hired after 01-JAN-81.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE > '01-JAN-81';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employees whose salary is less than 1500.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL < 1500;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display employees whose salary is > 2000 and job is 'MANAGER'.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 2000 <b>AND</b> JOB = 'MANAGER';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employees working in department 10 or 20.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (10, 20);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employees whose job is 'SALESMAN' and salary > 1500.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN' <b>AND</b> SAL > 1500;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display employees who are either CLERK or ANALYST.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>IN</b> ('CLERK', 'ANALYST');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display employees hired before 1982 and working in department 30.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE < '01-JAN-1982' <b>AND</b> DEPTNO = 30;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employees working in departments 10, 20, or 30.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (10, 20, 30);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display employees whose job is not MANAGER or CLERK.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>NOT IN</b> ('MANAGER', 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employees whose department is not 10.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO != 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display employees whose salary is between 1000 and 3000.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL <b>BETWEEN</b> 1000 <b>AND</b> 3000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display employees hired between 01-JAN-81 and 31-DEC-81.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE <b>BETWEEN</b> '01-JAN-81' <b>AND</b> '31-DEC-81';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display all employees ordered by salary in ascending order.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> SAL <b>ASC</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display all employees ordered by salary in descending order.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> SAL <b>DESC</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display employees ordered by hire date.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> HIREDATE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display employees ordered by department number and salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> DEPTNO, SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display employees ordered by job (ascending) and salary (descending).",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> JOB <b>ASC</b>, SAL <b>DESC</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display employee names ordered alphabetically.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>ORDER BY</b> ENAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display employees of department 30 ordered by salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 30 <b>ORDER BY</b> SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display employees ordered by annual salary.",
+                    sql: "<b>SELECT</b> ENAME, SAL * 12 <b>AS</b> ANNUAL_SAL <b>FROM</b> EMP <b>ORDER BY</b> ANNUAL_SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Display employees ordered by commission.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> COMM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Display employees ordered by job and name.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> JOB, ENAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Display employee name as Employee_Name.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> Employee_Name <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Display salary as Monthly_Salary.",
+                    sql: "<b>SELECT</b> SAL <b>AS</b> Monthly_Salary <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Display employee name and job with aliases.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> \"Name\", JOB <b>AS</b> \"Designation\" <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Display department number as Dept_No.",
+                    sql: "<b>SELECT</b> DEPTNO <b>AS</b> Dept_No <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Display employee name and salary with meaningful aliases.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> \"Staff_Name\", SAL <b>AS</b> \"Basic_Salary\" <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "31. Display commission as Incentive.",
+                    sql: "<b>SELECT</b> COMM <b>AS</b> Incentive <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "32. Display employee name, job, and salary with aliases, ordered by job.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> \"Emp\", JOB <b>AS</b> \"Role\", SAL <b>AS</b> \"Pay\" <b>FROM</b> EMP <b>ORDER BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "33. Display employees of department 30 whose salary > 1500, ordered by salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 30 <b>AND</b> SAL > 1500 <b>ORDER BY</b> SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "34. Display employees whose commission is NOT NULL, ordered by commission.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NOT NULL ORDER BY</b> COMM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "35. Display employees whose salary is between 1500 and 3000, ordered by salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL <b>BETWEEN</b> 1500 <b>AND</b> 3000 <b>ORDER BY</b> SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "36. Display employee name and department, ordered by department and name.",
+                    sql: "<b>SELECT</b> ENAME, DEPTNO <b>FROM</b> EMP <b>ORDER BY</b> DEPTNO, ENAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "37. Display employees whose name starts with 'S', ordered by salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'S%' <b>ORDER BY</b> SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "38. Display employees hired before 1982 with aliases, ordered by hire date.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> \"Name\", HIREDATE <b>AS</b> \"Joined_Date\" <b>FROM</b> EMP <b>WHERE</b> HIREDATE < '01-JAN-1982' <b>ORDER BY</b> HIREDATE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "39. Display employee name as Name and salary as Pay for department 10.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> Name, SAL <b>AS</b> Pay <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "40. Display employees whose commission is NULL, ordered by salary descending.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NULL ORDER BY</b> SAL <b>DESC</b>;",
+                    output: "Paste result here..."
+                }
+            ],
+            "Pattern Matching": [
+                {
+                    question: "1. Display employees whose name starts with A.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'A%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employees whose name starts with S.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'S%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display employees whose name ends with N.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%N';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employees whose name ends with R.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%R';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employees whose name contains LL.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%LL%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display employees whose name contains AR.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%AR%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employees whose job starts with M.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> 'M%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employees whose job ends with AN.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> '%AN';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display employees whose job contains CL.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> '%CL%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display departments whose location starts with N.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT <b>WHERE</b> LOC <b>LIKE</b> 'N%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employees whose name has exactly 4 characters.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '____';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display employees whose name has exactly 5 characters.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '_____';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employees whose name has A as the second character.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '_A%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display employees whose name has L as the third character.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '__L%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display employees whose job has exactly 6 characters.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> '______';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display employees whose name starts with any letter but ends with N.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%N';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display employees whose job starts with any one character and ends with ER.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> '%ER';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display employees whose name has A as the first and N as the last character.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'A%N';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display employees whose name has exactly 2 characters before 'E'.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '__E%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display employees whose name has exactly 1 character after 'A'.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%A_';",
+                    output: "Paste result here..."
+                }
+            ],
+            "Grouping & Having": [
+                {
+                    question: "1. Display the total number of employees.",
+                    sql: "<b>SELECT COUNT</b>(*) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display the total salary of all employees.",
+                    sql: "<b>SELECT SUM</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display the average salary of all employees.",
+                    sql: "<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display the highest salary.",
+                    sql: "<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display the lowest salary.",
+                    sql: "<b>SELECT MIN</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display the total number of departments in EMP table.",
+                    sql: "<b>SELECT COUNT</b>(<b>DISTINCT</b> DEPTNO) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display the number of employees who are managers.",
+                    sql: "<b>SELECT COUNT</b>(<b>DISTINCT</b> MGR) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display the total commission paid to employees.",
+                    sql: "<b>SELECT SUM</b>(COMM) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display the average commission.",
+                    sql: "<b>SELECT AVG</b>(COMM) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display the number of employees who are getting commission.",
+                    sql: "<b>SELECT COUNT</b>(COMM) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display department-wise total salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display department-wise average salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display department-wise number of employees.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>COUNT</b>(*) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display job-wise number of employees.",
+                    sql: "<b>SELECT</b> JOB, <b>COUNT</b>(*) <b>FROM</b> EMP <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display job-wise total salary.",
+                    sql: "<b>SELECT</b> JOB, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display job-wise maximum salary.",
+                    sql: "<b>SELECT</b> JOB, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display job-wise minimum salary.",
+                    sql: "<b>SELECT</b> JOB, <b>MIN</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display department-wise maximum salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display department-wise minimum salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>MIN</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display department-wise average commission.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>AVG</b>(COMM) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display department-wise job-wise number of employees.",
+                    sql: "<b>SELECT</b> DEPTNO, JOB, <b>COUNT</b>(*) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display department-wise job-wise total salary.",
+                    sql: "<b>SELECT</b> DEPTNO, JOB, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display department-wise job-wise average salary.",
+                    sql: "<b>SELECT</b> DEPTNO, JOB, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Display job-wise department-wise maximum salary.",
+                    sql: "<b>SELECT</b> JOB, DEPTNO, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB, DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Display job-wise department-wise minimum salary.",
+                    sql: "<b>SELECT</b> JOB, DEPTNO, <b>MIN</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB, DEPTNO;",
+                    output: "Paste result here..."
+                }
+            ],
+            "Subqueries": [
+                {
+                    question: "1. Display employees whose salary is greater than JONES.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> ENAME = 'JONES');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employees earning the same salary as SCOTT.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> ENAME = 'SCOTT') <b>AND</b> ENAME <> 'SCOTT';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display employees hired after ALLEN.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE > (<b>SELECT</b> HIREDATE <b>FROM</b> EMP <b>WHERE</b> ENAME = 'ALLEN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employees working in the same department as BLAKE.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> ENAME = 'BLAKE') <b>AND</b> ENAME <> 'BLAKE';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employees having the same job as MILLER.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB = (<b>SELECT</b> JOB <b>FROM</b> EMP <b>WHERE</b> ENAME = 'MILLER') <b>AND</b> ENAME <> 'MILLER';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display employees earning less than the average salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL < (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employees earning more than the maximum salary of CLERKs.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employee(s) with the minimum salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MIN</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display employee(s) with the maximum salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display employees working in departments located in NEW YORK.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'NEW YORK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employees whose salary matches any salary in department 30.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL <b>IN</b> (<b>SELECT DISTINCT</b> SAL <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 30);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display employees earning more than all CLERKs.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > <b>ALL</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employees earning less than any MANAGER.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL < <b>ANY</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display employees whose job appears in department 20.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>IN</b> (<b>SELECT DISTINCT</b> JOB <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display employees whose department has at least one SALESMAN.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display employees earning the same salary as any CLERK.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL <b>IN</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display employees who are not working in departments of SALESMAN.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display employees earning more than all employees in department 10.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > <b>ALL</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display employees whose department number is among departments with more than 3 employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 3);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display employees whose salary is greater than salary of their manager.",
+                    sql: "<b>SELECT</b> E.ENAME <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> EMPNO = E.MGR);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display jobs where average salary is greater than overall average salary.",
+                    sql: "<b>SELECT</b> JOB <b>FROM</b> EMP <b>GROUP BY</b> JOB <b>HAVING AVG</b>(SAL) > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display employees earning more than the department average salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display employees earning the highest salary in each department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> (DEPTNO, SAL) <b>IN</b> (<b>SELECT</b> DEPTNO, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Display employees earning the lowest salary in each job.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> (JOB, SAL) <b>IN</b> (<b>SELECT</b> JOB, <b>MIN</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Display departments having total salary greater than department 20.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING SUM</b>(SAL) > (<b>SELECT SUM</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Display employees whose salary equals the maximum salary of their job.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> JOB = E.JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Display employees earning more than the overall average salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Display department(s) having the maximum number of employees.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = (<b>SELECT MAX</b>(<b>COUNT</b>(*)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Display jobs having minimum average salary.",
+                    sql: "<b>SELECT</b> JOB <b>FROM</b> EMP <b>GROUP BY</b> JOB <b>HAVING AVG</b>(SAL) = (<b>SELECT MIN</b>(<b>AVG</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Display employees earning more than the average salary of CLERKs.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "31. Display department(s) where average salary is highest.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING AVG</b>(SAL) = (<b>SELECT MAX</b>(<b>AVG</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "32. Display employees earning more than the average salary of their own department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "33. Display employees earning the maximum salary in their department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "34. Display employees earning the minimum salary in their department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL = (<b>SELECT MIN</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "35. Display employees whose salary is greater than the average salary of their job.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> JOB = E.JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "36. Display employees who are the only employee in their department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = 1);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "37. Display departments having employees earning more than 5000.",
+                    sql: "<b>SELECT DISTINCT</b> DNAME <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> SAL > 5000);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "38. Display employees whose department has more than 3 employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 3);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "39. Display employees whose job has more than 2 employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>IN</b> (<b>SELECT</b> JOB <b>FROM</b> EMP <b>GROUP BY</b> JOB <b>HAVING COUNT</b>(*) > 2);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "40. Display employees working in departments where no one gets commission.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NOT NULL AND</b> COMM > 0);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "41. Display employees whose department has at least one manager.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "42. Display departments that have employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "43. Display departments that have no employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IS NOT NULL</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "44. Display employees who are managers (have subordinates).",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> EMPNO <b>IN</b> (<b>SELECT DISTINCT</b> MGR <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "45. Display employees who are not managers.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> EMPNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> MGR <b>FROM</b> EMP <b>WHERE</b> MGR <b>IS NOT NULL</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "46. Display employees working in departments where SALESMAN exists.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "47. Display departments where no SALESMAN exists.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "48. Display employees whose department has employees with commission.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NOT NULL</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "49. Display departments where all employees get commission.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = <b>COUNT</b>(COMM);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "50. Display employees whose department has no CLERKs.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "51. Display employees who work in departments located in CHICAGO.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'CHICAGO');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "52. Display department number and average salary of employees whose salary is greater than 2000.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> SAL > 2000 <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "53. Display job and total salary of employees earning more than the department average.",
+                    sql: "<b>SELECT</b> JOB, <b>SUM</b>(SAL) <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO) <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "54. Display departments having average salary greater than overall average salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING AVG</b>(SAL) > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "55. Display job-wise employee count from employees earning more than 1500.",
+                    sql: "<b>SELECT</b> JOB, <b>COUNT</b>(*) <b>FROM</b> EMP <b>WHERE</b> SAL > 1500 <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "56. Display departments having more than 2 employees earning commission.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NOT NULL AND</b> COMM > 0 <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 2;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "57. Display job and maximum salary from employees hired after 1981.",
+                    sql: "<b>SELECT</b> JOB, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> HIREDATE > '31-DEC-1981' <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "58. Display department-wise total salary excluding department 30.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO <> 30 <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "59. Display departments having total salary greater than overall total salary average.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING SUM</b>(SAL) > (<b>SELECT AVG</b>(<b>SUM</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "60. Display job-wise average salary where department has more than 3 employees.",
+                    sql: "<b>SELECT</b> JOB, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 3) <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "61. Display department and job having maximum total salary.",
+                    sql: "<b>SELECT</b> DEPTNO, JOB, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB <b>HAVING SUM</b>(SAL) = (<b>SELECT MAX</b>(<b>SUM</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "62. Display employees earning the second highest salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> SAL < (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "63. Display employees earning more than the average salary of departments located in DALLAS.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'DALLAS'));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "64. Display departments where maximum salary equals minimum salary.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING MAX</b>(SAL) = <b>MIN</b>(SAL);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "65. Display employees whose salary is less than all MANAGERS but more than any CLERK.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL < <b>ALL</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER') <b>AND</b> SAL > <b>ANY</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "66. Display employees whose salary is equal to department-wise second highest salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E1 <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP E2 <b>WHERE</b> E2.DEPTNO = E1.DEPTNO <b>AND</b> E2.SAL < (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP E3 <b>WHERE</b> E3.DEPTNO = E1.DEPTNO));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "67. Display employees earning more than the median salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT MEDIAN</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "68. Display employees whose salary is greater than 50% of employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E1 <b>WHERE</b> (<b>SELECT COUNT</b>(*) <b>FROM</b> EMP E2 <b>WHERE</b> E2.SAL < E1.SAL) > (<b>SELECT COUNT</b>(*)/2 <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "69. Display employees earning the third highest salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MIN</b>(SAL) <b>FROM</b> (<b>SELECT DISTINCT</b> SAL <b>FROM</b> EMP <b>ORDER BY</b> SAL <b>DESC</b>) <b>WHERE ROWNUM</b> <= 3);",
+                    output: "Paste result here..."
+                }
+            ],
+            "Scalar Functions": [
+                {
+                    question: "1. Display employee name, hire date, and current date. Also calculate the number of days the employee has worked.",
+                    sql: "<b>SELECT</b> ENAME, HIREDATE, <b>SYSDATE</b>, <b>ROUND</b>(<b>SYSDATE</b> - HIREDATE) <b>AS</b> DAYS_WORKED <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employee name and hire date in the format: Monday, January 01, 2024.",
+                    sql: "<b>SELECT</b> ENAME, <b>TO_CHAR</b>(HIREDATE, 'Day, Month DD, YYYY') <b>AS</b> FORMATTED_DATE <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Find employees who joined in the same month as the current system date (ignore year).",
+                    sql: "<b>SELECT</b> ENAME, HIREDATE <b>FROM</b> EMP <b>WHERE</b> <b>TO_CHAR</b>(HIREDATE, 'MM') = <b>TO_CHAR</b>(<b>SYSDATE</b>, 'MM');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employee name and the next Monday after their hire date.",
+                    sql: "<b>SELECT</b> ENAME, <b>NEXT_DAY</b>(HIREDATE, 'MONDAY') <b>AS</b> NEXT_MONDAY <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employee name and the last day of their joining month.",
+                    sql: "<b>SELECT</b> ENAME, <b>LAST_DAY</b>(HIREDATE) <b>AS</b> END_OF_MONTH <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Find employees who have completed more than 10 years in the company.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> <b>MONTHS_BETWEEN</b>(<b>SYSDATE</b>, HIREDATE) / 12 > 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employee name and number of months worked in the company.",
+                    sql: "<b>SELECT</b> ENAME, <b>ROUND</b>(<b>MONTHS_BETWEEN</b>(<b>SYSDATE</b>, HIREDATE)) <b>AS</b> MONTHS_WORKED <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employee name, hire date, and hire date after adding 3 years and 6 months.",
+                    sql: "<b>SELECT</b> ENAME, HIREDATE, <b>ADD_MONTHS</b>(HIREDATE, 42) <b>AS</b> FUTURE_DATE <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Find employees hired between two given dates (use TO_DATE).",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> HIREDATE <b>BETWEEN</b> <b>TO_DATE</b>('01-JAN-1981', 'DD-MON-YYYY') <b>AND</b> <b>TO_DATE</b>('31-DEC-1982', 'DD-MON-YYYY');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display the difference in years between SYSDATE and hire date (rounded).",
+                    sql: "<b>SELECT</b> ENAME, <b>ROUND</b>(<b>MONTHS_BETWEEN</b>(<b>SYSDATE</b>, HIREDATE) / 12) <b>AS</b> YEARS_DIFF <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employee name and salary rounded to the nearest 1000.",
+                    sql: "<b>SELECT</b> ENAME, <b>ROUND</b>(SAL, -3) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display salary truncated to 2 decimal places.",
+                    sql: "<b>SELECT</b> <b>TRUNC</b>(SAL, 2) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employee name and square root of salary.",
+                    sql: "<b>SELECT</b> ENAME, <b>SQRT</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Find the absolute difference between salary and 5000.",
+                    sql: "<b>SELECT</b> ENAME, <b>ABS</b>(SAL - 5000) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display salary rounded up to the nearest integer.",
+                    sql: "<b>SELECT</b> <b>CEIL</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display salary rounded down to the nearest integer.",
+                    sql: "<b>SELECT</b> <b>FLOOR</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Generate a random number between 1 and 500 for each employee.",
+                    sql: "<b>SELECT</b> ENAME, <b>DBMS_RANDOM.VALUE</b>(1, 500) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display remainder when salary is divided by 2000.",
+                    sql: "<b>SELECT</b> ENAME, <b>MOD</b>(SAL, 2000) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display salary raised to the power of 3.",
+                    sql: "<b>SELECT</b> ENAME, <b>POWER</b>(SAL, 3) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Round salary to nearest hundred and thousand (two columns).",
+                    sql: "<b>SELECT</b> <b>ROUND</b>(SAL, -2) <b>AS</b> HUNDREDS, <b>ROUND</b>(SAL, -3) <b>AS</b> THOUSANDS <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display employee names in uppercase and lowercase in two columns.",
+                    sql: "<b>SELECT</b> <b>UPPER</b>(ENAME), <b>LOWER</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display employee name and its length.",
+                    sql: "<b>SELECT</b> ENAME, <b>LENGTH</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display first 4 characters of employee name.",
+                    sql: "<b>SELECT</b> <b>SUBSTR</b>(ENAME, 1, 4) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Concatenate employee name and job using - symbol.",
+                    sql: "<b>SELECT</b> ENAME || '-' || JOB <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Replace all occurrences of letter ‘A’ with ‘#’ in employee names.",
+                    sql: "<b>SELECT</b> <b>REPLACE</b>(ENAME, 'A', '#') <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Display position of first occurrence of ‘E’ in employee name.",
+                    sql: "<b>SELECT</b> ENAME, <b>INSTR</b>(ENAME, 'E') <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Remove leading and trailing spaces from employee name.",
+                    sql: "<b>SELECT</b> <b>TRIM</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Display employee name with first letter capital and rest lowercase.",
+                    sql: "<b>SELECT</b> <b>INITCAP</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Display last 3 characters of employee name.",
+                    sql: "<b>SELECT</b> <b>SUBSTR</b>(ENAME, -3) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Pad employee name with * on the left to make total length 10.",
+                    sql: "<b>SELECT</b> <b>LPAD</b>(ENAME, 10, '*') <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "31. Display employee name with spaces removed.",
+                    sql: "<b>SELECT</b> <b>REPLACE</b>(ENAME, ' ', '') <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "32. Display employee names starting with ‘S’.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'S%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "33. Count number of characters excluding spaces.",
+                    sql: "<b>SELECT</b> <b>LENGTH</b>(<b>REPLACE</b>(ENAME, ' ', '')) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "34. Display employee name reversed.",
+                    sql: "<b>SELECT</b> <b>REVERSE</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "35. Extract domain name from email column.",
+                    sql: "<b>SELECT</b> <b>SUBSTR</b>(EMAIL, <b>INSTR</b>(EMAIL, '@') + 1) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                }
+            ],
+            "SQL Joins": [
+                {
+                    question: "1. Display employee name and department name.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employee name, salary, and department location.",
+                    sql: "<b>SELECT</b> E.ENAME, E.SAL, D.LOC <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display employee name and department name for department 10.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.DEPTNO = 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employee name and department name where salary > 2000.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.SAL > 2000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employee name, job, and department name.",
+                    sql: "<b>SELECT</b> E.ENAME, E.JOB, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display employee name and department location for CLERKs.",
+                    sql: "<b>SELECT</b> E.ENAME, D.LOC <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.JOB = 'CLERK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employee name and department name working in NEW YORK.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> D.LOC = 'NEW YORK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employee name, department number, and department name.",
+                    sql: "<b>SELECT</b> E.ENAME, E.DEPTNO, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display employees hired after 1981 with department name.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.HIREDATE > '31-DEC-1981';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display employees with commission along with department name.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.COMM <b>IS NOT NULL</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employees whose salary is between 1500 and 3000 with department.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.SAL <b>BETWEEN</b> 1500 <b>AND</b> 3000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display employees who are the only employee in their department.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = 1);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employees whose department has more than 3 employees.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 3);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display departments where no employee earns more than 2000.",
+                    sql: "<b>SELECT</b> DNAME <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> SAL > 2000 <b>AND</b> DEPTNO <b>IS NOT NULL</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display employees who earn more than at least one manager.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> SAL > <b>ANY</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display employees who share same job and department.",
+                    sql: "<b>SELECT</b> E1.ENAME <b>FROM</b> EMP E1 <b>WHERE EXISTS</b> (<b>SELECT</b> 1 <b>FROM</b> EMP E2 <b>WHERE</b> E1.EMPNO <> E2.EMPNO <b>AND</b> E1.JOB = E2.JOB <b>AND</b> E1.DEPTNO = E2.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display employees working in same department as their manager.",
+                    sql: "<b>SELECT</b> E.ENAME <b>FROM</b> EMP E <b>JOIN</b> EMP M <b>ON</b> E.MGR = M.EMPNO <b>WHERE</b> E.DEPTNO = M.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display employees whose manager works in a different department.",
+                    sql: "<b>SELECT</b> E.ENAME <b>FROM</b> EMP E <b>JOIN</b> EMP M <b>ON</b> E.MGR = M.EMPNO <b>WHERE</b> E.DEPTNO <> M.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display employees who are highest paid in their department.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> (DEPTNO, SAL) <b>IN</b> (<b>SELECT</b> DEPTNO, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display employees earning more than their department average.",
+                    sql: "<b>SELECT</b> E.ENAME <b>FROM</b> EMP E <b>WHERE</b> E.SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display department with maximum employees.",
+                    sql: "<b>SELECT</b> DNAME <b>FROM</b> DEPT <b>WHERE</b> DEPTNO = (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = (<b>SELECT MAX</b>(<b>COUNT</b>(*)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display department with highest total salary.",
+                    sql: "<b>SELECT</b> DNAME <b>FROM</b> DEPT <b>WHERE</b> DEPTNO = (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING SUM</b>(SAL) = (<b>SELECT MAX</b>(<b>SUM</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display department name and average salary.",
+                    sql: "<b>SELECT</b> D.DNAME, <b>AVG</b>(E.SAL) <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>GROUP BY</b> D.DNAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Display department name and total salary.",
+                    sql: "<b>SELECT</b> D.DNAME, <b>SUM</b>(E.SAL) <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>GROUP BY</b> D.DNAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Display department name and number of employees.",
+                    sql: "<b>SELECT</b> D.DNAME, <b>COUNT</b>(E.EMPNO) <b>FROM</b> DEPT D <b>LEFT JOIN</b> EMP E <b>ON</b> D.DEPTNO = E.DEPTNO <b>GROUP BY</b> D.DNAME;",
+                    output: "Paste result here..."
+                }
+            ],
             "Set Operators": [
                 {
                     question: "Display all department numbers from both EMP and DEPT tables (Unique).",
