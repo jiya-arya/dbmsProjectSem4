@@ -2529,63 +2529,7 @@
                     "output": "paste here"
                 }
             ],
-            "PLSQL: Packages": [
-                {
-                    "question": "1. Write a package specification and body to display 'Hello Oracle'. (Package Basic Structure)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_hello <b>AS</b><br>  <b>PROCEDURE</b> display_msg;<br><b>END</b> pkg_hello;<br>/<br><b>CREATE OR REPLACE PACKAGE BODY</b> pkg_hello <b>AS</b><br>  <b>PROCEDURE</b> display_msg <b>AS</b><br>  <b>BEGIN</b><br>    DBMS_OUTPUT.PUT_LINE('Hello Oracle');<br>  <b>END</b>;<br><b>END</b> pkg_hello;<br>/<br><b>EXEC</b> pkg_hello.display_msg;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "3. Create a package containing a function to return square of a number. (Package + Function)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_math <b>AS</b><br>  <b>FUNCTION</b> get_square(num <b>NUMBER</b>) <b>RETURN NUMBER</b>;<br><b>END</b> pkg_math;<br>/<br><b>CREATE OR REPLACE PACKAGE BODY</b> pkg_math <b>AS</b><br>  <b>FUNCTION</b> get_square(num <b>NUMBER</b>) <b>RETURN NUMBER IS</b><br>  <b>BEGIN</b><br>    <b>RETURN</b> num * num;<br>  <b>END</b>;<br><b>END</b> pkg_math;<br>/<br><b>SELECT</b> pkg_math.get_square(6) <b>FROM</b> DUAL;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "6. Create a package with a global variable and display its value. (Package Variable)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_glob <b>AS</b><br>  v_count <b>NUMBER</b> := 100;<br><b>END</b> pkg_glob;<br>/<br><b>BEGIN</b><br>  DBMS_OUTPUT.PUT_LINE('Value: ' || pkg_glob.v_count);<br><b>END</b>;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "7. Write a package to store company name as constant and display it. (Package Constant)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_conf <b>AS</b><br>  c_comp <b>CONSTANT VARCHAR2</b>(20) := 'Oracle Corp';<br><b>END</b> pkg_conf;<br>/<br><b>BEGIN</b><br>  DBMS_OUTPUT.PUT_LINE('Company: ' || pkg_conf.c_comp);<br><b>END</b>;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "11. Create a package procedure to insert employee record. (Package + INSERT)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_emp <b>AS</b><br>  <b>PROCEDURE</b> add_dept(p_id <b>NUMBER</b>, p_name <b>VARCHAR2</b>);<br><b>END</b> pkg_emp;<br>/<br><b>CREATE OR REPLACE PACKAGE BODY</b> pkg_emp <b>AS</b><br>  <b>PROCEDURE</b> add_dept(p_id <b>NUMBER</b>, p_name <b>VARCHAR2</b>) <b>IS</b><br>  <b>BEGIN</b><br>    <b>INSERT INTO</b> DEPT(DEPTNO, DNAME) <b>VALUES</b>(p_id, p_name);<br>    <b>COMMIT</b>;<br>  <b>END</b>;<br><b>END</b> pkg_emp;<br>/<br><b>EXEC</b> pkg_emp.add_dept(70, 'RESEARCH');",
-                    "output": "paste here"
-                },
-                {
-                    "question": "12. Create a package procedure to update employee salary. (Package + UPDATE)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_upd <b>AS</b><br>  <b>PROCEDURE</b> set_sal(p_empno <b>NUMBER</b>, p_sal <b>NUMBER</b>);<br><b>END</b> pkg_upd;<br>/<br><b>CREATE OR REPLACE PACKAGE BODY</b> pkg_upd <b>AS</b><br>  <b>PROCEDURE</b> set_sal(p_empno <b>NUMBER</b>, p_sal <b>NUMBER</b>) <b>IS</b><br>  <b>BEGIN</b><br>    <b>UPDATE</b> EMP <b>SET</b> SAL = p_sal <b>WHERE</b> EMPNO = p_empno;<br>    <b>COMMIT</b>;<br>  <b>END</b>;<br><b>END</b> pkg_upd;<br>/<br><b>EXEC</b> pkg_upd.set_sal(7788, 5500);",
-                    "output": "paste here"
-                },
-                {
-                    "question": "13. Create a package procedure to delete employee record. (Package + DELETE)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_del <b>AS</b><br>  <b>PROCEDURE</b> rem_emp(p_empno <b>NUMBER</b>);<br><b>END</b> pkg_del;<br>/<br><b>CREATE OR REPLACE PACKAGE BODY</b> pkg_del <b>AS</b><br>  <b>PROCEDURE</b> rem_emp(p_empno <b>NUMBER</b>) <b>IS</b><br>  <b>BEGIN</b><br>    <b>DELETE FROM</b> EMP <b>WHERE</b> EMPNO = p_empno;<br>    <b>COMMIT</b>;<br>  <b>END</b>;<br><b>END</b> pkg_del;<br>/<br><b>EXEC</b> pkg_del.rem_emp(7900);",
-                    "output": "paste here"
-                },
-                {
-                    "question": "15. Create a package function to return employee salary. (Package Function)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_func <b>AS</b><br>  <b>FUNCTION</b> get_sal(p_id <b>NUMBER</b>) <b>RETURN NUMBER</b>;<br><b>END</b> pkg_func;<br>/<br><b>CREATE OR REPLACE PACKAGE BODY</b> pkg_func <b>AS</b><br>  <b>FUNCTION</b> get_sal(p_id <b>NUMBER</b>) <b>RETURN NUMBER IS</b><br>    v_sal <b>NUMBER</b>;<br>  <b>BEGIN</b><br>    <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_id;<br>    <b>RETURN</b> v_sal;<br>  <b>END</b>;<br><b>END</b> pkg_func;<br>/<br><b>SELECT</b> pkg_func.get_sal(7788) <b>FROM</b> DUAL;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "16. Create a package function to return total employees. (Package + Aggregate Function)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_stats <b>AS</b><br>  <b>FUNCTION</b> get_total <b>RETURN NUMBER</b>;<br><b>END</b> pkg_stats;<br>/<br><b>CREATE OR REPLACE PACKAGE BODY</b> pkg_stats <b>AS</b><br>  <b>FUNCTION</b> get_total <b>RETURN NUMBER IS</b><br>    v_count <b>NUMBER</b>;<br>  <b>BEGIN</b><br>    <b>SELECT COUNT</b>(*) <b>INTO</b> v_count <b>FROM</b> EMP;<br>    <b>RETURN</b> v_count;<br>  <b>END</b>;<br><b>END</b> pkg_stats;<br>/<br><b>SELECT</b> pkg_stats.get_total() <b>FROM</b> DUAL;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "17. Create a package function to return maximum salary. (Package + Aggregate Function)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_sal_stat <b>AS</b><br>  <b>FUNCTION</b> get_max <b>RETURN NUMBER</b>;<br><b>END</b> pkg_sal_stat;<br>/<br><b>CREATE OR REPLACE PACKAGE BODY</b> pkg_sal_stat <b>AS</b><br>  <b>FUNCTION</b> get_max <b>RETURN NUMBER IS</b><br>    v_max <b>NUMBER</b>;<br>  <b>BEGIN</b><br>    <b>SELECT MAX</b>(SAL) <b>INTO</b> v_max <b>FROM</b> EMP;<br>    <b>RETURN</b> v_max;<br>  <b>END</b>;<br><b>END</b> pkg_sal_stat;<br>/<br><b>SELECT</b> pkg_sal_stat.get_max() <b>FROM</b> DUAL;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "2. Create a package with one procedure to display employee details. (Package + Procedure)",
-                    "sql": "<b>CREATE OR REPLACE PACKAGE</b> pkg_details <b>AS</b><br>  <b>PROCEDURE</b> show_emp(p_id <b>NUMBER</b>);<br><b>END</b> pkg_details;<br>/<br><b>CREATE OR REPLACE PACKAGE BODY</b> pkg_details <b>AS</b><br>  <b>PROCEDURE</b> show_emp(p_id <b>NUMBER</b>) <b>IS</b><br>    v_name <b>VARCHAR2</b>(20);<br>  <b>BEGIN</b><br>    <b>SELECT</b> ENAME <b>INTO</b> v_name <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_id;<br>    DBMS_OUTPUT.PUT_LINE('Employee: ' || v_name);<br>  <b>END</b>;<br><b>END</b> pkg_details;<br>/<br><b>EXEC</b> pkg_details.show_emp(7788);",
-                    "output": "paste here"
-                }
-            ],
+            "PLSQL: Packages": [],
             "Exception Handling": [
                 {
                     "question": "Write a PL/SQL block to handle NO_DATA_FOUND exception while fetching employee details. (Exception Basics)",
@@ -2633,30 +2577,15 @@
                     "output": "Error: Salary cannot be less than 2000\n\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.011"
                 },
                 {
-                    "question": "13. Write a PL/SQL block to declare and handle a user-defined exception. (User Defined Exception)",
-                    "sql": "<b>DECLARE</b><br>  e_my_error <b>EXCEPTION</b>;<br>  v_val <b>NUMBER</b> := 50;<br><b>BEGIN</b><br>  <b>IF</b> v_val > 40 <b>THEN</b><br>    <b>RAISE</b> e_my_error;<br>  <b>END IF</b>;<br><b>EXCEPTION</b><br>  <b>WHEN</b> e_my_error <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Caught user-defined exception.');<br><b>END</b>;",
-                    "output": "paste here"
+                    "question": "Write a PL/SQL block to handle multiple user-defined exceptions.(Multiple Exceptions)",
+                    "sql": "<b>DECLARE</b><br>  low_salary <b>EXCEPTION</b>;<br>  invalid_age <b>EXCEPTION</b>;<br>  salary <b>NUMBER</b> := 1500;<br>  age <b>NUMBER</b> := 16;<br><b>BEGIN</b><br>  <b>IF</b> salary &lt; 2000 <b>THEN</b><br>    <b>RAISE</b> low_salary;<br>  <b>END IF</b>;<br><br>  <b>IF</b> age &lt; 18 <b>THEN</b><br>    <b>RAISE</b> invalid_age;<br>  <b>END IF</b>;<br><br>  DBMS_OUTPUT.PUT_LINE('Salary and age are valid');<br><br><b>EXCEPTION</b><br>  <b>WHEN</b> low_salary <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Error: Salary cannot be less than 2000');<br>  <b>WHEN</b> invalid_age <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Error: Employee must be at least 18 years old');<br>  <b>WHEN</b> OTHERS <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);<br>    DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);<br><b>END</b>;",
+                    "output": "Error: Salary cannot be less than 2000\n\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.011"
                 },
                 {
-                    "question": "14. Write a PL/SQL block to raise a custom exception when salary exceeds limit. (User Defined Exception)",
-                    "sql": "<b>DECLARE</b><br>  e_sal_limit <b>EXCEPTION</b>;<br>  v_sal <b>NUMBER</b> := 6000;<br><b>BEGIN</b><br>  <b>IF</b> v_sal > 5000 <b>THEN</b><br>    <b>RAISE</b> e_sal_limit;<br>  <b>END IF</b>;<br><b>EXCEPTION</b><br>  <b>WHEN</b> e_sal_limit <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Error: Salary exceeds maximum limit.');<br><b>END</b>;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "17. Write a PL/SQL block to catch an exception and re-raise it using RAISE. (Re-raise Exception)",
-                    "sql": "<b>BEGIN</b><br>  <b>BEGIN</b><br>    <b>INSERT INTO</b> EMP(EMPNO) <b>VALUES</b>(NULL);<br>  <b>EXCEPTION</b><br>    <b>WHEN OTHERS THEN</b><br>      DBMS_OUTPUT.PUT_LINE('Logging error inside...');<br>      <b>RAISE</b>;<br>  <b>END</b>;<br><b>EXCEPTION</b><br>  <b>WHEN OTHERS THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Caught re-raised error.');<br><b>END</b>;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "22. Write a PL/SQL block to validate salary and raise appropriate exception. (Validation + Exception)",
-                    "sql": "<b>DECLARE</b><br>  v_sal <b>NUMBER</b> := -100;<br><b>BEGIN</b><br>  <b>IF</b> v_sal <= 0 <b>THEN</b><br>    RAISE_APPLICATION_ERROR(-20005, 'Salary cannot be zero or negative.');<br>  <b>END IF</b>;<br><b>END</b>;",
-                    "output": "paste here"
-                },
-                {
-                    "question": "23. Write a PL/SQL block to perform division and handle exception using SQLCODE & SQLERRM. (Combined Concepts)",
-                    "sql": "<b>DECLARE</b><br>  v_res <b>NUMBER</b>;<br><b>BEGIN</b><br>  v_res := 100 / 0;<br><b>EXCEPTION</b><br>  <b>WHEN OTHERS THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Error Code: ' || <b>SQLCODE</b>);<br>    DBMS_OUTPUT.PUT_LINE('Error Msg: ' || <b>SQLERRM</b>);<br><b>END</b>;",
-                    "output": "paste here"
-                }
+                    "question": "Write a PL/SQL block where exception is handled in inner block and re-raised to outer block.(Nested Blocks + Re-raise)",
+                    "sql": "<b>DECLARE</b><br>  emp_salary emp.sal%TYPE;<br>  divisor <b>NUMBER</b> := 0;<br>  result <b>NUMBER</b>;<br><b>BEGIN</b><br>  <b>BEGIN</b><br>    SELECT sal<br>    INTO emp_salary<br>    FROM emp<br>    WHERE ename = 'SCOTT';<br><br>    result := emp_salary / divisor;<br><br>    DBMS_OUTPUT.PUT_LINE('Result: ' || result);<br>  <b>EXCEPTION</b><br>    <b>WHEN</b> ZERO_DIVIDE <b>THEN</b><br>      DBMS_OUTPUT.PUT_LINE('Inner Block: Caught ZERO_DIVIDE, re-raising.');<br>      <b>RAISE</b>;<br>  <b>END</b>;<br><br><b>EXCEPTION</b><br>  <b>WHEN</b> ZERO_DIVIDE <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Outer Block: ZERO_DIVIDE handled again.');<br><b>END</b>;",
+                    "output": "Inner Block: Caught ZERO_DIVIDE, re-raising.\nOuter Block: ZERO_DIVIDE handled again.\n\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.012"
+                }, 
             ],
             "Triggers": [
                 {
