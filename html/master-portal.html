@@ -258,7 +258,258 @@
         // --- MASTER DATA STORAGE ---
         // We will fill these arrays step by step.
         const assignmentData = {
-            "DDL Commands": [],
+            "DDL Commands": [
+                {
+                    question: "1. Create a table called STUDENT with columns: SID (NUMBER), SNAME (VARCHAR2(30)), AGE (NUMBER), COURSE (VARCHAR2(20))",
+                    sql: "<b>CREATE TABLE</b> STUDENT (SID <b>NUMBER</b>, SNAME <b>VARCHAR2</b>(30), AGE <b>NUMBER</b>, COURSE <b>VARCHAR2</b>(20));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Create a table EMPLOYEE with columns: EID NUMBER, ENAME VARCHAR2(40), SALARY NUMBER(8,2), DEPTNO NUMBER",
+                    sql: "<b>CREATE TABLE</b> EMPLOYEE (EID <b>NUMBER</b>, ENAME <b>VARCHAR2</b>(40), SALARY <b>NUMBER</b>(8,2), DEPTNO <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Create a table DEPARTMENT with columns: DEPTNO NUMBER, DNAME VARCHAR2(30), LOCATION VARCHAR2(30)",
+                    sql: "<b>CREATE TABLE</b> DEPARTMENT (DEPTNO <b>NUMBER</b>, DNAME <b>VARCHAR2</b>(30), LOCATION <b>VARCHAR2</b>(30));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Create a table BOOK with columns: BOOK_ID NUMBER, TITLE VARCHAR2(50), AUTHOR VARCHAR2(40), PRICE NUMBER",
+                    sql: "<b>CREATE TABLE</b> BOOK (BOOK_ID <b>NUMBER</b>, TITLE <b>VARCHAR2</b>(50), AUTHOR <b>VARCHAR2</b>(40), PRICE <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Create a table COURSE with columns: CID NUMBER, CNAME VARCHAR2(40), DURATION NUMBER",
+                    sql: "<b>CREATE TABLE</b> COURSE (CID <b>NUMBER</b>, CNAME <b>VARCHAR2</b>(40), DURATION <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Create a table PROJECT with columns: PID NUMBER, PNAME VARCHAR2(50), START_DATE DATE, END_DATE DATE",
+                    sql: "<b>CREATE TABLE</b> PROJECT (PID <b>NUMBER</b>, PNAME <b>VARCHAR2</b>(50), START_DATE <b>DATE</b>, END_DATE <b>DATE</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Create a table CUSTOMER with columns: CID NUMBER, CNAME VARCHAR2(40), CITY VARCHAR2(30), PHONE NUMBER",
+                    sql: "<b>CREATE TABLE</b> CUSTOMER (CID <b>NUMBER</b>, CNAME <b>VARCHAR2</b>(40), CITY <b>VARCHAR2</b>(30), PHONE <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Create a table SALES with columns: SALE_ID NUMBER, PRODUCT_NAME VARCHAR2(50), QUANTITY NUMBER, PRICE NUMBER",
+                    sql: "<b>CREATE TABLE</b> SALES (SALE_ID <b>NUMBER</b>, PRODUCT_NAME <b>VARCHAR2</b>(50), QUANTITY <b>NUMBER</b>, PRICE <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Create a table EMP_COPY from the existing EMP table (structure only)",
+                    sql: "<b>CREATE TABLE</b> EMP_COPY <b>AS SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> 1=0;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Create a table EMP_BACKUP from EMP including data",
+                    sql: "<b>CREATE TABLE</b> EMP_BACKUP <b>AS SELECT</b> * <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Add a column EMAIL VARCHAR2(50) to the STUDENT table",
+                    sql: "<b>ALTER TABLE</b> STUDENT <b>ADD</b> EMAIL <b>VARCHAR2</b>(50);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Add a column PHONE NUMBER to the EMPLOYEE table",
+                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>ADD</b> PHONE <b>NUMBER</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Modify the column SNAME in STUDENT table to VARCHAR2(50)",
+                    sql: "<b>ALTER TABLE</b> STUDENT <b>MODIFY</b> SNAME <b>VARCHAR2</b>(50);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Modify the column SALARY in EMPLOYEE table to NUMBER(10,2)",
+                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>MODIFY</b> SALARY <b>NUMBER</b>(10,2);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Add two columns CITY VARCHAR2(30) and PINCODE NUMBER to CUSTOMER table",
+                    sql: "<b>ALTER TABLE</b> CUSTOMER <b>ADD</b> (CITY <b>VARCHAR2</b>(30), PINCODE <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Rename the column SNAME to STUDENT_NAME in STUDENT table",
+                    sql: "<b>ALTER TABLE</b> STUDENT <b>RENAME COLUMN</b> SNAME <b>TO</b> STUDENT_NAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Drop the column AGE from STUDENT table",
+                    sql: "<b>ALTER TABLE</b> STUDENT <b>DROP COLUMN</b> AGE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Set the column SALARY in EMPLOYEE table to NOT NULL",
+                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>MODIFY</b> SALARY <b>NOT NULL</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Increase the size of column TITLE in BOOK table to VARCHAR2(100)",
+                    sql: "<b>ALTER TABLE</b> BOOK <b>MODIFY</b> TITLE <b>VARCHAR2</b>(100);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Add a column MANAGER_ID NUMBER to EMPLOYEE table",
+                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>ADD</b> MANAGER_ID <b>NUMBER</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Drop the table STUDENT",
+                    sql: "<b>DROP TABLE</b> STUDENT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Drop the table CUSTOMER from the database",
+                    sql: "<b>DROP TABLE</b> CUSTOMER;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Drop the table PROJECT permanently",
+                    sql: "<b>DROP TABLE</b> PROJECT <b>PURGE</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Remove the table SALES",
+                    sql: "<b>DROP TABLE</b> SALES;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Drop the table COURSE",
+                    sql: "<b>DROP TABLE</b> COURSE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Rename the table STUDENT to STUDENTS",
+                    sql: "<b>RENAME</b> STUDENT <b>TO</b> STUDENTS;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Rename the table EMPLOYEE to EMP_MASTER",
+                    sql: "<b>RENAME</b> EMPLOYEE <b>TO</b> EMP_MASTER;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Rename the table CUSTOMER to CLIENT",
+                    sql: "<b>RENAME</b> CUSTOMER <b>TO</b> CLIENT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Rename the table BOOK to BOOK_DETAILS",
+                    sql: "<b>RENAME</b> BOOK <b>TO</b> BOOK_DETAILS;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Rename the table PROJECT to PROJECT_INFO",
+                    sql: "<b>RENAME</b> PROJECT <b>TO</b> PROJECT_INFO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "31. Remove all records from the STUDENT table",
+                    sql: "<b>TRUNCATE TABLE</b> STUDENT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "32. Delete all rows from EMPLOYEE table using TRUNCATE",
+                    sql: "<b>TRUNCATE TABLE</b> EMPLOYEE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "33. Empty the CUSTOMER table quickly",
+                    sql: "<b>TRUNCATE TABLE</b> CUSTOMER;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "34. Remove all data from SALES table but keep structure",
+                    sql: "<b>TRUNCATE TABLE</b> SALES;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "35. Clear the PROJECT table",
+                    sql: "<b>TRUNCATE TABLE</b> PROJECT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "36. Create a table TRAINING with columns TID, TNAME, DURATION",
+                    sql: "<b>CREATE TABLE</b> TRAINING (TID <b>NUMBER</b>, TNAME <b>VARCHAR2</b>(30), DURATION <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "37. Add column TRAINER_NAME VARCHAR2(40) to TRAINING",
+                    sql: "<b>ALTER TABLE</b> TRAINING <b>ADD</b> TRAINER_NAME <b>VARCHAR2</b>(40);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "38. Modify TNAME column size to VARCHAR2(60)",
+                    sql: "<b>ALTER TABLE</b> TRAINING <b>MODIFY</b> TNAME <b>VARCHAR2</b>(60);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "39. Rename the TRAINING table to TRAINING_PROGRAM",
+                    sql: "<b>RENAME</b> TRAINING <b>TO</b> TRAINING_PROGRAM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "40. Truncate the TRAINING_PROGRAM table",
+                    sql: "<b>TRUNCATE TABLE</b> TRAINING_PROGRAM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "41. Drop the TRAINING_PROGRAM table",
+                    sql: "<b>DROP TABLE</b> TRAINING_PROGRAM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "42. Create EMP_PROJECT table and modify ROLE and add STATUS",
+                    sql: "<b>CREATE TABLE</b> EMP_PROJECT (EMP_ID <b>NUMBER</b>, PROJECT_ID <b>NUMBER</b>, START_DATE <b>DATE</b>, END_DATE <b>DATE</b>, ROLE <b>VARCHAR2</b>(30)); <b>ALTER TABLE</b> EMP_PROJECT <b>MODIFY</b> ROLE <b>VARCHAR2</b>(50); <b>ALTER TABLE</b> EMP_PROJECT <b>ADD</b> STATUS <b>VARCHAR2</b>(20);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "43. Create PRODUCT table, rename PNAME and change PRICE datatype",
+                    sql: "<b>CREATE TABLE</b> PRODUCT (PID <b>NUMBER</b>, PNAME <b>VARCHAR2</b>(50), PRICE <b>NUMBER</b>, CATEGORY <b>VARCHAR2</b>(30)); <b>ALTER TABLE</b> PRODUCT <b>RENAME COLUMN</b> PNAME <b>TO</b> PRODUCT_NAME; <b>ALTER TABLE</b> PRODUCT <b>MODIFY</b> PRICE <b>NUMBER</b>(10,2);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "44. Create ORDERS table, add STATUS, drop TOTAL_AMOUNT, and re-add it with new datatype",
+                    sql: "<b>CREATE TABLE</b> ORDERS (ORDER_ID <b>NUMBER</b>, CUSTOMER_ID <b>NUMBER</b>, ORDER_DATE <b>DATE</b>, TOTAL_AMOUNT <b>NUMBER</b>); <b>ALTER TABLE</b> ORDERS <b>ADD</b> STATUS <b>VARCHAR2</b>(20); <b>ALTER TABLE</b> ORDERS <b>DROP COLUMN</b> TOTAL_AMOUNT; <b>ALTER TABLE</b> ORDERS <b>ADD</b> TOTAL_AMOUNT <b>NUMBER</b>(10,2);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "45. Create EMP_TEMP for salary > 2000, rename, truncate and drop",
+                    sql: "<b>CREATE TABLE</b> EMP_TEMP <b>AS SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 2000; <b>RENAME</b> EMP_TEMP <b>TO</b> EMP_HIGH_SALARY; <b>TRUNCATE TABLE</b> EMP_HIGH_SALARY; <b>DROP TABLE</b> EMP_HIGH_SALARY;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "46. Create STUDENT_RECORD, add GRADE, modify MARKS, rename COURSE",
+                    sql: "<b>CREATE TABLE</b> STUDENT_RECORD (SID <b>NUMBER</b>, SNAME <b>VARCHAR2</b>(40), COURSE <b>VARCHAR2</b>(30), MARKS <b>NUMBER</b>); <b>ALTER TABLE</b> STUDENT_RECORD <b>ADD</b> GRADE <b>CHAR</b>(1); <b>ALTER TABLE</b> STUDENT_RECORD <b>MODIFY</b> MARKS <b>NUMBER</b>(5,2); <b>ALTER TABLE</b> STUDENT_RECORD <b>RENAME COLUMN</b> COURSE <b>TO</b> COURSE_NAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "47. Create EMP_ARCHIVE (structure only), add ARCHIVE_DATE, rename to EMP_HISTORY",
+                    sql: "<b>CREATE TABLE</b> EMP_ARCHIVE <b>AS SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> 1=0; <b>ALTER TABLE</b> EMP_ARCHIVE <b>ADD</b> ARCHIVE_DATE <b>DATE</b>; <b>RENAME</b> EMP_ARCHIVE <b>TO</b> EMP_HISTORY;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "48. Create DEPT_BACKUP (all rows), drop LOC, add LOCATION",
+                    sql: "<b>CREATE TABLE</b> DEPT_BACKUP <b>AS SELECT</b> * <b>FROM</b> DEPT; <b>ALTER TABLE</b> DEPT_BACKUP <b>DROP COLUMN</b> LOC; <b>ALTER TABLE</b> DEPT_BACKUP <b>ADD</b> LOCATION <b>VARCHAR2</b>(40);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "49. Create SALES_DATA, add REGION, modify AMOUNT, rename table",
+                    sql: "<b>CREATE TABLE</b> SALES_DATA (SALE_ID <b>NUMBER</b>, PRODUCT_ID <b>NUMBER</b>, SALE_DATE <b>DATE</b>, AMOUNT <b>NUMBER</b>); <b>ALTER TABLE</b> SALES_DATA <b>ADD</b> REGION <b>VARCHAR2</b>(30); <b>ALTER TABLE</b> SALES_DATA <b>MODIFY</b> AMOUNT <b>NUMBER</b>(12,2); <b>RENAME</b> SALES_DATA <b>TO</b> REGIONAL_SALES_DATA;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "50. Create LOG_TABLE, truncate, rename, and drop permanently",
+                    sql: "<b>CREATE TABLE</b> LOG_TABLE (LOG_ID <b>NUMBER</b>, USER_NAME <b>VARCHAR2</b>(30), ACTION <b>VARCHAR2</b>(50), LOG_DATE <b>DATE</b>); <b>TRUNCATE TABLE</b> LOG_TABLE; <b>RENAME</b> LOG_TABLE <b>TO</b> SYSTEM_LOG; <b>DROP TABLE</b> SYSTEM_LOG <b>PURGE</b>;",
+                    output: "Paste result here..."
+                }
+            ],
             "DML Commands": [],
             "DQL: Select": [],
             "Where & Order By": [],
@@ -271,574 +522,634 @@
                 {
                     question: "Display all department numbers from both EMP and DEPT tables (Unique).",
                     sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>UNION</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display all department numbers from EMP and DEPT including duplicates.",
                     sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>UNION ALL</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display department numbers that are present in both EMP and DEPT.",
                     sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>INTERSECT</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display department numbers that are present in DEPT but not assigned to any employee.",
                     sql: "<b>SELECT</b> DEPTNO <b>FROM</b> DEPT \n<b>MINUS</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> EMP;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display employee names and department names in a single column.",
                     sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP \n<b>UNION</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display jobs that exist in EMP table and also exist as department names in DEPT.",
                     sql: "<b>SELECT</b> JOB <b>FROM</b> EMP \n<b>INTERSECT</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display employee names that are not department names.",
                     sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP \n<b>MINUS</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display employee names from department 10 and department 20 using UNION.",
                     sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10 \n<b>UNION</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display employee names from department 10 and department 20 including duplicates.",
                     sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10 \n<b>UNION ALL</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display department numbers that have employees and also exist in DEPT table.",
                     sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>INTERSECT</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display all unique job roles and all unique department names in one result.",
                     sql: "<b>SELECT</b> JOB <b>FROM</b> EMP \n<b>UNION</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display common values between employee job titles and department locations.",
                     sql: "<b>SELECT</b> JOB <b>FROM</b> EMP \n<b>INTERSECT</b> \n<b>SELECT</b> LOC <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Combine employees earning > 2000 and employees from department 10.",
                     sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> SAL > 2000 \n<b>UNION</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display department numbers that exist in both tables, but exclude department 10.",
                     sql: "(<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>INTERSECT</b> <b>SELECT</b> DEPTNO <b>FROM</b> DEPT) \n<b>MINUS</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> DEPTNO = 10;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display all employee names and department names in a single result sorted alphabetically.",
                     sql: "<b>SELECT</b> ENAME <b>AS</b> Results <b>FROM</b> EMP \n<b>UNION</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT \n<b>ORDER BY</b> 1;"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display employees from departments located in NEW YORK and DALLAS using UNION.",
                     sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'NEW YORK') \n<b>UNION</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'DALLAS');"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Combine employees with salary > 3000 and employees with job = 'MANAGER' (Unique).",
                     sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> SAL > 3000 \n<b>UNION</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER';"
+                    , output: "Paste result here..."
                 },
                 {
                     question: "Display employee names who are not assigned to any valid department in the DEPT table.",
                     sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>MINUS</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
                 }
             ],
             "Database Views": [
                 {
                     question: "Create a view to display employee name, salary, and department number from EMP table.",
-                    sql: "<b>CREATE VIEW</b> emp_v1 <b>AS</b>\n<b>SELECT</b> ENAME, SAL, DEPTNO <b>FROM</b> EMP;"
+                    sql: "<b>CREATE VIEW</b> emp_v1 <b>AS</b>\n<b>SELECT</b> ENAME, SAL, DEPTNO <b>FROM</b> EMP;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a view to display employee name and department name by joining EMP and DEPT tables.",
-                    sql: "<b>CREATE VIEW</b> emp_dept_v <b>AS</b>\n<b>SELECT</b> E.ENAME, D.DNAME \n<b>FROM</b> EMP E, DEPT D \n<b>WHERE</b> E.DEPTNO = D.DEPTNO;"
+                    sql: "<b>CREATE VIEW</b> emp_dept_v <b>AS</b>\n<b>SELECT</b> E.ENAME, D.DNAME \n<b>FROM</b> EMP E, DEPT D \n<b>WHERE</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a view to display employees working in department 10.",
-                    sql: "<b>CREATE VIEW</b> dept10_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10;"
+                    sql: "<b>CREATE VIEW</b> dept10_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a view to display employee name, job, and annual salary (SAL * 12).",
-                    sql: "<b>CREATE VIEW</b> ann_sal_v <b>AS</b>\n<b>SELECT</b> ENAME, JOB, (SAL * 12) <b>AS</b> ANNUAL_SAL \n<b>FROM</b> EMP;"
+                    sql: "<b>CREATE VIEW</b> ann_sal_v <b>AS</b>\n<b>SELECT</b> ENAME, JOB, (SAL * 12) <b>AS</b> ANNUAL_SAL \n<b>FROM</b> EMP;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a view to display employees earning more than 3000.",
-                    sql: "<b>CREATE VIEW</b> high_sal_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 3000;"
+                    sql: "<b>CREATE VIEW</b> high_sal_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 3000;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a view to display department-wise total salary using EMP table.",
-                    sql: "<b>CREATE VIEW</b> dept_sal_v <b>AS</b>\n<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>AS</b> TOTAL_SAL \n<b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;"
+                    sql: "<b>CREATE VIEW</b> dept_sal_v <b>AS</b>\n<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>AS</b> TOTAL_SAL \n<b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a view with column aliases for employee name and salary.",
-                    sql: "<b>CREATE VIEW</b> emp_alias_v (Name, Monthly_Pay) <b>AS</b>\n<b>SELECT</b> ENAME, SAL <b>FROM</b> EMP;"
+                    sql: "<b>CREATE VIEW</b> emp_alias_v (Name, Monthly_Pay) <b>AS</b>\n<b>SELECT</b> ENAME, SAL <b>FROM</b> EMP;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a view for employees in department 20 with WITH CHECK OPTION.",
-                    sql: "<b>CREATE VIEW</b> dept20_check_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20\n<b>WITH CHECK OPTION</b>;"
+                    sql: "<b>CREATE VIEW</b> dept20_check_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20\n<b>WITH CHECK OPTION</b>;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Try inserting an employee with department 30 into a 'Dept 20' view with CHECK OPTION.",
-                    sql: "<b>INSERT INTO</b> dept20_check_v (EMPNO, ENAME, DEPTNO) \n<b>VALUES</b> (9999, 'TEST', 30);\n<i>-- Result: Error (View WITH CHECK OPTION where-clause violation)</i>"
+                    sql: "<b>INSERT INTO</b> dept20_check_v (EMPNO, ENAME, DEPTNO) \n<b>VALUES</b> (9999, 'TEST', 30);\n<i>-- Result: Error (View WITH CHECK OPTION where-clause violation)</i>",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a READ ONLY view to display employee details.",
-                    sql: "<b>CREATE VIEW</b> emp_read_only_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP\n<b>WITH READ ONLY</b>;"
+                    sql: "<b>CREATE VIEW</b> emp_read_only_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP\n<b>WITH READ ONLY</b>;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Try updating salary through a READ ONLY view and observe the restriction.",
-                    sql: "<b>UPDATE</b> emp_read_only_v <b>SET</b> SAL = 5000 <b>WHERE</b> ENAME = 'SMITH';\n<i>-- Result: Error (Cannot perform DML on a read-only view)</i>"
+                    sql: "<b>UPDATE</b> emp_read_only_v <b>SET</b> SAL = 5000 <b>WHERE</b> ENAME = 'SMITH';\n<i>-- Result: Error (Cannot perform DML on a read-only view)</i>",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a view that hides salary but shows employee name and department name (Security).",
-                    sql: "<b>CREATE VIEW</b> secure_emp_v <b>AS</b>\n<b>SELECT</b> ENAME, DEPTNO <b>FROM</b> EMP;"
+                    sql: "<b>CREATE VIEW</b> secure_emp_v <b>AS</b>\n<b>SELECT</b> ENAME, DEPTNO <b>FROM</b> EMP;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a materialized view to store employee name and salary from EMP table.",
-                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_emp_sal <b>AS</b>\n<b>SELECT</b> ENAME, SAL <b>FROM</b> EMP;"
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_emp_sal <b>AS</b>\n<b>SELECT</b> ENAME, SAL <b>FROM</b> EMP;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a materialized view to store employee name and department name using Join.",
-                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_emp_dept <b>AS</b>\n<b>SELECT</b> E.ENAME, D.DNAME \n<b>FROM</b> EMP E, DEPT D \n<b>WHERE</b> E.DEPTNO = D.DEPTNO;"
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_emp_dept <b>AS</b>\n<b>SELECT</b> E.ENAME, D.DNAME \n<b>FROM</b> EMP E, DEPT D \n<b>WHERE</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a materialized view with REFRESH COMPLETE for EMP table.",
-                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_complete_refresh\n<b>REFRESH COMPLETE AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP;"
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_complete_refresh\n<b>REFRESH COMPLETE AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a materialized view with REFRESH ON COMMIT.",
-                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_commit_refresh\n<b>REFRESH ON COMMIT AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP;"
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_commit_refresh\n<b>REFRESH ON COMMIT AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a materialized view to store department-wise total salary.",
-                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_dept_agg <b>AS</b>\n<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>AS</b> SUM_SAL \n<b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;"
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_dept_agg <b>AS</b>\n<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>AS</b> SUM_SAL \n<b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a materialized view with BUILD IMMEDIATE option.",
-                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_immediate\n<b>BUILD IMMEDIATE AS</b>\n<b>SELECT</b> * <b>FROM</b> DEPT;"
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_immediate\n<b>BUILD IMMEDIATE AS</b>\n<b>SELECT</b> * <b>FROM</b> DEPT;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Refresh a materialized view manually using DBMS_MVIEW package.",
-                    sql: "<b>EXEC</b> DBMS_MVIEW.REFRESH('mv_emp_sal');"
+                    sql: "<b>EXEC</b> DBMS_MVIEW.REFRESH('mv_emp_sal');",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Drop a materialized view created on EMP table.",
-                    sql: "<b>DROP MATERIALIZED VIEW</b> mv_emp_sal;"
+                    sql: "<b>DROP MATERIALIZED VIEW</b> mv_emp_sal;",
+                    output: "Paste result here..."
                 },
                 {
                     question: "Create a complex view to display department name and highest salary in each department.",
-                    sql: "<b>CREATE VIEW</b> complex_dept_v <b>AS</b>\n<b>SELECT</b> D.DNAME, <b>MAX</b>(E.SAL) <b>AS</b> MAX_SAL \n<b>FROM</b> EMP E, DEPT D \n<b>WHERE</b> E.DEPTNO = D.DEPTNO \n<b>GROUP BY</b> D.DNAME;"
+                    sql: "<b>CREATE VIEW</b> complex_dept_v <b>AS</b>\n<b>SELECT</b> D.DNAME, <b>MAX</b>(E.SAL) <b>AS</b> MAX_SAL \n<b>FROM</b> EMP E, DEPT D \n<b>WHERE</b> E.DEPTNO = D.DEPTNO \n<b>GROUP BY</b> D.DNAME;",
+                    output: "Paste result here..."
                 }
             ],
             "TCL and DCL": [
                 {
-                    question: "Grant SELECT privilege on EMP table to a user named USER1.",
-                    sql: "<b>GRANT SELECT ON</b> EMP <b>TO</b> USER1;"
-                },
-                {
-                    question: "Grant SELECT and INSERT privileges on EMP table to USER2.",
-                    sql: "<b>GRANT SELECT, INSERT ON</b> EMP <b>TO</b> USER2;"
-                },
-                {
-                    question: "Grant all privileges on DEPT table to USER3.",
-                    sql: "<b>GRANT ALL ON</b> DEPT <b>TO</b> USER3;"
-                },
-                {
-                    question: "Grant SELECT privilege on EMP table to USER4 with GRANT OPTION.",
-                    sql: "<b>GRANT SELECT ON</b> EMP <b>TO</b> USER4 <b>WITH GRANT OPTION</b>;"
-                },
-                {
-                    question: "Grant UPDATE privilege only on SAL column of EMP table to USER5.",
-                    sql: "<b>GRANT UPDATE</b>(SAL) <b>ON</b> EMP <b>TO</b> USER5;"
-                },
-                {
-                    question: "Grant privileges on EMP table to PUBLIC (all users).",
-                    sql: "<b>GRANT SELECT ON</b> EMP <b>TO PUBLIC</b>;"
-                },
-                {
-                    question: "Revoke SELECT privilege on EMP table from USER1.",
-                    sql: "<b>REVOKE SELECT ON</b> EMP <b>FROM</b> USER1;"
-                },
-                {
-                    question: "Revoke INSERT and UPDATE privileges on EMP table from USER2.",
-                    sql: "<b>REVOKE INSERT, UPDATE ON</b> EMP <b>FROM</b> USER2;"
-                },
-                {
-                    question: "Revoke ALL privileges on DEPT table from USER3.",
-                    sql: "<b>REVOKE ALL ON</b> DEPT <b>FROM</b> USER3;"
-                },
-                {
-                    question: "Revoke UPDATE privilege on SAL column from USER5.",
-                    sql: "<b>REVOKE UPDATE ON</b> EMP <b>FROM</b> USER5;"
-                },
-                {
                     question: "Insert a new employee record into EMP table and commit the changes.",
-                    sql: "<b>INSERT INTO</b> EMP (EMPNO, ENAME, SAL) <b>VALUES</b> (8001, 'JIYA', 5000);\n<b>COMMIT;</b>"
+                    sql: "<b>INSERT INTO</b> EMP (EMPNO, ENAME, SAL) <b>VALUES</b> (8001, 'JIYA', 5000);\n<b>COMMIT;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Update salary of employees in department 10 and commit the changes.",
-                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL + 500 <b>WHERE</b> DEPTNO = 10;\n<b>COMMIT;</b>"
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL + 500 <b>WHERE</b> DEPTNO = 10;\n<b>COMMIT;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Delete employees with salary less than 1000 and commit the transaction.",
-                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> SAL < 1000;\n<b>COMMIT;</b>"
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> SAL < 1000;\n<b>COMMIT;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Insert multiple records into DEPT table and commit them together.",
-                    sql: "<b>INSERT INTO</b> DEPT <b>VALUES</b> (50, 'IT', 'MUMBAI');\n<b>INSERT INTO</b> DEPT <b>VALUES</b> (60, 'HR', 'PUNE');\n<b>COMMIT;</b>"
-                },
-                {
-                    question: "Insert a new employee into EMP table but rollback the transaction.",
-                    sql: "<b>INSERT INTO</b> EMP (EMPNO, ENAME) <b>VALUES</b> (9001, 'TEMP');\n<b>ROLLBACK;</b>"
-                },
-                {
-                    question: "Update salary of employees and then rollback the changes.",
-                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL * 2;\n<b>ROLLBACK;</b>"
-                },
-                {
-                    question: "Delete records from EMP table and rollback the transaction.",
-                    sql: "<b>DELETE FROM</b> EMP;\n<b>ROLLBACK;</b>"
-                },
-                {
-                    question: "Perform multiple operations (INSERT, UPDATE) and rollback all changes.",
-                    sql: "<b>INSERT INTO</b> DEPT <b>VALUES</b> (70, 'FIN', 'LKO');\n<b>UPDATE</b> EMP <b>SET</b> COMM = 100;\n<b>ROLLBACK;</b>"
+                    sql: "<b>INSERT INTO</b> DEPT <b>VALUES</b> (50, 'IT', 'MUMBAI');\n<b>INSERT INTO</b> DEPT <b>VALUES</b> (60, 'HR', 'PUNE');\n<b>COMMIT;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Insert an employee, update salary, and commit after verification.",
-                    sql: "<b>INSERT INTO</b> EMP (EMPNO, ENAME) <b>VALUES</b> (8888, 'TEST');\n<b>UPDATE</b> EMP <b>SET</b> SAL = 4000 <b>WHERE</b> EMPNO = 8888;\n<b>COMMIT;</b>"
+                    sql: "<b>INSERT INTO</b> EMP (EMPNO, ENAME) <b>VALUES</b> (8888, 'TEST');\n<b>UPDATE</b> EMP <b>SET</b> SAL = 4000 <b>WHERE</b> EMPNO = 8888;\n<b>COMMIT;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Demonstrate use of SAVEPOINT in EMP table operations.",
-                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = 3000 <b>WHERE</b> EMPNO = 7369;\n<b>SAVEPOINT</b> s1;\n<b>UPDATE</b> EMP <b>SET</b> SAL = 4000 <b>WHERE</b> EMPNO = 7369;\n<b>ROLLBACK TO</b> s1;\n<b>COMMIT;</b>"
-                },
-                {
-                    question: "Perform update on EMP table and rollback to a specific SAVEPOINT.",
-                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> DEPTNO = 30;\n<b>SAVEPOINT</b> del_point;\n<b>DELETE FROM</b> EMP <b>WHERE</b> DEPTNO = 20;\n<b>ROLLBACK TO</b> del_point;"
-                },
-                {
-                    question: "Grant privileges to a user and perform a committed DML operation.",
-                    sql: "<b>GRANT SELECT ON</b> EMP <b>TO</b> USER1;\n<b>INSERT INTO</b> EMP (EMPNO, ENAME) <b>VALUES</b> (7777, 'ADMIN');\n<b>COMMIT;</b>"
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = 3000 <b>WHERE</b> EMPNO = 7369;\n<b>SAVEPOINT</b> s1;\n<b>UPDATE</b> EMP <b>SET</b> SAL = 4000 <b>WHERE</b> EMPNO = 7369;\n<b>ROLLBACK TO</b> s1;\n<b>COMMIT;</b>",
+                    output: "paste here"
                 }
             ],
             "PLSQL: Basics": [
                 {
                     question: "Write a PL/SQL block to print your name and city in two separate lines.",
-                    sql: "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Name: Jiya');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('City: Delhi');\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Name: Jiya');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('City: Delhi');\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to display numbers from 1 to 5 using DBMS_OUTPUT.",
-                    sql: "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('1');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('2');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('3');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('4');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('5');\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('1');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('2');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('3');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('4');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('5');\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print the current system date.",
-                    sql: "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Today is: ' || <b>SYSDATE</b>);\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Today is: ' || <b>SYSDATE</b>);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare a variable and assign your age, then display it.",
-                    sql: "<b>DECLARE</b>\n  v_age <b>NUMBER</b>(2) := 20;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('My Age is: ' || v_age);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_age <b>NUMBER</b>(2) := 20;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('My Age is: ' || v_age);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare two variables and print their sum.",
-                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10;\n  b <b>NUMBER</b> := 20;\n  s <b>NUMBER</b>;\n<b>BEGIN</b>\n  s := a + b;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum is: ' || s);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10;\n  b <b>NUMBER</b> := 20;\n  s <b>NUMBER</b>;\n<b>BEGIN</b>\n  s := a + b;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum is: ' || s);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to store employee name and salary in variables and display them.",
-                    sql: "<b>DECLARE</b>\n  v_name <b>VARCHAR2</b>(20) := 'SMITH';\n  v_sal  <b>NUMBER</b> := 800;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Employee: ' || v_name || ' Salary: ' || v_sal);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_name <b>VARCHAR2</b>(20) := 'SMITH';\n  v_sal  <b>NUMBER</b> := 800;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Employee: ' || v_name || ' Salary: ' || v_sal);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to swap two numbers using variables.",
-                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 5; b <b>NUMBER</b> := 10; temp <b>NUMBER</b>;\n<b>BEGIN</b>\n  temp := a; a := b; b := temp;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('a=' || a || ' b=' || b);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 5; b <b>NUMBER</b> := 10; temp <b>NUMBER</b>;\n<b>BEGIN</b>\n  temp := a; a := b; b := temp;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('a=' || a || ' b=' || b);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to calculate area of a rectangle using variables.",
-                    sql: "<b>DECLARE</b>\n  l <b>NUMBER</b> := 10; w <b>NUMBER</b> := 5; area <b>NUMBER</b>;\n<b>BEGIN</b>\n  area := l * w;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Area of Rectangle: ' || area);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  l <b>NUMBER</b> := 10; w <b>NUMBER</b> := 5; area <b>NUMBER</b>;\n<b>BEGIN</b>\n  area := l * w;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Area of Rectangle: ' || area);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare a constant for PI and calculate area of a circle.",
-                    sql: "<b>DECLARE</b>\n  pi <b>CONSTANT NUMBER</b> := 3.14;\n  r  <b>NUMBER</b> := 5; area <b>NUMBER</b>;\n<b>BEGIN</b>\n  area := pi * r * r;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Area of Circle: ' || area);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  pi <b>CONSTANT NUMBER</b> := 3.14;\n  r  <b>NUMBER</b> := 5; area <b>NUMBER</b>;\n<b>BEGIN</b>\n  area := pi * r * r;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Area of Circle: ' || area);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare a constant tax rate and calculate total salary after tax.",
-                    sql: "<b>DECLARE</b>\n  sal <b>NUMBER</b> := 5000;\n  tax <b>CONSTANT NUMBER</b> := 0.10;\n  net <b>NUMBER</b>;\n<b>BEGIN</b>\n  net := sal - (sal * tax);\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Net Salary: ' || net);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  sal <b>NUMBER</b> := 5000;\n  tax <b>CONSTANT NUMBER</b> := 0.10;\n  net <b>NUMBER</b>;\n<b>BEGIN</b>\n  net := sal - (sal * tax);\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Net Salary: ' || net);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to calculate simple interest using constant rate of interest.",
-                    sql: "<b>DECLARE</b>\n  p <b>NUMBER</b> := 1000; t <b>NUMBER</b> := 2;\n  r <b>CONSTANT NUMBER</b> := 5;\n  si <b>NUMBER</b>;\n<b>BEGIN</b>\n  si := (p * r * t) / 100;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Simple Interest: ' || si);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  p <b>NUMBER</b> := 1000; t <b>NUMBER</b> := 2;\n  r <b>CONSTANT NUMBER</b> := 5;\n  si <b>NUMBER</b>;\n<b>BEGIN</b>\n  si := (p * r * t) / 100;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Simple Interest: ' || si);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block using different datatypes: NUMBER, VARCHAR2, DATE.",
-                    sql: "<b>DECLARE</b>\n  v_id   <b>NUMBER</b> := 1;\n  v_name <b>VARCHAR2</b>(20) := 'Jiya';\n  v_dob  <b>DATE</b> := '01-JAN-2004';\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_id || ' ' || v_name || ' ' || v_dob);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_id   <b>NUMBER</b> := 1;\n  v_name <b>VARCHAR2</b>(20) := 'Jiya';\n  v_dob  <b>DATE</b> := '01-JAN-2004';\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_id || ' ' || v_name || ' ' || v_dob);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare a variable using %TYPE from EMP table salary column.",
-                    sql: "<b>DECLARE</b>\n  v_sal <b>EMP.SAL%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7839;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary via %TYPE: ' || v_sal);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_sal <b>EMP.SAL%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7839;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary via %TYPE: ' || v_sal);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare a record using %ROWTYPE and display employee details.",
-                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7788;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_rec.ename || ' is ' || v_rec.job);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7788;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_rec.ename || ' is ' || v_rec.job);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to convert number to string and display it.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 1234;\n  s <b>VARCHAR2</b>(10);\n<b>BEGIN</b>\n  s := <b>TO_CHAR</b>(n);\n  <b>DBMS_OUTPUT.PUT_LINE</b>('String value: ' || s);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 1234;\n  s <b>VARCHAR2</b>(10);\n<b>BEGIN</b>\n  s := <b>TO_CHAR</b>(n);\n  <b>DBMS_OUTPUT.PUT_LINE</b>('String value: ' || s);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block using variables, constants, and output statement together.",
-                    sql: "<b>DECLARE</b>\n  msg <b>CONSTANT VARCHAR2</b>(10) := 'Hello';\n  name <b>VARCHAR2</b>(10) := 'Jiya';\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(msg || ' ' || name);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  msg <b>CONSTANT VARCHAR2</b>(10) := 'Hello';\n  name <b>VARCHAR2</b>(10) := 'Jiya';\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(msg || ' ' || name);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to calculate bonus (10% of salary) and display result with comments.",
-                    sql: "<b>DECLARE</b>\n  v_sal <b>NUMBER</b> := 3000;\n  v_bon <b>NUMBER</b>; -- Variable for bonus\n<b>BEGIN</b>\n  v_bon := v_sal * 0.10;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Bonus Amount: ' || v_bon);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_sal <b>NUMBER</b> := 3000;\n  v_bon <b>NUMBER</b>; -- Variable for bonus\n<b>BEGIN</b>\n  v_bon := v_sal * 0.10;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Bonus Amount: ' || v_bon);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block that uses variable, constant, and %TYPE together.",
-                    sql: "<b>DECLARE</b>\n  c_tax <b>CONSTANT NUMBER</b> := 0.05;\n  v_sal <b>EMP.SAL%TYPE</b>;\n  v_ded <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> ENAME = 'KING';\n  v_ded := v_sal * c_tax;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Tax Deduction: ' || v_ded);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  c_tax <b>CONSTANT NUMBER</b> := 0.05;\n  v_sal <b>EMP.SAL%TYPE</b>;\n  v_ded <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> ENAME = 'KING';\n  v_ded := v_sal * c_tax;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Tax Deduction: ' || v_ded);\n<b>END;</b>",
+                    output: "paste here"
                 }
             ],
             "PLSQL: Conditionals": [
                 {
                     question: "Write a PL/SQL block to check if a number is positive using IF.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Number is Positive');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Number is Positive');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to check if an employee’s salary is greater than 3000.",
-                    sql: "<b>DECLARE</b>\n  v_sal <b>NUMBER</b> := 3500;\n<b>BEGIN</b>\n  <b>IF</b> v_sal > 3000 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('High Salary Employee');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_sal <b>NUMBER</b> := 3500;\n<b>BEGIN</b>\n  <b>IF</b> v_sal > 3000 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('High Salary Employee');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to check if a given number is even.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 4;\n<b>BEGIN</b>\n  <b>IF MOD</b>(n, 2) = 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Number is Even');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 4;\n<b>BEGIN</b>\n  <b>IF MOD</b>(n, 2) = 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Number is Even');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to check whether a number is even or odd using IF-ELSE.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 7;\n<b>BEGIN</b>\n  <b>IF MOD</b>(n, 2) = 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Even');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Odd');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 7;\n<b>BEGIN</b>\n  <b>IF MOD</b>(n, 2) = 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Even');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Odd');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to compare two numbers and display the greater one.",
-                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10; b <b>NUMBER</b> := 20;\n<b>BEGIN</b>\n  <b>IF</b> a > b <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Greater is: ' || a);\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Greater is: ' || b);\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10; b <b>NUMBER</b> := 20;\n<b>BEGIN</b>\n  <b>IF</b> a > b <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Greater is: ' || a);\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Greater is: ' || b);\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to check whether a student passed (marks ≥ 40) or failed.",
-                    sql: "<b>DECLARE</b>\n  m <b>NUMBER</b> := 45;\n<b>BEGIN</b>\n  <b>IF</b> m >= 40 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Result: Passed');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Result: Failed');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  m <b>NUMBER</b> := 45;\n<b>BEGIN</b>\n  <b>IF</b> m >= 40 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Result: Passed');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Result: Failed');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to assign grades based on marks using IF-ELSIF-ELSE.",
-                    sql: "<b>DECLARE</b>\n  m <b>NUMBER</b> := 75;\n<b>BEGIN</b>\n  <b>IF</b> m >= 80 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Grade A');\n  <b>ELSIF</b> m >= 60 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Grade B');\n  <b>ELSIF</b> m >= 40 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Grade C');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Fail');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  m <b>NUMBER</b> := 75;\n<b>BEGIN</b>\n  <b>IF</b> m >= 80 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Grade A');\n  <b>ELSIF</b> m >= 60 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Grade B');\n  <b>ELSIF</b> m >= 40 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Grade C');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Fail');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to find the greatest of three numbers.",
-                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b>:=10; b <b>NUMBER</b>:=30; c <b>NUMBER</b>:=20;\n<b>BEGIN</b>\n  <b>IF</b> a>b <b>AND</b> a>c <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(a);\n  <b>ELSIF</b> b>a <b>AND</b> b>c <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(b);\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(c);\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b>:=10; b <b>NUMBER</b>:=30; c <b>NUMBER</b>:=20;\n<b>BEGIN</b>\n  <b>IF</b> a>b <b>AND</b> a>c <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(a);\n  <b>ELSIF</b> b>a <b>AND</b> b>c <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(b);\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(c);\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to check if a number is Positive, Negative, or Zero.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Positive');\n  <b>ELSIF</b> n < 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Negative');\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Zero');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Positive');\n  <b>ELSIF</b> n < 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Negative');\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Zero');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to categorize salary into High, Medium, or Low.",
-                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 4000;\n<b>BEGIN</b>\n  <b>IF</b> s > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High');\n  <b>ELSIF</b> s >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium');\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 4000;\n<b>BEGIN</b>\n  <b>IF</b> s > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High');\n  <b>ELSIF</b> s >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium');\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to calculate bonus based on job role using ELSIF.",
-                    sql: "<b>DECLARE</b>\n  v_job <b>VARCHAR2</b>(20) := 'MANAGER'; v_bon <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>IF</b> v_job = 'MANAGER' <b>THEN</b> v_bon := 1000;\n  <b>ELSIF</b> v_job = 'CLERK' <b>THEN</b> v_bon := 500;\n  <b>ELSE</b> v_bon := 200;\n  <b>END IF;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Bonus: ' || v_bon);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_job <b>VARCHAR2</b>(20) := 'MANAGER'; v_bon <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>IF</b> v_job = 'MANAGER' <b>THEN</b> v_bon := 1000;\n  <b>ELSIF</b> v_job = 'CLERK' <b>THEN</b> v_bon := 500;\n  <b>ELSE</b> v_bon := 200;\n  <b>END IF;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Bonus: ' || v_bon);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block using CASE to display day of week based on number (1–7).",
-                    sql: "<b>DECLARE</b>\n  d <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>CASE</b> d\n    <b>WHEN</b> 1 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Monday');\n    <b>WHEN</b> 2 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Tuesday');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Other Day');\n  <b>END CASE;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  d <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>CASE</b> d\n    <b>WHEN</b> 1 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Monday');\n    <b>WHEN</b> 2 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Tuesday');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Other Day');\n  <b>END CASE;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block using CASE to assign grades based on marks.",
-                    sql: "<b>DECLARE</b>\n  m <b>NUMBER</b> := 85;\n<b>BEGIN</b>\n  <b>CASE</b>\n    <b>WHEN</b> m >= 80 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('A');\n    <b>WHEN</b> m >= 60 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('B');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('C');\n  <b>END CASE;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  m <b>NUMBER</b> := 85;\n<b>BEGIN</b>\n  <b>CASE</b>\n    <b>WHEN</b> m >= 80 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('A');\n    <b>WHEN</b> m >= 60 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('B');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('C');\n  <b>END CASE;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block using CASE to display department name based on ID.",
-                    sql: "<b>DECLARE</b>\n  d <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>CASE</b> d\n    <b>WHEN</b> 10 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Accounting');\n    <b>WHEN</b> 20 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Research');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Sales');\n  <b>END CASE;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  d <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>CASE</b> d\n    <b>WHEN</b> 10 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Accounting');\n    <b>WHEN</b> 20 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Research');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Sales');\n  <b>END CASE;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block using CASE to categorize salary (High/Medium/Low).",
-                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 6000;\n<b>BEGIN</b>\n  <b>CASE</b>\n    <b>WHEN</b> s > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High');\n    <b>WHEN</b> s >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low');\n  <b>END CASE;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 6000;\n<b>BEGIN</b>\n  <b>CASE</b>\n    <b>WHEN</b> s > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High');\n    <b>WHEN</b> s >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low');\n  <b>END CASE;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print numbers 1 to 10 but skip 5 using CONTINUE.",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>CONTINUE WHEN</b> i = 5;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>CONTINUE WHEN</b> i = 5;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to display only odd numbers between 1 and 20 using CONTINUE.",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..20 <b>LOOP</b>\n    <b>CONTINUE WHEN MOD</b>(i, 2) = 0;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..20 <b>LOOP</b>\n    <b>CONTINUE WHEN MOD</b>(i, 2) = 0;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to skip multiples of 3 while printing numbers 1–15.",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..15 <b>LOOP</b>\n    <b>CONTINUE WHEN MOD</b>(i, 3) = 0;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..15 <b>LOOP</b>\n    <b>CONTINUE WHEN MOD</b>(i, 3) = 0;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to exit loop when number reaches 5 using EXIT.",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>EXIT WHEN</b> i = 5;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>EXIT WHEN</b> i = 5;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print numbers until sum exceeds 50, then exit.",
-                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..100 <b>LOOP</b>\n    s := s + i;\n    <b>EXIT WHEN</b> s > 50;\n    <b>DBMS_OUTPUT.PUT_LINE</b>('i='||i||' Sum='||s);\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..100 <b>LOOP</b>\n    s := s + i;\n    <b>EXIT WHEN</b> s > 50;\n    <b>DBMS_OUTPUT.PUT_LINE</b>('i='||i||' Sum='||s);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to exit loop when a negative number is encountered.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    n := -1; -- Simulated input\n    <b>EXIT WHEN</b> n < 0;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(n);\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    n := -1; -- Simulated input\n    <b>EXIT WHEN</b> n < 0;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(n);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block using EXIT WHEN to stop loop based on a variable.",
-                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 3;\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 3;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block using IF-ELSIF and CASE together.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b>\n    <b>CASE WHEN MOD</b>(n,2)=0 <b>THEN DBMS_OUTPUT.PUT_LINE</b>('Pos Even'); <b>END CASE;</b>\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b>\n    <b>CASE WHEN MOD</b>(n,2)=0 <b>THEN DBMS_OUTPUT.PUT_LINE</b>('Pos Even'); <b>END CASE;</b>\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to process salaries using LOOP, CONTINUE, and EXIT.",
-                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 1000;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    s := s + 1000;\n    <b>CONTINUE WHEN</b> s < 3000;\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Processing: ' || s);\n    <b>EXIT WHEN</b> s >= 5000;\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 1000;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    s := s + 1000;\n    <b>CONTINUE WHEN</b> s < 3000;\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Processing: ' || s);\n    <b>EXIT WHEN</b> s >= 5000;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to simulate a login system (check username & password).",
-                    sql: "<b>DECLARE</b>\n  u <b>VARCHAR2</b>(10):='admin'; p <b>VARCHAR2</b>(10):='123';\n<b>BEGIN</b>\n  <b>IF</b> u = 'admin' <b>AND</b> p = '123' <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Login Successful');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Access Denied');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  u <b>VARCHAR2</b>(10):='admin'; p <b>VARCHAR2</b>(10):='123';\n<b>BEGIN</b>\n  <b>IF</b> u = 'admin' <b>AND</b> p = '123' <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Login Successful');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Access Denied');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 }
             ],
             "PLSQL: Loops": [
                 {
                     question: "Write a PL/SQL block to print numbers from 1 to 5 using SIMPLE LOOP.",
-                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 5;\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 5;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to display numbers from 10 to 1 in reverse order using SIMPLE LOOP.",
-                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i - 1;\n    <b>EXIT WHEN</b> i < 1;\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i - 1;\n    <b>EXIT WHEN</b> i < 1;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to calculate the sum of numbers from 1 to 10 using SIMPLE LOOP.",
-                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    s := s + i;\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 10;\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum is: ' || s);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    s := s + i;\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 10;\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum is: ' || s);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print multiplication table of a number using SIMPLE LOOP.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 5;\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(n || ' x ' || i || ' = ' || (n*i));\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 10;\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 5;\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(n || ' x ' || i || ' = ' || (n*i));\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 10;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print even numbers between 1 and 20 using SIMPLE LOOP.",
-                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 2;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 2;\n    <b>EXIT WHEN</b> i > 20;\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 2;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 2;\n    <b>EXIT WHEN</b> i > 20;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block that exits the loop when a number becomes greater than 50.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Current Value: ' || n);\n    n := n + 15;\n    <b>EXIT WHEN</b> n > 50;\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Current Value: ' || n);\n    n := n + 15;\n    <b>EXIT WHEN</b> n > 50;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print numbers from 1 to 10 using WHILE LOOP.",
-                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>WHILE</b> i <= 10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>WHILE</b> i <= 10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to calculate factorial of a number using WHILE LOOP.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 5;\n  f <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    f := f * n;\n    n := n - 1;\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Factorial is: ' || f);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 5;\n  f <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    f := f * n;\n    n := n - 1;\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Factorial is: ' || f);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to display sum of digits of a number using WHILE LOOP.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 123;\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    s := s + <b>MOD</b>(n, 10);\n    n := <b>TRUNC</b>(n / 10);\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum of digits: ' || s);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 123;\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    s := s + <b>MOD</b>(n, 10);\n    n := <b>TRUNC</b>(n / 10);\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum of digits: ' || s);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to reverse a number using WHILE LOOP.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 123;\n  r <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    r := (r * 10) + <b>MOD</b>(n, 10);\n    n := <b>TRUNC</b>(n / 10);\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Reversed Number: ' || r);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 123;\n  r <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    r := (r * 10) + <b>MOD</b>(n, 10);\n    n := <b>TRUNC</b>(n / 10);\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Reversed Number: ' || r);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to check whether a number is palindrome using WHILE LOOP.",
-                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 121;\n  t <b>NUMBER</b> := n;\n  r <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    r := (r * 10) + <b>MOD</b>(n, 10);\n    n := <b>TRUNC</b>(n / 10);\n  <b>END LOOP;</b>\n  <b>IF</b> t = r <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Number is Palindrome');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Not a Palindrome');\n  <b>END IF;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 121;\n  t <b>NUMBER</b> := n;\n  r <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    r := (r * 10) + <b>MOD</b>(n, 10);\n    n := <b>TRUNC</b>(n / 10);\n  <b>END LOOP;</b>\n  <b>IF</b> t = r <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Number is Palindrome');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Not a Palindrome');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print Fibonacci series up to N terms using WHILE LOOP.",
-                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 0; b <b>NUMBER</b> := 1; c <b>NUMBER</b>;\n  n <b>NUMBER</b> := 5; i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>WHILE</b> i <= n <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(a);\n    c := a + b; a := b; b := c;\n    i := i + 1;\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 0; b <b>NUMBER</b> := 1; c <b>NUMBER</b>;\n  n <b>NUMBER</b> := 5; i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>WHILE</b> i <= n <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(a);\n    c := a + b; a := b; b := c;\n    i := i + 1;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print numbers from 1 to 10 using FOR LOOP.",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print numbers in reverse order using FOR LOOP.",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN REVERSE</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN REVERSE</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to calculate sum of first 10 natural numbers using FOR LOOP.",
-                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    s := s + i;\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum: ' || s);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    s := s + i;\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum: ' || s);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to display multiplication table of 5 using FOR LOOP.",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('5 x ' || i || ' = ' || (5*i));\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('5 x ' || i || ' = ' || (5*i));\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print squares of numbers from 1 to 10.",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Square of ' || i || ' is ' || (i*i));\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Square of ' || i || ' is ' || (i*i));\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to display all odd numbers between 1 and 50 using FOR LOOP.",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..50 <b>LOOP</b>\n    <b>IF MOD</b>(i, 2) != 0 <b>THEN</b>\n      <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    <b>END IF;</b>\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..50 <b>LOOP</b>\n    <b>IF MOD</b>(i, 2) != 0 <b>THEN</b>\n      <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    <b>END IF;</b>\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to print a pattern using nested loops: * , ** , *** , ****",
-                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..4 <b>LOOP</b>\n    <b>FOR</b> j <b>IN</b> 1..i <b>LOOP</b>\n      <b>DBMS_OUTPUT.PUT</b>('*');\n    <b>END LOOP;</b>\n    <b>DBMS_OUTPUT.NEW_LINE;</b>\n  <b>END LOOP;</b>\n<b>END;</b>"
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..4 <b>LOOP</b>\n    <b>FOR</b> j <b>IN</b> 1..i <b>LOOP</b>\n      <b>DBMS_OUTPUT.PUT</b>('*');\n    <b>END LOOP;</b>\n    <b>DBMS_OUTPUT.NEW_LINE;</b>\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
                 }
             ],
             "PLSQL: Types": [
                 {
                     question: "Write a PL/SQL block to fetch employee name from EMP table for empno = 7369 and display it.",
-                    sql: "<b>DECLARE</b>\n  v_ename <b>EMP.ENAME%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME <b>INTO</b> v_ename <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Employee Name: ' || v_ename);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_ename <b>EMP.ENAME%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME <b>INTO</b> v_ename <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Employee Name: ' || v_ename);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to retrieve salary of an employee and print it.",
-                    sql: "<b>DECLARE</b>\n  v_sal <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7839;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary is: ' || v_sal);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_sal <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7839;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary is: ' || v_sal);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to fetch employee name and job using a single SELECT statement.",
-                    sql: "<b>DECLARE</b>\n  v_name <b>VARCHAR2</b>(20);\n  v_job  <b>VARCHAR2</b>(20);\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME, JOB <b>INTO</b> v_name, v_job <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7788;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_name || ' works as ' || v_job);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_name <b>VARCHAR2</b>(20);\n  v_job  <b>VARCHAR2</b>(20);\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME, JOB <b>INTO</b> v_name, v_job <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7788;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_name || ' works as ' || v_job);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to display department number of an employee using SELECT INTO.",
-                    sql: "<b>DECLARE</b>\n  v_dept <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> DEPTNO <b>INTO</b> v_dept <b>FROM</b> EMP <b>WHERE</b> ENAME = 'SMITH';\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Dept No: ' || v_dept);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_dept <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> DEPTNO <b>INTO</b> v_dept <b>FROM</b> EMP <b>WHERE</b> ENAME = 'SMITH';\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Dept No: ' || v_dept);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to fetch hiredate of an employee and display it.",
-                    sql: "<b>DECLARE</b>\n  v_hdate <b>DATE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> HIREDATE <b>INTO</b> v_hdate <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7902;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Hire Date: ' || v_hdate);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_hdate <b>DATE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> HIREDATE <b>INTO</b> v_hdate <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7902;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Hire Date: ' || v_hdate);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to count total number of employees using SELECT INTO.",
-                    sql: "<b>DECLARE</b>\n  v_count <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT COUNT</b>(*) <b>INTO</b> v_count <b>FROM</b> EMP;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Total Employees: ' || v_count);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_count <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT COUNT</b>(*) <b>INTO</b> v_count <b>FROM</b> EMP;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Total Employees: ' || v_count);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare a variable using %TYPE based on EMP.SAL and display salary.",
-                    sql: "<b>DECLARE</b>\n  v_sal <b>EMP.SAL%TYPE</b>;\n<b>BEGIN</b>\n  v_sal := 5000;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary: ' || v_sal);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_sal <b>EMP.SAL%TYPE</b>;\n<b>BEGIN</b>\n  v_sal := 5000;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary: ' || v_sal);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare variables for employee name and job using %TYPE.",
-                    sql: "<b>DECLARE</b>\n  v_name <b>EMP.ENAME%TYPE</b>;\n  v_job  <b>EMP.JOB%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME, JOB <b>INTO</b> v_name, v_job <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7698;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_name || ' - ' || v_job);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_name <b>EMP.ENAME%TYPE</b>;\n  v_job  <b>EMP.JOB%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME, JOB <b>INTO</b> v_name, v_job <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7698;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_name || ' - ' || v_job);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to fetch salary using %TYPE variable and display it.",
-                    sql: "<b>DECLARE</b>\n  v_salary <b>EMP.SAL%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_salary <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7566;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Fetched Salary: ' || v_salary);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_salary <b>EMP.SAL%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_salary <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7566;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Fetched Salary: ' || v_salary);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to calculate annual salary using %TYPE variable.",
-                    sql: "<b>DECLARE</b>\n  v_sal <b>EMP.SAL%TYPE</b>;\n  v_ann <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7844;\n  v_ann := v_sal * 12;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Annual Salary: ' || v_ann);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_sal <b>EMP.SAL%TYPE</b>;\n  v_ann <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7844;\n  v_ann := v_sal * 12;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Annual Salary: ' || v_ann);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to update salary using %TYPE variable.",
-                    sql: "<b>DECLARE</b>\n  v_new_sal <b>EMP.SAL%TYPE</b> := 3500;\n<b>BEGIN</b>\n  <b>UPDATE</b> EMP <b>SET</b> SAL = v_new_sal <b>WHERE</b> EMPNO = 7900;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary Updated Successfully');\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_new_sal <b>EMP.SAL%TYPE</b> := 3500;\n<b>BEGIN</b>\n  <b>UPDATE</b> EMP <b>SET</b> SAL = v_new_sal <b>WHERE</b> EMPNO = 7900;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary Updated Successfully');\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare a variable using %TYPE from DEPT table.",
-                    sql: "<b>DECLARE</b>\n  v_loc <b>DEPT.LOC%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> LOC <b>INTO</b> v_loc <b>FROM</b> DEPT <b>WHERE</b> DEPTNO = 10;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Location: ' || v_loc);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_loc <b>DEPT.LOC%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> LOC <b>INTO</b> v_loc <b>FROM</b> DEPT <b>WHERE</b> DEPTNO = 10;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Location: ' || v_loc);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to declare a record using %ROWTYPE for EMP table.",
-                    sql: "<b>DECLARE</b>\n  emp_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Record structure for EMP declared.');\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  emp_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Record structure for EMP declared.');\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to fetch complete employee record using %ROWTYPE and display fields.",
-                    sql: "<b>DECLARE</b>\n  v_emp <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_emp <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7839;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('ID: ' || v_emp.empno || ' Name: ' || v_emp.ename);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_emp <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_emp <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7839;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('ID: ' || v_emp.empno || ' Name: ' || v_emp.ename);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to display employee name, salary, and job using %ROWTYPE.",
-                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7782;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_rec.ename || ' | ' || v_rec.job || ' | ' || v_rec.sal);\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7782;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_rec.ename || ' | ' || v_rec.job || ' | ' || v_rec.sal);\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to update salary using %ROWTYPE variable.",
-                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369;\n  v_rec.sal := v_rec.sal + 500;\n  <b>UPDATE</b> EMP <b>SET ROW</b> = v_rec <b>WHERE</b> EMPNO = 7369;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Row Updated using %ROWTYPE');\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369;\n  v_rec.sal := v_rec.sal + 500;\n  <b>UPDATE</b> EMP <b>SET ROW</b> = v_rec <b>WHERE</b> EMPNO = 7369;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Row Updated using %ROWTYPE');\n<b>END;</b>",
+                    output: "paste here"
                 },
                 {
                     question: "Write a PL/SQL block to insert a record using %ROWTYPE.",
-                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  v_rec.empno := 8000;\n  v_rec.ename := 'JIYA';\n  v_rec.job   := 'DEVELOPER';\n  v_rec.deptno:= 10;\n  <b>INSERT INTO</b> EMP <b>VALUES</b> v_rec;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Record Inserted via %ROWTYPE');\n<b>END;</b>"
+                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  v_rec.empno := 8000;\n  v_rec.ename := 'JIYA';\n  v_rec.job   := 'DEVELOPER';\n  v_rec.deptno:= 10;\n  <b>INSERT INTO</b> EMP <b>VALUES</b> v_rec;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Record Inserted via %ROWTYPE');\n<b>END;</b>",
+                    output: "paste here"
                 }
             ],
             "PLSQL: Cursors": [],
@@ -870,15 +1181,16 @@
             queries.forEach((item, index) => {
                 const card = document.createElement('div');
                 card.className = 'query-card';
+                // ... inside your loop ...
                 card.innerHTML = `
-                    <div class="q-badge">${index + 1}</div>
-                    <p class="q-text">${item.question}</p>
-                    <div class="code-box">
-                        <pre class="sql-code">${item.sql}</pre>
-                    </div>
-                    <span class="output-label">Execution Output:</span>
-                    <div class="placeholder-img">Image of SQL Plus result will go here</div>
-                `;
+    <div class="q-badge">${index + 1}</div>
+    <p class="q-text">${item.question}</p>
+    <div class="code-box"><pre class="sql-code">${item.sql}</pre></div>
+    <span class="output-label">Oracle Terminal Output:</span>
+    <div style="background:#f1f5f9; border:1px solid #e2e8f0; border-radius:12px; padding:15px; overflow-x:auto;">
+        <pre style="margin:0; font-family:'Consolas', monospace; font-size:0.85rem; color:#475569; white-space:pre;">${item.output}</pre>
+    </div>
+`;
                 container.appendChild(card);
             });
         }
