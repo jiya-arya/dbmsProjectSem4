@@ -2479,14 +2479,16 @@
             ],
             "Procedures & Functions": [
                 {
-                    "question": "1. Write a stored procedure to display 'Hello Oracle' using DBMS_OUTPUT. (Stored Procedure – Basic)",
+                    "question": "Write a stored procedure to display (Hello Oracle) using DBMS_OUTPUT.",
+
                     "sql": "<b>CREATE OR REPLACE PROCEDURE</b> hello_oracle <b>AS</b><br><b>BEGIN</b><br>  DBMS_OUTPUT.PUT_LINE('Hello Oracle');<br><b>END</b>;<br>/<br><b>EXEC</b> hello_oracle;",
-                    "output": "paste here"
+
+                    "output": "Procedure HELLO_ORACLE_PROC compiled\n\nElapsed: 00:00:00.067"
                 },
                 {
-                    "question": "16. Write a function to return square of a number. (Function – Basic)",
+                    "question": "Write a stored procedure to display employee name for a given empno.",
                     "sql": "<b>CREATE OR REPLACE FUNCTION</b> get_square(num <b>NUMBER</b>) <b>RETURN NUMBER AS</b><br><b>BEGIN</b><br>  <b>RETURN</b> num * num;<br><b>END</b>;<br>/<br><b>SELECT</b> get_square(5) <b>FROM</b> DUAL;",
-                    "output": "paste here"
+                    "output": "Procedure SHOW_EMP_NAME compiled\n\nElapsed: 00:00:00.067"
                 },
                 {
                     "question": "18. Write a function to return total number of employees. (Function + Aggregate)",
