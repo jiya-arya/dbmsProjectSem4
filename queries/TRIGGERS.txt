@@ -1,0 +1,103 @@
+-- 1 Write a trigger to display a message whenever a record is inserted into EMP table.
+CREATE OR REPLACE TRIGGER emp_insert_msg
+AFTER INSERT ON EMP
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('A new employee has been inserted: ');
+END;
+/
+
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+VALUES (9300, 'TINA', 'ANALYST', 6566, TO_DATE('08-APR-2026','DD-MON-YYYY'), 4000, (null), 20);
+
+
+--2 Write a trigger that fires before inserting data into EMP table.
+CREATE OR REPLACE TRIGGER emp_before_insert
+BEFORE INSERT ON EMP
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('About to insert employee:');
+END;
+/
+
+INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
+VALUES (9400, 'ANITA', 'ANALYST', 7566, TO_DATE('08-APR-2026','DD-MON-YYYY'), 4000, (null), 20);
+
+--3 Write a trigger that fires after deleting a record from EMP table.
+CREATE OR REPLACE TRIGGER emp_after_delete
+AFTER DELETE ON EMP
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Employee deleted' );
+END;
+/
+
+DELETE FROM EMP WHERE EMPNO = 9400;
+
+--4 Write a trigger to prevent deletion from EMP table.
+CREATE OR REPLACE TRIGGER emp_prevent_delete
+BEFORE DELETE ON EMP
+FOR EACH ROW
+BEGIN
+    RAISE_APPLICATION_ERROR(-20002, 'Deletion is not allowed from EMP table!');
+END;
+/
+
+DELETE FROM EMP WHERE EMPNO = 8100;
+
+--5 Write a trigger to display a message when employee salary is updated.
+CREATE OR REPLACE TRIGGER emp_after_salary_update
+AFTER UPDATE OF SAL ON EMP
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Salary updated for employee');
+END;
+/
+UPDATE EMP
+SET SAL = SAL + 500
+WHERE EMPNO = 9400;
+
+--6 Write a row-level trigger to display old and new salary when salary is updated.
+CREATE OR REPLACE TRIGGER emp_salary_change
+AFTER UPDATE OF SAL ON EMP
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Employee: ' || :NEW.ENAME || 
+                         ', EMPNO: ' || :NEW.EMPNO || 
+                         ', Old SAL: ' || :OLD.SAL || 
+                         ', New SAL: ' || :NEW.SAL);
+END;
+/
+
+UPDATE EMP
+SET SAL = SAL + 400
+WHERE EMPNO = 7876;
+
+-- 10  Write a trigger to copy deleted records into another table (audit table).
+CREATE TABLE EMP_AUDIT (
+    EMPNO NUMBER(4),
+    ENAME VARCHAR2(10),
+    JOB VARCHAR2(9),
+    MGR NUMBER(4),
+    HIREDATE DATE,
+    SAL NUMBER(7,2),
+    COMM NUMBER(7,2),
+    DEPTNO NUMBER(2),
+    DELETED_ON DATE
+);
+
+CREATE OR REPLACE TRIGGER emp_delete_audit
+AFTER DELETE ON EMP
+FOR EACH ROW
+BEGIN
+    INSERT INTO EMP_AUDIT (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, DELETED_ON)
+    VALUES (:OLD.EMPNO, :OLD.ENAME, :OLD.JOB, :OLD.MGR, :OLD.HIREDATE, :OLD.SAL, :OLD.COMM, :OLD.DEPTNO, SYSDATE);
+
+    DBMS_OUTPUT.PUT_LINE('Deleted employee logged: ' || :OLD.ENAME || ', EMPNO: ' || :OLD.EMPNO);
+END;
+/
+
+ALTER TRIGGER emp_prevent_delete DISABLE;
+
+DELETE FROM EMP
+WHERE EMPNO = 7876;
