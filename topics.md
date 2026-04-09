@@ -1,0 +1,2373 @@
+const assignmentData = {
+            "DDL Commands": [
+                {
+                    question: "1. Create a table called STUDENT with columns: SID (NUMBER), SNAME (VARCHAR2(30)), AGE (NUMBER), COURSE (VARCHAR2(20))",
+                    sql: "<b>CREATE TABLE</b> STUDENT (SID <b>NUMBER</b>, SNAME <b>VARCHAR2</b>(30), AGE <b>NUMBER</b>, COURSE <b>VARCHAR2</b>(20));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Create a table EMPLOYEE with columns: EID NUMBER, ENAME VARCHAR2(40), SALARY NUMBER(8,2), DEPTNO NUMBER",
+                    sql: "<b>CREATE TABLE</b> EMPLOYEE (EID <b>NUMBER</b>, ENAME <b>VARCHAR2</b>(40), SALARY <b>NUMBER</b>(8,2), DEPTNO <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Create a table DEPARTMENT with columns: DEPTNO NUMBER, DNAME VARCHAR2(30), LOCATION VARCHAR2(30)",
+                    sql: "<b>CREATE TABLE</b> DEPARTMENT (DEPTNO <b>NUMBER</b>, DNAME <b>VARCHAR2</b>(30), LOCATION <b>VARCHAR2</b>(30));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Create a table BOOK with columns: BOOK_ID NUMBER, TITLE VARCHAR2(50), AUTHOR VARCHAR2(40), PRICE NUMBER",
+                    sql: "<b>CREATE TABLE</b> BOOK (BOOK_ID <b>NUMBER</b>, TITLE <b>VARCHAR2</b>(50), AUTHOR <b>VARCHAR2</b>(40), PRICE <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Create a table COURSE with columns: CID NUMBER, CNAME VARCHAR2(40), DURATION NUMBER",
+                    sql: "<b>CREATE TABLE</b> COURSE (CID <b>NUMBER</b>, CNAME <b>VARCHAR2</b>(40), DURATION <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Create a table PROJECT with columns: PID NUMBER, PNAME VARCHAR2(50), START_DATE DATE, END_DATE DATE",
+                    sql: "<b>CREATE TABLE</b> PROJECT (PID <b>NUMBER</b>, PNAME <b>VARCHAR2</b>(50), START_DATE <b>DATE</b>, END_DATE <b>DATE</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Create a table CUSTOMER with columns: CID NUMBER, CNAME VARCHAR2(40), CITY VARCHAR2(30), PHONE NUMBER",
+                    sql: "<b>CREATE TABLE</b> CUSTOMER (CID <b>NUMBER</b>, CNAME <b>VARCHAR2</b>(40), CITY <b>VARCHAR2</b>(30), PHONE <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Create a table SALES with columns: SALE_ID NUMBER, PRODUCT_NAME VARCHAR2(50), QUANTITY NUMBER, PRICE NUMBER",
+                    sql: "<b>CREATE TABLE</b> SALES (SALE_ID <b>NUMBER</b>, PRODUCT_NAME <b>VARCHAR2</b>(50), QUANTITY <b>NUMBER</b>, PRICE <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Create a table EMP_COPY from the existing EMP table (structure only)",
+                    sql: "<b>CREATE TABLE</b> EMP_COPY <b>AS SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> 1=0;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Create a table EMP_BACKUP from EMP including data",
+                    sql: "<b>CREATE TABLE</b> EMP_BACKUP <b>AS SELECT</b> * <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Add a column EMAIL VARCHAR2(50) to the STUDENT table",
+                    sql: "<b>ALTER TABLE</b> STUDENT <b>ADD</b> EMAIL <b>VARCHAR2</b>(50);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Add a column PHONE NUMBER to the EMPLOYEE table",
+                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>ADD</b> PHONE <b>NUMBER</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Modify the column SNAME in STUDENT table to VARCHAR2(50)",
+                    sql: "<b>ALTER TABLE</b> STUDENT <b>MODIFY</b> SNAME <b>VARCHAR2</b>(50);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Modify the column SALARY in EMPLOYEE table to NUMBER(10,2)",
+                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>MODIFY</b> SALARY <b>NUMBER</b>(10,2);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Add two columns CITY VARCHAR2(30) and PINCODE NUMBER to CUSTOMER table",
+                    sql: "<b>ALTER TABLE</b> CUSTOMER <b>ADD</b> (CITY <b>VARCHAR2</b>(30), PINCODE <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Rename the column SNAME to STUDENT_NAME in STUDENT table",
+                    sql: "<b>ALTER TABLE</b> STUDENT <b>RENAME COLUMN</b> SNAME <b>TO</b> STUDENT_NAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Drop the column AGE from STUDENT table",
+                    sql: "<b>ALTER TABLE</b> STUDENT <b>DROP COLUMN</b> AGE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Set the column SALARY in EMPLOYEE table to NOT NULL",
+                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>MODIFY</b> SALARY <b>NOT NULL</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Increase the size of column TITLE in BOOK table to VARCHAR2(100)",
+                    sql: "<b>ALTER TABLE</b> BOOK <b>MODIFY</b> TITLE <b>VARCHAR2</b>(100);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Add a column MANAGER_ID NUMBER to EMPLOYEE table",
+                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>ADD</b> MANAGER_ID <b>NUMBER</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Drop the table STUDENT",
+                    sql: "<b>DROP TABLE</b> STUDENT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Drop the table CUSTOMER from the database",
+                    sql: "<b>DROP TABLE</b> CUSTOMER;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Drop the table PROJECT permanently",
+                    sql: "<b>DROP TABLE</b> PROJECT <b>PURGE</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Remove the table SALES",
+                    sql: "<b>DROP TABLE</b> SALES;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Drop the table COURSE",
+                    sql: "<b>DROP TABLE</b> COURSE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Rename the table STUDENT to STUDENTS",
+                    sql: "<b>RENAME</b> STUDENT <b>TO</b> STUDENTS;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Rename the table EMPLOYEE to EMP_MASTER",
+                    sql: "<b>RENAME</b> EMPLOYEE <b>TO</b> EMP_MASTER;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Rename the table CUSTOMER to CLIENT",
+                    sql: "<b>RENAME</b> CUSTOMER <b>TO</b> CLIENT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Rename the table BOOK to BOOK_DETAILS",
+                    sql: "<b>RENAME</b> BOOK <b>TO</b> BOOK_DETAILS;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Rename the table PROJECT to PROJECT_INFO",
+                    sql: "<b>RENAME</b> PROJECT <b>TO</b> PROJECT_INFO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "31. Remove all records from the STUDENT table",
+                    sql: "<b>TRUNCATE TABLE</b> STUDENT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "32. Delete all rows from EMPLOYEE table using TRUNCATE",
+                    sql: "<b>TRUNCATE TABLE</b> EMPLOYEE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "33. Empty the CUSTOMER table quickly",
+                    sql: "<b>TRUNCATE TABLE</b> CUSTOMER;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "34. Remove all data from SALES table but keep structure",
+                    sql: "<b>TRUNCATE TABLE</b> SALES;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "35. Clear the PROJECT table",
+                    sql: "<b>TRUNCATE TABLE</b> PROJECT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "36. Create a table TRAINING with columns TID, TNAME, DURATION",
+                    sql: "<b>CREATE TABLE</b> TRAINING (TID <b>NUMBER</b>, TNAME <b>VARCHAR2</b>(30), DURATION <b>NUMBER</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "37. Add column TRAINER_NAME VARCHAR2(40) to TRAINING",
+                    sql: "<b>ALTER TABLE</b> TRAINING <b>ADD</b> TRAINER_NAME <b>VARCHAR2</b>(40);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "38. Modify TNAME column size to VARCHAR2(60)",
+                    sql: "<b>ALTER TABLE</b> TRAINING <b>MODIFY</b> TNAME <b>VARCHAR2</b>(60);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "39. Rename the TRAINING table to TRAINING_PROGRAM",
+                    sql: "<b>RENAME</b> TRAINING <b>TO</b> TRAINING_PROGRAM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "40. Truncate the TRAINING_PROGRAM table",
+                    sql: "<b>TRUNCATE TABLE</b> TRAINING_PROGRAM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "41. Drop the TRAINING_PROGRAM table",
+                    sql: "<b>DROP TABLE</b> TRAINING_PROGRAM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "42. Create EMP_PROJECT table and modify ROLE and add STATUS",
+                    sql: "<b>CREATE TABLE</b> EMP_PROJECT (EMP_ID <b>NUMBER</b>, PROJECT_ID <b>NUMBER</b>, START_DATE <b>DATE</b>, END_DATE <b>DATE</b>, ROLE <b>VARCHAR2</b>(30)); <b>ALTER TABLE</b> EMP_PROJECT <b>MODIFY</b> ROLE <b>VARCHAR2</b>(50); <b>ALTER TABLE</b> EMP_PROJECT <b>ADD</b> STATUS <b>VARCHAR2</b>(20);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "43. Create PRODUCT table, rename PNAME and change PRICE datatype",
+                    sql: "<b>CREATE TABLE</b> PRODUCT (PID <b>NUMBER</b>, PNAME <b>VARCHAR2</b>(50), PRICE <b>NUMBER</b>, CATEGORY <b>VARCHAR2</b>(30)); <b>ALTER TABLE</b> PRODUCT <b>RENAME COLUMN</b> PNAME <b>TO</b> PRODUCT_NAME; <b>ALTER TABLE</b> PRODUCT <b>MODIFY</b> PRICE <b>NUMBER</b>(10,2);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "44. Create ORDERS table, add STATUS, drop TOTAL_AMOUNT, and re-add it with new datatype",
+                    sql: "<b>CREATE TABLE</b> ORDERS (ORDER_ID <b>NUMBER</b>, CUSTOMER_ID <b>NUMBER</b>, ORDER_DATE <b>DATE</b>, TOTAL_AMOUNT <b>NUMBER</b>); <b>ALTER TABLE</b> ORDERS <b>ADD</b> STATUS <b>VARCHAR2</b>(20); <b>ALTER TABLE</b> ORDERS <b>DROP COLUMN</b> TOTAL_AMOUNT; <b>ALTER TABLE</b> ORDERS <b>ADD</b> TOTAL_AMOUNT <b>NUMBER</b>(10,2);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "45. Create EMP_TEMP for salary > 2000, rename, truncate and drop",
+                    sql: "<b>CREATE TABLE</b> EMP_TEMP <b>AS SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 2000; <b>RENAME</b> EMP_TEMP <b>TO</b> EMP_HIGH_SALARY; <b>TRUNCATE TABLE</b> EMP_HIGH_SALARY; <b>DROP TABLE</b> EMP_HIGH_SALARY;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "46. Create STUDENT_RECORD, add GRADE, modify MARKS, rename COURSE",
+                    sql: "<b>CREATE TABLE</b> STUDENT_RECORD (SID <b>NUMBER</b>, SNAME <b>VARCHAR2</b>(40), COURSE <b>VARCHAR2</b>(30), MARKS <b>NUMBER</b>); <b>ALTER TABLE</b> STUDENT_RECORD <b>ADD</b> GRADE <b>CHAR</b>(1); <b>ALTER TABLE</b> STUDENT_RECORD <b>MODIFY</b> MARKS <b>NUMBER</b>(5,2); <b>ALTER TABLE</b> STUDENT_RECORD <b>RENAME COLUMN</b> COURSE <b>TO</b> COURSE_NAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "47. Create EMP_ARCHIVE (structure only), add ARCHIVE_DATE, rename to EMP_HISTORY",
+                    sql: "<b>CREATE TABLE</b> EMP_ARCHIVE <b>AS SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> 1=0; <b>ALTER TABLE</b> EMP_ARCHIVE <b>ADD</b> ARCHIVE_DATE <b>DATE</b>; <b>RENAME</b> EMP_ARCHIVE <b>TO</b> EMP_HISTORY;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "48. Create DEPT_BACKUP (all rows), drop LOC, add LOCATION",
+                    sql: "<b>CREATE TABLE</b> DEPT_BACKUP <b>AS SELECT</b> * <b>FROM</b> DEPT; <b>ALTER TABLE</b> DEPT_BACKUP <b>DROP COLUMN</b> LOC; <b>ALTER TABLE</b> DEPT_BACKUP <b>ADD</b> LOCATION <b>VARCHAR2</b>(40);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "49. Create SALES_DATA, add REGION, modify AMOUNT, rename table",
+                    sql: "<b>CREATE TABLE</b> SALES_DATA (SALE_ID <b>NUMBER</b>, PRODUCT_ID <b>NUMBER</b>, SALE_DATE <b>DATE</b>, AMOUNT <b>NUMBER</b>); <b>ALTER TABLE</b> SALES_DATA <b>ADD</b> REGION <b>VARCHAR2</b>(30); <b>ALTER TABLE</b> SALES_DATA <b>MODIFY</b> AMOUNT <b>NUMBER</b>(12,2); <b>RENAME</b> SALES_DATA <b>TO</b> REGIONAL_SALES_DATA;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "50. Create LOG_TABLE, truncate, rename, and drop permanently",
+                    sql: "<b>CREATE TABLE</b> LOG_TABLE (LOG_ID <b>NUMBER</b>, USER_NAME <b>VARCHAR2</b>(30), ACTION <b>VARCHAR2</b>(50), LOG_DATE <b>DATE</b>); <b>TRUNCATE TABLE</b> LOG_TABLE; <b>RENAME</b> LOG_TABLE <b>TO</b> SYSTEM_LOG; <b>DROP TABLE</b> SYSTEM_LOG <b>PURGE</b>;",
+                    output: "Paste result here..."
+                }
+            ],
+            "DML Commands": [
+                {
+                    question: "1. Insert a record into STUDENT table with values: SID = 101, SNAME = 'RAHUL', AGE = 20, COURSE = 'MCA'.",
+                    sql: "<b>INSERT INTO</b> STUDENT (SID, SNAME, AGE, COURSE) <b>VALUES</b> (101, 'RAHUL', 20, 'MCA');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Insert a record into EMPLOYEE table with EID = 201, ENAME = 'ANITA', SALARY = 45000, DEPTNO = 10.",
+                    sql: "<b>INSERT INTO</b> EMPLOYEE (EID, ENAME, SALARY, DEPTNO) <b>VALUES</b> (201, 'ANITA', 45000, 10);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Insert a new department into DEPT table; DEPTNO = 50, DNAME = 'TRAINING', LOC = 'DELHI'",
+                    sql: "<b>INSERT INTO</b> DEPT (DEPTNO, DNAME, LOC) <b>VALUES</b> (50, 'TRAINING', 'DELHI');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Insert a record into BOOK table with only BOOK_ID, TITLE, and PRICE.",
+                    sql: "<b>INSERT INTO</b> BOOK (BOOK_ID, TITLE, PRICE) <b>VALUES</b> (501, 'SQL Guide', 750);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Insert multiple rows into COURSE table.",
+                    sql: "<b>INSERT ALL INTO</b> COURSE (CID, CNAME, DURATION) <b>VALUES</b> (1, 'Java', 6) <b>INTO</b> COURSE (CID, CNAME, DURATION) <b>VALUES</b> (2, 'Python', 4) <b>SELECT</b> * <b>FROM</b> DUAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Insert data into EMP_COPY table from the EMP table.",
+                    sql: "<b>INSERT INTO</b> EMP_COPY <b>SELECT</b> * <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Insert employees from EMP whose salary is greater than 3000 into EMP_HIGH_SAL.",
+                    sql: "<b>INSERT INTO</b> EMP_HIGH_SAL <b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 3000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Insert employees hired after 1981 into EMP_NEW_HIRE.",
+                    sql: "<b>INSERT INTO</b> EMP_NEW_HIRE <b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE > '31-DEC-1981';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Insert department numbers and names from DEPT into a table called DEPT_BACKUP.",
+                    sql: "<b>INSERT INTO</b> DEPT_BACKUP (DEPTNO, DNAME) <b>SELECT</b> DEPTNO, DNAME <b>FROM</b> DEPT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Insert employee names and salaries into a table EMP_SALARY_RECORD.",
+                    sql: "<b>INSERT INTO</b> EMP_SALARY_RECORD (ENAME, SAL) <b>SELECT</b> ENAME, SAL <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Update the salary of employee SMITH to 2000.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = 2000 <b>WHERE</b> ENAME = 'SMITH';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Increase salary of all employees by 10%.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL * 1.10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Update the department number of employee ALLEN to 20.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> DEPTNO = 20 <b>WHERE</b> ENAME = 'ALLEN';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Update commission of SALESMAN to 500.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> COMM = 500 <b>WHERE</b> JOB = 'SALESMAN';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Update job of employee MILLER to MANAGER.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> JOB = 'MANAGER' <b>WHERE</b> ENAME = 'MILLER';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Increase salary of employees in department 10 by 20%.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL * 1.20 <b>WHERE</b> DEPTNO = 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Update salary of employees whose job is CLERK to 1500.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = 1500 <b>WHERE</b> JOB = 'CLERK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Update location of department 30 to MUMBAI.",
+                    sql: "<b>UPDATE</b> DEPT <b>SET</b> LOC = 'MUMBAI' <b>WHERE</b> DEPTNO = 30;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Update commission of employees who have NULL commission to 100.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> COMM = 100 <b>WHERE</b> COMM <b>IS NULL</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Update salary of employees who earn less than average salary.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL + 500 <b>WHERE</b> SAL < (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Delete employee SMITH from EMP table.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> ENAME = 'SMITH';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Delete all employees working in department 30.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> DEPTNO = 30;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Delete employees whose salary is less than 1000.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> SAL < 1000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Delete employees hired before 1981.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> HIREDATE < '01-JAN-1981';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Delete employees who do not receive commission.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> COMM <b>IS NULL OR</b> COMM = 0;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Delete departments located in CHICAGO.",
+                    sql: "<b>DELETE FROM</b> DEPT <b>WHERE</b> LOC = 'CHICAGO';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Delete employees whose job is CLERK.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> JOB = 'CLERK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Delete employees earning the minimum salary.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MIN</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Delete employees working in departments located in NEW YORK.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'NEW YORK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Delete employees whose manager number is NULL.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> MGR <b>IS NULL</b>;",
+                    output: "Paste result here..."
+                }
+            ],
+            "DQL: Select": [
+                {
+                    question: "1. Display all columns of the EMP table.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP;",
+                    output: "EMPNO | ENAME  | JOB      | MGR  | HIREDATE  | SAL  | COMM | DEPTNO\n-------------------------------------------------------------------\n7839  | KING   | PRESIDENT|      | 17-NOV-81 | 5000 |      | 10\n7698  | BLAKE  | MANAGER  | 7839 | 01-MAY-81 | 2850 |      | 30\n7782  | CLARK  | MANAGER  | 7839 | 09-JUN-81 | 2450 |      | 10\n7566  | JONES  | MANAGER  | 7839 | 02-APR-81 | 2975 |      | 20\n7788  | SCOTT  | ANALYST  | 7566 | 19-APR-87 | 3000 |      | 20\n7902  | FORD   | ANALYST  | 7566 | 03-DEC-81 | 3000 |      | 20\n7369  | SMITH  | CLERK    | 7902 | 17-DEC-80 | 800  |      | 20\n7499  | ALLEN  | SALESMAN | 7698 | 20-FEB-81 | 1600 | 300  | 30\n7521  | WARD   | SALESMAN | 7698 | 22-FEB-81 | 1250 | 500  | 30\n7654  | MARTIN | SALESMAN | 7698 | 28-SEP-81 | 1250 | 1400 | 30\n7844  | TURNER | SALESMAN | 7698 | 08-SEP-81 | 1500 | 0    | 30\n7876  | ADAMS  | CLERK    | 7788 | 23-MAY-87 | 1100 |      | 20\n7900  | JAMES  | CLERK    | 7698 | 03-DEC-81 | 950  |      | 30\n7934  | MILLER | CLERK    | 7782 | 23-JAN-82 | 1300 |      | 10"
+                },
+                {
+                    question: "2. Display EMPNO, ENAME, and SAL of all employees from the EMP table.",
+                    sql: "<b>SELECT</b> EMPNO, ENAME, SAL <b>FROM</b> EMP;",
+                    output: "EMPNO | ENAME  | SAL\n---------------------------\n7839  | KING   | 5000\n7698  | BLAKE  | 2850\n7782  | CLARK  | 2450\n7566  | JONES  | 2975\n7788  | SCOTT  | 3000\n7902  | FORD   | 3000\n7369  | SMITH  | 800\n7499  | ALLEN  | 1600\n7521  | WARD   | 1250\n7654  | MARTIN | 1250\n7844  | TURNER | 1500\n7876  | ADAMS  | 1100\n7900  | JAMES  | 950\n7934  | MILLER | 1300"
+                },
+                {
+                    question: "3. Display unique job titles from the EMP table.",
+                    sql: "<b>SELECT DISTINCT</b> JOB <b>FROM</b> EMP;",
+                    output: "JOB\n----------\nPRESIDENT\nMANAGER\nANALYST\nCLERK\nSALESMAN"
+                },
+                {
+                    question: "4. Display employee names along with their department numbers from the EMP table.",
+                    sql: "<b>SELECT</b> ENAME, DEPTNO <b>FROM</b> EMP;",
+                    output: "ENAME  | DEPTNO\n-----------------\nKING   | 10\nBLAKE  | 30\nCLARK  | 10\nJONES  | 20\nSCOTT  | 20\nFORD   | 20\nSMITH  | 20\nALLEN  | 30\nWARD   | 30\nMARTIN | 30\nTURNER | 30\nADAMS  | 20\nJAMES  | 30\nMILLER | 10"
+                },
+                {
+                    question: "5. Display all department details from the DEPT table.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT;",
+                    output: "DEPTNO | DNAME       | LOC\n-------------------------------\n10     | ACCOUNTING  | NEW YORK\n20     | RESEARCH    | DALLAS\n30     | SALES       | CHICAGO\n40     | OPERATIONS  | BOSTON"
+                },
+                {
+                    question: "6. Display distinct department numbers from the EMP table.",
+                    sql: "<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP;",
+                    output: "DEPTNO\n--------\n10\n30\n20"
+                },
+                {
+                    question: "7. Display employee name and annual salary (SAL × 12) from the EMP table.",
+                    sql: "<b>SELECT</b> ENAME, SAL * 12 <b>AS</b> ANNUAL_SAL <b>FROM</b> EMP;",
+                    output: "ENAME  | ANNUAL_SAL\n----------------------\nKING   | 60000\nBLAKE  | 34200\nCLARK  | 29400\nJONES  | 35700\nSCOTT  | 36000\nFORD   | 36000\nSMITH  | 9600\nALLEN  | 19200\nWARD   | 15000\nMARTIN | 15000\nTURNER | 18000\nADAMS  | 13200\nJAMES  | 11400\nMILLER | 15600"
+                },
+                {
+                    question: "8. Display employee name, salary, and commission from the EMP table.",
+                    sql: "<b>SELECT</b> ENAME, SAL, COMM <b>FROM</b> EMP;",
+                    output: "ENAME  | SAL  | COMM\n----------------------\nKING   | 5000 | \nBLAKE  | 2850 | \nCLARK  | 2450 | \nJONES  | 2975 | \nSCOTT  | 3000 | \nFORD   | 3000 | \nSMITH  | 800  | \nALLEN  | 1600 | 300\nWARD   | 1250 | 500\nMARTIN | 1250 | 1400\nTURNER | 1500 | 0\nADAMS  | 1100 | \nJAMES  | 950  | \nMILLER | 1300 |"
+                },
+                {
+                    question: "9. Display job and salary of all employees from the EMP table.",
+                    sql: "<b>SELECT</b> JOB, SAL <b>FROM</b> EMP;",
+                    output: "JOB       | SAL\n----------------\nPRESIDENT | 5000\nMANAGER   | 2850\nMANAGER   | 2450\nMANAGER   | 2975\nANALYST   | 3000\nANALYST   | 3000\nCLERK     | 800\nSALESMAN  | 1600\nSALESMAN  | 1250\nSALESMAN  | 1250\nSALESMAN  | 1500\nCLERK     | 1100\nCLERK     | 950\nCLERK     | 1300"
+                },
+                {
+                    question: "10. Display employees along with their manager numbers from the EMP table.",
+                    sql: "<b>SELECT</b> ENAME, MGR <b>FROM</b> EMP;",
+                    output: "ENAME  | MGR\n----------------\nKING   | (null)\nBLAKE  | 7839\nCLARK  | 7839\nJONES  | 7839\nSCOTT  | 7566\nFORD   | 7566\nSMITH  | 7902\nALLEN  | 7698\nWARD   | 7698\nMARTIN | 7698\nTURNER | 7698\nADAMS  | 7788\nJAMES  | 7698\nMILLER | 7782"
+                }
+            ],
+            "Where & Order By": [
+                {
+                    question: "1. Display employees whose salary is greater than 3000.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 3000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employees working in department 10.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display employees whose job is 'CLERK'.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employees hired after 01-JAN-81.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE > '01-JAN-81';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employees whose salary is less than 1500.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL < 1500;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display employees whose salary is > 2000 and job is 'MANAGER'.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 2000 <b>AND</b> JOB = 'MANAGER';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employees working in department 10 or 20.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (10, 20);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employees whose job is 'SALESMAN' and salary > 1500.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN' <b>AND</b> SAL > 1500;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display employees who are either CLERK or ANALYST.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>IN</b> ('CLERK', 'ANALYST');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display employees hired before 1982 and working in department 30.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE < '01-JAN-1982' <b>AND</b> DEPTNO = 30;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employees working in departments 10, 20, or 30.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (10, 20, 30);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display employees whose job is not MANAGER or CLERK.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>NOT IN</b> ('MANAGER', 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employees whose department is not 10.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO != 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display employees whose salary is between 1000 and 3000.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL <b>BETWEEN</b> 1000 <b>AND</b> 3000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display employees hired between 01-JAN-81 and 31-DEC-81.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE <b>BETWEEN</b> '01-JAN-81' <b>AND</b> '31-DEC-81';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display all employees ordered by salary in ascending order.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> SAL <b>ASC</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display all employees ordered by salary in descending order.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> SAL <b>DESC</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display employees ordered by hire date.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> HIREDATE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display employees ordered by department number and salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> DEPTNO, SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display employees ordered by job (ascending) and salary (descending).",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> JOB <b>ASC</b>, SAL <b>DESC</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display employee names ordered alphabetically.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>ORDER BY</b> ENAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display employees of department 30 ordered by salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 30 <b>ORDER BY</b> SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display employees ordered by annual salary.",
+                    sql: "<b>SELECT</b> ENAME, SAL * 12 <b>AS</b> ANNUAL_SAL <b>FROM</b> EMP <b>ORDER BY</b> ANNUAL_SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Display employees ordered by commission.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> COMM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Display employees ordered by job and name.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>ORDER BY</b> JOB, ENAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Display employee name as Employee_Name.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> Employee_Name <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Display salary as Monthly_Salary.",
+                    sql: "<b>SELECT</b> SAL <b>AS</b> Monthly_Salary <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Display employee name and job with aliases.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> \"Name\", JOB <b>AS</b> \"Designation\" <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Display department number as Dept_No.",
+                    sql: "<b>SELECT</b> DEPTNO <b>AS</b> Dept_No <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Display employee name and salary with meaningful aliases.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> \"Staff_Name\", SAL <b>AS</b> \"Basic_Salary\" <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "31. Display commission as Incentive.",
+                    sql: "<b>SELECT</b> COMM <b>AS</b> Incentive <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "32. Display employee name, job, and salary with aliases, ordered by job.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> \"Emp\", JOB <b>AS</b> \"Role\", SAL <b>AS</b> \"Pay\" <b>FROM</b> EMP <b>ORDER BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "33. Display employees of department 30 whose salary > 1500, ordered by salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 30 <b>AND</b> SAL > 1500 <b>ORDER BY</b> SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "34. Display employees whose commission is NOT NULL, ordered by commission.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NOT NULL ORDER BY</b> COMM;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "35. Display employees whose salary is between 1500 and 3000, ordered by salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL <b>BETWEEN</b> 1500 <b>AND</b> 3000 <b>ORDER BY</b> SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "36. Display employee name and department, ordered by department and name.",
+                    sql: "<b>SELECT</b> ENAME, DEPTNO <b>FROM</b> EMP <b>ORDER BY</b> DEPTNO, ENAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "37. Display employees whose name starts with 'S', ordered by salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'S%' <b>ORDER BY</b> SAL;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "38. Display employees hired before 1982 with aliases, ordered by hire date.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> \"Name\", HIREDATE <b>AS</b> \"Joined_Date\" <b>FROM</b> EMP <b>WHERE</b> HIREDATE < '01-JAN-1982' <b>ORDER BY</b> HIREDATE;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "39. Display employee name as Name and salary as Pay for department 10.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> Name, SAL <b>AS</b> Pay <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "40. Display employees whose commission is NULL, ordered by salary descending.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NULL ORDER BY</b> SAL <b>DESC</b>;",
+                    output: "Paste result here..."
+                }
+            ],
+            "Pattern Matching": [
+                {
+                    question: "1. Display employees whose name starts with A.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'A%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employees whose name starts with S.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'S%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display employees whose name ends with N.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%N';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employees whose name ends with R.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%R';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employees whose name contains LL.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%LL%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display employees whose name contains AR.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%AR%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employees whose job starts with M.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> 'M%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employees whose job ends with AN.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> '%AN';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display employees whose job contains CL.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> '%CL%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display departments whose location starts with N.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT <b>WHERE</b> LOC <b>LIKE</b> 'N%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employees whose name has exactly 4 characters.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '____';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display employees whose name has exactly 5 characters.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '_____';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employees whose name has A as the second character.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '_A%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display employees whose name has L as the third character.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '__L%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display employees whose job has exactly 6 characters.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> '______';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display employees whose name starts with any letter but ends with N.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%N';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display employees whose job starts with any one character and ends with ER.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>LIKE</b> '%ER';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display employees whose name has A as the first and N as the last character.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'A%N';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display employees whose name has exactly 2 characters before 'E'.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '__E%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display employees whose name has exactly 1 character after 'A'.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> '%A_';",
+                    output: "Paste result here..."
+                }
+            ],
+            "Grouping & Having": [
+                {
+                    question: "1. Display the total number of employees.",
+                    sql: "<b>SELECT COUNT</b>(*) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display the total salary of all employees.",
+                    sql: "<b>SELECT SUM</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display the average salary of all employees.",
+                    sql: "<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display the highest salary.",
+                    sql: "<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display the lowest salary.",
+                    sql: "<b>SELECT MIN</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display the total number of departments in EMP table.",
+                    sql: "<b>SELECT COUNT</b>(<b>DISTINCT</b> DEPTNO) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display the number of employees who are managers.",
+                    sql: "<b>SELECT COUNT</b>(<b>DISTINCT</b> MGR) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display the total commission paid to employees.",
+                    sql: "<b>SELECT SUM</b>(COMM) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display the average commission.",
+                    sql: "<b>SELECT AVG</b>(COMM) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display the number of employees who are getting commission.",
+                    sql: "<b>SELECT COUNT</b>(COMM) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display department-wise total salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display department-wise average salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display department-wise number of employees.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>COUNT</b>(*) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display job-wise number of employees.",
+                    sql: "<b>SELECT</b> JOB, <b>COUNT</b>(*) <b>FROM</b> EMP <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display job-wise total salary.",
+                    sql: "<b>SELECT</b> JOB, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display job-wise maximum salary.",
+                    sql: "<b>SELECT</b> JOB, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display job-wise minimum salary.",
+                    sql: "<b>SELECT</b> JOB, <b>MIN</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display department-wise maximum salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display department-wise minimum salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>MIN</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display department-wise average commission.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>AVG</b>(COMM) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display department-wise job-wise number of employees.",
+                    sql: "<b>SELECT</b> DEPTNO, JOB, <b>COUNT</b>(*) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display department-wise job-wise total salary.",
+                    sql: "<b>SELECT</b> DEPTNO, JOB, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display department-wise job-wise average salary.",
+                    sql: "<b>SELECT</b> DEPTNO, JOB, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Display job-wise department-wise maximum salary.",
+                    sql: "<b>SELECT</b> JOB, DEPTNO, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB, DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Display job-wise department-wise minimum salary.",
+                    sql: "<b>SELECT</b> JOB, DEPTNO, <b>MIN</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB, DEPTNO;",
+                    output: "Paste result here..."
+                }
+            ],
+            "Subqueries": [
+                {
+                    question: "1. Display employees whose salary is greater than JONES.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> ENAME = 'JONES');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employees earning the same salary as SCOTT.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> ENAME = 'SCOTT') <b>AND</b> ENAME <> 'SCOTT';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display employees hired after ALLEN.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> HIREDATE > (<b>SELECT</b> HIREDATE <b>FROM</b> EMP <b>WHERE</b> ENAME = 'ALLEN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employees working in the same department as BLAKE.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> ENAME = 'BLAKE') <b>AND</b> ENAME <> 'BLAKE';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employees having the same job as MILLER.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB = (<b>SELECT</b> JOB <b>FROM</b> EMP <b>WHERE</b> ENAME = 'MILLER') <b>AND</b> ENAME <> 'MILLER';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display employees earning less than the average salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL < (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employees earning more than the maximum salary of CLERKs.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employee(s) with the minimum salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MIN</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display employee(s) with the maximum salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display employees working in departments located in NEW YORK.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'NEW YORK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employees whose salary matches any salary in department 30.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL <b>IN</b> (<b>SELECT DISTINCT</b> SAL <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 30);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display employees earning more than all CLERKs.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > <b>ALL</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employees earning less than any MANAGER.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL < <b>ANY</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display employees whose job appears in department 20.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>IN</b> (<b>SELECT DISTINCT</b> JOB <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display employees whose department has at least one SALESMAN.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display employees earning the same salary as any CLERK.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL <b>IN</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display employees who are not working in departments of SALESMAN.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display employees earning more than all employees in department 10.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > <b>ALL</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display employees whose department number is among departments with more than 3 employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 3);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display employees whose salary is greater than salary of their manager.",
+                    sql: "<b>SELECT</b> E.ENAME <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> EMPNO = E.MGR);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display jobs where average salary is greater than overall average salary.",
+                    sql: "<b>SELECT</b> JOB <b>FROM</b> EMP <b>GROUP BY</b> JOB <b>HAVING AVG</b>(SAL) > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display employees earning more than the department average salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display employees earning the highest salary in each department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> (DEPTNO, SAL) <b>IN</b> (<b>SELECT</b> DEPTNO, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Display employees earning the lowest salary in each job.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> (JOB, SAL) <b>IN</b> (<b>SELECT</b> JOB, <b>MIN</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Display departments having total salary greater than department 20.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING SUM</b>(SAL) > (<b>SELECT SUM</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Display employees whose salary equals the maximum salary of their job.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> JOB = E.JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Display employees earning more than the overall average salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Display department(s) having the maximum number of employees.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = (<b>SELECT MAX</b>(<b>COUNT</b>(*)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Display jobs having minimum average salary.",
+                    sql: "<b>SELECT</b> JOB <b>FROM</b> EMP <b>GROUP BY</b> JOB <b>HAVING AVG</b>(SAL) = (<b>SELECT MIN</b>(<b>AVG</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Display employees earning more than the average salary of CLERKs.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "31. Display department(s) where average salary is highest.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING AVG</b>(SAL) = (<b>SELECT MAX</b>(<b>AVG</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "32. Display employees earning more than the average salary of their own department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "33. Display employees earning the maximum salary in their department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "34. Display employees earning the minimum salary in their department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL = (<b>SELECT MIN</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "35. Display employees whose salary is greater than the average salary of their job.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> JOB = E.JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "36. Display employees who are the only employee in their department.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = 1);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "37. Display departments having employees earning more than 5000.",
+                    sql: "<b>SELECT DISTINCT</b> DNAME <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> SAL > 5000);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "38. Display employees whose department has more than 3 employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 3);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "39. Display employees whose job has more than 2 employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> JOB <b>IN</b> (<b>SELECT</b> JOB <b>FROM</b> EMP <b>GROUP BY</b> JOB <b>HAVING COUNT</b>(*) > 2);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "40. Display employees working in departments where no one gets commission.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NOT NULL AND</b> COMM > 0);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "41. Display employees whose department has at least one manager.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "42. Display departments that have employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "43. Display departments that have no employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IS NOT NULL</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "44. Display employees who are managers (have subordinates).",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> EMPNO <b>IN</b> (<b>SELECT DISTINCT</b> MGR <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "45. Display employees who are not managers.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> EMPNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> MGR <b>FROM</b> EMP <b>WHERE</b> MGR <b>IS NOT NULL</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "46. Display employees working in departments where SALESMAN exists.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "47. Display departments where no SALESMAN exists.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'SALESMAN');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "48. Display employees whose department has employees with commission.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NOT NULL</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "49. Display departments where all employees get commission.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = <b>COUNT</b>(COMM);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "50. Display employees whose department has no CLERKs.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "51. Display employees who work in departments located in CHICAGO.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'CHICAGO');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "52. Display department number and average salary of employees whose salary is greater than 2000.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> SAL > 2000 <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "53. Display job and total salary of employees earning more than the department average.",
+                    sql: "<b>SELECT</b> JOB, <b>SUM</b>(SAL) <b>FROM</b> EMP E <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO) <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "54. Display departments having average salary greater than overall average salary.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING AVG</b>(SAL) > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "55. Display job-wise employee count from employees earning more than 1500.",
+                    sql: "<b>SELECT</b> JOB, <b>COUNT</b>(*) <b>FROM</b> EMP <b>WHERE</b> SAL > 1500 <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "56. Display departments having more than 2 employees earning commission.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> COMM <b>IS NOT NULL AND</b> COMM > 0 <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 2;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "57. Display job and maximum salary from employees hired after 1981.",
+                    sql: "<b>SELECT</b> JOB, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> HIREDATE > '31-DEC-1981' <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "58. Display department-wise total salary excluding department 30.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO <> 30 <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "59. Display departments having total salary greater than overall total salary average.",
+                    sql: "<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING SUM</b>(SAL) > (<b>SELECT AVG</b>(<b>SUM</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "60. Display job-wise average salary where department has more than 3 employees.",
+                    sql: "<b>SELECT</b> JOB, <b>AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 3) <b>GROUP BY</b> JOB;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "61. Display department and job having maximum total salary.",
+                    sql: "<b>SELECT</b> DEPTNO, JOB, <b>SUM</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB <b>HAVING SUM</b>(SAL) = (<b>SELECT MAX</b>(<b>SUM</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO, JOB);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "62. Display employees earning the second highest salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> SAL < (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "63. Display employees earning more than the average salary of departments located in DALLAS.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'DALLAS'));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "64. Display departments where maximum salary equals minimum salary.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING MAX</b>(SAL) = <b>MIN</b>(SAL);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "65. Display employees whose salary is less than all MANAGERS but more than any CLERK.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL < <b>ALL</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER') <b>AND</b> SAL > <b>ANY</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'CLERK');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "66. Display employees whose salary is equal to department-wise second highest salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E1 <b>WHERE</b> SAL = (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP E2 <b>WHERE</b> E2.DEPTNO = E1.DEPTNO <b>AND</b> E2.SAL < (<b>SELECT MAX</b>(SAL) <b>FROM</b> EMP E3 <b>WHERE</b> E3.DEPTNO = E1.DEPTNO));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "67. Display employees earning more than the median salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > (<b>SELECT MEDIAN</b>(SAL) <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "68. Display employees whose salary is greater than 50% of employees.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP E1 <b>WHERE</b> (<b>SELECT COUNT</b>(*) <b>FROM</b> EMP E2 <b>WHERE</b> E2.SAL < E1.SAL) > (<b>SELECT COUNT</b>(*)/2 <b>FROM</b> EMP);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "69. Display employees earning the third highest salary.",
+                    sql: "<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL = (<b>SELECT MIN</b>(SAL) <b>FROM</b> (<b>SELECT DISTINCT</b> SAL <b>FROM</b> EMP <b>ORDER BY</b> SAL <b>DESC</b>) <b>WHERE ROWNUM</b> <= 3);",
+                    output: "Paste result here..."
+                }
+            ],
+            "Scalar Functions": [
+                {
+                    question: "1. Display employee name, hire date, and current date. Also calculate the number of days the employee has worked.",
+                    sql: "<b>SELECT</b> ENAME, HIREDATE, <b>SYSDATE</b>, <b>ROUND</b>(<b>SYSDATE</b> - HIREDATE) <b>AS</b> DAYS_WORKED <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employee name and hire date in the format: Monday, January 01, 2024.",
+                    sql: "<b>SELECT</b> ENAME, <b>TO_CHAR</b>(HIREDATE, 'Day, Month DD, YYYY') <b>AS</b> FORMATTED_DATE <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Find employees who joined in the same month as the current system date (ignore year).",
+                    sql: "<b>SELECT</b> ENAME, HIREDATE <b>FROM</b> EMP <b>WHERE</b> <b>TO_CHAR</b>(HIREDATE, 'MM') = <b>TO_CHAR</b>(<b>SYSDATE</b>, 'MM');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employee name and the next Monday after their hire date.",
+                    sql: "<b>SELECT</b> ENAME, <b>NEXT_DAY</b>(HIREDATE, 'MONDAY') <b>AS</b> NEXT_MONDAY <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employee name and the last day of their joining month.",
+                    sql: "<b>SELECT</b> ENAME, <b>LAST_DAY</b>(HIREDATE) <b>AS</b> END_OF_MONTH <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Find employees who have completed more than 10 years in the company.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> <b>MONTHS_BETWEEN</b>(<b>SYSDATE</b>, HIREDATE) / 12 > 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employee name and number of months worked in the company.",
+                    sql: "<b>SELECT</b> ENAME, <b>ROUND</b>(<b>MONTHS_BETWEEN</b>(<b>SYSDATE</b>, HIREDATE)) <b>AS</b> MONTHS_WORKED <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employee name, hire date, and hire date after adding 3 years and 6 months.",
+                    sql: "<b>SELECT</b> ENAME, HIREDATE, <b>ADD_MONTHS</b>(HIREDATE, 42) <b>AS</b> FUTURE_DATE <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Find employees hired between two given dates (use TO_DATE).",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> HIREDATE <b>BETWEEN</b> <b>TO_DATE</b>('01-JAN-1981', 'DD-MON-YYYY') <b>AND</b> <b>TO_DATE</b>('31-DEC-1982', 'DD-MON-YYYY');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display the difference in years between SYSDATE and hire date (rounded).",
+                    sql: "<b>SELECT</b> ENAME, <b>ROUND</b>(<b>MONTHS_BETWEEN</b>(<b>SYSDATE</b>, HIREDATE) / 12) <b>AS</b> YEARS_DIFF <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employee name and salary rounded to the nearest 1000.",
+                    sql: "<b>SELECT</b> ENAME, <b>ROUND</b>(SAL, -3) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display salary truncated to 2 decimal places.",
+                    sql: "<b>SELECT</b> <b>TRUNC</b>(SAL, 2) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employee name and square root of salary.",
+                    sql: "<b>SELECT</b> ENAME, <b>SQRT</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Find the absolute difference between salary and 5000.",
+                    sql: "<b>SELECT</b> ENAME, <b>ABS</b>(SAL - 5000) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display salary rounded up to the nearest integer.",
+                    sql: "<b>SELECT</b> <b>CEIL</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display salary rounded down to the nearest integer.",
+                    sql: "<b>SELECT</b> <b>FLOOR</b>(SAL) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Generate a random number between 1 and 500 for each employee.",
+                    sql: "<b>SELECT</b> ENAME, <b>DBMS_RANDOM.VALUE</b>(1, 500) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display remainder when salary is divided by 2000.",
+                    sql: "<b>SELECT</b> ENAME, <b>MOD</b>(SAL, 2000) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display salary raised to the power of 3.",
+                    sql: "<b>SELECT</b> ENAME, <b>POWER</b>(SAL, 3) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Round salary to nearest hundred and thousand (two columns).",
+                    sql: "<b>SELECT</b> <b>ROUND</b>(SAL, -2) <b>AS</b> HUNDREDS, <b>ROUND</b>(SAL, -3) <b>AS</b> THOUSANDS <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display employee names in uppercase and lowercase in two columns.",
+                    sql: "<b>SELECT</b> <b>UPPER</b>(ENAME), <b>LOWER</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display employee name and its length.",
+                    sql: "<b>SELECT</b> ENAME, <b>LENGTH</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display first 4 characters of employee name.",
+                    sql: "<b>SELECT</b> <b>SUBSTR</b>(ENAME, 1, 4) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Concatenate employee name and job using - symbol.",
+                    sql: "<b>SELECT</b> ENAME || '-' || JOB <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Replace all occurrences of letter ‘A’ with ‘#’ in employee names.",
+                    sql: "<b>SELECT</b> <b>REPLACE</b>(ENAME, 'A', '#') <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "26. Display position of first occurrence of ‘E’ in employee name.",
+                    sql: "<b>SELECT</b> ENAME, <b>INSTR</b>(ENAME, 'E') <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "27. Remove leading and trailing spaces from employee name.",
+                    sql: "<b>SELECT</b> <b>TRIM</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "28. Display employee name with first letter capital and rest lowercase.",
+                    sql: "<b>SELECT</b> <b>INITCAP</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "29. Display last 3 characters of employee name.",
+                    sql: "<b>SELECT</b> <b>SUBSTR</b>(ENAME, -3) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "30. Pad employee name with * on the left to make total length 10.",
+                    sql: "<b>SELECT</b> <b>LPAD</b>(ENAME, 10, '*') <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "31. Display employee name with spaces removed.",
+                    sql: "<b>SELECT</b> <b>REPLACE</b>(ENAME, ' ', '') <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "32. Display employee names starting with ‘S’.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'S%';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "33. Count number of characters excluding spaces.",
+                    sql: "<b>SELECT</b> <b>LENGTH</b>(<b>REPLACE</b>(ENAME, ' ', '')) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "34. Display employee name reversed.",
+                    sql: "<b>SELECT</b> <b>REVERSE</b>(ENAME) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "35. Extract domain name from email column.",
+                    sql: "<b>SELECT</b> <b>SUBSTR</b>(EMAIL, <b>INSTR</b>(EMAIL, '@') + 1) <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                }
+            ],
+            "SQL Joins": [
+                {
+                    question: "1. Display employee name and department name.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "2. Display employee name, salary, and department location.",
+                    sql: "<b>SELECT</b> E.ENAME, E.SAL, D.LOC <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "3. Display employee name and department name for department 10.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.DEPTNO = 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "4. Display employee name and department name where salary > 2000.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.SAL > 2000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "5. Display employee name, job, and department name.",
+                    sql: "<b>SELECT</b> E.ENAME, E.JOB, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "6. Display employee name and department location for CLERKs.",
+                    sql: "<b>SELECT</b> E.ENAME, D.LOC <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.JOB = 'CLERK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "7. Display employee name and department name working in NEW YORK.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> D.LOC = 'NEW YORK';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "8. Display employee name, department number, and department name.",
+                    sql: "<b>SELECT</b> E.ENAME, E.DEPTNO, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "9. Display employees hired after 1981 with department name.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.HIREDATE > '31-DEC-1981';",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "10. Display employees with commission along with department name.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.COMM <b>IS NOT NULL</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "11. Display employees whose salary is between 1500 and 3000 with department.",
+                    sql: "<b>SELECT</b> E.ENAME, D.DNAME <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>WHERE</b> E.SAL <b>BETWEEN</b> 1500 <b>AND</b> 3000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "12. Display employees who are the only employee in their department.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = 1);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "13. Display employees whose department has more than 3 employees.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) > 3);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "14. Display departments where no employee earns more than 2000.",
+                    sql: "<b>SELECT</b> DNAME <b>FROM</b> DEPT <b>WHERE</b> DEPTNO <b>NOT IN</b> (<b>SELECT DISTINCT</b> DEPTNO <b>FROM</b> EMP <b>WHERE</b> SAL > 2000 <b>AND</b> DEPTNO <b>IS NOT NULL</b>);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "15. Display employees who earn more than at least one manager.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> SAL > <b>ANY</b> (<b>SELECT</b> SAL <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "16. Display employees who share same job and department.",
+                    sql: "<b>SELECT</b> E1.ENAME <b>FROM</b> EMP E1 <b>WHERE EXISTS</b> (<b>SELECT</b> 1 <b>FROM</b> EMP E2 <b>WHERE</b> E1.EMPNO <> E2.EMPNO <b>AND</b> E1.JOB = E2.JOB <b>AND</b> E1.DEPTNO = E2.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "17. Display employees working in same department as their manager.",
+                    sql: "<b>SELECT</b> E.ENAME <b>FROM</b> EMP E <b>JOIN</b> EMP M <b>ON</b> E.MGR = M.EMPNO <b>WHERE</b> E.DEPTNO = M.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "18. Display employees whose manager works in a different department.",
+                    sql: "<b>SELECT</b> E.ENAME <b>FROM</b> EMP E <b>JOIN</b> EMP M <b>ON</b> E.MGR = M.EMPNO <b>WHERE</b> E.DEPTNO <> M.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "19. Display employees who are highest paid in their department.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> (DEPTNO, SAL) <b>IN</b> (<b>SELECT</b> DEPTNO, <b>MAX</b>(SAL) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "20. Display employees earning more than their department average.",
+                    sql: "<b>SELECT</b> E.ENAME <b>FROM</b> EMP E <b>WHERE</b> E.SAL > (<b>SELECT AVG</b>(SAL) <b>FROM</b> EMP <b>WHERE</b> DEPTNO = E.DEPTNO);",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "21. Display department with maximum employees.",
+                    sql: "<b>SELECT</b> DNAME <b>FROM</b> DEPT <b>WHERE</b> DEPTNO = (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING COUNT</b>(*) = (<b>SELECT MAX</b>(<b>COUNT</b>(*)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "22. Display department with highest total salary.",
+                    sql: "<b>SELECT</b> DNAME <b>FROM</b> DEPT <b>WHERE</b> DEPTNO = (<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO <b>HAVING SUM</b>(SAL) = (<b>SELECT MAX</b>(<b>SUM</b>(SAL)) <b>FROM</b> EMP <b>GROUP BY</b> DEPTNO));",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "23. Display department name and average salary.",
+                    sql: "<b>SELECT</b> D.DNAME, <b>AVG</b>(E.SAL) <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>GROUP BY</b> D.DNAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "24. Display department name and total salary.",
+                    sql: "<b>SELECT</b> D.DNAME, <b>SUM</b>(E.SAL) <b>FROM</b> EMP E <b>JOIN</b> DEPT D <b>ON</b> E.DEPTNO = D.DEPTNO <b>GROUP BY</b> D.DNAME;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "25. Display department name and number of employees.",
+                    sql: "<b>SELECT</b> D.DNAME, <b>COUNT</b>(E.EMPNO) <b>FROM</b> DEPT D <b>LEFT JOIN</b> EMP E <b>ON</b> D.DEPTNO = E.DEPTNO <b>GROUP BY</b> D.DNAME;",
+                    output: "Paste result here..."
+                }
+            ],
+            "Set Operators": [
+                {
+                    question: "Display all department numbers from both EMP and DEPT tables (Unique).",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>UNION</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display all department numbers from EMP and DEPT including duplicates.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>UNION ALL</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display department numbers that are present in both EMP and DEPT.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>INTERSECT</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display department numbers that are present in DEPT but not assigned to any employee.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> DEPT \n<b>MINUS</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> EMP;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display employee names and department names in a single column.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP \n<b>UNION</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display jobs that exist in EMP table and also exist as department names in DEPT.",
+                    sql: "<b>SELECT</b> JOB <b>FROM</b> EMP \n<b>INTERSECT</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display employee names that are not department names.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP \n<b>MINUS</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display employee names from department 10 and department 20 using UNION.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10 \n<b>UNION</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display employee names from department 10 and department 20 including duplicates.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10 \n<b>UNION ALL</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display department numbers that have employees and also exist in DEPT table.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>INTERSECT</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display all unique job roles and all unique department names in one result.",
+                    sql: "<b>SELECT</b> JOB <b>FROM</b> EMP \n<b>UNION</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display common values between employee job titles and department locations.",
+                    sql: "<b>SELECT</b> JOB <b>FROM</b> EMP \n<b>INTERSECT</b> \n<b>SELECT</b> LOC <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Combine employees earning > 2000 and employees from department 10.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> SAL > 2000 \n<b>UNION</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display department numbers that exist in both tables, but exclude department 10.",
+                    sql: "(<b>SELECT</b> DEPTNO <b>FROM</b> EMP <b>INTERSECT</b> <b>SELECT</b> DEPTNO <b>FROM</b> DEPT) \n<b>MINUS</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> DEPTNO = 10;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display all employee names and department names in a single result sorted alphabetically.",
+                    sql: "<b>SELECT</b> ENAME <b>AS</b> Results <b>FROM</b> EMP \n<b>UNION</b> \n<b>SELECT</b> DNAME <b>FROM</b> DEPT \n<b>ORDER BY</b> 1;"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display employees from departments located in NEW YORK and DALLAS using UNION.",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'NEW YORK') \n<b>UNION</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO <b>IN</b> (<b>SELECT</b> DEPTNO <b>FROM</b> DEPT <b>WHERE</b> LOC = 'DALLAS');"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Combine employees with salary > 3000 and employees with job = 'MANAGER' (Unique).",
+                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> SAL > 3000 \n<b>UNION</b> \n<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> JOB = 'MANAGER';"
+                    , output: "Paste result here..."
+                },
+                {
+                    question: "Display employee names who are not assigned to any valid department in the DEPT table.",
+                    sql: "<b>SELECT</b> DEPTNO <b>FROM</b> EMP \n<b>MINUS</b> \n<b>SELECT</b> DEPTNO <b>FROM</b> DEPT;"
+                    , output: "Paste result here..."
+                }
+            ],
+            "Database Views": [
+                {
+                    question: "Create a view to display employee name, salary, and department number from EMP table.",
+                    sql: "<b>CREATE VIEW</b> emp_v1 <b>AS</b>\n<b>SELECT</b> ENAME, SAL, DEPTNO <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a view to display employee name and department name by joining EMP and DEPT tables.",
+                    sql: "<b>CREATE VIEW</b> emp_dept_v <b>AS</b>\n<b>SELECT</b> E.ENAME, D.DNAME \n<b>FROM</b> EMP E, DEPT D \n<b>WHERE</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a view to display employees working in department 10.",
+                    sql: "<b>CREATE VIEW</b> dept10_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a view to display employee name, job, and annual salary (SAL * 12).",
+                    sql: "<b>CREATE VIEW</b> ann_sal_v <b>AS</b>\n<b>SELECT</b> ENAME, JOB, (SAL * 12) <b>AS</b> ANNUAL_SAL \n<b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a view to display employees earning more than 3000.",
+                    sql: "<b>CREATE VIEW</b> high_sal_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 3000;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a view to display department-wise total salary using EMP table.",
+                    sql: "<b>CREATE VIEW</b> dept_sal_v <b>AS</b>\n<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>AS</b> TOTAL_SAL \n<b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a view with column aliases for employee name and salary.",
+                    sql: "<b>CREATE VIEW</b> emp_alias_v (Name, Monthly_Pay) <b>AS</b>\n<b>SELECT</b> ENAME, SAL <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a view for employees in department 20 with WITH CHECK OPTION.",
+                    sql: "<b>CREATE VIEW</b> dept20_check_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 20\n<b>WITH CHECK OPTION</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Try inserting an employee with department 30 into a 'Dept 20' view with CHECK OPTION.",
+                    sql: "<b>INSERT INTO</b> dept20_check_v (EMPNO, ENAME, DEPTNO) \n<b>VALUES</b> (9999, 'TEST', 30);\n<i>-- Result: Error (View WITH CHECK OPTION where-clause violation)</i>",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a READ ONLY view to display employee details.",
+                    sql: "<b>CREATE VIEW</b> emp_read_only_v <b>AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP\n<b>WITH READ ONLY</b>;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Try updating salary through a READ ONLY view and observe the restriction.",
+                    sql: "<b>UPDATE</b> emp_read_only_v <b>SET</b> SAL = 5000 <b>WHERE</b> ENAME = 'SMITH';\n<i>-- Result: Error (Cannot perform DML on a read-only view)</i>",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a view that hides salary but shows employee name and department name (Security).",
+                    sql: "<b>CREATE VIEW</b> secure_emp_v <b>AS</b>\n<b>SELECT</b> ENAME, DEPTNO <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a materialized view to store employee name and salary from EMP table.",
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_emp_sal <b>AS</b>\n<b>SELECT</b> ENAME, SAL <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a materialized view to store employee name and department name using Join.",
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_emp_dept <b>AS</b>\n<b>SELECT</b> E.ENAME, D.DNAME \n<b>FROM</b> EMP E, DEPT D \n<b>WHERE</b> E.DEPTNO = D.DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a materialized view with REFRESH COMPLETE for EMP table.",
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_complete_refresh\n<b>REFRESH COMPLETE AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a materialized view with REFRESH ON COMMIT.",
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_commit_refresh\n<b>REFRESH ON COMMIT AS</b>\n<b>SELECT</b> * <b>FROM</b> EMP;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a materialized view to store department-wise total salary.",
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_dept_agg <b>AS</b>\n<b>SELECT</b> DEPTNO, <b>SUM</b>(SAL) <b>AS</b> SUM_SAL \n<b>FROM</b> EMP <b>GROUP BY</b> DEPTNO;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a materialized view with BUILD IMMEDIATE option.",
+                    sql: "<b>CREATE MATERIALIZED VIEW</b> mv_immediate\n<b>BUILD IMMEDIATE AS</b>\n<b>SELECT</b> * <b>FROM</b> DEPT;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Refresh a materialized view manually using DBMS_MVIEW package.",
+                    sql: "<b>EXEC</b> DBMS_MVIEW.REFRESH('mv_emp_sal');",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Drop a materialized view created on EMP table.",
+                    sql: "<b>DROP MATERIALIZED VIEW</b> mv_emp_sal;",
+                    output: "Paste result here..."
+                },
+                {
+                    question: "Create a complex view to display department name and highest salary in each department.",
+                    sql: "<b>CREATE VIEW</b> complex_dept_v <b>AS</b>\n<b>SELECT</b> D.DNAME, <b>MAX</b>(E.SAL) <b>AS</b> MAX_SAL \n<b>FROM</b> EMP E, DEPT D \n<b>WHERE</b> E.DEPTNO = D.DEPTNO \n<b>GROUP BY</b> D.DNAME;",
+                    output: "Paste result here..."
+                }
+            ],
+            "TCL and DCL": [
+                {
+                    question: "Insert a new employee record into EMP table and commit the changes.",
+                    sql: "<b>INSERT INTO</b> EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) \n<b>VALUES</b> (8001, 'JIYA', 'DEVELOPER', 7698, <b>TO_DATE</b>('08-APR-2026','DD-MON-YYYY'), 5000, (null), 30);\n<b>COMMIT;</b>",
+                    output: "1 row inserted.\nElapsed: 00:00:00.004\nCommit complete.\nElapsed: 00:00:00.002"
+                },
+                {
+                    question: "Update salary of employees in department 10 and commit the changes.",
+                    sql: "<b>UPDATE</b> EMP <b>SET</b> SAL = SAL + 500 <b>WHERE</b> DEPTNO = 10;\n<b>COMMIT;</b>",
+                    output: "3 rows updated.\nElapsed: 00:00:00.006\nCommit complete.\nElapsed: 00:00:00.002"
+                },
+                {
+                    question: "Delete employees with salary less than 1000 and commit the transaction.",
+                    sql: "<b>DELETE FROM</b> EMP <b>WHERE</b> SAL < 1000;\n<b>COMMIT;</b>",
+                    output: "2 rows deleted.\nElapsed: 00:00:00.004\nCommit complete.\nElapsed: 00:00:00.001"
+                }
+            ],
+            "PLSQL: Basics": [
+                {
+                    question: "Write a PL/SQL block to print your name and city in two separate lines.",
+                    sql: "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Name: Jiya');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('City: Delhi');\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to display numbers from 1 to 5 using DBMS_OUTPUT.",
+                    sql: "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('1');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('2');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('3');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('4');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('5');\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print the current system date.",
+                    sql: "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Today is: ' || <b>SYSDATE</b>);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare a variable and assign your age, then display it.",
+                    sql: "<b>DECLARE</b>\n  v_age <b>NUMBER</b>(2) := 20;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('My Age is: ' || v_age);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare two variables and print their sum.",
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10;\n  b <b>NUMBER</b> := 20;\n  s <b>NUMBER</b>;\n<b>BEGIN</b>\n  s := a + b;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum is: ' || s);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to store employee name and salary in variables and display them.",
+                    sql: "<b>DECLARE</b>\n  v_name <b>VARCHAR2</b>(20) := 'SMITH';\n  v_sal  <b>NUMBER</b> := 800;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Employee: ' || v_name || ' Salary: ' || v_sal);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to swap two numbers using variables.",
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 5; b <b>NUMBER</b> := 10; temp <b>NUMBER</b>;\n<b>BEGIN</b>\n  temp := a; a := b; b := temp;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('a=' || a || ' b=' || b);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to calculate area of a rectangle using variables.",
+                    sql: "<b>DECLARE</b>\n  l <b>NUMBER</b> := 10; w <b>NUMBER</b> := 5; area <b>NUMBER</b>;\n<b>BEGIN</b>\n  area := l * w;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Area of Rectangle: ' || area);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare a constant for PI and calculate area of a circle.",
+                    sql: "<b>DECLARE</b>\n  pi <b>CONSTANT NUMBER</b> := 3.14;\n  r  <b>NUMBER</b> := 5; area <b>NUMBER</b>;\n<b>BEGIN</b>\n  area := pi * r * r;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Area of Circle: ' || area);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare a constant tax rate and calculate total salary after tax.",
+                    sql: "<b>DECLARE</b>\n  sal <b>NUMBER</b> := 5000;\n  tax <b>CONSTANT NUMBER</b> := 0.10;\n  net <b>NUMBER</b>;\n<b>BEGIN</b>\n  net := sal - (sal * tax);\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Net Salary: ' || net);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to calculate simple interest using constant rate of interest.",
+                    sql: "<b>DECLARE</b>\n  p <b>NUMBER</b> := 1000; t <b>NUMBER</b> := 2;\n  r <b>CONSTANT NUMBER</b> := 5;\n  si <b>NUMBER</b>;\n<b>BEGIN</b>\n  si := (p * r * t) / 100;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Simple Interest: ' || si);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block using different datatypes: NUMBER, VARCHAR2, DATE.",
+                    sql: "<b>DECLARE</b>\n  v_id   <b>NUMBER</b> := 1;\n  v_name <b>VARCHAR2</b>(20) := 'Jiya';\n  v_dob  <b>DATE</b> := '01-JAN-2004';\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_id || ' ' || v_name || ' ' || v_dob);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare a variable using %TYPE from EMP table salary column.",
+                    sql: "<b>DECLARE</b>\n  v_sal <b>EMP.SAL%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7839;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary via %TYPE: ' || v_sal);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare a record using %ROWTYPE and display employee details.",
+                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7788;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_rec.ename || ' is ' || v_rec.job);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to convert number to string and display it.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 1234;\n  s <b>VARCHAR2</b>(10);\n<b>BEGIN</b>\n  s := <b>TO_CHAR</b>(n);\n  <b>DBMS_OUTPUT.PUT_LINE</b>('String value: ' || s);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block using variables, constants, and output statement together.",
+                    sql: "<b>DECLARE</b>\n  msg <b>CONSTANT VARCHAR2</b>(10) := 'Hello';\n  name <b>VARCHAR2</b>(10) := 'Jiya';\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(msg || ' ' || name);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to calculate bonus (10% of salary) and display result with comments.",
+                    sql: "<b>DECLARE</b>\n  v_sal <b>NUMBER</b> := 3000;\n  v_bon <b>NUMBER</b>; -- Variable for bonus\n<b>BEGIN</b>\n  v_bon := v_sal * 0.10;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Bonus Amount: ' || v_bon);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block that uses variable, constant, and %TYPE together.",
+                    sql: "<b>DECLARE</b>\n  c_tax <b>CONSTANT NUMBER</b> := 0.05;\n  v_sal <b>EMP.SAL%TYPE</b>;\n  v_ded <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> ENAME = 'KING';\n  v_ded := v_sal * c_tax;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Tax Deduction: ' || v_ded);\n<b>END;</b>",
+                    output: "paste here"
+                }
+            ],
+            "PLSQL: Conditionals": [
+                {
+                    question: "Write a PL/SQL block to check if a number is positive using IF.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Number is Positive');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to check if an employee’s salary is greater than 3000.",
+                    sql: "<b>DECLARE</b>\n  v_sal <b>NUMBER</b> := 3500;\n<b>BEGIN</b>\n  <b>IF</b> v_sal > 3000 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('High Salary Employee');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to check if a given number is even.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 4;\n<b>BEGIN</b>\n  <b>IF MOD</b>(n, 2) = 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Number is Even');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to check whether a number is even or odd using IF-ELSE.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 7;\n<b>BEGIN</b>\n  <b>IF MOD</b>(n, 2) = 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Even');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Odd');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to compare two numbers and display the greater one.",
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10; b <b>NUMBER</b> := 20;\n<b>BEGIN</b>\n  <b>IF</b> a > b <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Greater is: ' || a);\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Greater is: ' || b);\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to check whether a student passed (marks ≥ 40) or failed.",
+                    sql: "<b>DECLARE</b>\n  m <b>NUMBER</b> := 45;\n<b>BEGIN</b>\n  <b>IF</b> m >= 40 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Result: Passed');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Result: Failed');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to assign grades based on marks using IF-ELSIF-ELSE.",
+                    sql: "<b>DECLARE</b>\n  m <b>NUMBER</b> := 75;\n<b>BEGIN</b>\n  <b>IF</b> m >= 80 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Grade A');\n  <b>ELSIF</b> m >= 60 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Grade B');\n  <b>ELSIF</b> m >= 40 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Grade C');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Fail');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to find the greatest of three numbers.",
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b>:=10; b <b>NUMBER</b>:=30; c <b>NUMBER</b>:=20;\n<b>BEGIN</b>\n  <b>IF</b> a>b <b>AND</b> a>c <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(a);\n  <b>ELSIF</b> b>a <b>AND</b> b>c <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(b);\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(c);\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to check if a number is Positive, Negative, or Zero.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Positive');\n  <b>ELSIF</b> n < 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Negative');\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Zero');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to categorize salary into High, Medium, or Low.",
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 4000;\n<b>BEGIN</b>\n  <b>IF</b> s > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High');\n  <b>ELSIF</b> s >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium');\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to calculate bonus based on job role using ELSIF.",
+                    sql: "<b>DECLARE</b>\n  v_job <b>VARCHAR2</b>(20) := 'MANAGER'; v_bon <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>IF</b> v_job = 'MANAGER' <b>THEN</b> v_bon := 1000;\n  <b>ELSIF</b> v_job = 'CLERK' <b>THEN</b> v_bon := 500;\n  <b>ELSE</b> v_bon := 200;\n  <b>END IF;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Bonus: ' || v_bon);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block using CASE to display day of week based on number (1–7).",
+                    sql: "<b>DECLARE</b>\n  d <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>CASE</b> d\n    <b>WHEN</b> 1 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Monday');\n    <b>WHEN</b> 2 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Tuesday');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Other Day');\n  <b>END CASE;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block using CASE to assign grades based on marks.",
+                    sql: "<b>DECLARE</b>\n  m <b>NUMBER</b> := 85;\n<b>BEGIN</b>\n  <b>CASE</b>\n    <b>WHEN</b> m >= 80 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('A');\n    <b>WHEN</b> m >= 60 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('B');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('C');\n  <b>END CASE;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block using CASE to display department name based on ID.",
+                    sql: "<b>DECLARE</b>\n  d <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>CASE</b> d\n    <b>WHEN</b> 10 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Accounting');\n    <b>WHEN</b> 20 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Research');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Sales');\n  <b>END CASE;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block using CASE to categorize salary (High/Medium/Low).",
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 6000;\n<b>BEGIN</b>\n  <b>CASE</b>\n    <b>WHEN</b> s > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High');\n    <b>WHEN</b> s >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low');\n  <b>END CASE;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print numbers 1 to 10 but skip 5 using CONTINUE.",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>CONTINUE WHEN</b> i = 5;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to display only odd numbers between 1 and 20 using CONTINUE.",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..20 <b>LOOP</b>\n    <b>CONTINUE WHEN MOD</b>(i, 2) = 0;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to skip multiples of 3 while printing numbers 1–15.",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..15 <b>LOOP</b>\n    <b>CONTINUE WHEN MOD</b>(i, 3) = 0;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to exit loop when number reaches 5 using EXIT.",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>EXIT WHEN</b> i = 5;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print numbers until sum exceeds 50, then exit.",
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..100 <b>LOOP</b>\n    s := s + i;\n    <b>EXIT WHEN</b> s > 50;\n    <b>DBMS_OUTPUT.PUT_LINE</b>('i='||i||' Sum='||s);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to exit loop when a negative number is encountered.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    n := -1; -- Simulated input\n    <b>EXIT WHEN</b> n < 0;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(n);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block using EXIT WHEN to stop loop based on a variable.",
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 3;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block using IF-ELSIF and CASE together.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b>\n    <b>CASE WHEN MOD</b>(n,2)=0 <b>THEN DBMS_OUTPUT.PUT_LINE</b>('Pos Even'); <b>END CASE;</b>\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to process salaries using LOOP, CONTINUE, and EXIT.",
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 1000;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    s := s + 1000;\n    <b>CONTINUE WHEN</b> s < 3000;\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Processing: ' || s);\n    <b>EXIT WHEN</b> s >= 5000;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to simulate a login system (check username & password).",
+                    sql: "<b>DECLARE</b>\n  u <b>VARCHAR2</b>(10):='admin'; p <b>VARCHAR2</b>(10):='123';\n<b>BEGIN</b>\n  <b>IF</b> u = 'admin' <b>AND</b> p = '123' <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Login Successful');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Access Denied');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                }
+            ],
+            "PLSQL: Loops": [
+                {
+                    question: "Write a PL/SQL block to print numbers from 1 to 5 using SIMPLE LOOP.",
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 5;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to display numbers from 10 to 1 in reverse order using SIMPLE LOOP.",
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i - 1;\n    <b>EXIT WHEN</b> i < 1;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to calculate the sum of numbers from 1 to 10 using SIMPLE LOOP.",
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    s := s + i;\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 10;\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum is: ' || s);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print multiplication table of a number using SIMPLE LOOP.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 5;\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(n || ' x ' || i || ' = ' || (n*i));\n    i := i + 1;\n    <b>EXIT WHEN</b> i > 10;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print even numbers between 1 and 20 using SIMPLE LOOP.",
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 2;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 2;\n    <b>EXIT WHEN</b> i > 20;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block that exits the loop when a number becomes greater than 50.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Current Value: ' || n);\n    n := n + 15;\n    <b>EXIT WHEN</b> n > 50;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print numbers from 1 to 10 using WHILE LOOP.",
+                    sql: "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>WHILE</b> i <= 10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to calculate factorial of a number using WHILE LOOP.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 5;\n  f <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    f := f * n;\n    n := n - 1;\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Factorial is: ' || f);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to display sum of digits of a number using WHILE LOOP.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 123;\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    s := s + <b>MOD</b>(n, 10);\n    n := <b>TRUNC</b>(n / 10);\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum of digits: ' || s);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to reverse a number using WHILE LOOP.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 123;\n  r <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    r := (r * 10) + <b>MOD</b>(n, 10);\n    n := <b>TRUNC</b>(n / 10);\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Reversed Number: ' || r);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to check whether a number is palindrome using WHILE LOOP.",
+                    sql: "<b>DECLARE</b>\n  n <b>NUMBER</b> := 121;\n  t <b>NUMBER</b> := n;\n  r <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>WHILE</b> n > 0 <b>LOOP</b>\n    r := (r * 10) + <b>MOD</b>(n, 10);\n    n := <b>TRUNC</b>(n / 10);\n  <b>END LOOP;</b>\n  <b>IF</b> t = r <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Number is Palindrome');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Not a Palindrome');\n  <b>END IF;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print Fibonacci series up to N terms using WHILE LOOP.",
+                    sql: "<b>DECLARE</b>\n  a <b>NUMBER</b> := 0; b <b>NUMBER</b> := 1; c <b>NUMBER</b>;\n  n <b>NUMBER</b> := 5; i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>WHILE</b> i <= n <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(a);\n    c := a + b; a := b; b := c;\n    i := i + 1;\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print numbers from 1 to 10 using FOR LOOP.",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print numbers in reverse order using FOR LOOP.",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN REVERSE</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to calculate sum of first 10 natural numbers using FOR LOOP.",
+                    sql: "<b>DECLARE</b>\n  s <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    s := s + i;\n  <b>END LOOP;</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Sum: ' || s);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to display multiplication table of 5 using FOR LOOP.",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('5 x ' || i || ' = ' || (5*i));\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print squares of numbers from 1 to 10.",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Square of ' || i || ' is ' || (i*i));\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to display all odd numbers between 1 and 50 using FOR LOOP.",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..50 <b>LOOP</b>\n    <b>IF MOD</b>(i, 2) != 0 <b>THEN</b>\n      <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    <b>END IF;</b>\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to print a pattern using nested loops: * , ** , *** , ****",
+                    sql: "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..4 <b>LOOP</b>\n    <b>FOR</b> j <b>IN</b> 1..i <b>LOOP</b>\n      <b>DBMS_OUTPUT.PUT</b>('*');\n    <b>END LOOP;</b>\n    <b>DBMS_OUTPUT.NEW_LINE;</b>\n  <b>END LOOP;</b>\n<b>END;</b>",
+                    output: "paste here"
+                }
+            ],
+            "PLSQL: Types": [
+                {
+                    question: "Write a PL/SQL block to fetch employee name from EMP table for empno = 7369 and display it.",
+                    sql: "<b>DECLARE</b>\n  v_ename <b>EMP.ENAME%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME <b>INTO</b> v_ename <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Employee Name: ' || v_ename);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to retrieve salary of an employee and print it.",
+                    sql: "<b>DECLARE</b>\n  v_sal <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7839;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary is: ' || v_sal);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to fetch employee name and job using a single SELECT statement.",
+                    sql: "<b>DECLARE</b>\n  v_name <b>VARCHAR2</b>(20);\n  v_job  <b>VARCHAR2</b>(20);\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME, JOB <b>INTO</b> v_name, v_job <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7788;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_name || ' works as ' || v_job);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to display department number of an employee using SELECT INTO.",
+                    sql: "<b>DECLARE</b>\n  v_dept <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> DEPTNO <b>INTO</b> v_dept <b>FROM</b> EMP <b>WHERE</b> ENAME = 'SMITH';\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Dept No: ' || v_dept);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to fetch hiredate of an employee and display it.",
+                    sql: "<b>DECLARE</b>\n  v_hdate <b>DATE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> HIREDATE <b>INTO</b> v_hdate <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7902;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Hire Date: ' || v_hdate);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to count total number of employees using SELECT INTO.",
+                    sql: "<b>DECLARE</b>\n  v_count <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT COUNT</b>(*) <b>INTO</b> v_count <b>FROM</b> EMP;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Total Employees: ' || v_count);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare a variable using %TYPE based on EMP.SAL and display salary.",
+                    sql: "<b>DECLARE</b>\n  v_sal <b>EMP.SAL%TYPE</b>;\n<b>BEGIN</b>\n  v_sal := 5000;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary: ' || v_sal);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare variables for employee name and job using %TYPE.",
+                    sql: "<b>DECLARE</b>\n  v_name <b>EMP.ENAME%TYPE</b>;\n  v_job  <b>EMP.JOB%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME, JOB <b>INTO</b> v_name, v_job <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7698;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_name || ' - ' || v_job);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to fetch salary using %TYPE variable and display it.",
+                    sql: "<b>DECLARE</b>\n  v_salary <b>EMP.SAL%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_salary <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7566;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Fetched Salary: ' || v_salary);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to calculate annual salary using %TYPE variable.",
+                    sql: "<b>DECLARE</b>\n  v_sal <b>EMP.SAL%TYPE</b>;\n  v_ann <b>NUMBER</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> v_sal <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7844;\n  v_ann := v_sal * 12;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Annual Salary: ' || v_ann);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to update salary using %TYPE variable.",
+                    sql: "<b>DECLARE</b>\n  v_new_sal <b>EMP.SAL%TYPE</b> := 3500;\n<b>BEGIN</b>\n  <b>UPDATE</b> EMP <b>SET</b> SAL = v_new_sal <b>WHERE</b> EMPNO = 7900;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Salary Updated Successfully');\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare a variable using %TYPE from DEPT table.",
+                    sql: "<b>DECLARE</b>\n  v_loc <b>DEPT.LOC%TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> LOC <b>INTO</b> v_loc <b>FROM</b> DEPT <b>WHERE</b> DEPTNO = 10;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Location: ' || v_loc);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to declare a record using %ROWTYPE for EMP table.",
+                    sql: "<b>DECLARE</b>\n  emp_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Record structure for EMP declared.');\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to fetch complete employee record using %ROWTYPE and display fields.",
+                    sql: "<b>DECLARE</b>\n  v_emp <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_emp <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7839;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('ID: ' || v_emp.empno || ' Name: ' || v_emp.ename);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to display employee name, salary, and job using %ROWTYPE.",
+                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7782;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(v_rec.ename || ' | ' || v_rec.job || ' | ' || v_rec.sal);\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to update salary using %ROWTYPE variable.",
+                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> v_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369;\n  v_rec.sal := v_rec.sal + 500;\n  <b>UPDATE</b> EMP <b>SET ROW</b> = v_rec <b>WHERE</b> EMPNO = 7369;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Row Updated using %ROWTYPE');\n<b>END;</b>",
+                    output: "paste here"
+                },
+                {
+                    question: "Write a PL/SQL block to insert a record using %ROWTYPE.",
+                    sql: "<b>DECLARE</b>\n  v_rec <b>EMP%ROWTYPE</b>;\n<b>BEGIN</b>\n  v_rec.empno := 8000;\n  v_rec.ename := 'JIYA';\n  v_rec.job   := 'DEVELOPER';\n  v_rec.deptno:= 10;\n  <b>INSERT INTO</b> EMP <b>VALUES</b> v_rec;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Record Inserted via %ROWTYPE');\n<b>END;</b>",
+                    output: "paste here"
+                }
+            ],
+            "PLSQL: Cursors": [
+                {
+                    "question": "1. Write a PL/SQL block to declare a cursor to fetch all employees from EMP table and display their names. (Explicit Cursor)",
+                    "sql": "<b>DECLARE</b><br>  <b>CURSOR</b> c_emp <b>IS SELECT</b> ENAME <b>FROM</b> EMP;<br>  v_name EMP.ENAME%<b>TYPE</b>;<br><b>BEGIN</b><br>  <b>OPEN</b> c_emp;<br>  <b>LOOP</b><br>    <b>FETCH</b> c_emp <b>INTO</b> v_name;<br>    <b>EXIT WHEN</b> c_emp%<b>NOTFOUND</b>;<br>    DBMS_OUTPUT.PUT_LINE(v_name);<br>  <b>END LOOP</b>;<br>  <b>CLOSE</b> c_emp;<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "2. Write a PL/SQL block to fetch employee name and salary using cursor and display them. (Explicit Cursor)",
+                    "sql": "<b>DECLARE</b><br>  <b>CURSOR</b> c_emp <b>IS SELECT</b> ENAME, SAL <b>FROM</b> EMP;<br>  v_name EMP.ENAME%<b>TYPE</b>;<br>  v_sal EMP.SAL%<b>TYPE</b>;<br><b>BEGIN</b><br>  <b>OPEN</b> c_emp;<br>  <b>LOOP</b><br>    <b>FETCH</b> c_emp <b>INTO</b> v_name, v_sal;<br>    <b>EXIT WHEN</b> c_emp%<b>NOTFOUND</b>;<br>    DBMS_OUTPUT.PUT_LINE(v_name || ' ' || v_sal);<br>  <b>END LOOP</b>;<br>  <b>CLOSE</b> c_emp;<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "3. Write a PL/SQL block to display employees whose salary is greater than 3000 using cursor. (Explicit Cursor + Condition)",
+                    "sql": "<b>DECLARE</b><br>  <b>CURSOR</b> c_emp <b>IS SELECT</b> ENAME, SAL <b>FROM</b> EMP <b>WHERE</b> SAL > 3000;<br>  v_name EMP.ENAME%<b>TYPE</b>;<br>  v_sal EMP.SAL%<b>TYPE</b>;<br><b>BEGIN</b><br>  <b>OPEN</b> c_emp;<br>  <b>LOOP</b><br>    <b>FETCH</b> c_emp <b>INTO</b> v_name, v_sal;<br>    <b>EXIT WHEN</b> c_emp%<b>NOTFOUND</b>;<br>    DBMS_OUTPUT.PUT_LINE(v_name || ' : ' || v_sal);<br>  <b>END LOOP</b>;<br>  <b>CLOSE</b> c_emp;<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "4. Write a PL/SQL block to count number of employees using cursor. (Explicit Cursor)",
+                    "sql": "<b>DECLARE</b><br>  <b>CURSOR</b> c_emp <b>IS SELECT</b> * <b>FROM</b> EMP;<br>  v_rec c_emp%<b>ROWTYPE</b>;<br>  v_count <b>NUMBER</b> := 0;<br><b>BEGIN</b><br>  <b>OPEN</b> c_emp;<br>  <b>LOOP</b><br>    <b>FETCH</b> c_emp <b>INTO</b> v_rec;<br>    <b>EXIT WHEN</b> c_emp%<b>NOTFOUND</b>;<br>    v_count := v_count + 1;<br>  <b>END LOOP</b>;<br>  <b>CLOSE</b> c_emp;<br>  DBMS_OUTPUT.PUT_LINE('Total: ' || v_count);<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "5. Write a PL/SQL block to calculate total salary of all employees using cursor. (Explicit Cursor + Aggregate)",
+                    "sql": "<b>DECLARE</b><br>  <b>CURSOR</b> c_sal <b>IS SELECT</b> SAL <b>FROM</b> EMP;<br>  v_sal <b>NUMBER</b>;<br>  v_total <b>NUMBER</b> := 0;<br><b>BEGIN</b><br>  <b>OPEN</b> c_sal;<br>  <b>LOOP</b><br>    <b>FETCH</b> c_sal <b>INTO</b> v_sal;<br>    <b>EXIT WHEN</b> c_sal%<b>NOTFOUND</b>;<br>    v_total := v_total + v_sal;<br>  <b>END LOOP</b>;<br>  <b>CLOSE</b> c_sal;<br>  DBMS_OUTPUT.PUT_LINE('Total Salary: ' || v_total);<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "6. Write a PL/SQL block to fetch records one by one using OPEN, FETCH, and CLOSE. (Cursor Lifecycle)",
+                    "sql": "<b>DECLARE</b><br>  <b>CURSOR</b> c_emp <b>IS SELECT</b> ENAME <b>FROM</b> EMP;<br>  v_name EMP.ENAME%<b>TYPE</b>;<br><b>BEGIN</b><br>  <b>OPEN</b> c_emp;<br>  <b>FETCH</b> c_emp <b>INTO</b> v_name;<br>  DBMS_OUTPUT.PUT_LINE('First: ' || v_name);<br>  <b>FETCH</b> c_emp <b>INTO</b> v_name;<br>  DBMS_OUTPUT.PUT_LINE('Second: ' || v_name);<br>  <b>CLOSE</b> c_emp;<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "7. Write a PL/SQL block to display all employee records using cursor FOR LOOP. (Cursor FOR LOOP)",
+                    "sql": "<b>BEGIN</b><br>  <b>FOR</b> r <b>IN</b> (<b>SELECT</b> * <b>FROM</b> EMP) <b>LOOP</b><br>    DBMS_OUTPUT.PUT_LINE(r.EMPNO || ' ' || r.ENAME);<br>  <b>END LOOP</b>;<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "8. Write a PL/SQL block to display employee names and jobs using cursor FOR LOOP. (Cursor FOR LOOP)",
+                    "sql": "<b>BEGIN</b><br>  <b>FOR</b> r <b>IN</b> (<b>SELECT</b> ENAME, JOB <b>FROM</b> EMP) <b>LOOP</b><br>    DBMS_OUTPUT.PUT_LINE(r.ENAME || ' is a ' || r.JOB);<br>  <b>END LOOP</b>;<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "9. Write a PL/SQL block to display employees from department 10 using cursor FOR LOOP. (Cursor FOR LOOP + Condition)",
+                    "sql": "<b>BEGIN</b><br>  <b>FOR</b> r <b>IN</b> (<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = 10) <b>LOOP</b><br>    DBMS_OUTPUT.PUT_LINE('Dept 10: ' || r.ENAME);<br>  <b>END LOOP</b>;<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "10. Write a PL/SQL block to calculate total salary using cursor FOR LOOP. (Cursor FOR LOOP)",
+                    "sql": "<b>DECLARE</b><br>  v_total <b>NUMBER</b> := 0;<br><b>BEGIN</b><br>  <b>FOR</b> r <b>IN</b> (<b>SELECT</b> SAL <b>FROM</b> EMP) <b>LOOP</b><br>    v_total := v_total + r.SAL;<br>  <b>END LOOP</b>;<br>  DBMS_OUTPUT.PUT_LINE('Total: ' || v_total);<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "12. Write a PL/SQL block to declare a parameterized cursor that takes department number and displays employees of that department. (Parameterized Cursor)",
+                    "sql": "<b>DECLARE</b><br>  <b>CURSOR</b> c_dept(p_deptno <b>NUMBER</b>) <b>IS</b><br>    <b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = p_deptno;<br><b>BEGIN</b><br>  <b>FOR</b> r <b>IN</b> c_dept(20) <b>LOOP</b><br>    DBMS_OUTPUT.PUT_LINE(r.ENAME);<br>  <b>END LOOP</b>;<br><b>END</b>;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "13. Write a PL/SQL block to fetch employees whose salary is greater than a given value using parameterized cursor. (Parameterized Cursor)",
+                    "sql": "<b>DECLARE</b><br>  <b>CURSOR</b> c_sal(p_min_sal <b>NUMBER</b>) <b>IS</b><br>    <b>SELECT</b> ENAME, SAL <b>FROM</b> EMP <b>WHERE</b> SAL > p_min_sal;<br><b>BEGIN</b><br>  <b>FOR</b> r <b>IN</b> c_sal(2500) <b>LOOP</b><br>    DBMS_OUTPUT.PUT_LINE(r.ENAME || ' : ' || r.SAL);<br>  <b>END LOOP</b>;<br><b>END</b>;",
+                    "output": "paste here"
+                }
+            ],
+            "Procedures & Functions": [
+                {
+                    "question": "Write a stored procedure to display (Hello Oracle) using DBMS_OUTPUT.",
+
+                    "sql": "<b>CREATE OR REPLACE PROCEDURE</b> hello_oracle <b>AS</b><br><b>BEGIN</b><br>  DBMS_OUTPUT.PUT_LINE('Hello Oracle');<br><b>END</b>;<br>/<br><b>EXEC</b> hello_oracle;",
+
+                    "output": "Procedure HELLO_ORACLE_PROC compiled\n\nElapsed: 00:00:00.067"
+                },
+                {
+                    "question": "Write a stored procedure to display employee name for a given empno.",
+                    "sql": "<b>CREATE OR REPLACE FUNCTION</b> get_square(num <b>NUMBER</b>) <b>RETURN NUMBER AS</b><br><b>BEGIN</b><br>  <b>RETURN</b> num * num;<br><b>END</b>;<br>/<br><b>SELECT</b> get_square(5) <b>FROM</b> DUAL;",
+                    "output": "Procedure SHOW_EMP_NAME compiled\n\nElapsed: 00:00:00.067"
+                },
+                {
+                    "question": "18. Write a function to return total number of employees. (Function + Aggregate)",
+                    "sql": "<b>CREATE OR REPLACE FUNCTION</b> count_emp <b>RETURN NUMBER AS</b><br>  v_count <b>NUMBER</b>;<br><b>BEGIN</b><br>  <b>SELECT COUNT</b>(*) <b>INTO</b> v_count <b>FROM</b> EMP;<br>  <b>RETURN</b> v_count;<br><b>END</b>;<br>/<br><b>SELECT</b> count_emp() <b>FROM</b> DUAL;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "23. Write a function to check whether a number is even or odd. (Function + Logic)",
+                    "sql": "<b>CREATE OR REPLACE FUNCTION</b> check_even_odd(num <b>NUMBER</b>) <b>RETURN VARCHAR2 AS</b><br><b>BEGIN</b><br>  <b>IF MOD</b>(num, 2) = 0 <b>THEN</b><br>    <b>RETURN</b> 'Even';<br>  <b>ELSE</b><br>    <b>RETURN</b> 'Odd';<br>  <b>END IF</b>;<br><b>END</b>;<br>/<br><b>SELECT</b> check_even_odd(10) <b>FROM</b> DUAL;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "5. Write a stored procedure to display department details. (Procedure – Basic)",
+                    "sql": "<b>CREATE OR REPLACE PROCEDURE</b> show_depts <b>AS</b><br><b>BEGIN</b><br>  <b>FOR</b> r <b>IN</b> (<b>SELECT</b> * <b>FROM</b> DEPT) <b>LOOP</b><br>    DBMS_OUTPUT.PUT_LINE(r.DEPTNO || ' ' || r.DNAME);<br>  <b>END LOOP</b>;<br><b>END</b>;<br>/<br><b>EXEC</b> show_depts;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "19. Write a function to return maximum salary from EMP table. (Function + Aggregate)",
+                    "sql": "<b>CREATE OR REPLACE FUNCTION</b> get_max_sal <b>RETURN NUMBER AS</b><br>  v_max <b>NUMBER</b>;<br><b>BEGIN</b><br>  <b>SELECT MAX</b>(SAL) <b>INTO</b> v_max <b>FROM</b> EMP;<br>  <b>RETURN</b> v_max;<br><b>END</b>;<br>/<br><b>SELECT</b> get_max_sal() <b>FROM</b> DUAL;",
+                    "output": "paste here"
+                },
+                {
+                    "question": "13. Write a stored procedure to delete an employee record. (Procedure + DELETE)",
+                    "sql": "<b>CREATE OR REPLACE PROCEDURE</b> del_emp(p_empno <b>NUMBER</b>) <b>AS</b><br><b>BEGIN</b><br>  <b>DELETE FROM</b> EMP <b>WHERE</b> EMPNO = p_empno;<br>  <b>COMMIT</b>;<br><b>END</b>;<br>/<br><b>EXEC</b> del_emp(7900);",
+                    "output": "paste here"
+                },
+                {
+                    "question": "11. Write a stored procedure to insert a new employee record. (Procedure + INSERT)",
+                    "sql": "<b>CREATE OR REPLACE PROCEDURE</b> add_dept(p_id <b>NUMBER</b>, p_name <b>VARCHAR2</b>) <b>AS</b><br><b>BEGIN</b><br>  <b>INSERT INTO</b> DEPT (DEPTNO, DNAME) <b>VALUES</b> (p_id, p_name);<br>  <b>COMMIT</b>;<br><b>END</b>;<br>/<br><b>EXEC</b> add_dept(50, 'IT');",
+                    "output": "paste here"
+                },
+                {
+                    "question": "2. Write a stored procedure to display employee name for a given empno. (Procedure + SELECT INTO)",
+                    "sql": "<b>CREATE OR REPLACE PROCEDURE</b> show_name(p_empno <b>NUMBER</b>) <b>AS</b><br>  v_name EMP.ENAME%<b>TYPE</b>;<br><b>BEGIN</b><br>  <b>SELECT</b> ENAME <b>INTO</b> v_name <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_empno;<br>  DBMS_OUTPUT.PUT_LINE('Name: ' || v_name);<br><b>END</b>;<br>/<br><b>EXEC</b> show_name(7788);",
+                    "output": "paste here"
+                },
+                {
+                    "question": "12. Write a stored procedure to update employee salary based on empno. (Procedure + UPDATE)",
+                    "sql": "<b>CREATE OR REPLACE PROCEDURE</b> update_sal(p_empno <b>NUMBER</b>, p_sal <b>NUMBER</b>) <b>AS</b><br><b>BEGIN</b><br>  <b>UPDATE</b> EMP <b>SET</b> SAL = p_sal <b>WHERE</b> EMPNO = p_empno;<br>  <b>COMMIT</b>;<br><b>END</b>;<br>/<br><b>EXEC</b> update_sal(7788, 4000);",
+                    "output": "paste here"
+                }
+            ],
+            "PLSQL: Packages (I'll start this after understanding it a bit.)": [],
+            "Exception Handling": [
+                {
+                    "question": "Write a PL/SQL block to handle NO_DATA_FOUND exception while fetching employee details. (Exception Basics)",
+                    "sql": "<b>DECLARE</b><br>  emp_name emp.ename%<b>TYPE</b>;<br>  emp_salary emp.sal%<b>TYPE</b>;<br>  emp_number emp.empno%<b>TYPE</b> := 9999;<br><b>BEGIN</b><br>  <b>SELECT</b> ename, sal <b>INTO</b> emp_name, emp_salary <b>FROM</b> emp <b>WHERE</b> empno = emp_number;<br><br>  DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_name);<br>  DBMS_OUTPUT.PUT_LINE('Salary: ' || emp_salary);<br><br><b>EXCEPTION</b><br>  -- Handle case when no employee is found<br>  <b>WHEN NO_DATA_FOUND THEN</b><br>    DBMS_OUTPUT.PUT_LINE('No employee found with EMPNO = ' || emp_number);<br><b>END;</b>",
+                    "output": "No employee found with EMPNO = 9999\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.010"
+                },
+                {
+                    "question": "Write a PL/SQL block to handle TOO_MANY_ROWS exception. (Exception Basics)",
+                    "sql": "<b>DECLARE</b><br> emp_name emp.ename%<b>TYPE</b>;<br> emp_salary emp.sal%<b>TYPE</b>;<br><b>BEGIN</b><br> <b>SELECT</b> ename, sal <b>INTO</b> emp_name, emp_salary <b>FROM</b> emp <b>WHERE</b> job = 'SALESMAN';<br><br> DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_name);<br> DBMS_OUTPUT.PUT_LINE('Salary: ' || emp_salary);<br><br><b>EXCEPTION</b><br> <b>WHEN NO_DATA_FOUND THEN</b><br> DBMS_OUTPUT.PUT_LINE('No employee found with the specified criteria.');<br> <b>WHEN TOO_MANY_ROWS THEN</b><br> DBMS_OUTPUT.PUT_LINE('Error: More than one employee found for the criteria.');<br><b>END;</b>",
+                    "output": "Error: More than one employee found for the condition.\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.009"
+                },
+                {
+                    "question": "Write a PL/SQL block to handle ZERO_DIVIDE exception. (Exception Basics)",
+                    "sql": "<b>DECLARE</b><br> emp_salary emp.sal%<b>TYPE</b>;<br> bonus NUMBER := 0;<br> result NUMBER;<br><b>BEGIN</b><br> <b>SELECT</b> sal <b>INTO</b> emp_salary <b>FROM</b> emp <b>WHERE</b> ename = 'SCOTT';<br><br> result := emp_salary / bonus;<br><br> DBMS_OUTPUT.PUT_LINE('Result: ' || result);<br><br><b>EXCEPTION</b><br> <b>WHEN ZERO_DIVIDE THEN</b><br> DBMS_OUTPUT.PUT_LINE('Error: cannot be divide by zero.');<br><b>END;</b>",
+                    "output": "Error: cannot be divide by zero.\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.012"
+                },
+                {
+                    "question": "Write a PL/SQL block with a generic WHEN OTHERS exception handler.(Exception Basics)",
+                    "sql": "<b>DECLARE</b><br> emp_salary emp.sal%<b>TYPE</b>;<br> divisor NUMBER := 0;<br> result NUMBER;<br><b>BEGIN</b><br> <b>SELECT</b> sal <b>INTO</b> emp_salary <b>FROM</b> emp <b>WHERE</b> ename = 'SCOTT';<br><br> result := emp_salary / divisor;<br><br> DBMS_OUTPUT.PUT_LINE('Result: ' || result);<br><br><b>EXCEPTION</b><br> <b>WHEN OTHERS THEN</b><br> DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);<br><b>END;</b>",
+                    "output": "An unexpected error occurred: ORA-01476: divisor is equal to zero\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.010"
+                },
+                {
+                    "question": "Write a PL/SQL block to display error code and message using SQLCODE and SQLERRM.(Exception Variables)",
+                    "sql": "<b>DECLARE</b><br> emp_salary emp.sal%<b>TYPE</b>;<br> divisor NUMBER := 0;<br> result NUMBER;<br><b>BEGIN</b><br> <b>SELECT</b> sal <b>INTO</b> emp_salary <b>FROM</b> emp <b>WHERE</b> ename = 'SCOTT';<br><br> result := emp_salary / divisor;<br><br> DBMS_OUTPUT.PUT_LINE('Result: ' || result);<br><br><b>EXCEPTION</b><br> <b>WHEN OTHERS THEN</b><br> DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);<br> DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);<br><b>END;</b>",
+                    "output": "Error Code: -1476\nError Message: ORA-01476: divisor is equal to zero\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.011"
+                },
+                {
+                    "question": "Write a PL/SQL block to raise an error if salary is less than 2000 using RAISE_APPLICATION_ERROR.(RAISE_APPLICATION_ERROR)",
+                    "sql": "<b>DECLARE</b><br> emp_salary emp.sal%<b>TYPE</b>;<br><b>BEGIN</b><br> <b>SELECT</b> sal <b>INTO</b> emp_salary <b>FROM</b> emp <b>WHERE</b> ename = 'SCOTT';<br><br> <b>IF</b> emp_salary < 2000 <b>THEN</b><br> RAISE_APPLICATION_ERROR(-20001, 'Salary is less than 2000');<br> <b>END IF;</b><br><br> DBMS_OUTPUT.PUT_LINE('Salary is OK: ' || emp_salary);<br><br><b>EXCEPTION</b><br> <b>WHEN OTHERS THEN</b><br> DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);<br> DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);<br><b>END;</b>",
+                    "output": "Salary is OK: 3000\n\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.011"
+                },
+                {
+                    "question": "Write a PL/SQL block to validate employee age and raise custom error if age < 18.(RAISE_APPLICATION_ERROR)",
+                    "sql": "<b>DECLARE</b><br> emp_age NUMBER := 16;<br><b>BEGIN</b><br> <b>IF</b> emp_age < 18 <b>THEN</b><br> RAISE_APPLICATION_ERROR(-20002, 'Employee age must be at least 18');<br> <b>END IF;</b><br><br> DBMS_OUTPUT.PUT_LINE('Employee age is valid: ' || emp_age);<br><br><b>EXCEPTION</b><br> <b>WHEN OTHERS THEN</b><br> DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);<br> DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);<br><b>END;</b>",
+                    "output": "Error Code: -20002\nError Message: ORA-20002: Employee age must be at least 18\n\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.012"
+                },
+                {
+                    "question": "Write a PL/SQL block to raise an error when invalid department number is entered.(Validation Logic)",
+                    "sql": "<b>DECLARE</b><br> dept_number NUMBER :=80;<br> count_dept NUMBER;<br><b>BEGIN</b><br> <b>SELECT</b> COUNT(*) <b>INTO</b> count_dept <b>FROM</b> dept <b>WHERE</b> deptno = dept_number;<br><br> <b>IF</b> count_dept = 0 <b>THEN</b><br> RAISE_APPLICATION_ERROR(-20003, 'Invalid department number: ' || dept_number);<br> <b>END IF;</b><br><br> DBMS_OUTPUT.PUT_LINE('Department number is valid: ' || dept_number);<br><br><b>EXCEPTION</b><br> <b>WHEN OTHERS THEN</b><br> DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);<br> DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);<br><b>END;</b>",
+                    "output": "Error Code: -20003\nError Message: ORA-20003: Invalid department number: 80.\n\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.013"
+                },
+                {
+                    "question": "Write a PL/SQL block to declare and handle a user-defined exception.(User Defined Exception)",
+                    "sql": "<b>DECLARE</b><br> invalid_salary EXCEPTION;<br> salary NUMBER := 1500;<br><b>BEGIN</b><br> <b>IF</b> salary < 2000 <b>THEN</b><br> <b>RAISE</b> invalid_salary;<br> <b>END IF;</b><br><br> DBMS_OUTPUT.PUT_LINE('Salary is valid: ' || salary);<br><br><b>EXCEPTION</b><br> <b>WHEN</b> invalid_salary <b>THEN</b><br> DBMS_OUTPUT.PUT_LINE('Error: Salary cannot be less than 2000');<br> <b>WHEN OTHERS THEN</b><br> DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);<br> DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);<br><b>END;</b>",
+                    "output": "Error: Salary cannot be less than 2000\n\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.011"
+                },
+                {
+                    "question": "Write a PL/SQL block to handle multiple user-defined exceptions.(Multiple Exceptions)",
+                    "sql": "<b>DECLARE</b><br>  low_salary <b>EXCEPTION</b>;<br>  invalid_age <b>EXCEPTION</b>;<br>  salary <b>NUMBER</b> := 1500;<br>  age <b>NUMBER</b> := 16;<br><b>BEGIN</b><br>  <b>IF</b> salary &lt; 2000 <b>THEN</b><br>    <b>RAISE</b> low_salary;<br>  <b>END IF</b>;<br><br>  <b>IF</b> age &lt; 18 <b>THEN</b><br>    <b>RAISE</b> invalid_age;<br>  <b>END IF</b>;<br><br>  DBMS_OUTPUT.PUT_LINE('Salary and age are valid');<br><br><b>EXCEPTION</b><br>  <b>WHEN</b> low_salary <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Error: Salary cannot be less than 2000');<br>  <b>WHEN</b> invalid_age <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Error: Employee must be at least 18 years old');<br>  <b>WHEN</b> OTHERS <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);<br>    DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);<br><b>END</b>;",
+                    "output": "Error: Salary cannot be less than 2000\n\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.011"
+                },
+                {
+                    "question": "Write a PL/SQL block where exception is handled in inner block and re-raised to outer block.(Nested Blocks + Re-raise)",
+                    "sql": "<b>DECLARE</b><br>  emp_salary emp.sal%TYPE;<br>  divisor <b>NUMBER</b> := 0;<br>  result <b>NUMBER</b>;<br><b>BEGIN</b><br>  <b>BEGIN</b><br>    SELECT sal<br>    INTO emp_salary<br>    FROM emp<br>    WHERE ename = 'SCOTT';<br><br>    result := emp_salary / divisor;<br><br>    DBMS_OUTPUT.PUT_LINE('Result: ' || result);<br>  <b>EXCEPTION</b><br>    <b>WHEN</b> ZERO_DIVIDE <b>THEN</b><br>      DBMS_OUTPUT.PUT_LINE('Inner Block: Caught ZERO_DIVIDE, re-raising.');<br>      <b>RAISE</b>;<br>  <b>END</b>;<br><br><b>EXCEPTION</b><br>  <b>WHEN</b> ZERO_DIVIDE <b>THEN</b><br>    DBMS_OUTPUT.PUT_LINE('Outer Block: ZERO_DIVIDE handled again.');<br><b>END</b>;",
+                    "output": "Inner Block: Caught ZERO_DIVIDE, re-raising.\nOuter Block: ZERO_DIVIDE handled again.\n\nPL/SQL procedure successfully completed.\nElapsed: 00:00:00.012"
+                }, 
+            ],
+            "Triggers": [
+                {
+                    "question": "Write a trigger to display a message whenever a record is inserted into EMP table. (Trigger Basics)",
+                    sql: "<b>CREATE OR REPLACE TRIGGER</b> emp_insert_msg\n<b>AFTER INSERT ON</b> EMP\n<b>FOR EACH ROW</b>\n<b>BEGIN</b>\n    DBMS_OUTPUT.PUT_LINE('A new employee has been inserted ');\n<b>END;</b>\n/\n\n<b>INSERT INTO</b> EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) <b>VALUES</b> (8300, 'DAKSHI', 'ANALYST', 7566, <b>TO_DATE</b>('08-APR-2026','DD-MON-YYYY'), 4000, (null), 20);\n<b>COMMIT;</b>",
+                    "output": "Trigger EMP_INSERT_MSG compiled\nElapsed: 00:00:00.025\n\nA new employee has been inserted\n1 row inserted.\nElapsed: 00:00:00.003"
+                },
+                {
+                    "question": "Write a trigger that fires before inserting data into EMP table. (BEFORE INSERT Trigger)",
+
+                    sql: "<b>CREATE OR REPLACE TRIGGER</b> emp_before_insert\n<b>BEFORE INSERT ON</b> EMP\n<b>FOR EACH ROW</b>\n<b>BEGIN</b>\n DBMS_OUTPUT.PUT_LINE('About to insert employee:');\n<b>END;</b>\n/\n\n<b>INSERT INTO</b> EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) <b>VALUES</b> (9400, 'ANITA', 'ANALYST', 7566, <b>TO_DATE</b>('08-APR-2026','DD-MON-YYYY'), 4000, (null), 20);",
+                    "output": "Trigger EMP_BEFORE_INSERT compiled\nElapsed: 00:00:00.022\n\nAbout to insert employee\nA new employee has been inserted.\n1 row inserted.\nElapsed: 00:00:00.010"
+                },
+                {
+                    "question": "Write a trigger that fires after deleting a record from EMP table. (AFTER DELETE Trigger)",
+                    sql: "<b>CREATE OR REPLACE TRIGGER</b> emp_after_delete\n<b>AFTER DELETE ON</b> EMP\n<b>FOR EACH ROW</b>\n<b>BEGIN</b>\n DBMS_OUTPUT.PUT_LINE('Employee deleted' );\n<b>END;</b>\n/\n\n<b>DELETE FROM</b> EMP <b>WHERE</b> EMPNO = 9400;",
+                    "output": "Trigger EMP_AFTER_DELETE compiled\nElapsed: 00:00:00.015\n\nEmployee deleted\n1 row deleted..\nElapsed: 00:00:00.010"
+                },
+                {
+                    "question": "Write a trigger to prevent deletion from EMP table. (BEFORE DELETE Trigger)",
+                    
+sql: "<b>CREATE OR REPLACE TRIGGER</b> emp_prevent_delete\n<b>BEFORE DELETE ON</b> EMP\n<b>FOR EACH ROW</b>\n<b>BEGIN</b>\n RAISE_APPLICATION_ERROR(-20002, 'Deletion is not allowed from EMP table!');\n<b>END;</b>\n/\n\n<b>DELETE FROM</b> EMP <b>WHERE</b> EMPNO = 8100;",
+                    "output": "Trigger EMP_PREVENT_DELETE compiled\nElapsed: 00:00:00.022\n\n0 rows deleted..\nElapsed: 00:00:00.004"
+                },
+                {
+                    "question": "Write a trigger to display a message when employee salary is updated. (AFTER UPDATE Trigger)",                   
+sql: "<b>CREATE OR REPLACE TRIGGER</b> emp_after_salary_update\n<b>AFTER UPDATE OF</b> SAL <b>ON</b> EMP\n<b>FOR EACH ROW</b>\n<b>BEGIN</b>\n DBMS_OUTPUT.PUT_LINE('Salary updated for employee');\n<b>END;</b>\n/\n\n<b>UPDATE</b> EMP <b>SET</b> SAL = SAL + 500 <b>WHERE</b> EMPNO = 9400;",
+                    "output": "Trigger EMP_AFTER_SALARY_UPDATE compiled\nElapsed: 00:00:00.015\n\nSalary updated for employee\n1 row updated.\nElapsed: 00:00:00.010"
+                },
+                {
+                    "question": "Write a row-level trigger to display old and new salary when salary is updated. (:OLD and :NEW)",
+                    
+sql: "<b>CREATE OR REPLACE TRIGGER</b> emp_salary_change\n<b>AFTER UPDATE OF</b> SAL <b>ON</b> EMP\n<b>FOR EACH ROW</b>\n<b>BEGIN</b>\n DBMS_OUTPUT.PUT_LINE('Employee: ' || :NEW.ENAME || \n ', EMPNO: ' || :NEW.EMPNO || \n ', Old SAL: ' || :OLD.SAL || \n ', New SAL: ' || :NEW.SAL);\n<b>END;</b>\n/\n\n<b>UPDATE</b> EMP <b>SET</b> SAL = SAL + 400 <b>WHERE</b> EMPNO = 7876;",
+                    "output": "Trigger EMP_SALARY_CHANGE compiled\nElapsed: 00:00:00.015\n\nEmployee: ADAMS, EMPNO: 7876, Old SAL: 1100, New SAL: 1500\nSalary updated for employee\n1 row updated.\nElapsed: 00:00:00.010"
+                },
+                {
+                    "question": "Write a trigger to copy deleted records into another table (audit table).(AFTER DELETE + Logging)",
+                    sql: "<b>CREATE TABLE</b> EMP_AUDIT (\n EMPNO NUMBER(4),\n ENAME VARCHAR2(10),\n JOB VARCHAR2(9),\n MGR NUMBER(4),\n HIREDATE DATE,\n SAL NUMBER(7,2),\n COMM NUMBER(7,2),\n DEPTNO NUMBER(2),\n DELETED_ON DATE\n);\n\n<b>CREATE OR REPLACE TRIGGER</b> emp_delete_audit\n<b>AFTER DELETE ON</b> EMP\n<b>FOR EACH ROW</b>\n<b>BEGIN</b>\n <b>INSERT INTO</b> EMP_AUDIT (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, DELETED_ON)\n <b>VALUES</b> (:OLD.EMPNO, :OLD.ENAME, :OLD.JOB, :OLD.MGR, :OLD.HIREDATE, :OLD.SAL, :OLD.COMM, :OLD.DEPTNO, SYSDATE);\n\n DBMS_OUTPUT.PUT_LINE('Deleted employee logged: ' || :OLD.ENAME || ', EMPNO: ' || :OLD.EMPNO);\n<b>END;</b>\n/\n\n<b>ALTER TRIGGER</b> emp_prevent_delete <b>DISABLE</b>;\n\n<b>DELETE FROM</b> EMP\n<b>WHERE</b> EMPNO = 7876;",
+                    "output": "Table EMP_AUDIT created.\nTrigger EMP_SALARY_CHANGE compiled\nElapsed: 00:00:00.015\n\nTrigger EMP_PREVENT_DELETE altered.\n\nDeleted employee logged: ADAMS, EMPNO: 7876\nEmployee deleted\n1 row updated.\nElapsed: 00:00:00.010"
+                },                
+            ]
+        };
