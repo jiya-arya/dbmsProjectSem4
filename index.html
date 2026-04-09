@@ -1,5 +1,3 @@
-<!-- website link - https://jiya-arya.github.io/dbmsProjectSem4/ -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,14 +15,12 @@
             --text-dark: #334155;
             --text-light: #64748b;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Quicksand', sans-serif;
         }
-
         body {
             background: linear-gradient(135deg, #ffffff 0%, var(--pastel-blue) 100%);
             color: var(--text-dark);
@@ -32,8 +28,6 @@
             display: flex;
             flex-direction: column;
         }
-
-        /* --- Minimalist Navbar --- */
         nav {
             padding: 1.2rem 8%;
             display: flex;
@@ -43,14 +37,12 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
-
         .nav-brand {
             font-weight: 700;
             font-size: 1.1rem;
             letter-spacing: 1px;
             color: var(--accent);
         }
-
         .nav-session {
             font-size: 0.85rem;
             font-weight: 600;
@@ -59,8 +51,6 @@
             padding: 4px 12px;
             border-radius: 20px;
         }
-
-        /* --- Hero Content --- */
         .main-hero {
             flex: 1;
             display: flex;
@@ -70,7 +60,6 @@
             padding: 2rem;
             text-align: center;
         }
-
         .project-tag {
             background: var(--pastel-purple);
             color: #7e22ce;
@@ -82,21 +71,17 @@
             margin-bottom: 1rem;
             letter-spacing: 1px;
         }
-
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: #1e293b;
         }
-
         .subtitle {
             font-size: 1.1rem;
             color: var(--text-light);
             margin-bottom: 2.5rem;
         }
-
-        /* --- Student Identity Card --- */
         .identity-card {
             background: white;
             padding: 2rem;
@@ -107,7 +92,6 @@
             border: 1px solid rgba(255,255,255,0.8);
             margin-bottom: 2.5rem;
         }
-
         .id-row {
             display: flex;
             justify-content: space-between;
@@ -115,9 +99,9 @@
             padding: 0.8rem 0;
             border-bottom: 1px solid #f1f5f9;
         }
-
-        .id-row:last-child { border-bottom: none; }
-
+        .id-row:last-child {
+            border-bottom: none;
+        }
         .label {
             font-size: 0.75rem;
             font-weight: 700;
@@ -125,21 +109,17 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .value {
             font-size: 1rem;
             font-weight: 600;
             color: var(--text-dark);
         }
-
-        /* --- CTA Section (Buttons) --- */
         .cta-container {
             display: flex;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .btn-group {
             display: flex;
             flex-direction: column;
@@ -147,7 +127,6 @@
             gap: 10px;
             width: 260px;
         }
-
         .btn-enter {
             width: 100%;
             background: var(--accent);
@@ -164,38 +143,14 @@
             align-items: center;
             gap: 8px;
         }
-
-        /* Different color for the Lab Work button */
-        .btn-lab {
-            background: #6366f1;
-        }
-
         .btn-enter:hover {
             transform: translateY(-4px);
             box-shadow: 0 15px 30px rgba(129, 140, 248, 0.3);
             filter: brightness(1.1);
         }
-
-        .btn-desc {
-            font-size: 0.75rem;
-            color: var(--text-light);
-            font-weight: 500;
-            max-width: 200px;
-            line-height: 1.3;
-        }
-
-        footer {
-            padding: 1.5rem;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        /* Animations */
         .fade-in {
             animation: fadeIn 1s ease-out;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -203,18 +158,14 @@
     </style>
 </head>
 <body>
-
     <nav>
         <div class="nav-brand">SUBMISSION PORTFOLIO</div>
         <div class="nav-session">JIYA | 7011/24 | BCA 4 SEM</div>
     </nav>
-
     <main class="main-hero">
         <div class="project-tag fade-in">Final Project Submission</div>
         <h1 class="fade-in">DBMS Practical Implementation</h1>
-        <p class="subtitle fade-in">A comprehensive record of solved Oracle SQL queries.</p>
-
-        <!-- Identity Card -->
+        <p class="subtitle fade-in">Assignment record for Oracle SQL and PL/SQL implementation.</p>
         <div class="identity-card fade-in">
             <div class="id-row">
                 <span class="label">Student Name</span>
@@ -233,32 +184,13 @@
                 <span class="value">DBMS (Oracle SQL)</span>
             </div>
         </div>
-
-        <!-- Two Path Selection -->
         <div class="cta-container fade-in">
-            
-            <!-- Button Group 1 -->
             <div class="btn-group">
                 <a href="html/dashboard.html" class="btn-enter">
-                    General Topics <span>&rarr;</span>
+                    View Topics <span>&rarr;</span>
                 </a>
-                <p class="btn-desc">Comprehensive list of 20 solved assignment topics.</p>
             </div>
-
-            <!-- Button Group 2 -->
-            <div class="btn-group">
-                <a href="html/oracle-practice" class="btn-enter btn-lab">
-                    Oracle Lab Work <span>&rarr;</span>
-                </a>
-                <p class="btn-desc">Solved queries based on standard EMP & DEPT tables.</p>
-            </div>
-
         </div>
     </main>
-
-    <!-- <footer>
-        Submitted to Department of Computer Applications
-    </footer> -->
-
 </body>
 </html>
