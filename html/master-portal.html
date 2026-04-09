@@ -220,6 +220,64 @@
             background: #cbd5e1;
             border-radius: 10px;
         }
+
+        /* --- Responsive Styles for Mobile --- */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column; /* Stack sidebar on top of content */
+                overflow: auto; /* Allow the page to scroll naturally */
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%; /* Sidebar takes full width on mobile */
+                height: auto;
+                padding: 1rem;
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                position: sticky;
+                top: 0;
+                background: white;
+            }
+
+            .sidebar h2 {
+                margin-bottom: 1rem;
+                font-size: 0.7rem;
+            }
+
+            .topic-list {
+                display: flex; /* Make the list horizontal on mobile */
+                overflow-x: auto;
+                gap: 8px;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .topic-item {
+                white-space: nowrap; /* Prevent text from wrapping */
+                margin-bottom: 0;
+                padding: 8px 15px;
+            }
+
+            .main-content {
+                padding: 1.5rem 1rem; /* Reduce padding on mobile */
+                overflow: visible;
+            }
+
+            .header h1 {
+                font-size: 1.2rem; /* Shrink title slightly */
+            }
+
+            .query-card {
+                padding: 1.5rem; /* Less padding inside the card */
+                margin-bottom: 1.5rem;
+            }
+
+            .q-badge {
+                left: 15px; /* Move badge inside the card boundaries */
+                top: -15px;
+            }
+        }
     </style>
 </head>
 
@@ -2531,7 +2589,7 @@
                     "output": "paste here"
                 }
             ],
-            "PLSQL: Packages (I’ll start this after understanding it a bit.)": [],
+            "PLSQL: Packages (I'll start this after understanding it a bit.)": [],
             "Exception Handling": [
                 {
                     "question": "Write a PL/SQL block to handle NO_DATA_FOUND exception while fetching employee details. (Exception Basics)",
