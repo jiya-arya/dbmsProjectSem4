@@ -1,0 +1,623 @@
+--1 Display employees whose salary is greater than JONES.
+SELECT ENAME
+FROM SCOTT.EMP
+WHERE SAL>(SELECT SAL 
+FROM SCOTT.EMP 
+WHERE ENAME='JONES');
+
+--2 Display employees earning the same salary as SCOTT.
+SELECT ENAME
+FROM SCOTT.EMP
+WHERE SAL=(SELECT SAL 
+FROM SCOTT.EMP 
+WHERE ENAME='SCOTT');
+
+--4 Display employees working in the same department as BLAKE.
+SELECT *
+FROM SCOTT.EMP
+WHERE DEPTNO = (
+    SELECT DEPTNO
+    FROM SCOTT.EMP
+    WHERE ENAME = 'BLAKE'
+);
+
+-- 3 Display employees hired after ALLEN.
+SELECT *
+FROM SCOTT.EMP
+WHERE HIREDATE > (
+    SELECT HIREDATE 
+    FROM SCOTT.EMP
+    WHERE ENAME = 'ALLEN'
+);
+
+--5 Display employees having the same job as MILLER.
+SELECT *
+FROM SCOTT.EMP
+WHERE JOB = (
+    SELECT JOB
+    FROM SCOTT.EMP
+    WHERE ENAME = 'MILLER'
+);
+
+--6 Display employees earning less than the average salary.
+SELECT *
+FROM SCOTT.EMP
+WHERE SAL > (
+    SELECT AVG(SAL)
+    FROM SCOTT.EMP
+);
+
+--7 Display employees earning more than the maximum salary of CLERKs.
+SELECT * 
+FROM SCOTT.EMP
+WHERE SAL > (
+    SELECT MAX(SAL)
+    FROM SCOTT.EMP
+    WHERE JOB='CLERK'
+);
+
+--8 Display employee(s) with the minimum salary.
+SELECT *
+FROM SCOTT.EMP
+WHERE SAL = (SELECT MIN(SAL) FROM SCOTT.EMP);
+
+--9 Display employee(s) with the maximum salary.
+SELECT *
+FROM SCOTT.EMP
+WHERE SAL = (SELECT MAX(SAL) FROM SCOTT.EMP);
+
+--10 Display employees working in departments located in NEW YORK.
+SELECT ENAME, DEPTNO
+FROM EMP
+WHERE DEPTNO IN (
+    SELECT DEPTNO
+    FROM DEPT
+    WHERE LOC = 'NEW YORK'
+);
+
+-- 11 Display employees whose salary matches any salary in department 30.
+SELECT ENAME, SAL, DEPTNO
+FROM EMP
+WHERE SAL = ANY (
+    SELECT SAL
+    FROM EMP
+    WHERE DEPTNO = 30
+);
+
+-- 12 Display employees earning more than all CLERKs.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > ALL (
+    SELECT SAL
+    FROM EMP
+    WHERE JOB = 'CLERK'
+);
+
+-- 13 Display employees earning less than any MANAGER.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL < ANY (
+    SELECT SAL
+    FROM EMP
+    WHERE JOB = 'MANAGER'
+);
+
+-- 14 Display employees whose job appears in department 20.
+SELECT ENAME, JOB
+FROM EMP
+WHERE JOB IN (
+    SELECT JOB
+    FROM EMP
+    WHERE DEPTNO = 20
+);
+
+-- 15 Display employees whose department has at least one SALESMAN.
+SELECT ENAME, DEPTNO
+FROM EMP E
+WHERE EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+    AND JOB = 'SALESMAN'
+);
+
+-- 16 Display employees earning the same salary as any CLERK.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL = ANY (
+    SELECT SAL
+    FROM EMP
+    WHERE JOB = 'CLERK'
+);
+
+-- 17 Display employees who are not working in departments of SALESMAN.
+SELECT ENAME, DEPTNO
+FROM EMP
+WHERE DEPTNO NOT IN (
+    SELECT DEPTNO
+    FROM EMP
+    WHERE JOB = 'SALESMAN'
+);
+
+-- 18 Display employees earning more than all employees in department 10.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > ALL (
+    SELECT SAL
+    FROM EMP
+    WHERE DEPTNO = 10
+);
+
+-- 19 Display employees whose department number is among departments with more than 3 employees.
+SELECT ENAME, DEPTNO
+FROM EMP
+WHERE DEPTNO IN (
+    SELECT DEPTNO
+    FROM EMP
+    GROUP BY DEPTNO
+    HAVING COUNT(*) > 3
+);
+
+-- 20 Display employees whose salary is greater than salary of their manager.
+SELECT ENAME, SAL
+FROM EMP E
+WHERE SAL > (
+    SELECT SAL
+    FROM EMP
+    WHERE EMPNO = E.MGR
+);
+
+-- 21 Display jobs where average salary is greater than overall average salary.
+SELECT JOB
+FROM EMP
+GROUP BY JOB
+HAVING AVG(SAL) > (
+    SELECT AVG(SAL)
+    FROM EMP
+);
+
+-- 22 Display employees earning more than the department average salary.
+SELECT ENAME, SAL, DEPTNO
+FROM EMP E
+WHERE SAL > (
+    SELECT AVG(SAL)
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+);
+
+-- 23 Display employees earning the highest salary in each department.
+SELECT ENAME, SAL, DEPTNO
+FROM EMP E
+WHERE SAL = (
+    SELECT MAX(SAL)
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+);
+
+-- 24 Display employees earning the lowest salary in each job.
+SELECT ENAME, SAL, JOB
+FROM EMP E
+WHERE SAL = (
+    SELECT MIN(SAL)
+    FROM EMP
+    WHERE JOB = E.JOB
+);
+
+-- 25 Display departments having total salary greater than department 20.
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING SUM(SAL) > (
+    SELECT SUM(SAL)
+    FROM EMP
+    WHERE DEPTNO = 20
+);
+
+-- 26 Display employees whose salary equals the maximum salary of their job.
+SELECT ENAME, SAL, JOB
+FROM EMP E
+WHERE SAL = (
+    SELECT MAX(SAL)
+    FROM EMP
+    WHERE JOB = E.JOB
+);
+
+-- 27 Display employees earning more than the overall average salary.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > (
+    SELECT AVG(SAL)
+    FROM EMP
+);
+
+-- 28 Display department(s) having the maximum number of employees.
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING COUNT(*) = (
+    SELECT MAX(COUNT(*))
+    FROM EMP
+    GROUP BY DEPTNO
+);
+
+-- 29 Display jobs having minimum average salary.
+SELECT JOB
+FROM EMP
+GROUP BY JOB
+HAVING AVG(SAL) = (
+    SELECT MIN(AVG(SAL))
+    FROM EMP
+    GROUP BY JOB
+);
+
+-- 30 Display employees earning more than the average salary of CLERKs.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > (
+    SELECT AVG(SAL)
+    FROM EMP
+    WHERE JOB = 'CLERK'
+);
+
+-- 31 Display department(s) where average salary is highest.
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING AVG(SAL) = (
+    SELECT MAX(AVG(SAL))
+    FROM EMP
+    GROUP BY DEPTNO
+);
+
+-- 32 Display employees earning more than the average salary of their own department.
+SELECT ENAME, SAL, DEPTNO
+FROM EMP E
+WHERE SAL > (
+    SELECT AVG(SAL)
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+);
+
+-- 33 Display employees earning the maximum salary in their department.
+SELECT ENAME, SAL, DEPTNO
+FROM EMP E
+WHERE SAL = (
+    SELECT MAX(SAL)
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+);
+
+-- 34 Display employees earning the minimum salary in their department.
+SELECT ENAME, SAL, DEPTNO
+FROM EMP E
+WHERE SAL = (
+    SELECT MIN(SAL)
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+);
+
+-- 35 Display employees whose salary is greater than the average salary of their job.
+SELECT ENAME, SAL, JOB
+FROM EMP E
+WHERE SAL > (
+    SELECT AVG(SAL)
+    FROM EMP
+    WHERE JOB = E.JOB
+);
+
+-- 36 Display employees who are the only employee in their department.
+SELECT ENAME, DEPTNO
+FROM EMP E
+WHERE 1 = (
+    SELECT COUNT(*)
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+);
+
+-- 37 Display departments having employees earning more than 5000.
+SELECT DISTINCT DEPTNO
+FROM EMP
+WHERE DEPTNO IN (
+    SELECT DEPTNO
+    FROM EMP
+    WHERE SAL > 5000
+);
+
+-- 38 Display employees whose department has more than 3 employees.
+SELECT ENAME, DEPTNO
+FROM EMP E
+WHERE DEPTNO IN (
+    SELECT DEPTNO
+    FROM EMP
+    GROUP BY DEPTNO
+    HAVING COUNT(*) > 3
+);
+
+-- 39 Display employees whose job has more than 2 employees.
+SELECT ENAME, JOB
+FROM EMP E
+WHERE JOB IN (
+    SELECT JOB
+    FROM EMP
+    GROUP BY JOB
+    HAVING COUNT(*) > 2
+);
+
+-- 40 Display employees working in departments where no one gets commission.
+SELECT ENAME, DEPTNO
+FROM EMP E
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+    AND COMM IS NOT NULL
+);
+
+-- 41 Display employees whose department has at least one manager.
+SELECT ENAME, DEPTNO
+FROM EMP E
+WHERE EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+    AND JOB = 'MANAGER'
+);
+
+-- 42 Display departments that have employees.
+SELECT DEPTNO
+FROM DEPT D
+WHERE EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE DEPTNO = D.DEPTNO
+);
+
+-- 43 Display departments that have no employees.
+SELECT DEPTNO
+FROM DEPT D
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE DEPTNO = D.DEPTNO
+);
+
+-- 44 Display employees who are managers (have subordinates).
+SELECT ENAME
+FROM EMP E
+WHERE EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE MGR = E.EMPNO
+);
+
+-- 45 Display employees who are not managers.
+SELECT ENAME
+FROM EMP E
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE MGR = E.EMPNO
+);
+
+-- 46 Display employees working in departments where SALESMAN exists.
+SELECT ENAME, DEPTNO
+FROM EMP E
+WHERE EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+    AND JOB = 'SALESMAN'
+);
+
+-- 47 Display departments where no SALESMAN exists.
+SELECT DEPTNO
+FROM DEPT D
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE DEPTNO = D.DEPTNO
+    AND JOB = 'SALESMAN'
+);
+
+-- 48 Display employees whose department has employees with commission.
+SELECT ENAME, DEPTNO
+FROM EMP E
+WHERE EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+    AND COMM IS NOT NULL
+);
+
+-- 49 Display departments where all employees get commission.
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING COUNT(*) = COUNT(COMM);
+
+-- 50 Display employees whose department has no CLERKs.
+SELECT ENAME, DEPTNO
+FROM EMP E
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+    AND JOB = 'CLERK'
+);
+
+-- 51 Display employees who work in departments located in CHICAGO.
+SELECT ENAME, DEPTNO
+FROM EMP
+WHERE DEPTNO IN (
+    SELECT DEPTNO
+    FROM DEPT
+    WHERE LOC = 'CHICAGO'
+);
+
+-- 52 Display department number and average salary of employees whose salary is greater than 2000.
+SELECT DEPTNO, AVG(SAL)
+FROM EMP
+WHERE SAL > 2000
+GROUP BY DEPTNO;
+
+-- 53 Display job and total salary of employees earning more than the department average.
+SELECT JOB, SUM(SAL)
+FROM EMP E
+WHERE SAL > (
+    SELECT AVG(SAL)
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+)
+GROUP BY JOB;
+
+-- 54 Display departments having average salary greater than overall average salary.
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING AVG(SAL) > (
+    SELECT AVG(SAL)
+    FROM EMP
+);
+
+-- 55 Display job-wise employee count from employees earning more than 1500.
+SELECT JOB, COUNT(*)
+FROM EMP
+WHERE SAL > 1500
+GROUP BY JOB;
+
+-- 56 Display departments having more than 2 employees earning commission.
+SELECT DEPTNO
+FROM EMP
+WHERE COMM IS NOT NULL
+GROUP BY DEPTNO
+HAVING COUNT(*) > 2;
+
+-- 57 Display job and maximum salary from employees hired after 1981.
+SELECT JOB, MAX(SAL)
+FROM EMP
+WHERE HIREDATE > '31-DEC-1981'
+GROUP BY JOB;
+
+-- 58 Display department-wise total salary excluding department 30.
+SELECT DEPTNO, SUM(SAL)
+FROM EMP
+WHERE DEPTNO <> 30
+GROUP BY DEPTNO;
+
+-- 59 Display departments having total salary greater than overall total salary average.
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING SUM(SAL) > (
+    SELECT AVG(SUM(SAL))
+    FROM EMP
+    GROUP BY DEPTNO
+);
+
+-- 60 Display job-wise average salary where department has more than 3 employees.
+SELECT JOB, AVG(SAL)
+FROM EMP
+WHERE DEPTNO IN (
+    SELECT DEPTNO
+    FROM EMP
+    GROUP BY DEPTNO
+    HAVING COUNT(*) > 3
+)
+GROUP BY JOB;
+
+-- 61 Display department and job having maximum total salary.
+SELECT DEPTNO, JOB
+FROM EMP
+GROUP BY DEPTNO, JOB
+HAVING SUM(SAL) = (
+    SELECT MAX(SUM(SAL))
+    FROM EMP
+    GROUP BY DEPTNO, JOB
+);
+
+-- 62 Display employees earning the second highest salary.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL = (
+    SELECT MAX(SAL)
+    FROM EMP
+    WHERE SAL < (
+        SELECT MAX(SAL)
+        FROM EMP
+    )
+);
+
+-- 63 Display employees earning more than the average salary of departments located in DALLAS.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > (
+    SELECT AVG(SAL)
+    FROM EMP
+    WHERE DEPTNO IN (
+        SELECT DEPTNO
+        FROM DEPT
+        WHERE LOC = 'DALLAS'
+    )
+);
+
+-- 64 Display departments where maximum salary equals minimum salary.
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING MAX(SAL) = MIN(SAL);
+
+-- 65 Display employees whose salary is less than all MANAGERS but more than any CLERK.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL < ALL (
+    SELECT SAL FROM EMP WHERE JOB = 'MANAGER'
+)
+AND SAL > ANY (
+    SELECT SAL FROM EMP WHERE JOB = 'CLERK'
+);
+
+-- 66 Display employees whose salary is equal to department-wise second highest salary.
+SELECT ENAME, SAL, DEPTNO
+FROM EMP E
+WHERE SAL = (
+    SELECT MAX(SAL)
+    FROM EMP
+    WHERE DEPTNO = E.DEPTNO
+    AND SAL < (
+        SELECT MAX(SAL)
+        FROM EMP
+        WHERE DEPTNO = E.DEPTNO
+    )
+);
+
+-- 67 Display employees earning more than the median salary.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > (
+    SELECT MEDIAN(SAL)
+    FROM EMP
+);
+
+-- 68 Display employees whose salary is greater than 50% of employees.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > (
+    SELECT MEDIAN(SAL)
+    FROM EMP
+);
+
+-- 69 Display employees earning the third highest salary.
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL = (
+    SELECT MAX(SAL)
+    FROM EMP
+    WHERE SAL < (
+        SELECT MAX(SAL)
+        FROM EMP
+        WHERE SAL < (
+            SELECT MAX(SAL)
+            FROM EMP
+        )
+    )
+);

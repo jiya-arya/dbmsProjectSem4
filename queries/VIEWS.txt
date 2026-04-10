@@ -1,0 +1,107 @@
+-- 1 create a view to display employee name, salary, and department number
+CREATE OR REPLACE VIEW emp_view1 AS
+SELECT ename, sal, deptno
+FROM emp;
+
+-- 2 create a view to display employee name and department name
+CREATE OR REPLACE VIEW emp_dept_view AS
+SELECT ENAME, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO;
+
+-- 3 create a view to display employees working in department 10
+CREATE VIEW dept10_view AS
+SELECT *
+FROM EMP
+WHERE DEPTNO = 10;
+
+-- 4 create a view with annual salary
+CREATE VIEW annual_salary_view AS
+SELECT ENAME, JOB, SAL*12 AS ANNUAL_SALARY
+FROM EMP;
+
+-- 5 create a view to display department name and location
+CREATE VIEW dept_view AS
+SELECT DNAME, LOC
+FROM DEPT;
+
+-- 6 create a view with employee name, department name, and location
+CREATE VIEW emp_full_view AS
+SELECT ENAME, DNAME, LOC
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO;
+
+-- 7 create a view for employees earning more than 3000
+CREATE VIEW high_salary_view AS
+SELECT *
+FROM EMP
+WHERE SAL > 3000;
+
+-- 8 create a view for department-wise total salary
+CREATE VIEW dept_total_sal AS
+SELECT DEPTNO, SUM(SAL) AS TOTAL_SAL
+FROM EMP
+GROUP BY DEPTNO;
+
+-- 9 create a view to display only managers
+CREATE VIEW manager_view AS
+SELECT *
+FROM EMP
+WHERE JOB = 'MANAGER';
+
+-- 10 create a view with column aliases
+CREATE VIEW alias_view AS
+SELECT ENAME AS EMP_NAME, SAL AS EMP_SAL
+FROM EMP;
+
+-- 11 create a view for department 20 with check option
+CREATE VIEW dept20_view AS
+SELECT *
+FROM EMP
+WHERE DEPTNO = 20
+WITH CHECK OPTION;
+
+-- 12 insert into view (valid insert)
+INSERT INTO dept20_view (EMPNO, ENAME, JOB, SAL, DEPTNO)
+VALUES (9001, 'TEST1', 'CLERK', 1000, 20);
+
+-- 13 insert into view (invalid insert)
+INSERT INTO dept20_view (EMPNO, ENAME, JOB, SAL, DEPTNO)
+VALUES (9002, 'TEST2', 'CLERK', 1000, 30);
+
+-- 15 create view with salary condition and check option
+CREATE VIEW sal_view AS
+SELECT *
+FROM EMP
+WHERE SAL > 2000
+WITH CHECK OPTION;
+
+-- 16 create read only view
+CREATE VIEW readonly_emp AS
+SELECT *
+FROM EMP
+WITH READ ONLY;
+
+-- 17 create read only view with join
+CREATE VIEW readonly_join AS
+SELECT ENAME, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+WITH READ ONLY;
+
+-- 21 create materialized view for employee name and salary
+CREATE MATERIALIZED VIEW mv_emp
+BUILD IMMEDIATE
+REFRESH COMPLETE
+AS
+SELECT ENAME, SAL
+FROM EMP;
+
+-- 26 create materialized view for department-wise total salary
+CREATE MATERIALIZED VIEW mv_dept_sal
+BUILD IMMEDIATE
+REFRESH COMPLETE
+AS
+SELECT DEPTNO, SUM(SAL) AS TOTAL_SAL
+FROM EMP
+GROUP BY DEPTNO;

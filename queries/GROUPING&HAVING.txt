@@ -1,0 +1,194 @@
+-- 1 display total number of employees
+SELECT COUNT(*) 
+FROM EMP;
+
+-- 2 display total salary of all employees
+SELECT SUM(SAL) 
+FROM EMP;
+
+-- 3 display average salary
+SELECT AVG(SAL) 
+FROM EMP;
+
+-- 4 display highest salary
+SELECT MAX(SAL) 
+FROM EMP;
+
+-- 5 display lowest salary
+SELECT MIN(SAL) 
+FROM EMP;
+
+-- 6 display total number of departments in emp
+SELECT COUNT(DISTINCT DEPTNO) 
+FROM EMP;
+
+-- 7 display number of managers
+SELECT COUNT(*) 
+FROM EMP
+WHERE JOB = 'MANAGER';
+
+-- 8 display total commission
+SELECT SUM(COMM) 
+FROM EMP;
+
+-- 10 display employees getting commission
+SELECT COUNT(*) 
+FROM EMP
+WHERE COMM IS NOT NULL;
+
+-- 11 display department-wise total salary
+SELECT DEPTNO, SUM(SAL)
+FROM EMP
+GROUP BY DEPTNO;
+
+-- 12 display department-wise average salary
+SELECT DEPTNO, AVG(SAL)
+FROM EMP
+GROUP BY DEPTNO;
+
+-- 13 display department-wise number of employees
+SELECT DEPTNO, COUNT(*)
+FROM EMP
+GROUP BY DEPTNO;
+
+-- 14 display job-wise number of employees
+SELECT JOB, COUNT(*)
+FROM EMP
+GROUP BY JOB;
+
+-- 15 display job-wise total salary
+SELECT JOB, SUM(SAL)
+FROM EMP
+GROUP BY JOB;
+
+-- 16 display job-wise maximum salary
+SELECT JOB, MAX(SAL)
+FROM EMP
+GROUP BY JOB;
+
+-- 18 display department-wise maximum salary
+SELECT DEPTNO, MAX(SAL)
+FROM EMP
+GROUP BY DEPTNO;
+
+-- 21 display department-wise job-wise number of employees
+SELECT DEPTNO, JOB, COUNT(*)
+FROM EMP
+GROUP BY DEPTNO, JOB;
+
+-- 22 display department-wise job-wise total salary
+SELECT DEPTNO, JOB, SUM(SAL)
+FROM EMP
+GROUP BY DEPTNO, JOB;
+
+-- 26 display department and job having highest total salary
+SELECT DEPTNO, JOB, SUM(SAL)
+FROM EMP
+GROUP BY DEPTNO, JOB
+HAVING SUM(SAL) = (
+    SELECT MAX(SUM(SAL))
+    FROM EMP
+    GROUP BY DEPTNO, JOB
+);
+
+-- 27 display department with maximum total salary
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING SUM(SAL) = (
+    SELECT MAX(SUM(SAL))
+    FROM EMP
+    GROUP BY DEPTNO
+);
+
+-- 28 display job having minimum average salary
+SELECT JOB
+FROM EMP
+GROUP BY JOB
+HAVING AVG(SAL) = (
+    SELECT MIN(AVG(SAL))
+    FROM EMP
+    GROUP BY JOB
+);
+
+-- 30 display department having highest number of employees
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING COUNT(*) = (
+    SELECT MAX(COUNT(*))
+    FROM EMP
+    GROUP BY DEPTNO
+);
+
+-- 34 display department having minimum total salary
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING SUM(SAL) = (
+    SELECT MIN(SUM(SAL))
+    FROM EMP
+    GROUP BY DEPTNO
+);
+
+-- 35 display job having highest average salary
+SELECT JOB
+FROM EMP
+GROUP BY JOB
+HAVING AVG(SAL) = (
+    SELECT MAX(AVG(SAL))
+    FROM EMP
+    GROUP BY JOB
+);
+
+-- 37 display job-wise count of employees not getting commission
+SELECT JOB, COUNT(*)
+FROM EMP
+WHERE COMM IS NULL
+GROUP BY JOB;
+
+-- 42 display number of employees without commission
+SELECT COUNT(*)
+FROM EMP
+WHERE COMM IS NULL;
+
+-- 45 display job-wise total commission
+SELECT JOB, SUM(COMM)
+FROM EMP
+GROUP BY JOB;
+
+-- 49 display job-wise avg salary where total salary > 5000
+SELECT JOB, AVG(SAL)
+FROM EMP
+GROUP BY JOB
+HAVING SUM(SAL) > 5000;
+
+-- 50 display dept-wise total salary where employee count > 4
+SELECT DEPTNO, SUM(SAL)
+FROM EMP
+GROUP BY DEPTNO
+HAVING COUNT(*) > 4;
+
+-- 53 display jobs having more than 2 employees
+SELECT JOB
+FROM EMP
+GROUP BY JOB
+HAVING COUNT(*) > 2;
+
+-- 56 display departments having more than 3 employees
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING COUNT(*) > 3;
+
+-- 58 display job-wise max salary where salary > 1500
+SELECT JOB, MAX(SAL)
+FROM EMP
+WHERE SAL > 1500
+GROUP BY JOB;
+
+-- 60 display job-wise avg salary where dept is 20
+SELECT JOB, AVG(SAL)
+FROM EMP
+WHERE DEPTNO = 20
+GROUP BY JOB;

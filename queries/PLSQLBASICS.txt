@@ -1,0 +1,164 @@
+-- 1 print your name and city
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Jiya');
+    DBMS_OUTPUT.PUT_LINE('chandigarh');
+END;
+/
+
+-- 2 display numbers from 1 to 5
+BEGIN
+    
+        DBMS_OUTPUT.PUT_LINE(1);
+        DBMS_OUTPUT.PUT_LINE(2);
+        DBMS_OUTPUT.PUT_LINE(3);
+        DBMS_OUTPUT.PUT_LINE(4);
+        DBMS_OUTPUT.PUT_LINE(5);
+   
+END;
+/
+
+-- 3 print current system date
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(SYSDATE);
+END;
+/
+
+-- 4 display employee name and salary using variables
+DECLARE
+    ename_var EMP.ENAME%TYPE;
+    sal_var EMP.SAL%TYPE;
+BEGIN
+    SELECT ENAME, SAL INTO ename_var, sal_var
+    FROM EMP
+    WHERE EMPNO = 4300;
+
+    DBMS_OUTPUT.PUT_LINE(ename_var || ' ' || sal_var);
+END;
+/
+
+-- 5 declare variable and assign age
+DECLARE
+    age NUMBER := 20;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(age);
+END;
+/
+
+-- 6 declare two variables and print sum
+DECLARE
+    a NUMBER := 10;
+    b NUMBER := 20;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(a + b);
+END;
+/
+
+-- 7 store employee name and salary and display
+DECLARE
+    name_var EMP.ENAME%TYPE;
+    salary_var EMP.SAL%TYPE;
+BEGIN
+    SELECT ENAME, SAL INTO name_var, salary_var
+    FROM EMP
+    WHERE EMPNO = 7499;
+
+    DBMS_OUTPUT.PUT_LINE(name_var || ' ' || salary_var);
+END;
+/
+
+-- 8 swap two numbers
+DECLARE
+    a NUMBER := 10;
+    b NUMBER := 20;
+    temp NUMBER;
+BEGIN
+    temp := a;
+    a := b;
+    b := temp;
+
+    DBMS_OUTPUT.PUT_LINE('A=' || a || ' B=' || b);
+END;
+/
+
+-- 9 calculate area of rectangle
+DECLARE
+    l NUMBER := 5;
+    w NUMBER := 4;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Area=' || (l*w));
+END;
+/
+
+-- 10 calculate area of circle using constant PI
+DECLARE
+    r NUMBER := 7;
+    pi CONSTANT NUMBER := 3.14;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Area=' || (pi*r*r));
+END;
+/
+
+-- 11 calculate salary after tax
+DECLARE
+    sal NUMBER := 5000;
+    tax CONSTANT NUMBER := 0.1;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('After Tax=' || (sal - sal*tax));
+END;
+/
+
+-- 13 simple interest using constant rate
+DECLARE
+    p NUMBER := 1000;
+    r CONSTANT NUMBER := 0.05;
+    t NUMBER := 2;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('SI=' || (p*r*t));
+END;
+/
+
+-- 14 using different datatypes
+DECLARE
+    num NUMBER := 100;
+    name VARCHAR2(20) := 'Jiya';
+    d DATE := SYSDATE;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(num || ' ' || name || ' ' || d);
+END;
+/
+
+-- 15 declare variable using %TYPE
+DECLARE
+    sal_var EMP.SAL%TYPE;
+BEGIN
+    SELECT SAL INTO sal_var FROM EMP WHERE EMPNO = 7369;
+    DBMS_OUTPUT.PUT_LINE(sal_var);
+END;
+/
+
+-- 16 declare record using %ROWTYPE
+DECLARE
+    emp_rec EMP%ROWTYPE;
+BEGIN
+    SELECT * INTO emp_rec FROM EMP WHERE EMPNO = 7369;
+    DBMS_OUTPUT.PUT_LINE(emp_rec.ENAME || ' ' || emp_rec.SAL);
+END;
+/
+
+-- 17 store and display current date
+DECLARE
+    d DATE := SYSDATE;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(d);
+END;
+/
+
+-- 21 calculate bonus (10% of salary)
+DECLARE
+    sal NUMBER := 4000;
+    bonus NUMBER;
+BEGIN
+    bonus := sal * 0.1;
+    DBMS_OUTPUT.PUT_LINE('Bonus=' || bonus);
+END;
+/

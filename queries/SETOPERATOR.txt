@@ -1,0 +1,59 @@
+-- 1 display all department numbers from both EMP and DEPT using UNION
+SELECT DEPTNO FROM EMP
+UNION
+SELECT DEPTNO FROM DEPT;
+
+-- 2 display all department numbers including duplicates using UNION ALL
+SELECT DEPTNO FROM EMP
+UNION ALL
+SELECT DEPTNO FROM DEPT;
+
+-- 3 display department numbers present in both EMP and DEPT
+SELECT DEPTNO FROM EMP
+INTERSECT
+SELECT DEPTNO FROM DEPT;
+
+-- 4 display department numbers present in EMP but not in DEPT
+SELECT DEPTNO FROM EMP
+MINUS
+SELECT DEPTNO FROM DEPT;
+
+-- 5 display department numbers in DEPT not assigned to any employee
+SELECT DEPTNO FROM DEPT
+MINUS
+SELECT DEPTNO FROM EMP;
+
+-- 6 display employee names and department names in single column
+SELECT ENAME AS NAME FROM EMP
+UNION
+SELECT DNAME FROM DEPT;
+
+-- 7 display all employee names and department names including duplicates
+SELECT ENAME FROM EMP
+UNION ALL
+SELECT DNAME FROM DEPT;
+
+-- 9 display employee names that are not department names
+SELECT ENAME FROM EMP
+MINUS
+SELECT DNAME FROM DEPT;
+
+-- 11 display employee names from department 10 and 20 using UNION
+SELECT ENAME FROM EMP WHERE DEPTNO = 10
+UNION
+SELECT ENAME FROM EMP WHERE DEPTNO = 20;
+
+-- 12 display employee names from department 10 and 20 including duplicates
+SELECT ENAME FROM EMP WHERE DEPTNO = 10
+UNION ALL
+SELECT ENAME FROM EMP WHERE DEPTNO = 20;
+
+-- 16 display all unique jobs and department names
+SELECT JOB FROM EMP
+UNION
+SELECT DNAME FROM DEPT;
+
+-- 25 combine employees with salary > 3000 and job = 'MANAGER'
+SELECT ENAME FROM EMP WHERE SAL > 3000
+UNION
+SELECT ENAME FROM EMP WHERE JOB = 'MANAGER';

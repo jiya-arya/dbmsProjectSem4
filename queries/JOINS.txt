@@ -1,0 +1,117 @@
+-- 1 display employee name and department name
+SELECT ENAME, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO;
+
+-- 2 display employee name, salary, and department location
+SELECT ENAME, SAL, LOC
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO;
+
+-- 3 display employee name and department name for department 10
+SELECT ENAME, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+AND E.DEPTNO = 10;
+
+-- 4 display employee name and department name where salary > 2000
+SELECT ENAME, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+AND SAL > 2000;
+
+-- 5 display employee name, job, and department name
+SELECT ENAME, JOB, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO;
+
+-- 6 display employee name and department location for clerks
+SELECT ENAME, LOC
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+AND JOB = 'CLERK';
+
+-- 7 display employee name and department name working in NEW YORK
+SELECT ENAME, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+AND LOC = 'NEW YORK';
+
+-- 8 display employee name, department number, and department name
+SELECT ENAME, E.DEPTNO, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO;
+
+-- 9 display employees hired after 1981 with department name
+SELECT ENAME, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+AND HIREDATE > TO_DATE('31-DEC-1981','DD-MON-YYYY');
+
+-- 10 display employees with commission along with department name
+SELECT ENAME, COMM, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+AND COMM IS NOT NULL;
+
+-- 11 display employees whose salary is between 1500 and 3000 with department
+SELECT ENAME, SAL, DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+AND SAL BETWEEN 1500 AND 3000;
+
+-- 19 display employees who are highest paid in their department
+SELECT ENAME, SAL, DEPTNO
+FROM EMP E
+WHERE SAL = (SELECT MAX(SAL)
+             FROM EMP
+             WHERE DEPTNO = E.DEPTNO);
+
+-- 20 display employees earning more than their department average
+SELECT ENAME, SAL, DEPTNO
+FROM EMP E
+WHERE SAL > (SELECT AVG(SAL)
+             FROM EMP
+             WHERE DEPTNO = E.DEPTNO);
+
+-- 21 display department with maximum employees
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING COUNT(*) = (SELECT MAX(COUNT(*))
+                   FROM EMP
+                   GROUP BY DEPTNO);
+
+-- 23 display department name and average salary
+SELECT DNAME, AVG(SAL)
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+GROUP BY DNAME;
+
+-- 24 display department name and total salary
+SELECT DNAME, SUM(SAL)
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+GROUP BY DNAME;
+
+-- 25 display department name and number of employees
+SELECT DNAME, COUNT(*)
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+GROUP BY DNAME;
+
+-- 26 display employees not assigned to any department
+SELECT ENAME
+FROM EMP
+WHERE DEPTNO IS NULL;
+
+-- 27 display departments with no employees
+SELECT DNAME
+FROM DEPT
+WHERE DEPTNO NOT IN (SELECT DEPTNO FROM EMP);
+
+-- 28 display all departments with employees (even if no employees)
+SELECT DNAME, ENAME
+FROM DEPT D LEFT JOIN EMP E
+ON D.DEPTNO = E.DEPTNO;
+

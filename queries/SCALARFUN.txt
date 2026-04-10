@@ -1,0 +1,126 @@
+-- 1 display employee name, hire date, and current date. also calculate days worked
+SELECT ENAME, HIREDATE, SYSDATE,
+       (SYSDATE - HIREDATE) AS DAYS_WORKED
+FROM EMP;
+
+-- 2 display employee name and hire date in format Monday, January 01, 2024
+SELECT ENAME,
+       TO_CHAR(HIREDATE, 'Day, Month DD, YYYY') AS FORMATTED_DATE
+FROM EMP;
+
+-- 3 find employees who joined in same month as current date
+SELECT ENAME, HIREDATE
+FROM EMP
+WHERE TO_CHAR(HIREDATE, 'MM') = TO_CHAR(SYSDATE, 'MM');
+
+-- 4 display next Monday after hire date
+SELECT ENAME,
+       NEXT_DAY(HIREDATE, 'MONDAY') AS NEXT_MONDAY
+FROM EMP;
+
+-- 5 display last day of joining month
+SELECT ENAME,
+       LAST_DAY(HIREDATE) AS LAST_DAY
+FROM EMP;
+
+-- 7 display number of months worked
+SELECT ENAME,
+       MONTHS_BETWEEN(SYSDATE, HIREDATE) AS MONTHS_WORKED
+FROM EMP;
+
+-- 8 display hire date after adding 3 years 6 months
+SELECT ENAME, HIREDATE,
+       ADD_MONTHS(HIREDATE, 42) AS NEW_DATE
+FROM EMP;
+
+-- 9 find employees hired between given dates
+SELECT ENAME, HIREDATE
+FROM EMP
+WHERE HIREDATE BETWEEN TO_DATE('01-JAN-1981','DD-MON-YYYY')
+                   AND TO_DATE('31-DEC-1981','DD-MON-YYYY');
+
+-- 10 display difference in years between sysdate and hiredate
+SELECT ENAME,
+       ROUND(MONTHS_BETWEEN(SYSDATE, HIREDATE)/12) AS YEARS
+FROM EMP;
+
+-- 11 display salary rounded to nearest 1000
+SELECT ENAME,
+       ROUND(SAL, -3) AS ROUNDED_SAL
+FROM EMP;
+
+-- 13 display square root of salary
+SELECT ENAME,
+       SQRT(SAL) AS SQRT_SAL
+FROM EMP;
+
+-- 14 absolute difference between salary and 5000
+SELECT ENAME,
+       ABS(SAL - 5000) AS DIFFERENCE
+FROM EMP;
+
+-- 17 generate random number between 1 and 500
+SELECT ENAME,
+       TRUNC(DBMS_RANDOM.VALUE(1,501)) AS RANDOM_NUM
+FROM EMP;
+
+-- 20 round salary to nearest hundred and thousand
+SELECT ENAME,
+       ROUND(SAL, -2) AS NEAREST_100,
+       ROUND(SAL, -3) AS NEAREST_1000
+FROM EMP;
+
+-- 21 display names in uppercase and lowercase
+SELECT UPPER(ENAME) AS UPPER_NAME,
+       LOWER(ENAME) AS LOWER_NAME
+FROM EMP;
+
+-- 22 display employee name and length
+SELECT ENAME,
+       LENGTH(ENAME) AS NAME_LENGTH
+FROM EMP;
+
+-- 23 display first 4 characters of name
+SELECT ENAME,
+       SUBSTR(ENAME,1,4) AS FIRST4
+FROM EMP;
+
+-- 24 concatenate name and job
+SELECT ENAME || ' - ' || JOB AS DETAILS
+FROM EMP;
+
+-- 25 replace A with #
+SELECT REPLACE(ENAME,'A','#') AS MODIFIED_NAME
+FROM EMP;
+
+-- 28 display name in initcap format
+SELECT INITCAP(ENAME) AS FORMATTED_NAME
+FROM EMP;
+
+-- 32 display names starting with S
+SELECT ENAME
+FROM EMP
+WHERE ENAME LIKE 'S%';
+
+-- 36 convert sysdate to DD/MM/YYYY
+SELECT TO_CHAR(SYSDATE,'DD/MM/YYYY') AS TODAY
+FROM DUAL;
+
+-- 38 convert salary to currency format
+SELECT ENAME,
+       TO_CHAR(SAL,'99,999') AS SALARY
+FROM EMP;
+
+-- 47 display commission or 'No Commission'
+SELECT ENAME,
+       NVL(TO_CHAR(COMM),'No Commission') AS COMMISSION
+FROM EMP;
+
+-- 55 categorize employees based on experience
+SELECT ENAME,
+       CASE 
+           WHEN MONTHS_BETWEEN(SYSDATE,HIREDATE)/12 < 5 THEN 'LOW'
+           WHEN MONTHS_BETWEEN(SYSDATE,HIREDATE)/12 BETWEEN 5 AND 10 THEN 'MEDIUM'
+           ELSE 'HIGH'
+       END AS EXPERIENCE
+FROM EMP;

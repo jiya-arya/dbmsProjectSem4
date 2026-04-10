@@ -1,0 +1,292 @@
+-- 1 check if a number is positive
+DECLARE
+    n NUMBER := 10;
+BEGIN
+    IF n > 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Positive');
+    END IF;
+END;
+/
+
+-- 2 check if employee salary > 3000
+DECLARE
+    sal NUMBER := 3500;
+BEGIN
+    IF sal > 3000 THEN
+        DBMS_OUTPUT.PUT_LINE('Salary > 3000');
+    END IF;
+END;
+/
+
+-- 3 check if number is even
+DECLARE
+    n NUMBER := 4;
+BEGIN
+    IF MOD(n,2)=0 THEN
+        DBMS_OUTPUT.PUT_LINE('Even');
+    END IF;
+END;
+/
+
+-- 4 display message if today is Monday
+BEGIN
+    IF TO_CHAR(SYSDATE,'DAY') LIKE 'MONDAY%' THEN
+        DBMS_OUTPUT.PUT_LINE('Today is Monday');
+    END IF;
+END;
+/
+
+-- 5 check divisible by 5
+DECLARE
+    n NUMBER := 25;
+BEGIN
+    IF MOD(n,5)=0 THEN
+        DBMS_OUTPUT.PUT_LINE('Divisible by 5');
+    END IF;
+END;
+/
+
+-- 6 check even or odd
+DECLARE
+    n NUMBER := 7;
+BEGIN
+    IF MOD(n,2)=0 THEN
+        DBMS_OUTPUT.PUT_LINE('Even');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Odd');
+    END IF;
+END;
+/
+
+-- 7 check positive or negative
+DECLARE
+    n NUMBER := -5;
+BEGIN
+    IF n >= 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Positive');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Negative');
+    END IF;
+END;
+/
+
+-- 8 compare two numbers
+DECLARE
+    a NUMBER := 10;
+    b NUMBER := 20;
+BEGIN
+    IF a > b THEN
+        DBMS_OUTPUT.PUT_LINE(a);
+    ELSE
+        DBMS_OUTPUT.PUT_LINE(b);
+    END IF;
+END;
+/
+
+-- 9 check pass or fail
+DECLARE
+    marks NUMBER := 55;
+BEGIN
+    IF marks >= 40 THEN
+        DBMS_OUTPUT.PUT_LINE('Pass');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Fail');
+    END IF;
+END;
+/
+
+-- 10 check salary above average (fixed value)
+DECLARE
+    sal NUMBER := 2500;
+    avg NUMBER := 2000;
+BEGIN
+    IF sal > avg THEN
+        DBMS_OUTPUT.PUT_LINE('Above Avg');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Below Avg');
+    END IF;
+END;
+/
+
+-- 11 assign grades using IF-ELSIF
+DECLARE
+    marks NUMBER := 75;
+BEGIN
+    IF marks >= 80 THEN
+        DBMS_OUTPUT.PUT_LINE('A');
+    ELSIF marks >= 60 THEN
+        DBMS_OUTPUT.PUT_LINE('B');
+    ELSIF marks >= 40 THEN
+        DBMS_OUTPUT.PUT_LINE('C');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Fail');
+    END IF;
+END;
+/
+
+-- 12 greatest of three numbers
+DECLARE
+    a NUMBER := 10;
+    b NUMBER := 20;
+    c NUMBER := 15;
+BEGIN
+    IF a > b AND a > c THEN
+        DBMS_OUTPUT.PUT_LINE(a);
+    ELSIF b > c THEN
+        DBMS_OUTPUT.PUT_LINE(b);
+    ELSE
+        DBMS_OUTPUT.PUT_LINE(c);
+    END IF;
+END;
+/
+
+-- 13 check positive, negative or zero
+DECLARE
+    n NUMBER := 0;
+BEGIN
+    IF n > 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Positive');
+    ELSIF n < 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Negative');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Zero');
+    END IF;
+END;
+/
+
+-- 14 categorize salary
+DECLARE
+    sal NUMBER := 3200;
+BEGIN
+    IF sal > 5000 THEN
+        DBMS_OUTPUT.PUT_LINE('High');
+    ELSIF sal >= 3000 THEN
+        DBMS_OUTPUT.PUT_LINE('Medium');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Low');
+    END IF;
+END;
+/
+
+-- 16 CASE day of week
+DECLARE
+    d NUMBER := 3;
+BEGIN
+    CASE d
+        WHEN 1 THEN DBMS_OUTPUT.PUT_LINE('Monday');
+        WHEN 2 THEN DBMS_OUTPUT.PUT_LINE('Tuesday');
+        WHEN 3 THEN DBMS_OUTPUT.PUT_LINE('Wednesday');
+        ELSE DBMS_OUTPUT.PUT_LINE('Other');
+    END CASE;
+END;
+/
+
+-- 17 CASE grades
+DECLARE
+    marks NUMBER := 85;
+BEGIN
+    CASE 
+        WHEN marks >= 80 THEN DBMS_OUTPUT.PUT_LINE('A');
+        WHEN marks >= 60 THEN DBMS_OUTPUT.PUT_LINE('B');
+        ELSE DBMS_OUTPUT.PUT_LINE('Fail');
+    END CASE;
+END;
+/
+
+-- 18 CASE even or odd
+DECLARE
+    n NUMBER := 6;
+BEGIN
+    CASE MOD(n,2)
+        WHEN 0 THEN DBMS_OUTPUT.PUT_LINE('Even');
+        ELSE DBMS_OUTPUT.PUT_LINE('Odd');
+    END CASE;
+END;
+/
+
+-- 20 CASE salary category
+DECLARE
+    sal NUMBER := 4500;
+BEGIN
+    CASE 
+        WHEN sal > 5000 THEN DBMS_OUTPUT.PUT_LINE('High');
+        WHEN sal >= 3000 THEN DBMS_OUTPUT.PUT_LINE('Medium');
+        ELSE DBMS_OUTPUT.PUT_LINE('Low');
+    END CASE;
+END;
+/
+
+-- 21 print 1 to 10 skip 5
+BEGIN
+    FOR i IN 1..10 LOOP
+        IF i = 5 THEN CONTINUE; END IF;
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+/
+
+-- 22 print odd numbers 1 to 20
+BEGIN
+    FOR i IN 1..20 LOOP
+        IF MOD(i,2)=0 THEN CONTINUE; END IF;
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+/
+
+-- 23 skip multiples of 3
+BEGIN
+    FOR i IN 1..15 LOOP
+        IF MOD(i,3)=0 THEN CONTINUE; END IF;
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+/
+
+-- 25 exit loop when number reaches 5
+BEGIN
+    FOR i IN 1..10 LOOP
+        EXIT WHEN i = 5;
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+/
+
+-- 26 exit when sum exceeds 50
+DECLARE
+    sum_val NUMBER := 0;
+    i NUMBER := 1;
+BEGIN
+    LOOP
+        sum_val := sum_val + i;
+        EXIT WHEN sum_val > 50;
+        i := i + 1;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(sum_val);
+END;
+/
+
+-- 28 exit when condition met
+DECLARE
+    i NUMBER := 1;
+BEGIN
+    LOOP
+        EXIT WHEN i > 5;
+        DBMS_OUTPUT.PUT_LINE(i);
+        i := i + 1;
+    END LOOP;
+END;
+/
+
+-- 31 simple login system
+DECLARE
+    uname VARCHAR2(20) := 'admin';
+    pass VARCHAR2(20) := '123';
+BEGIN
+    IF uname = 'admin' AND pass = '123' THEN
+        DBMS_OUTPUT.PUT_LINE('Login Success');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Login Failed');
+    END IF;
+END;
+/

@@ -1,0 +1,315 @@
+-- 1 print numbers 1 to 5 using simple loop
+DECLARE
+    i NUMBER := 1;
+BEGIN
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+        i := i + 1;
+        EXIT WHEN i > 5;
+    END LOOP;
+END;
+/
+
+-- 2 display numbers 10 to 1
+DECLARE
+    i NUMBER := 10;
+BEGIN
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+        i := i - 1;
+        EXIT WHEN i < 1;
+    END LOOP;
+END;
+/
+
+-- 3 sum 1 to 10
+DECLARE
+    i NUMBER := 1;
+    s NUMBER := 0;
+BEGIN
+    LOOP
+        s := s + i;
+        i := i + 1;
+        EXIT WHEN i > 10;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(s);
+END;
+/
+
+-- 4 multiplication table using simple loop
+DECLARE
+    n NUMBER := 5;
+    i NUMBER := 1;
+BEGIN
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(n || '*' || i || '=' || (n*i));
+        i := i + 1;
+        EXIT WHEN i > 10;
+    END LOOP;
+END;
+/
+
+-- 5 even numbers 1 to 20
+DECLARE
+    i NUMBER := 1;
+BEGIN
+    LOOP
+        IF MOD(i,2)=0 THEN
+            DBMS_OUTPUT.PUT_LINE(i);
+        END IF;
+        i := i + 1;
+        EXIT WHEN i > 20;
+    END LOOP;
+END;
+/
+
+-- 6 exit when number > 50
+DECLARE
+    i NUMBER := 1;
+BEGIN
+    LOOP
+        EXIT WHEN i > 50;
+        DBMS_OUTPUT.PUT_LINE(i);
+        i := i + 1;
+    END LOOP;
+END;
+/
+
+-- 7 numbers 1 to 10 using while
+DECLARE
+    i NUMBER := 1;
+BEGIN
+    WHILE i <= 10 LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+        i := i + 1;
+    END LOOP;
+END;
+/
+
+-- 8 factorial using while
+DECLARE
+    n NUMBER := 5;
+    f NUMBER := 1;
+BEGIN
+    WHILE n > 0 LOOP
+        f := f * n;
+        n := n - 1;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(f);
+END;
+/
+
+-- 9 sum of digits
+DECLARE
+    n NUMBER := 123;
+    s NUMBER := 0;
+BEGIN
+    WHILE n > 0 LOOP
+        s := s + MOD(n,10);
+        n := TRUNC(n/10);
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(s);
+END;
+/
+
+-- 10 reverse number
+DECLARE
+    n NUMBER := 123;
+    r NUMBER := 0;
+BEGIN
+    WHILE n > 0 LOOP
+        r := r*10 + MOD(n,10);
+        n := TRUNC(n/10);
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(r);
+END;
+/
+
+-- 11 palindrome check
+DECLARE
+    n NUMBER := 121;
+    temp NUMBER;
+    r NUMBER := 0;
+BEGIN
+    temp := n;
+    WHILE n > 0 LOOP
+        r := r*10 + MOD(n,10);
+        n := TRUNC(n/10);
+    END LOOP;
+    IF temp = r THEN
+        DBMS_OUTPUT.PUT_LINE('Palindrome');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Not Palindrome');
+    END IF;
+END;
+/
+
+-- 12 fibonacci series
+DECLARE
+    a NUMBER := 0;
+    b NUMBER := 1;
+    c NUMBER;
+    i NUMBER := 1;
+BEGIN
+    WHILE i <= 5 LOOP
+        DBMS_OUTPUT.PUT_LINE(a);
+        c := a + b;
+        a := b;
+        b := c;
+        i := i + 1;
+    END LOOP;
+END;
+/
+
+-- 13 numbers 1 to 10 using for
+BEGIN
+    FOR i IN 1..10 LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+/
+
+
+
+-- 15 sum first 10 numbers
+DECLARE
+    s NUMBER := 0;
+BEGIN
+    FOR i IN 1..10 LOOP
+        s := s + i;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(s);
+END;
+/
+
+-- 16 table of 5
+BEGIN
+    FOR i IN 1..10 LOOP
+        DBMS_OUTPUT.PUT_LINE('5*'||i||'='||(5*i));
+    END LOOP;
+END;
+/
+
+-- 17 squares 1 to 10
+BEGIN
+    FOR i IN 1..10 LOOP
+        DBMS_OUTPUT.PUT_LINE(i*i);
+    END LOOP;
+END;
+/
+
+-- 18 odd numbers 1 to 50
+BEGIN
+    FOR i IN 1..50 LOOP
+        IF MOD(i,2)!=0 THEN
+            DBMS_OUTPUT.PUT_LINE(i);
+        END IF;
+    END LOOP;
+END;
+/
+
+-- 19 star pattern
+BEGIN
+    FOR i IN 1..4 LOOP
+        FOR j IN 1..i LOOP
+            DBMS_OUTPUT.PUT('*');
+        END LOOP;
+        DBMS_OUTPUT.NEW_LINE;
+    END LOOP;
+END;
+/
+
+-- 20 tables 1 to 5
+BEGIN
+    FOR i IN 1..5 LOOP
+        FOR j IN 1..10 LOOP
+            DBMS_OUTPUT.PUT_LINE(i||'*'||j||'='||(i*j));
+        END LOOP;
+    END LOOP;
+END;
+/
+
+-- 21 number pattern
+BEGIN
+    FOR i IN 1..4 LOOP
+        FOR j IN 1..i LOOP
+            DBMS_OUTPUT.PUT(j);
+        END LOOP;
+        DBMS_OUTPUT.NEW_LINE;
+    END LOOP;
+END;
+/
+
+-- 22 skip multiples of 4
+BEGIN
+    FOR i IN 1..20 LOOP
+        IF MOD(i,4)=0 THEN CONTINUE; END IF;
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+/
+
+-- 23 stop when sum > 100
+DECLARE
+    s NUMBER := 0;
+BEGIN
+    FOR i IN 1..100 LOOP
+        s := s + i;
+        EXIT WHEN s > 100;
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+/
+
+-- 24 exit when divisible by 7
+BEGIN
+    FOR i IN 1..50 LOOP
+        IF MOD(i,7)=0 THEN EXIT; END IF;
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+END;
+/
+
+-- 25 display emp ids
+BEGIN
+    FOR rec IN (SELECT EMPNO FROM EMP) LOOP
+        DBMS_OUTPUT.PUT_LINE(rec.EMPNO);
+    END LOOP;
+END;
+/
+
+-- 26 increase salary by 10%
+BEGIN
+    FOR rec IN (SELECT EMPNO, SAL FROM EMP) LOOP
+        UPDATE EMP
+        SET SAL = SAL * 1.1
+        WHERE EMPNO = rec.EMPNO;
+    END LOOP;
+END;
+/
+
+
+
+
+
+-- 30 prime numbers 1 to 50
+DECLARE
+    i NUMBER;
+    j NUMBER;
+    flag NUMBER;
+BEGIN
+    FOR i IN 2..50 LOOP
+        flag := 0;
+        FOR j IN 2..i-1 LOOP
+            IF MOD(i,j)=0 THEN
+                flag := 1;
+                EXIT;
+            END IF;
+        END LOOP;
+        IF flag = 0 THEN
+            DBMS_OUTPUT.PUT_LINE(i);
+        END IF;
+    END LOOP;
+END;
+/
+

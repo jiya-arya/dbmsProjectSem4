@@ -1,0 +1,203 @@
+-- 1 display employees whose salary is greater than 3000
+SELECT ENAME, SAL
+FROM EMP
+WHERE SAL > 3000;
+
+-- 2 display employees working in department 10
+SELECT *
+FROM EMP
+WHERE DEPTNO = 10;
+
+-- 3 display employees whose job is clerk
+SELECT *
+FROM EMP
+WHERE JOB = 'CLERK';
+
+SELECT * FROM EMP;
+
+-- 4 display employees hired after 01-jan-81
+SELECT *
+FROM EMP
+WHERE HIREDATE > '01-JAN-1981';
+
+-- 5 display employees whose salary is less than 1500
+SELECT *
+FROM EMP
+WHERE SAL < 1500;
+
+-- 6 display employees with salary > 2000 and job manager
+SELECT *
+FROM EMP
+WHERE SAL > 2000 AND JOB = 'MANAGER';
+
+-- 7 display employees in dept 10 or 20
+SELECT *
+FROM EMP
+WHERE DEPTNO IN (10, 20);
+
+-- 8 display salesman with salary > 1500
+SELECT *
+FROM EMP
+WHERE JOB = 'SALESMAN' AND SAL > 1500;
+
+-- 9 display employees who are clerk or analyst
+SELECT *
+FROM EMP
+WHERE JOB IN ('CLERK', 'ANALYST');
+
+-- 10 display employees hired before 1982 in dept 30
+SELECT *
+FROM EMP
+WHERE HIREDATE < '01-JAN-1982'
+AND DEPTNO = 30;
+
+-- 11 display employees in dept 10, 20, 30
+SELECT *
+FROM EMP
+WHERE DEPTNO IN (10, 20, 30);
+
+-- 12 display employees not manager or clerk
+SELECT *
+FROM EMP
+WHERE JOB NOT IN ('MANAGER', 'CLERK');
+
+-- 13 display employees not in dept 10
+SELECT *
+FROM EMP
+WHERE DEPTNO <> 10;
+
+-- 14 display employees with salary between 1000 and 3000
+SELECT *
+FROM EMP
+WHERE SAL BETWEEN 1000 AND 3000;
+
+-- 15 display employees hired in 1981
+SELECT *
+FROM EMP
+WHERE HIREDATE BETWEEN '01-JAN-1981' AND '31-DEC-1981';
+
+-- 16 display employees ordered by salary asc
+SELECT *
+FROM EMP
+ORDER BY SAL ASC;
+
+-- 17 display employees ordered by salary desc
+SELECT *
+FROM EMP
+ORDER BY SAL DESC;
+
+-- 18 display employees ordered by hiredate
+SELECT *
+FROM EMP
+ORDER BY HIREDATE;
+
+-- 19 display employees ordered by deptno and salary
+SELECT *
+FROM EMP
+ORDER BY DEPTNO, SAL;
+
+-- 20 display employees ordered by job asc and salary desc
+SELECT *
+FROM EMP
+ORDER BY JOB ASC, SAL DESC;
+
+-- 21 display employee names alphabetically
+SELECT ENAME
+FROM EMP
+ORDER BY ENAME;
+
+-- 22 display dept 30 employees ordered by salary
+SELECT *
+FROM EMP
+WHERE DEPTNO = 30
+ORDER BY SAL;
+
+-- 23 display employees ordered by annual salary
+SELECT ENAME, SAL*12
+FROM EMP
+ORDER BY SAL*12;
+
+-- 24 display employees ordered by commission
+SELECT *
+FROM EMP
+ORDER BY COMM;
+
+-- 25 display employees ordered by job and name
+SELECT *
+FROM EMP
+ORDER BY JOB, ENAME;
+
+-- 26 display employee name as employee_name
+SELECT ENAME AS Employee_Name
+FROM EMP;
+
+-- 27 display salary as monthly_salary
+SELECT SAL AS Monthly_Salary
+FROM EMP;
+
+-- 28 display employee name and job with aliases
+SELECT ENAME AS Name, JOB AS Job
+FROM EMP;
+
+-- 29 display deptno as dept_no
+SELECT DEPTNO AS Dept_No
+FROM EMP;
+
+-- 30 display employee name and salary with aliases
+SELECT ENAME AS Name, SAL AS Salary
+FROM EMP;
+
+-- 31 display commission as incentive
+SELECT COMM AS Incentive
+FROM EMP;
+
+-- 32 display ename, job, salary with aliases ordered by job
+SELECT ENAME AS Name, JOB AS Job, SAL AS Salary
+FROM EMP
+ORDER BY JOB;
+
+-- 33 display dept 30 employees with salary > 1500 ordered by salary
+SELECT *
+FROM EMP
+WHERE DEPTNO = 30 AND SAL > 1500
+ORDER BY SAL;
+
+-- 34 display employees with non-null commission ordered by commission
+SELECT *
+FROM EMP
+WHERE COMM IS NOT NULL
+ORDER BY COMM;
+
+-- 35 display employees with salary between 1500 and 3000 ordered by salary
+SELECT *
+FROM EMP
+WHERE SAL BETWEEN 1500 AND 3000
+ORDER BY SAL;
+
+-- 36 display ename and deptno ordered by deptno and name
+SELECT ENAME, DEPTNO
+FROM EMP
+ORDER BY DEPTNO, ENAME;
+
+-- 37 display employees whose name starts with s ordered by salary
+SELECT *
+FROM EMP
+WHERE ENAME LIKE 'S%'
+ORDER BY SAL;
+
+-- 38 display employees hired before 1982 with aliases ordered by hiredate
+SELECT ENAME AS Name, HIREDATE AS Hire_Date
+FROM EMP
+WHERE HIREDATE < '01-JAN-1982'
+ORDER BY HIREDATE;
+
+-- 39 display name and pay for dept 10
+SELECT ENAME AS Name, SAL AS Pay
+FROM EMP
+WHERE DEPTNO = 10;
+
+-- 40 display employees with null commission ordered by salary desc
+SELECT *
+FROM EMP
+WHERE COMM IS NULL
+ORDER BY SAL DESC;

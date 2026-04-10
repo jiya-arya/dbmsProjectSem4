@@ -1,0 +1,151 @@
+-- 1 display employees whose name starts with a
+SELECT *
+FROM EMP
+WHERE ENAME LIKE 'A%';
+
+-- 2 display employees whose name starts with s
+SELECT *
+FROM EMP
+WHERE ENAME LIKE 'S%';
+
+-- 3 display employees whose name ends with n
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%N';
+
+-- 4 display employees whose name ends with r
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%R';
+
+-- 33 display employees whose name contains a and commission is null
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%A%' AND COMM IS NULL;
+
+-- 34 display employees whose job starts with c and salary < 1500
+SELECT *
+FROM EMP
+WHERE JOB LIKE 'C%' AND SAL < 1500;
+
+-- 35 display employees whose name ends with s and hired after 1981
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%S'
+AND HIREDATE > '31-DEC-1981';
+
+-- 5 display employees whose name contains ll
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%LL%';
+
+-- 6 display employees whose name contains ar
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%AR%';
+
+-- 7 display employees whose job starts with m
+SELECT *
+FROM EMP
+WHERE JOB LIKE 'M%';
+
+-- 8 display employees whose job ends with an
+SELECT *
+FROM EMP
+WHERE JOB LIKE '%AN';
+
+-- 9 display employees whose job contains cl
+SELECT *
+FROM EMP
+WHERE JOB LIKE '%CL%';
+
+-- 10 display departments whose location starts with n
+SELECT *
+FROM DEPT
+WHERE LOC LIKE 'N%';
+
+-- 11 display employees whose name has exactly 4 characters
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '____';
+
+-- 12 display employees whose name has exactly 5 characters
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '_____';
+
+-- 13 display employees whose name has a as second character
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '_A%';
+
+-- 14 display employees whose name has l as third character
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '__L%';
+
+-- 15 display employees whose job has exactly 6 characters
+SELECT *
+FROM EMP
+WHERE JOB LIKE '______';
+
+-- 18 display employees whose name starts with a and ends with n
+SELECT *
+FROM EMP
+WHERE ENAME LIKE 'A%N';
+
+-- 19 display employees whose name has exactly 2 characters before e
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '__E%';
+
+-- 20 display employees whose name has exactly 1 character after a
+SELECT *
+FROM EMP
+WHERE ENAME LIKE 'A_';
+
+-- 22 display employees whose name contains e
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%E%';
+
+-- 23 display employees whose name does not contain a
+SELECT *
+FROM EMP
+WHERE ENAME NOT LIKE '%A%';
+
+-- 24 display employees whose job contains man
+SELECT *
+FROM EMP
+WHERE JOB LIKE '%MAN%';
+
+-- 25 display employees whose job does not start with c
+SELECT *
+FROM EMP
+WHERE JOB NOT LIKE 'C%';
+
+-- 27 display employees whose name starts with j and has s anywhere
+SELECT *
+FROM EMP
+WHERE ENAME LIKE 'J%S%';
+
+-- 28 display employees whose job starts with s and ends with an
+SELECT *
+FROM EMP
+WHERE JOB LIKE 'S%AN';
+
+-- 29 display employees whose name has a as second last character
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%A_';
+
+-- 31 display employees whose name starts with s and salary > 2000
+SELECT *
+FROM EMP
+WHERE ENAME LIKE 'S%' AND SAL > 2000;
+
+-- 32 display employees whose job ends with man and deptno = 20
+SELECT *
+FROM EMP
+WHERE JOB LIKE '%MAN' AND DEPTNO = 20;
+

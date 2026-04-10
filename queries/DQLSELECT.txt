@@ -1,0 +1,37 @@
+-- 1 display all columns of emp table
+SELECT * FROM EMP;
+
+-- 2 display empno, ename and sal
+SELECT EMPNO, ENAME, SAL
+FROM EMP;
+
+-- 3 display unique job titles
+SELECT DISTINCT JOB
+FROM EMP;
+
+-- 4 display ename and deptno
+SELECT ENAME, DEPTNO
+FROM EMP;
+
+-- 5 display all dept details
+SELECT * FROM DEPT;
+
+-- 6 display distinct deptno from emp
+SELECT DISTINCT DEPTNO
+FROM EMP;
+
+-- 7 display ename and annual salary
+SELECT ENAME, SAL*12 AS ANNUAL_SALARY
+FROM EMP;
+
+-- 8 display ename, sal and comm
+SELECT ENAME, SAL, COMM
+FROM EMP;
+
+-- 9 display job and salary
+SELECT JOB, SAL
+FROM EMP;
+
+-- 10 display employees with manager number
+SELECT ENAME, MGR
+FROM EMP;

@@ -1,0 +1,136 @@
+-- 1 insert record into student table
+INSERT INTO STUDENT (SID, SNAME, AGE, COURSE)
+VALUES (101, 'RAHUL', 20, 'MCA');
+
+-- 2 insert record into employee table
+INSERT INTO EMPLOYEE (EID, ENAME, SALARY, DEPTNO)
+VALUES (201, 'ANITA', 45000, 10);
+
+-- 3 insert new department into dept table
+INSERT INTO DEPT (DEPTNO, DNAME, LOC)
+VALUES (50, 'TRAINING', 'DELHI');
+
+-- 4 insert into book (only selected columns)
+INSERT INTO BOOK (BOOK_ID, TITLE, PRICE)
+VALUES (1, 'SQL BASICS', 500);
+
+-- 5 insert multiple rows into course
+
+
+-- 6 insert data into emp_copy from emp
+INSERT INTO EMP_COPY
+SELECT * FROM EMP;
+
+-- 7 insert employees with salary > 3000 into emp_high_sal
+INSERT INTO EMP_HIGH_SAL
+SELECT * FROM EMP WHERE SAL > 3000;
+
+-- 8 insert employees hired after 1981 into emp_new_hire
+INSERT INTO EMP_NEW_HIRE
+SELECT * FROM EMP
+WHERE HIREDATE > '31-DEC-1981';
+
+-- 9 insert deptno and dname into dept_backup
+INSERT INTO DEPT_BACKUP (DEPTNO, DNAME)
+SELECT DEPTNO, DNAME FROM DEPT;
+
+-- 10 insert ename and salary into emp_salary_record
+INSERT INTO EMP_SALARY_RECORD (ENAME, SAL)
+SELECT ENAME, SAL FROM EMP;
+
+-- 11 update salary of smith
+UPDATE EMP
+SET SAL = 2000
+WHERE ENAME = 'SMITH';
+
+-- 12 increase salary of all employees by 10%
+UPDATE EMP
+SET SAL = SAL * 1.10;
+
+-- 13 update deptno of allen to 20
+UPDATE EMP
+SET DEPTNO = 20
+WHERE ENAME = 'ALLEN';
+
+-- 14 update commission of salesman to 500
+UPDATE EMP
+SET COMM = 500
+WHERE JOB = 'SALESMAN';
+
+-- 15 update job of miller to manager
+UPDATE EMP
+SET JOB = 'MANAGER'
+WHERE ENAME = 'MILLER';
+
+-- 16 increase salary of dept 10 by 20%
+UPDATE EMP
+SET SAL = SAL * 1.20
+WHERE DEPTNO = 10;
+
+-- 17 update salary of clerks to 1500
+UPDATE EMP
+SET SAL = 1500
+WHERE JOB = 'CLERK';
+
+-- 18 update location of dept 30
+UPDATE DEPT
+SET LOC = 'MUMBAI'
+WHERE DEPTNO = 30;
+
+-- 19 update null commission to 100
+UPDATE EMP
+SET COMM = 100
+WHERE COMM IS NULL;
+
+-- 20 update salary less than average
+UPDATE EMP
+SET SAL = SAL + 500
+WHERE SAL < (
+    SELECT AVG(SAL) FROM EMP
+);
+
+-- 21 delete smith
+DELETE FROM EMP
+WHERE ENAME = 'SMITH';
+
+-- 22 delete employees in dept 30
+DELETE FROM EMP
+WHERE DEPTNO = 30;
+
+-- 23 delete employees with salary < 1000
+DELETE FROM EMP
+WHERE SAL < 1000;
+
+-- 24 delete employees hired before 1981
+DELETE FROM EMP
+WHERE HIREDATE < '01-JAN-1981';
+
+-- 25 delete employees with no commission
+DELETE FROM EMP
+WHERE COMM IS NULL;
+
+-- 26 delete departments in chicago
+DELETE FROM DEPT
+WHERE LOC = 'CHICAGO';
+
+-- 27 delete clerks
+DELETE FROM EMP
+WHERE JOB = 'CLERK';
+
+-- 28 delete employees with minimum salary
+DELETE FROM EMP
+WHERE SAL = (
+    SELECT MIN(SAL) FROM EMP
+);
+
+-- 29 delete employees in departments located in new york
+DELETE FROM EMP
+WHERE DEPTNO IN (
+    SELECT DEPTNO
+    FROM DEPT
+    WHERE LOC = 'NEW YORK'
+);
+
+-- 30 delete employees with null manager
+DELETE FROM EMP
+WHERE MGR IS NULL;
