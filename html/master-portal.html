@@ -302,257 +302,257 @@
         // const assignmentData = {
         const assignmentData = {
             "DDL Commands": [
-                {
-                    question: "1. Create a table called STUDENT with columns SID, SNAME, AGE, COURSE",
-                    sql: "<b>CREATE TABLE</b> STUDENT (SID <b>NUMBER</b>, SNAME <b>VARCHAR2</b>(30), AGE <b>NUMBER</b>, COURSE <b>VARCHAR2</b>(20));",
-                    image: "./outputs/ddl/1.png"
-                },
-                {
-                    question: "2. Create a table EMPLOYEE with EID, ENAME, SALARY, DEPTNO",
-                    sql: "<b>CREATE TABLE</b> EMPLOYEE (EID <b>NUMBER</b>, ENAME <b>VARCHAR2</b>(40), SALARY <b>NUMBER</b>(8,2), DEPTNO <b>NUMBER</b>);",
-                    image: "./outputs/ddl/2.png"
-                },
-                {
-                    question: "3. Create a table DEPARTMENT with DEPTNO, DNAME, LOCATION",
-                    sql: "<b>CREATE TABLE</b> DEPARTMENT (DEPTNO <b>NUMBER</b>, DNAME <b>VARCHAR2</b>(30), LOCATION <b>VARCHAR2</b>(30));",
-                    image: "./outputs/ddl/3.png"
-                },
-                {
-                    question: "4. Create a table BOOK with BOOK_ID, TITLE, AUTHOR, PRICE",
-                    sql: "<b>CREATE TABLE</b> BOOK (BOOK_ID <b>NUMBER</b>, TITLE <b>VARCHAR2</b>(50), AUTHOR <b>VARCHAR2</b>(40), PRICE <b>NUMBER</b>);",
-                    image: "./outputs/ddl/4.png"
-                },
-                {
-                    question: "5. Create a table COURSE with CID, CNAME, DURATION",
-                    sql: "<b>CREATE TABLE</b> COURSE (CID <b>NUMBER</b>, CNAME <b>VARCHAR2</b>(40), DURATION <b>NUMBER</b>);",
-                    image: "./outputs/ddl/5.png"
-                },
-                {
-                    question: "6. Create a table PROJECT with PID, PNAME, START_DATE, END_DATE",
-                    sql: "<b>CREATE TABLE</b> PROJECT (PID <b>NUMBER</b>, PNAME <b>VARCHAR2</b>(50), START_DATE <b>DATE</b>, END_DATE <b>DATE</b>);",
-                    image: "./outputs/ddl/6.png"
-                },
-                {
-                    question: "7. Create a table CUSTOMER with CID, CNAME, CITY, PHONE",
-                    sql: "<b>CREATE TABLE</b> CUSTOMER (CID <b>NUMBER</b>, CNAME <b>VARCHAR2</b>(40), CITY <b>VARCHAR2</b>(30), PHONE <b>NUMBER</b>);",
-                    image: "./outputs/ddl/7.png"
-                },
-                {
-                    question: "8. Create a table SALES with SALE_ID, PRODUCT_NAME, QUANTITY, PRICE",
-                    sql: "<b>CREATE TABLE</b> SALES (SALE_ID <b>NUMBER</b>, PRODUCT_NAME <b>VARCHAR2</b>(50), QUANTITY <b>NUMBER</b>, PRICE <b>NUMBER</b>);",
-                    image: "./outputs/ddl/8.png"
-                },
-                {
-                    question: "9. Create EMP_COPY structure only",
-                    sql: "<b>CREATE TABLE</b> EMP_COPY <b>AS SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> 1=0;",
-                    image: "./outputs/ddl/9.png"
-                },
-                {
-                    question: "10. Create EMP_BACKUP with data",
-                    sql: "<b>CREATE TABLE</b> EMP_BACKUP <b>AS SELECT</b> * <b>FROM</b> EMP;",
-                    image: "./outputs/ddl/10.png"
-                },
-                {
-                    question: "11. Add EMAIL to STUDENT",
-                    sql: "<b>ALTER TABLE</b> STUDENT <b>ADD</b> EMAIL <b>VARCHAR2</b>(50);",
-                    image: "./outputs/ddl/11.png"
-                },
-                {
-                    question: "12. Add PHONE to EMPLOYEE",
-                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>ADD</b> PHONE <b>NUMBER</b>;",
-                    image: "./outputs/ddl/12.png"
-                },
-                {
-                    question: "13. Modify SNAME size",
-                    sql: "<b>ALTER TABLE</b> STUDENT <b>MODIFY</b> SNAME <b>VARCHAR2</b>(50);",
-                    image: "./outputs/ddl/13.png"
-                },
-                {
-                    question: "14. Modify SALARY datatype",
-                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>MODIFY</b> SALARY <b>NUMBER</b>(10,2);",
-                    image: "./outputs/ddl/14.png"
-                },
-                {
-                    question: "15. Add CITY and PINCODE",
-                    sql: "<b>ALTER TABLE</b> CUSTOMER <b>ADD</b> (CITY <b>VARCHAR2</b>(30), PINCODE <b>NUMBER</b>);",
-                    image: "./outputs/ddl/15.png"
-                },
-                {
-                    question: "16. Rename SNAME to STUDENT_NAME",
-                    sql: "<b>ALTER TABLE</b> STUDENT <b>RENAME COLUMN</b> SNAME <b>TO</b> STUDENT_NAME;",
-                    image: "./outputs/ddl/16.png"
-                },
-                {
-                    question: "17. Drop AGE column",
-                    sql: "<b>ALTER TABLE</b> STUDENT <b>DROP COLUMN</b> AGE;",
-                    image: "./outputs/ddl/17.png"
-                },
-                {
-                    question: "18. Set SALARY NOT NULL",
-                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>MODIFY</b> SALARY <b>NOT NULL</b>;",
-                    image: "./outputs/ddl/18.png"
-                },
-                {
-                    question: "19. Increase TITLE size",
-                    sql: "<b>ALTER TABLE</b> BOOK <b>MODIFY</b> TITLE <b>VARCHAR2</b>(100);",
-                    image: "./outputs/ddl/19.png"
-                },
-                {
-                    question: "20. Add MANAGER_ID",
-                    sql: "<b>ALTER TABLE</b> EMPLOYEE <b>ADD</b> MANAGER_ID <b>NUMBER</b>;",
-                    image: "./outputs/ddl/20.png"
-                },
-                {
-                    question: "21. Drop STUDENT table",
-                    sql: "<b>DROP TABLE</b> STUDENT;",
-                    image: "./outputs/ddl/21.png"
-                },
-                {
-                    question: "22. Drop CUSTOMER table",
-                    sql: "<b>DROP TABLE</b> CUSTOMER;",
-                    image: "./outputs/ddl/22.png"
-                },
-                {
-                    question: "23. Drop PROJECT permanently",
-                    sql: "<b>DROP TABLE</b> PROJECT <b>PURGE</b>;",
-                    image: "./outputs/ddl/23.png"
-                },
-                {
-                    question: "24. Drop SALES table",
-                    sql: "<b>DROP TABLE</b> SALES;",
-                    image: "./outputs/ddl/24.png"
-                },
-                {
-                    question: "25. Drop COURSE table",
-                    sql: "<b>DROP TABLE</b> COURSE;",
-                    image: "./outputs/ddl/25.png"
-                },
-                {
-                    question: "26. Rename STUDENT to STUDENTS",
-                    sql: "<b>RENAME</b> STUDENT <b>TO</b> STUDENTS;",
-                    image: "./outputs/ddl/26.png"
-                },
-                {
-                    question: "27. Rename EMPLOYEE to EMP_MASTER",
-                    sql: "<b>RENAME</b> EMPLOYEE <b>TO</b> EMP_MASTER;",
-                    image: "./outputs/ddl/27.png"
-                },
-                {
-                    question: "28. Rename CUSTOMER to CLIENT",
-                    sql: "<b>RENAME</b> CUSTOMER <b>TO</b> CLIENT;",
-                    image: "./outputs/ddl/28.png"
-                },
-                {
-                    question: "29. Rename BOOK to BOOK_DETAILS",
-                    sql: "<b>RENAME</b> BOOK <b>TO</b> BOOK_DETAILS;",
-                    image: "./outputs/ddl/29.png"
-                },
-                {
-                    question: "30. Rename PROJECT to PROJECT_INFO",
-                    sql: "<b>RENAME</b> PROJECT <b>TO</b> PROJECT_INFO;",
-                    image: "./outputs/ddl/30.png"
-                },
-                {
-                    question: "31. Delete all records from STUDENT",
-                    sql: "<b>DELETE FROM</b> STUDENT;",
-                    image: "./outputs/ddl/31.png"
-                },
-                {
-                    question: "32. Truncate EMPLOYEE",
-                    sql: "<b>TRUNCATE TABLE</b> EMPLOYEE;",
-                    image: "./outputs/ddl/32.png"
-                },
-                {
-                    question: "33. Truncate CUSTOMER",
-                    sql: "<b>TRUNCATE TABLE</b> CUSTOMER;",
-                    image: "./outputs/ddl/33.png"
-                },
-                {
-                    question: "34. Truncate SALES",
-                    sql: "<b>TRUNCATE TABLE</b> SALES;",
-                    image: "./outputs/ddl/34.png"
-                },
-                {
-                    question: "35. Truncate PROJECT",
-                    sql: "<b>TRUNCATE TABLE</b> PROJECT;",
-                    image: "./outputs/ddl/35.png"
-                },
-                {
-                    question: "36. Create TRAINING table",
-                    sql: "<b>CREATE TABLE</b> TRAINING (TID <b>NUMBER</b>, TNAME <b>VARCHAR2</b>(40), DURATION <b>NUMBER</b>);",
-                    image: "./outputs/ddl/36.png"
-                },
-                {
-                    question: "37. Add TRAINER_NAME",
-                    sql: "<b>ALTER TABLE</b> TRAINING <b>ADD</b> TRAINER_NAME <b>VARCHAR2</b>(40);",
-                    image: "./outputs/ddl/37.png"
-                },
-                {
-                    question: "38. Modify TNAME size",
-                    sql: "<b>ALTER TABLE</b> TRAINING <b>MODIFY</b> TNAME <b>VARCHAR2</b>(60);",
-                    image: "./outputs/ddl/38.png"
-                },
-                {
-                    question: "39. Rename TRAINING to TRAINING_PROGRAM",
-                    sql: "<b>RENAME</b> TRAINING <b>TO</b> TRAINING_PROGRAM;",
-                    image: "./outputs/ddl/39.png"
-                },
-                {
-                    question: "40. Truncate TRAINING_PROGRAM",
-                    sql: "<b>TRUNCATE TABLE</b> TRAINING_PROGRAM;",
-                    image: "./outputs/ddl/40.png"
-                },
-                {
-                    question: "41. Drop TRAINING_PROGRAM",
-                    sql: "<b>DROP TABLE</b> TRAINING_PROGRAM;",
-                    image: "./outputs/ddl/41.png"
-                },
-                {
-                    question: "42. Create EMP_PROJECT and modify",
-                    sql: "<b>CREATE TABLE</b> EMP_PROJECT (EMP_ID <b>NUMBER</b>, PROJECT_ID <b>NUMBER</b>, START_DATE <b>DATE</b>, END_DATE <b>DATE</b>, ROLE <b>VARCHAR2</b>(30)); <b>ALTER TABLE</b> EMP_PROJECT <b>MODIFY</b> ROLE <b>VARCHAR2</b>(50); <b>ALTER TABLE</b> EMP_PROJECT <b>ADD</b> STATUS <b>VARCHAR2</b>(20);",
-                    image: "./outputs/ddl/42.png"
-                },
-                {
-                    question: "43. Create PRODUCT and modify",
-                    sql: "<b>CREATE TABLE</b> PRODUCT (PID <b>NUMBER</b>, PNAME <b>VARCHAR2</b>(50), PRICE <b>NUMBER</b>, CATEGORY <b>VARCHAR2</b>(30)); <b>ALTER TABLE</b> PRODUCT <b>RENAME COLUMN</b> PNAME <b>TO</b> PRODUCT_NAME; <b>ALTER TABLE</b> PRODUCT <b>MODIFY</b> PRICE <b>NUMBER</b>(10,2);",
-                    image: "./outputs/ddl/43.png"
-                },
-                {
-                    question: "44. Create ORDERS and modify",
-                    sql: "<b>CREATE TABLE</b> ORDERS (ORDER_ID <b>NUMBER</b>, CUSTOMER_ID <b>NUMBER</b>, ORDER_DATE <b>DATE</b>, TOTAL_AMOUNT <b>NUMBER</b>); <b>ALTER TABLE</b> ORDERS <b>ADD</b> STATUS <b>VARCHAR2</b>(20); <b>ALTER TABLE</b> ORDERS <b>DROP COLUMN</b> TOTAL_AMOUNT; <b>ALTER TABLE</b> ORDERS <b>ADD</b> TOTAL_AMOUNT <b>NUMBER</b>(10,2);",
-                    image: "./outputs/ddl/44.png"
-                },
-                {
-                    question: "45. Create EMP_TEMP then rename, truncate, drop",
-                    sql: "<b>CREATE TABLE</b> EMP_TEMP <b>AS SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> SAL > 2000; <b>RENAME</b> EMP_TEMP <b>TO</b> EMP_HIGH_SALARY; <b>TRUNCATE TABLE</b> EMP_HIGH_SALARY; <b>DROP TABLE</b> EMP_HIGH_SALARY;",
-                    image: "./outputs/ddl/45.png"
-                },
-                {
-                    question: "46. Create STUDENT_RECORD and modify",
-                    sql: "<b>CREATE TABLE</b> STUDENT_RECORD (SID <b>NUMBER</b>, SNAME <b>VARCHAR2</b>(40), COURSE <b>VARCHAR2</b>(30), MARKS <b>NUMBER</b>); <b>ALTER TABLE</b> STUDENT_RECORD <b>ADD</b> GRADE <b>CHAR</b>(1); <b>ALTER TABLE</b> STUDENT_RECORD <b>MODIFY</b> MARKS <b>NUMBER</b>(5,2); <b>ALTER TABLE</b> STUDENT_RECORD <b>RENAME COLUMN</b> COURSE <b>TO</b> COURSE_NAME;",
-                    image: "./outputs/ddl/46.png"
-                },
-                {
-                    question: "47. Create EMP_ARCHIVE and modify",
-                    sql: "<b>CREATE TABLE</b> EMP_ARCHIVE <b>AS SELECT</b> * <b>FROM</b> EMP <b>WHERE</b> 1=0; <b>ALTER TABLE</b> EMP_ARCHIVE <b>ADD</b> ARCHIVE_DATE <b>DATE</b>; <b>RENAME</b> EMP_ARCHIVE <b>TO</b> EMP_HISTORY;",
-                    image: "./outputs/ddl/47.png"
-                },
-                {
-                    question: "48. Create DEPT_BACKUP and modify",
-                    sql: "<b>CREATE TABLE</b> DEPT_BACKUP <b>AS SELECT</b> * <b>FROM</b> DEPT; <b>ALTER TABLE</b> DEPT_BACKUP <b>DROP COLUMN</b> LOC; <b>ALTER TABLE</b> DEPT_BACKUP <b>ADD</b> LOCATION <b>VARCHAR2</b>(40);",
-                    image: "./outputs/ddl/48.png"
-                },
-                {
-                    question: "49. Create SALES_DATA and modify",
-                    sql: "<b>CREATE TABLE</b> SALES_DATA (SALE_ID <b>NUMBER</b>, PRODUCT_ID <b>NUMBER</b>, SALE_DATE <b>DATE</b>, AMOUNT <b>NUMBER</b>); <b>ALTER TABLE</b> SALES_DATA <b>ADD</b> REGION <b>VARCHAR2</b>(30); <b>ALTER TABLE</b> SALES_DATA <b>MODIFY</b> AMOUNT <b>NUMBER</b>(12,2); <b>RENAME</b> SALES_DATA <b>TO</b> REGIONAL_SALES_DATA;",
-                    image: "./outputs/ddl/49.png"
-                },
-                {
-                    question: "50. Create LOG_TABLE and modify",
-                    sql: "<b>CREATE TABLE</b> LOG_TABLE (LOG_ID <b>NUMBER</b>, USER_NAME <b>VARCHAR2</b>(30), ACTION <b>VARCHAR2</b>(50), LOG_DATE <b>DATE</b>); <b>TRUNCATE TABLE</b> LOG_TABLE; <b>RENAME</b> LOG_TABLE <b>TO</b> SYSTEM_LOG; <b>DROP TABLE</b> SYSTEM_LOG;",
-                    image: "./outputs/ddl/50.png"
-                }
-            ],
+    {
+        "question": "1. Create a table called STUDENT with columns SID, SNAME, AGE, COURSE",
+        "sql": "<b>CREATE TABLE</b> STUDENT (\n  SID <b>NUMBER</b>,\n  SNAME <b>VARCHAR2</b>(30),\n  AGE <b>NUMBER</b>,\n  COURSE <b>VARCHAR2</b>(20)\n);",
+        "image": "./outputs/ddl/1.png"
+    },
+    {
+        "question": "2. Create a table EMPLOYEE with EID, ENAME, SALARY, DEPTNO",
+        "sql": "<b>CREATE TABLE</b> EMPLOYEE (\n  EID <b>NUMBER</b>,\n  ENAME <b>VARCHAR2</b>(40),\n  SALARY <b>NUMBER</b>(8,2),\n  DEPTNO <b>NUMBER</b>\n);",
+        "image": "./outputs/ddl/2.png"
+    },
+    {
+        "question": "3. Create a table DEPARTMENT with DEPTNO, DNAME, LOCATION",
+        "sql": "<b>CREATE TABLE</b> DEPARTMENT (\n  DEPTNO <b>NUMBER</b>,\n  DNAME <b>VARCHAR2</b>(30),\n  LOCATION <b>VARCHAR2</b>(30)\n);",
+        "image": "./outputs/ddl/3.png"
+    },
+    {
+        "question": "4. Create a table BOOK with BOOK_ID, TITLE, AUTHOR, PRICE",
+        "sql": "<b>CREATE TABLE</b> BOOK (\n  BOOK_ID <b>NUMBER</b>,\n  TITLE <b>VARCHAR2</b>(50),\n  AUTHOR <b>VARCHAR2</b>(40),\n  PRICE <b>NUMBER</b>\n);",
+        "image": "./outputs/ddl/4.png"
+    },
+    {
+        "question": "5. Create a table COURSE with CID, CNAME, DURATION",
+        "sql": "<b>CREATE TABLE</b> COURSE (\n  CID <b>NUMBER</b>,\n  CNAME <b>VARCHAR2</b>(40),\n  DURATION <b>NUMBER</b>\n);",
+        "image": "./outputs/ddl/5.png"
+    },
+    {
+        "question": "6. Create a table PROJECT with PID, PNAME, START_DATE, END_DATE",
+        "sql": "<b>CREATE TABLE</b> PROJECT (\n  PID <b>NUMBER</b>,\n  PNAME <b>VARCHAR2</b>(50),\n  START_DATE <b>DATE</b>,\n  END_DATE <b>DATE</b>\n);",
+        "image": "./outputs/ddl/6.png"
+    },
+    {
+        "question": "7. Create a table CUSTOMER with CID, CNAME, CITY, PHONE",
+        "sql": "<b>CREATE TABLE</b> CUSTOMER (\n  CID <b>NUMBER</b>,\n  CNAME <b>VARCHAR2</b>(40),\n  CITY <b>VARCHAR2</b>(30),\n  PHONE <b>NUMBER</b>\n);",
+        "image": "./outputs/ddl/7.png"
+    },
+    {
+        "question": "8. Create a table SALES with SALE_ID, PRODUCT_NAME, QUANTITY, PRICE",
+        "sql": "<b>CREATE TABLE</b> SALES (\n  SALE_ID <b>NUMBER</b>,\n  PRODUCT_NAME <b>VARCHAR2</b>(50),\n  QUANTITY <b>NUMBER</b>,\n  PRICE <b>NUMBER</b>\n);",
+        "image": "./outputs/ddl/8.png"
+    },
+    {
+        "question": "9. Create EMP_COPY structure only",
+        "sql": "<b>CREATE TABLE</b> EMP_COPY\n<b>AS SELECT</b> *\n<b>FROM</b> EMP\n<b>WHERE</b> 1=0;",
+        "image": "./outputs/ddl/9.png"
+    },
+    {
+        "question": "10. Create EMP_BACKUP with data",
+        "sql": "<b>CREATE TABLE</b> EMP_BACKUP\n<b>AS SELECT</b> *\n<b>FROM</b> EMP;",
+        "image": "./outputs/ddl/10.png"
+    },
+    {
+        "question": "11. Add EMAIL to STUDENT",
+        "sql": "<b>ALTER TABLE</b> STUDENT\n<b>ADD</b> EMAIL <b>VARCHAR2</b>(50);",
+        "image": "./outputs/ddl/11.png"
+    },
+    {
+        "question": "12. Add PHONE to EMPLOYEE",
+        "sql": "<b>ALTER TABLE</b> EMPLOYEE\n<b>ADD</b> PHONE <b>NUMBER</b>;",
+        "image": "./outputs/ddl/12.png"
+    },
+    {
+        "question": "13. Modify SNAME size",
+        "sql": "<b>ALTER TABLE</b> STUDENT\n<b>MODIFY</b> SNAME <b>VARCHAR2</b>(50);",
+        "image": "./outputs/ddl/13.png"
+    },
+    {
+        "question": "14. Modify SALARY datatype",
+        "sql": "<b>ALTER TABLE</b> EMPLOYEE\n<b>MODIFY</b> SALARY <b>NUMBER</b>(10,2);",
+        "image": "./outputs/ddl/14.png"
+    },
+    {
+        "question": "15. Add CITY and PINCODE",
+        "sql": "<b>ALTER TABLE</b> CUSTOMER\n<b>ADD</b> (CITY <b>VARCHAR2</b>(30), PINCODE <b>NUMBER</b>);",
+        "image": "./outputs/ddl/15.png"
+    },
+    {
+        "question": "16. Rename SNAME to STUDENT_NAME",
+        "sql": "<b>ALTER TABLE</b> STUDENT\n<b>RENAME COLUMN</b> SNAME <b>TO</b> STUDENT_NAME;",
+        "image": "./outputs/ddl/16.png"
+    },
+    {
+        "question": "17. Drop AGE column",
+        "sql": "<b>ALTER TABLE</b> STUDENT\n<b>DROP COLUMN</b> AGE;",
+        "image": "./outputs/ddl/17.png"
+    },
+    {
+        "question": "18. Set SALARY NOT NULL",
+        "sql": "<b>ALTER TABLE</b> EMPLOYEE\n<b>MODIFY</b> SALARY <b>NOT NULL</b>;",
+        "image": "./outputs/ddl/18.png"
+    },
+    {
+        "question": "19. Increase TITLE size",
+        "sql": "<b>ALTER TABLE</b> BOOK\n<b>MODIFY</b> TITLE <b>VARCHAR2</b>(100);",
+        "image": "./outputs/ddl/19.png"
+    },
+    {
+        "question": "20. Add MANAGER_ID",
+        "sql": "<b>ALTER TABLE</b> EMPLOYEE\n<b>ADD</b> MANAGER_ID <b>NUMBER</b>;",
+        "image": "./outputs/ddl/20.png"
+    },
+    {
+        "question": "21. Drop STUDENT table",
+        "sql": "<b>DROP TABLE</b> STUDENT;",
+        "image": "./outputs/ddl/21.png"
+    },
+    {
+        "question": "22. Drop CUSTOMER table",
+        "sql": "<b>DROP TABLE</b> CUSTOMER;",
+        "image": "./outputs/ddl/22.png"
+    },
+    {
+        "question": "23. Drop PROJECT permanently",
+        "sql": "<b>DROP TABLE</b> PROJECT\n<b>PURGE</b>;",
+        "image": "./outputs/ddl/23.png"
+    },
+    {
+        "question": "24. Drop SALES table",
+        "sql": "<b>DROP TABLE</b> SALES;",
+        "image": "./outputs/ddl/24.png"
+    },
+    {
+        "question": "25. Drop COURSE table",
+        "sql": "<b>DROP TABLE</b> COURSE;",
+        "image": "./outputs/ddl/25.png"
+    },
+    {
+        "question": "26. Rename STUDENT to STUDENTS",
+        "sql": "<b>RENAME</b> STUDENT\n<b>TO</b> STUDENTS;",
+        "image": "./outputs/ddl/26.png"
+    },
+    {
+        "question": "27. Rename EMPLOYEE to EMP_MASTER",
+        "sql": "<b>RENAME</b> EMPLOYEE\n<b>TO</b> EMP_MASTER;",
+        "image": "./outputs/ddl/27.png"
+    },
+    {
+        "question": "28. Rename CUSTOMER to CLIENT",
+        "sql": "<b>RENAME</b> CUSTOMER\n<b>TO</b> CLIENT;",
+        "image": "./outputs/ddl/28.png"
+    },
+    {
+        "question": "29. Rename BOOK to BOOK_DETAILS",
+        "sql": "<b>RENAME</b> BOOK\n<b>TO</b> BOOK_DETAILS;",
+        "image": "./outputs/ddl/29.png"
+    },
+    {
+        "question": "30. Rename PROJECT to PROJECT_INFO",
+        "sql": "<b>RENAME</b> PROJECT\n<b>TO</b> PROJECT_INFO;",
+        "image": "./outputs/ddl/30.png"
+    },
+    {
+        "question": "31. Delete all records from STUDENT",
+        "sql": "<b>DELETE FROM</b> STUDENT;",
+        "image": "./outputs/ddl/31.png"
+    },
+    {
+        "question": "32. Truncate EMPLOYEE",
+        "sql": "<b>TRUNCATE TABLE</b> EMPLOYEE;",
+        "image": "./outputs/ddl/32.png"
+    },
+    {
+        "question": "33. Truncate CUSTOMER",
+        "sql": "<b>TRUNCATE TABLE</b> CUSTOMER;",
+        "image": "./outputs/ddl/33.png"
+    },
+    {
+        "question": "34. Truncate SALES",
+        "sql": "<b>TRUNCATE TABLE</b> SALES;",
+        "image": "./outputs/ddl/34.png"
+    },
+    {
+        "question": "35. Truncate PROJECT",
+        "sql": "<b>TRUNCATE TABLE</b> PROJECT;",
+        "image": "./outputs/ddl/35.png"
+    },
+    {
+        "question": "36. Create TRAINING table",
+        "sql": "<b>CREATE TABLE</b> TRAINING (\n  TID <b>NUMBER</b>,\n  TNAME <b>VARCHAR2</b>(40),\n  DURATION <b>NUMBER</b>\n);",
+        "image": "./outputs/ddl/36.png"
+    },
+    {
+        "question": "37. Add TRAINER_NAME",
+        "sql": "<b>ALTER TABLE</b> TRAINING\n<b>ADD</b> TRAINER_NAME <b>VARCHAR2</b>(40);",
+        "image": "./outputs/ddl/37.png"
+    },
+    {
+        "question": "38. Modify TNAME size",
+        "sql": "<b>ALTER TABLE</b> TRAINING\n<b>MODIFY</b> TNAME <b>VARCHAR2</b>(60);",
+        "image": "./outputs/ddl/38.png"
+    },
+    {
+        "question": "39. Rename TRAINING to TRAINING_PROGRAM",
+        "sql": "<b>RENAME</b> TRAINING\n<b>TO</b> TRAINING_PROGRAM;",
+        "image": "./outputs/ddl/39.png"
+    },
+    {
+        "question": "40. Truncate TRAINING_PROGRAM",
+        "sql": "<b>TRUNCATE TABLE</b> TRAINING_PROGRAM;",
+        "image": "./outputs/ddl/40.png"
+    },
+    {
+        "question": "41. Drop TRAINING_PROGRAM",
+        "sql": "<b>DROP TABLE</b> TRAINING_PROGRAM;",
+        "image": "./outputs/ddl/41.png"
+    },
+    {
+        "question": "42. Create EMP_PROJECT and modify",
+        "sql": "<b>CREATE TABLE</b> EMP_PROJECT (\n  EMP_ID <b>NUMBER</b>,\n  PROJECT_ID <b>NUMBER</b>,\n  START_DATE <b>DATE</b>,\n  END_DATE <b>DATE</b>,\n  ROLE <b>VARCHAR2</b>(30)\n);\n<b>ALTER TABLE</b> EMP_PROJECT\n<b>MODIFY</b> ROLE <b>VARCHAR2</b>(50);\n<b>ALTER TABLE</b> EMP_PROJECT\n<b>ADD</b> STATUS <b>VARCHAR2</b>(20);",
+        "image": "./outputs/ddl/42.png"
+    },
+    {
+        "question": "43. Create PRODUCT and modify",
+        "sql": "<b>CREATE TABLE</b> PRODUCT (\n  PID <b>NUMBER</b>,\n  PNAME <b>VARCHAR2</b>(50),\n  PRICE <b>NUMBER</b>,\n  CATEGORY <b>VARCHAR2</b>(30)\n);\n<b>ALTER TABLE</b> PRODUCT\n<b>RENAME COLUMN</b> PNAME <b>TO</b> PRODUCT_NAME;\n<b>ALTER TABLE</b> PRODUCT\n<b>MODIFY</b> PRICE <b>NUMBER</b>(10,2);",
+        "image": "./outputs/ddl/43.png"
+    },
+    {
+        "question": "44. Create ORDERS and modify",
+        "sql": "<b>CREATE TABLE</b> ORDERS (\n  ORDER_ID <b>NUMBER</b>,\n  CUSTOMER_ID <b>NUMBER</b>,\n  ORDER_DATE <b>DATE</b>,\n  TOTAL_AMOUNT <b>NUMBER</b>\n);\n<b>ALTER TABLE</b> ORDERS\n<b>ADD</b> STATUS <b>VARCHAR2</b>(20);\n<b>ALTER TABLE</b> ORDERS\n<b>DROP COLUMN</b> TOTAL_AMOUNT;\n<b>ALTER TABLE</b> ORDERS\n<b>ADD</b> TOTAL_AMOUNT <b>NUMBER</b>(10,2);",
+        "image": "./outputs/ddl/44.png"
+    },
+    {
+        "question": "45. Create EMP_TEMP then rename, truncate, drop",
+        "sql": "<b>CREATE TABLE</b> EMP_TEMP\n<b>AS SELECT</b> *\n<b>FROM</b> EMP\n<b>WHERE</b> SAL > 2000;\n<b>RENAME</b> EMP_TEMP <b>TO</b> EMP_HIGH_SALARY;\n<b>TRUNCATE TABLE</b> EMP_HIGH_SALARY;\n<b>DROP TABLE</b> EMP_HIGH_SALARY;",
+        "image": "./outputs/ddl/45.png"
+    },
+    {
+        "question": "46. Create STUDENT_RECORD and modify",
+        "sql": "<b>CREATE TABLE</b> STUDENT_RECORD (\n  SID <b>NUMBER</b>,\n  SNAME <b>VARCHAR2</b>(40),\n  COURSE <b>VARCHAR2</b>(30),\n  MARKS <b>NUMBER</b>\n);\n<b>ALTER TABLE</b> STUDENT_RECORD\n<b>ADD</b> GRADE <b>CHAR</b>(1);\n<b>ALTER TABLE</b> STUDENT_RECORD\n<b>MODIFY</b> MARKS <b>NUMBER</b>(5,2);\n<b>ALTER TABLE</b> STUDENT_RECORD\n<b>RENAME COLUMN</b> COURSE <b>TO</b> COURSE_NAME;",
+        "image": "./outputs/ddl/46.png"
+    },
+    {
+        "question": "47. Create EMP_ARCHIVE and modify",
+        "sql": "<b>CREATE TABLE</b> EMP_ARCHIVE\n<b>AS SELECT</b> *\n<b>FROM</b> EMP\n<b>WHERE</b> 1=0;\n<b>ALTER TABLE</b> EMP_ARCHIVE\n<b>ADD</b> ARCHIVE_DATE <b>DATE</b>;\n<b>RENAME</b> EMP_ARCHIVE <b>TO</b> EMP_HISTORY;",
+        "image": "./outputs/ddl/47.png"
+    },
+    {
+        "question": "48. Create DEPT_BACKUP and modify",
+        "sql": "<b>CREATE TABLE</b> DEPT_BACKUP\n<b>AS SELECT</b> *\n<b>FROM</b> DEPT;\n<b>ALTER TABLE</b> DEPT_BACKUP\n<b>DROP COLUMN</b> LOC;\n<b>ALTER TABLE</b> DEPT_BACKUP\n<b>ADD</b> LOCATION <b>VARCHAR2</b>(40);",
+        "image": "./outputs/ddl/48.png"
+    },
+    {
+        "question": "49. Create SALES_DATA and modify",
+        "sql": "<b>CREATE TABLE</b> SALES_DATA (\n  SALE_ID <b>NUMBER</b>,\n  PRODUCT_ID <b>NUMBER</b>,\n  SALE_DATE <b>DATE</b>,\n  AMOUNT <b>NUMBER</b>\n);\n<b>ALTER TABLE</b> SALES_DATA\n<b>ADD</b> REGION <b>VARCHAR2</b>(30);\n<b>ALTER TABLE</b> SALES_DATA\n<b>MODIFY</b> AMOUNT <b>NUMBER</b>(12,2);\n<b>RENAME</b> SALES_DATA <b>TO</b> REGIONAL_SALES_DATA;",
+        "image": "./outputs/ddl/49.png"
+    },
+    {
+        "question": "50. Create LOG_TABLE and modify",
+        "sql": "<b>CREATE TABLE</b> LOG_TABLE (\n  LOG_ID <b>NUMBER</b>,\n  USER_NAME <b>VARCHAR2</b>(30),\n  ACTION <b>VARCHAR2</b>(50),\n  LOG_DATE <b>DATE</b>\n);\n<b>TRUNCATE TABLE</b> LOG_TABLE;\n<b>RENAME</b> LOG_TABLE <b>TO</b> SYSTEM_LOG;\n<b>DROP TABLE</b> SYSTEM_LOG;",
+        "image": "./outputs/ddl/50.png"
+    }
+],
             "DML Commands": [
                 {
                     question: "1. Insert a record into STUDENT table with SID=101, SNAME='RAHUL', AGE=20, COURSE='MCA'",
@@ -1369,144 +1369,132 @@
                 { question: "69. Third highest salary", sql: "<b>SELECT</b> ENAME,SAL <b>FROM</b> EMP <b>WHERE</b> SAL=(<b>SELECT</b> MAX(SAL) <b>FROM</b> EMP <b>WHERE</b> SAL<(<b>SELECT</b> MAX(SAL) <b>FROM</b> EMP <b>WHERE</b> SAL<(<b>SELECT</b> MAX(SAL) <b>FROM</b> EMP)));", image: "" }
             ],
             "Scalar Functions": [
-                {
-                    question: "1. Display employee name, hire date, current date and days worked",
-                    sql: "<b>SELECT</b> ENAME, HIREDATE, SYSDATE, (SYSDATE - HIREDATE) <b>AS</b> DAYS_WORKED <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/1.png"
-                },
-                {
-                    question: "2. Display hire date in full format",
-                    sql: "<b>SELECT</b> ENAME, TO_CHAR(HIREDATE,'Day, Month DD, YYYY') <b>AS</b> FORMATTED_DATE <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/2.png"
-                },
-                {
-                    question: "3. Employees joined in current month",
-                    sql: "<b>SELECT</b> ENAME, HIREDATE <b>FROM</b> EMP <b>WHERE</b> TO_CHAR(HIREDATE,'MM') = TO_CHAR(SYSDATE,'MM');",
-                    image: "./outputs/scalarfun/3.png"
-                },
-                {
-                    question: "4. Next Monday after hire date",
-                    sql: "<b>SELECT</b> ENAME, NEXT_DAY(HIREDATE,'MONDAY') <b>AS</b> NEXT_MONDAY <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/4.png"
-                },
-                {
-                    question: "5. Last day of joining month",
-                    sql: "<b>SELECT</b> ENAME, LAST_DAY(HIREDATE) <b>AS</b> LAST_DAY <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/5.png"
-                },
-
-                {
-                    question: "7. Number of months worked",
-                    sql: "<b>SELECT</b> ENAME, MONTHS_BETWEEN(SYSDATE,HIREDATE) <b>AS</b> MONTHS_WORKED <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/7.png"
-                },
-                {
-                    question: "8. Hire date after adding 3 years 6 months",
-                    sql: "<b>SELECT</b> ENAME, HIREDATE, ADD_MONTHS(HIREDATE,42) <b>AS</b> NEW_DATE <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/8.png"
-                },
-                {
-                    question: "9. Employees hired between given dates",
-                    sql: "<b>SELECT</b> ENAME, HIREDATE <b>FROM</b> EMP <b>WHERE</b> HIREDATE <b>BETWEEN</b> TO_DATE('01-JAN-1981','DD-MON-YYYY') <b>AND</b> TO_DATE('31-DEC-1981','DD-MON-YYYY');",
-                    image: "./outputs/scalarfun/9.png"
-                },
-                {
-                    question: "10. Difference in years between sysdate and hiredate",
-                    sql: "<b>SELECT</b> ENAME, ROUND(MONTHS_BETWEEN(SYSDATE,HIREDATE)/12) <b>AS</b> YEARS <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/10.png"
-                },
-
-                {
-                    question: "11. Salary rounded to nearest 1000",
-                    sql: "<b>SELECT</b> ENAME, ROUND(SAL,-3) <b>AS</b> ROUNDED_SAL <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/11.png"
-                },
-
-                {
-                    question: "13. Square root of salary",
-                    sql: "<b>SELECT</b> ENAME, SQRT(SAL) <b>AS</b> SQRT_SAL <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/13.png"
-                },
-                {
-                    question: "14. Absolute difference between salary and 5000",
-                    sql: "<b>SELECT</b> ENAME, ABS(SAL-5000) <b>AS</b> DIFFERENCE <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/14.png"
-                },
-
-                {
-                    question: "17. Generate random number between 1 and 500",
-                    sql: "<b>SELECT</b> ENAME, TRUNC(DBMS_RANDOM.VALUE(1,501)) <b>AS</b> RANDOM_NUM <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/17.png"
-                },
-
-                {
-                    question: "20. Round salary to nearest 100 and 1000",
-                    sql: "<b>SELECT</b> ENAME, ROUND(SAL,-2) <b>AS</b> NEAREST_100, ROUND(SAL,-3) <b>AS</b> NEAREST_1000 <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/20.png"
-                },
-
-                {
-                    question: "21. Names in uppercase and lowercase",
-                    sql: "<b>SELECT</b> UPPER(ENAME) <b>AS</b> UPPER_NAME, LOWER(ENAME) <b>AS</b> LOWER_NAME <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/21.png"
-                },
-                {
-                    question: "22. Employee name length",
-                    sql: "<b>SELECT</b> ENAME, LENGTH(ENAME) <b>AS</b> NAME_LENGTH <b>FROM</b> EMP;",
-                    image: "./outputs/scalarfun/22.png"
-                },
-                {
-                    question: "23. First 4 characters of name",
-                    sql: "<b>SELECT</b> ENAME, SUBSTR(ENAME,1,4) <b>AS</b> FIRST4 <b>FROM</b> EMP;",
-                    image: ""
-                },
-                {
-                    question: "24. Concatenate name and job",
-                    sql: "<b>SELECT</b> ENAME || ' - ' || JOB <b>AS</b> DETAILS <b>FROM</b> EMP;",
-                    image: ""
-                },
-                {
-                    question: "25. Replace A with #",
-                    sql: "<b>SELECT</b> REPLACE(ENAME,'A','#') <b>AS</b> MODIFIED_NAME <b>FROM</b> EMP;",
-                    image: ""
-                },
-
-                {
-                    question: "28. Name in InitCap format",
-                    sql: "<b>SELECT</b> INITCAP(ENAME) <b>AS</b> FORMATTED_NAME <b>FROM</b> EMP;",
-                    image: ""
-                },
-
-                {
-                    question: "32. Names starting with S",
-                    sql: "<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> ENAME <b>LIKE</b> 'S%';",
-                    image: ""
-                },
-
-                {
-                    question: "36. Convert sysdate to DD/MM/YYYY",
-                    sql: "<b>SELECT</b> TO_CHAR(SYSDATE,'DD/MM/YYYY') <b>AS</b> TODAY <b>FROM</b> DUAL;",
-                    image: ""
-                },
-
-                {
-                    question: "38. Salary in currency format",
-                    sql: "<b>SELECT</b> ENAME, TO_CHAR(SAL,'99,999') <b>AS</b> SALARY <b>FROM</b> EMP;",
-                    image: ""
-                },
-
-                {
-                    question: "47. Display commission or No Commission",
-                    sql: "<b>SELECT</b> ENAME, NVL(TO_CHAR(COMM),'No Commission') <b>AS</b> COMMISSION <b>FROM</b> EMP;",
-                    image: ""
-                },
-
-                {
-                    question: "55. Categorize employees based on experience",
-                    sql: "<b>SELECT</b> ENAME, <b>CASE</b> WHEN MONTHS_BETWEEN(SYSDATE,HIREDATE)/12 < 5 THEN 'LOW' WHEN MONTHS_BETWEEN(SYSDATE,HIREDATE)/12 BETWEEN 5 AND 10 THEN 'MEDIUM' ELSE 'HIGH' <b>END</b> AS EXPERIENCE <b>FROM</b> EMP;",
-                    image: ""
-                }
-            ],
+    {
+        "question": "1. Display employee name, hire date, current date and days worked",
+        "sql": "<b>SELECT</b> ENAME, HIREDATE, SYSDATE,\n  (SYSDATE - HIREDATE) <b>AS</b> DAYS_WORKED\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/1.png"
+    },
+    {
+        "question": "2. Display hire date in full format",
+        "sql": "<b>SELECT</b> ENAME,\n  TO_CHAR(HIREDATE, 'Day, Month DD, YYYY') <b>AS</b> FORMATTED_DATE\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/2.png"
+    },
+    {
+        "question": "3. Employees joined in current month",
+        "sql": "<b>SELECT</b> ENAME, HIREDATE\n<b>FROM</b> EMP\n<b>WHERE</b> TO_CHAR(HIREDATE, 'MM') = TO_CHAR(SYSDATE, 'MM');",
+        "image": "./outputs/scalarfun/3.png"
+    },
+    {
+        "question": "4. Next Monday after hire date",
+        "sql": "<b>SELECT</b> ENAME,\n  NEXT_DAY(HIREDATE, 'MONDAY') <b>AS</b> NEXT_MONDAY\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/4.png"
+    },
+    {
+        "question": "5. Last day of joining month",
+        "sql": "<b>SELECT</b> ENAME,\n  LAST_DAY(HIREDATE) <b>AS</b> LAST_DAY\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/5.png"
+    },
+    {
+        "question": "7. Number of months worked",
+        "sql": "<b>SELECT</b> ENAME,\n  MONTHS_BETWEEN(SYSDATE, HIREDATE) <b>AS</b> MONTHS_WORKED\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/7.png"
+    },
+    {
+        "question": "8. Hire date after adding 3 years 6 months",
+        "sql": "<b>SELECT</b> ENAME, HIREDATE,\n  ADD_MONTHS(HIREDATE, 42) <b>AS</b> NEW_DATE\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/8.png"
+    },
+    {
+        "question": "9. Employees hired between given dates",
+        "sql": "<b>SELECT</b> ENAME, HIREDATE\n<b>FROM</b> EMP\n<b>WHERE</b> HIREDATE <b>BETWEEN</b>\n  TO_DATE('01-JAN-1981', 'DD-MON-YYYY') <b>AND</b>\n  TO_DATE('31-DEC-1981', 'DD-MON-YYYY');",
+        "image": "./outputs/scalarfun/9.png"
+    },
+    {
+        "question": "10. Difference in years between sysdate and hiredate",
+        "sql": "<b>SELECT</b> ENAME,\n  ROUND(MONTHS_BETWEEN(SYSDATE, HIREDATE) / 12) <b>AS</b> YEARS\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/10.png"
+    },
+    {
+        "question": "11. Salary rounded to nearest 1000",
+        "sql": "<b>SELECT</b> ENAME,\n  ROUND(SAL, -3) <b>AS</b> ROUNDED_SAL\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/11.png"
+    },
+    {
+        "question": "13. Square root of salary",
+        "sql": "<b>SELECT</b> ENAME,\n  SQRT(SAL) <b>AS</b> SQRT_SAL\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/13.png"
+    },
+    {
+        "question": "14. Absolute difference between salary and 5000",
+        "sql": "<b>SELECT</b> ENAME,\n  ABS(SAL - 5000) <b>AS</b> DIFFERENCE\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/14.png"
+    },
+    {
+        "question": "17. Generate random number between 1 and 500",
+        "sql": "<b>SELECT</b> ENAME,\n  TRUNC(DBMS_RANDOM.VALUE(1, 501)) <b>AS</b> RANDOM_NUM\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/17.png"
+    },
+    {
+        "question": "20. Round salary to nearest 100 and 1000",
+        "sql": "<b>SELECT</b> ENAME,\n  ROUND(SAL, -2) <b>AS</b> NEAREST_100,\n  ROUND(SAL, -3) <b>AS</b> NEAREST_1000\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/20.png"
+    },
+    {
+        "question": "21. Names in uppercase and lowercase",
+        "sql": "<b>SELECT</b> UPPER(ENAME) <b>AS</b> UPPER_NAME,\n  LOWER(ENAME) <b>AS</b> LOWER_NAME\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/21.png"
+    },
+    {
+        "question": "22. Employee name length",
+        "sql": "<b>SELECT</b> ENAME,\n  LENGTH(ENAME) <b>AS</b> NAME_LENGTH\n<b>FROM</b> EMP;",
+        "image": "./outputs/scalarfun/22.png"
+    },
+    {
+        "question": "23. First 4 characters of name",
+        "sql": "<b>SELECT</b> ENAME,\n  SUBSTR(ENAME, 1, 4) <b>AS</b> FIRST4\n<b>FROM</b> EMP;",
+        "image": ""
+    },
+    {
+        "question": "24. Concatenate name and job",
+        "sql": "<b>SELECT</b> ENAME || ' - ' || JOB <b>AS</b> DETAILS\n<b>FROM</b> EMP;",
+        "image": ""
+    },
+    {
+        "question": "25. Replace A with #",
+        "sql": "<b>SELECT</b> REPLACE(ENAME, 'A', '#') <b>AS</b> MODIFIED_NAME\n<b>FROM</b> EMP;",
+        "image": ""
+    },
+    {
+        "question": "28. Name in InitCap format",
+        "sql": "<b>SELECT</b> INITCAP(ENAME) <b>AS</b> FORMATTED_NAME\n<b>FROM</b> EMP;",
+        "image": ""
+    },
+    {
+        "question": "32. Names starting with S",
+        "sql": "<b>SELECT</b> ENAME\n<b>FROM</b> EMP\n<b>WHERE</b> ENAME <b>LIKE</b> 'S%';",
+        "image": ""
+    },
+    {
+        "question": "36. Convert sysdate to DD/MM/YYYY",
+        "sql": "<b>SELECT</b> TO_CHAR(SYSDATE, 'DD/MM/YYYY') <b>AS</b> TODAY\n<b>FROM</b> DUAL;",
+        "image": ""
+    },
+    {
+        "question": "38. Salary in currency format",
+        "sql": "<b>SELECT</b> ENAME,\n  TO_CHAR(SAL, '99,999') <b>AS</b> SALARY\n<b>FROM</b> EMP;",
+        "image": ""
+    },
+    {
+        "question": "47. Display commission or No Commission",
+        "sql": "<b>SELECT</b> ENAME,\n  NVL(TO_CHAR(COMM), 'No Commission') <b>AS</b> COMMISSION\n<b>FROM</b> EMP;",
+        "image": ""
+    },
+    {
+        "question": "55. Categorize employees based on experience",
+        "sql": "<b>SELECT</b> ENAME,\n  <b>CASE</b>\n    WHEN MONTHS_BETWEEN(SYSDATE, HIREDATE) / 12 < 5 THEN 'LOW'\n    WHEN MONTHS_BETWEEN(SYSDATE, HIREDATE) / 12 <b>BETWEEN</b> 5 AND 10 THEN 'MEDIUM'\n    ELSE 'HIGH'\n  <b>END</b> AS EXPERIENCE\n<b>FROM</b> EMP;",
+        "image": ""
+    }
+],
             "SQL Joins": [
                 {
                     question: "1. Display employee name and department name",
@@ -1682,7 +1670,7 @@
             "Database Views": [
                 {
                     question: "1. Create a view to display employee name, salary, and department number",
-                    sql: "<b>CREATE VIEW</b> emp_view1 <b>AS</b> <b>SELECT</b> ENAME, SAL, DEPTNO <b>FROM</b> EMP;",
+                    sql: "<b>CREATE  VIEW</b> emp_view1 <b>AS</b> <b>SELECT</b> ENAME, SAL, DEPTNO <b>FROM</b> EMP;",
                     image: "./outputs/views/1.png"
                 },
                 {
@@ -1795,378 +1783,375 @@
                 }
             ],
             "PLSQL: Basics": [
-                {
-                    question: "1. print your name and city",
-                    sql: "<b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Jiya'); <b>DBMS_OUTPUT.PUT_LINE</b>('chandigarh'); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/1.png"
-                },
-                {
-                    question: "2. display numbers from 1 to 5",
-                    sql: "<b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(1); <b>DBMS_OUTPUT.PUT_LINE</b>(2); <b>DBMS_OUTPUT.PUT_LINE</b>(3); <b>DBMS_OUTPUT.PUT_LINE</b>(4); <b>DBMS_OUTPUT.PUT_LINE</b>(5); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/2.png"
-                },
-                {
-                    question: "3. print current system date",
-                    sql: "<b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(<b>SYSDATE</b>); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/3.png"
-                },
-                {
-                    question: "4. display employee name and salary using variables",
-                    sql: "<b>DECLARE</b> ename_var EMP.ENAME%<b>TYPE</b>; sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> ENAME, SAL <b>INTO</b> ename_var, sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300; <b>DBMS_OUTPUT.PUT_LINE</b>(ename_var || ' ' || sal_var); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/4.png"
-                },
-                {
-                    question: "5. declare variable and assign age",
-                    sql: "<b>DECLARE</b> age <b>NUMBER</b> := 20; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(age); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/5.png"
-                },
-                {
-                    question: "6. declare two variables and print sum",
-                    sql: "<b>DECLARE</b> a <b>NUMBER</b> := 10; b <b>NUMBER</b> := 20; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(a + b); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/6.png"
-                },
-                {
-                    question: "7. store employee name and salary and display",
-                    sql: "<b>DECLARE</b> name_var EMP.ENAME%<b>TYPE</b>; salary_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> ENAME, SAL <b>INTO</b> name_var, salary_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7499; <b>DBMS_OUTPUT.PUT_LINE</b>(name_var || ' ' || salary_var); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/7.png"
-                },
-                {
-                    question: "8. swap two numbers",
-                    sql: "<b>DECLARE</b> a <b>NUMBER</b> := 10; b <b>NUMBER</b> := 20; temp <b>NUMBER</b>; <b>BEGIN</b> temp := a; a := b; b := temp; <b>DBMS_OUTPUT.PUT_LINE</b>('A=' || a || ' B=' || b); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/8.png"
-                },
-                {
-                    question: "9. calculate area of rectangle",
-                    sql: "<b>DECLARE</b> l <b>NUMBER</b> := 5; w <b>NUMBER</b> := 4; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Area=' || (l*w)); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/9.png"
-                },
-                {
-                    question: "10. calculate area of circle using constant PI",
-                    sql: "<b>DECLARE</b> r <b>NUMBER</b> := 7; pi <b>CONSTANT</b> <b>NUMBER</b> := 3.14; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Area=' || (pi*r*r)); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/10.png"
-                },
-                {
-                    question: "11. calculate salary after tax",
-                    sql: "<b>DECLARE</b> sal <b>NUMBER</b> := 5000; tax <b>CONSTANT</b> <b>NUMBER</b> := 0.1; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('After Tax=' || (sal - sal*tax)); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/11.png"
-                },
-                {
-                    question: "13. simple interest using constant rate",
-                    sql: "<b>DECLARE</b> p <b>NUMBER</b> := 1000; r <b>CONSTANT</b> <b>NUMBER</b> := 0.05; t <b>NUMBER</b> := 2; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('SI=' || (p*r*t)); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/13.png"
-                },
-                {
-                    question: "14. using different datatypes",
-                    sql: "<b>DECLARE</b> num <b>NUMBER</b> := 100; name <b>VARCHAR2</b>(20) := 'Jiya'; d <b>DATE</b> := <b>SYSDATE</b>; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(num || ' ' || name || ' ' || d); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/14.png"
-                },
-                {
-                    question: "15. declare variable using %TYPE",
-                    sql: "<b>DECLARE</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/15.png"
-                },
-                {
-                    question: "16. declare record using %ROWTYPE",
-                    sql: "<b>DECLARE</b> emp_rec EMP%<b>ROWTYPE</b>; <b>BEGIN</b> <b>SELECT</b> * <b>INTO</b> emp_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>DBMS_OUTPUT.PUT_LINE</b>(emp_rec.ENAME || ' ' || emp_rec.SAL); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/16.png"
-                },
-                {
-                    question: "17. store and display current date",
-                    sql: "<b>DECLARE</b> d <b>DATE</b> := <b>SYSDATE</b>; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(d); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/17.png"
-                },
-                {
-                    question: "21. calculate bonus (10% of salary)",
-                    sql: "<b>DECLARE</b> sal <b>NUMBER</b> := 4000; bonus <b>NUMBER</b>; <b>BEGIN</b> bonus := sal * 0.1; <b>DBMS_OUTPUT.PUT_LINE</b>('Bonus=' || bonus); <b>END</b>; /",
-                    image: "./outputs/PLSQLbasics/21.png"
-                }
-            ],
+    {
+        "question": "1. print your name and city",
+        "sql": "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Jiya');\n  <b>DBMS_OUTPUT.PUT_LINE</b>('chandigarh');\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/1.png"
+    },
+    {
+        "question": "2. display numbers from 1 to 5",
+        "sql": "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(1);\n  <b>DBMS_OUTPUT.PUT_LINE</b>(2);\n  <b>DBMS_OUTPUT.PUT_LINE</b>(3);\n  <b>DBMS_OUTPUT.PUT_LINE</b>(4);\n  <b>DBMS_OUTPUT.PUT_LINE</b>(5);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/2.png"
+    },
+    {
+        "question": "3. print current system date",
+        "sql": "<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(<b>SYSDATE</b>);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/3.png"
+    },
+    {
+        "question": "4. display employee name and salary using variables",
+        "sql": "<b>DECLARE</b>\n  ename_var EMP.ENAME%<b>TYPE</b>;\n  sal_var EMP.SAL%<b>TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME, SAL <b>INTO</b> ename_var, sal_var\n  <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(ename_var || ' ' || sal_var);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/4.png"
+    },
+    {
+        "question": "5. declare variable and assign age",
+        "sql": "<b>DECLARE</b>\n  age <b>NUMBER</b> := 20;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(age);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/5.png"
+    },
+    {
+        "question": "6. declare two variables and print sum",
+        "sql": "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10;\n  b <b>NUMBER</b> := 20;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(a + b);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/6.png"
+    },
+    {
+        "question": "7. store employee name and salary and display",
+        "sql": "<b>DECLARE</b>\n  name_var EMP.ENAME%<b>TYPE</b>;\n  salary_var EMP.SAL%<b>TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME, SAL <b>INTO</b> name_var, salary_var\n  <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7499;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(name_var || ' ' || salary_var);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/7.png"
+    },
+    {
+        "question": "8. swap two numbers",
+        "sql": "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10;\n  b <b>NUMBER</b> := 20;\n  temp <b>NUMBER</b>;\n<b>BEGIN</b>\n  temp := a;\n  a := b;\n  b := temp;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('A=' || a || ' B=' || b);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/8.png"
+    },
+    {
+        "question": "9. calculate area of rectangle",
+        "sql": "<b>DECLARE</b>\n  l <b>NUMBER</b> := 5;\n  w <b>NUMBER</b> := 4;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Area=' || (l*w));\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/9.png"
+    },
+    {
+        "question": "10. calculate area of circle using constant PI",
+        "sql": "<b>DECLARE</b>\n  r <b>NUMBER</b> := 7;\n  pi <b>CONSTANT</b> <b>NUMBER</b> := 3.14;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Area=' || (pi*r*r));\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/10.png"
+    },
+    {
+        "question": "11. calculate salary after tax",
+        "sql": "<b>DECLARE</b>\n  sal <b>NUMBER</b> := 5000;\n  tax <b>CONSTANT</b> <b>NUMBER</b> := 0.1;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('After Tax=' || (sal - sal*tax));\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/11.png"
+    },
+    {
+        "question": "13. simple interest using constant rate",
+        "sql": "<b>DECLARE</b>\n  p <b>NUMBER</b> := 1000;\n  r <b>CONSTANT</b> <b>NUMBER</b> := 0.05;\n  t <b>NUMBER</b> := 2;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('SI=' || (p*r*t));\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/13.png"
+    },
+    {
+        "question": "14. using different datatypes",
+        "sql": "<b>DECLARE</b>\n  num <b>NUMBER</b> := 100;\n  name <b>VARCHAR2</b>(20) := 'Jiya';\n  d <b>DATE</b> := <b>SYSDATE</b>;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(num || ' ' || name || ' ' || d);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/14.png"
+    },
+    {
+        "question": "15. declare variable using %TYPE",
+        "sql": "<b>DECLARE</b>\n  sal_var EMP.SAL%<b>TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/15.png"
+    },
+    {
+        "question": "16. declare record using %ROWTYPE",
+        "sql": "<b>DECLARE</b>\n  emp_rec EMP%<b>ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> emp_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(emp_rec.ENAME || ' ' || emp_rec.SAL);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/16.png"
+    },
+    {
+        "question": "17. store and display current date",
+        "sql": "<b>DECLARE</b>\n  d <b>DATE</b> := <b>SYSDATE</b>;\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>(d);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/17.png"
+    },
+    {
+        "question": "21. calculate bonus (10% of salary)",
+        "sql": "<b>DECLARE</b>\n  sal <b>NUMBER</b> := 4000;\n  bonus <b>NUMBER</b>;\n<b>BEGIN</b>\n  bonus := sal * 0.1;\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Bonus=' || bonus);\n<b>END</b>;\n/",
+        "image": "./outputs/PLSQLbasics/21.png"
+    }
+],
             "PLSQL: Conditionals": [
-                {
-                    question: "1. check if a number is positive",
-                    sql: "<b>DECLARE</b> n <b>NUMBER</b> := 10; <b>BEGIN</b> <b>IF</b> n > 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Positive'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/1.png"
-                },
-                {
-                    question: "2. check if employee salary > 3000",
-                    sql: "<b>DECLARE</b> sal <b>NUMBER</b> := 3500; <b>BEGIN</b> <b>IF</b> sal > 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Salary > 3000'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/2.png"
-                },
-                {
-                    question: "3. check if number is even",
-                    sql: "<b>DECLARE</b> n <b>NUMBER</b> := 4; <b>BEGIN</b> <b>IF</b> <b>MOD</b>(n,2)=0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Even'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/3.png"
-                },
-                {
-                    question: "4. display message if today is Monday",
-                    sql: "<b>BEGIN</b> <b>IF</b> <b>TO_CHAR</b>(<b>SYSDATE</b>,'DAY') <b>LIKE</b> 'MONDAY%' <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Today is Monday'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/4.png"
-                },
-                {
-                    question: "5. check divisible by 5",
-                    sql: "<b>DECLARE</b> n <b>NUMBER</b> := 25; <b>BEGIN</b> <b>IF</b> <b>MOD</b>(n,5)=0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Divisible by 5'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/5.png"
-                },
-                {
-                    question: "6. check even or odd",
-                    sql: "<b>DECLARE</b> n <b>NUMBER</b> := 7; <b>BEGIN</b> <b>IF</b> <b>MOD</b>(n,2)=0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Even'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Odd'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/6.png"
-                },
-                {
-                    question: "7. check positive or negative",
-                    sql: "<b>DECLARE</b> n <b>NUMBER</b> := -5; <b>BEGIN</b> <b>IF</b> n >= 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Positive'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Negative'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/7.png"
-                },
-                {
-                    question: "8. compare two numbers",
-                    sql: "<b>DECLARE</b> a <b>NUMBER</b> := 10; b <b>NUMBER</b> := 20; <b>BEGIN</b> <b>IF</b> a > b <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(a); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>(b); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/8.png"
-                },
-                {
-                    question: "9. check pass or fail",
-                    sql: "<b>DECLARE</b> marks <b>NUMBER</b> := 55; <b>BEGIN</b> <b>IF</b> marks >= 40 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Pass'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Fail'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/9.png"
-                },
-                {
-                    question: "10. check salary above average (fixed value)",
-                    sql: "<b>DECLARE</b> sal <b>NUMBER</b> := 2500; avg <b>NUMBER</b> := 2000; <b>BEGIN</b> <b>IF</b> sal > avg <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Above Avg'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Below Avg'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/10.png"
-                },
-                {
-                    question: "11. assign grades using IF-ELSIF",
-                    sql: "<b>DECLARE</b> marks <b>NUMBER</b> := 75; <b>BEGIN</b> <b>IF</b> marks >= 80 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('A'); <b>ELSIF</b> marks >= 60 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('B'); <b>ELSIF</b> marks >= 40 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('C'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Fail'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/11.png"
-                },
-                {
-                    question: "12. greatest of three numbers",
-                    sql: "<b>DECLARE</b> a <b>NUMBER</b> := 10; b <b>NUMBER</b> := 20; c <b>NUMBER</b> := 15; <b>BEGIN</b> <b>IF</b> a > b <b>AND</b> a > c <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(a); <b>ELSIF</b> b > c <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(b); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>(c); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/12.png"
-                },
-                {
-                    question: "13. check positive, negative or zero",
-                    sql: "<b>DECLARE</b> n <b>NUMBER</b> := 0; <b>BEGIN</b> <b>IF</b> n > 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Positive'); <b>ELSIF</b> n < 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Negative'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Zero'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/13.png"
-                },
-                {
-                    question: "14. categorize salary",
-                    sql: "<b>DECLARE</b> sal <b>NUMBER</b> := 3200; <b>BEGIN</b> <b>IF</b> sal > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High'); <b>ELSIF</b> sal >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/14.png"
-                },
-                {
-                    question: "16. CASE day of week",
-                    sql: "<b>DECLARE</b> d <b>NUMBER</b> := 3; <b>BEGIN</b> <b>CASE</b> d <b>WHEN</b> 1 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Monday'); <b>WHEN</b> 2 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Tuesday'); <b>WHEN</b> 3 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Wednesday'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Other'); <b>END CASE</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/16.png"
-                },
-                {
-                    question: "17. CASE grades",
-                    sql: "<b>DECLARE</b> marks <b>NUMBER</b> := 85; <b>BEGIN</b> <b>CASE</b> <b>WHEN</b> marks >= 80 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('A'); <b>WHEN</b> marks >= 60 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('B'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Fail'); <b>END CASE</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/17.png"
-                },
-                {
-                    "question": "18. CASE even or odd",
-                    "sql": "<b>DECLARE</b> n <b>NUMBER</b> := 6; <b>BEGIN</b> <b>CASE</b> <b>MOD</b>(n,2) <b>WHEN</b> 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Even'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Odd'); <b>END CASE</b>; <b>END</b>; /",
-                    "image": "./outputs/conditionals/18.png"
-                },
-                {
-                    question: "20. CASE salary category",
-                    sql: "<b>DECLARE</b> sal <b>NUMBER</b> := 4500; <b>BEGIN</b> <b>CASE</b> <b>WHEN</b> sal > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High'); <b>WHEN</b> sal >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low'); <b>END CASE</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/20.png"
-                },
-                {
-                    question: "21. print 1 to 10 skip 5",
-                    sql: "<b>BEGIN</b> <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b> <b>IF</b> i = 5 <b>THEN</b> <b>CONTINUE</b>; <b>END IF</b>; <b>DBMS_OUTPUT.PUT_LINE</b>(i); <b>END LOOP</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/21.png"
-                },
-                {
-                    question: "22. print odd numbers 1 to 20",
-                    sql: "<b>BEGIN</b> <b>FOR</b> i <b>IN</b> 1..20 <b>LOOP</b> <b>IF</b> <b>MOD</b>(i,2)=0 <b>THEN</b> <b>CONTINUE</b>; <b>END IF</b>; <b>DBMS_OUTPUT.PUT_LINE</b>(i); <b>END LOOP</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/22.png"
-                },
-                {
-                    question: "23. skip multiples of 3",
-                    sql: "<b>BEGIN</b> <b>FOR</b> i <b>IN</b> 1..15 <b>LOOP</b> <b>IF</b> <b>MOD</b>(i,3)=0 <b>THEN</b> <b>CONTINUE</b>; <b>END IF</b>; <b>DBMS_OUTPUT.PUT_LINE</b>(i); <b>END LOOP</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/23.png"
-                },
-                {
-                    question: "25. exit loop when number reaches 5",
-                    sql: "<b>BEGIN</b> <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b> <b>EXIT WHEN</b> i = 5; <b>DBMS_OUTPUT.PUT_LINE</b>(i); <b>END LOOP</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/25.png"
-                },
-                {
-                    question: "26. exit when sum exceeds 50",
-                    sql: "<b>DECLARE</b> sum_val <b>NUMBER</b> := 0; i <b>NUMBER</b> := 1; <b>BEGIN</b> <b>LOOP</b> sum_val := sum_val + i; <b>EXIT WHEN</b> sum_val > 50; i := i + 1; <b>END LOOP</b>; <b>DBMS_OUTPUT.PUT_LINE</b>(sum_val); <b>END</b>; /",
-                    image: "./outputs/conditionals/26.png"
-                },
-                {
-                    question: "28. exit when condition met",
-                    sql: "<b>DECLARE</b> i <b>NUMBER</b> := 1; <b>BEGIN</b> <b>LOOP</b> <b>EXIT WHEN</b> i > 5; <b>DBMS_OUTPUT.PUT_LINE</b>(i); i := i + 1; <b>END LOOP</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/28.png"
-                },
-                {
-                    question: "31. simple login system",
-                    sql: "<b>DECLARE</b> uname <b>VARCHAR2</b>(20) := 'admin'; pass <b>VARCHAR2</b>(20) := '123'; <b>BEGIN</b> <b>IF</b> uname = 'admin' <b>AND</b> pass = '123' <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Login Success'); <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Login Failed'); <b>END IF</b>; <b>END</b>; /",
-                    image: "./outputs/conditionals/31.png"
-                }
-            ],
+    {
+        "question": "1. check if a number is positive",
+        "sql": "<b>DECLARE</b>\n  n <b>NUMBER</b> := 10;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Positive');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/1.png"
+    },
+    {
+        "question": "2. check if employee salary > 3000",
+        "sql": "<b>DECLARE</b>\n  sal <b>NUMBER</b> := 3500;\n<b>BEGIN</b>\n  <b>IF</b> sal > 3000 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Salary > 3000');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/2.png"
+    },
+    {
+        "question": "3. check if number is even",
+        "sql": "<b>DECLARE</b>\n  n <b>NUMBER</b> := 4;\n<b>BEGIN</b>\n  <b>IF</b> <b>MOD</b>(n,2)=0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Even');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/3.png"
+    },
+    {
+        "question": "4. display message if today is Monday",
+        "sql": "<b>BEGIN</b>\n  <b>IF</b> <b>TO_CHAR</b>(<b>SYSDATE</b>,'DAY') <b>LIKE</b> 'MONDAY%' <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Today is Monday');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/4.png"
+    },
+    {
+        "question": "5. check divisible by 5",
+        "sql": "<b>DECLARE</b>\n  n <b>NUMBER</b> := 25;\n<b>BEGIN</b>\n  <b>IF</b> <b>MOD</b>(n,5)=0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Divisible by 5');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/5.png"
+    },
+    {
+        "question": "6. check even or odd",
+        "sql": "<b>DECLARE</b>\n  n <b>NUMBER</b> := 7;\n<b>BEGIN</b>\n  <b>IF</b> <b>MOD</b>(n,2)=0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Even');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Odd');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/6.png"
+    },
+    {
+        "question": "7. check positive or negative",
+        "sql": "<b>DECLARE</b>\n  n <b>NUMBER</b> := -5;\n<b>BEGIN</b>\n  <b>IF</b> n >= 0 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Positive');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Negative');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/7.png"
+    },
+    {
+        "question": "8. compare two numbers",
+        "sql": "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10;\n  b <b>NUMBER</b> := 20;\n<b>BEGIN</b>\n  <b>IF</b> a > b <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(a);\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(b);\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/8.png"
+    },
+    {
+        "question": "9. check pass or fail",
+        "sql": "<b>DECLARE</b>\n  marks <b>NUMBER</b> := 55;\n<b>BEGIN</b>\n  <b>IF</b> marks >= 40 <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Pass');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Fail');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/9.png"
+    },
+    {
+        "question": "10. check salary above average (fixed value)",
+        "sql": "<b>DECLARE</b>\n  sal <b>NUMBER</b> := 2500;\n  avg <b>NUMBER</b> := 2000;\n<b>BEGIN</b>\n  <b>IF</b> sal > avg <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Above Avg');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Below Avg');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/10.png"
+    },
+    {
+        "question": "11. assign grades using IF-ELSIF",
+        "sql": "<b>DECLARE</b>\n  marks <b>NUMBER</b> := 75;\n<b>BEGIN</b>\n  <b>IF</b> marks >= 80 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('A');\n  <b>ELSIF</b> marks >= 60 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('B');\n  <b>ELSIF</b> marks >= 40 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('C');\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Fail');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/11.png"
+    },
+    {
+        "question": "12. greatest of three numbers",
+        "sql": "<b>DECLARE</b>\n  a <b>NUMBER</b> := 10;\n  b <b>NUMBER</b> := 20;\n  c <b>NUMBER</b> := 15;\n<b>BEGIN</b>\n  <b>IF</b> a > b <b>AND</b> a > c <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(a);\n  <b>ELSIF</b> b > c <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(b);\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>(c);\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/12.png"
+    },
+    {
+        "question": "13. check positive, negative or zero",
+        "sql": "<b>DECLARE</b>\n  n <b>NUMBER</b> := 0;\n<b>BEGIN</b>\n  <b>IF</b> n > 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Positive');\n  <b>ELSIF</b> n < 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Negative');\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Zero');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/13.png"
+    },
+    {
+        "question": "14. categorize salary",
+        "sql": "<b>DECLARE</b>\n  sal <b>NUMBER</b> := 3200;\n<b>BEGIN</b>\n  <b>IF</b> sal > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High');\n  <b>ELSIF</b> sal >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium');\n  <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/14.png"
+    },
+    {
+        "question": "16. CASE day of week",
+        "sql": "<b>DECLARE</b>\n  d <b>NUMBER</b> := 3;\n<b>BEGIN</b>\n  <b>CASE</b> d\n    <b>WHEN</b> 1 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Monday');\n    <b>WHEN</b> 2 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Tuesday');\n    <b>WHEN</b> 3 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Wednesday');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Other');\n  <b>END CASE</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/16.png"
+    },
+    {
+        "question": "17. CASE grades",
+        "sql": "<b>DECLARE</b>\n  marks <b>NUMBER</b> := 85;\n<b>BEGIN</b>\n  <b>CASE</b>\n    <b>WHEN</b> marks >= 80 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('A');\n    <b>WHEN</b> marks >= 60 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('B');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Fail');\n  <b>END CASE</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/17.png"
+    },
+    {
+        "question": "18. CASE even or odd",
+        "sql": "<b>DECLARE</b>\n  n <b>NUMBER</b> := 6;\n<b>BEGIN</b>\n  <b>CASE</b> <b>MOD</b>(n,2)\n    <b>WHEN</b> 0 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Even');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Odd');\n  <b>END CASE</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/18.png"
+    },
+    {
+        "question": "20. CASE salary category",
+        "sql": "<b>DECLARE</b>\n  sal <b>NUMBER</b> := 4500;\n<b>BEGIN</b>\n  <b>CASE</b>\n    <b>WHEN</b> sal > 5000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('High');\n    <b>WHEN</b> sal >= 3000 <b>THEN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Medium');\n    <b>ELSE</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Low');\n  <b>END CASE</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/20.png"
+    },
+    {
+        "question": "21. print 1 to 10 skip 5",
+        "sql": "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>IF</b> i = 5 <b>THEN</b> <b>CONTINUE</b>; <b>END IF</b>;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/21.png"
+    },
+    {
+        "question": "22. print odd numbers 1 to 20",
+        "sql": "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..20 <b>LOOP</b>\n    <b>IF</b> <b>MOD</b>(i,2)=0 <b>THEN</b> <b>CONTINUE</b>; <b>END IF</b>;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/22.png"
+    },
+    {
+        "question": "23. skip multiples of 3",
+        "sql": "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..15 <b>LOOP</b>\n    <b>IF</b> <b>MOD</b>(i,3)=0 <b>THEN</b> <b>CONTINUE</b>; <b>END IF</b>;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/23.png"
+    },
+    {
+        "question": "25. exit loop when number reaches 5",
+        "sql": "<b>BEGIN</b>\n  <b>FOR</b> i <b>IN</b> 1..10 <b>LOOP</b>\n    <b>EXIT WHEN</b> i = 5;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n  <b>END LOOP</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/25.png"
+    },
+    {
+        "question": "26. exit when sum exceeds 50",
+        "sql": "<b>DECLARE</b>\n  sum_val <b>NUMBER</b> := 0;\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    sum_val := sum_val + i;\n    <b>EXIT WHEN</b> sum_val > 50;\n    i := i + 1;\n  <b>END LOOP</b>;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(sum_val);\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/26.png"
+    },
+    {
+        "question": "28. exit when condition met",
+        "sql": "<b>DECLARE</b>\n  i <b>NUMBER</b> := 1;\n<b>BEGIN</b>\n  <b>LOOP</b>\n    <b>EXIT WHEN</b> i > 5;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(i);\n    i := i + 1;\n  <b>END LOOP</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/28.png"
+    },
+    {
+        "question": "31. simple login system",
+        "sql": "<b>DECLARE</b>\n  uname <b>VARCHAR2</b>(20) := 'admin';\n  pass <b>VARCHAR2</b>(20) := '123';\n<b>BEGIN</b>\n  <b>IF</b> uname = 'admin' <b>AND</b> pass = '123' <b>THEN</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Login Success');\n  <b>ELSE</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>('Login Failed');\n  <b>END IF</b>;\n<b>END</b>;\n/",
+        "image": "./outputs/conditionals/31.png"
+    }
+],
             "PLSQL: Loops": [
-                {
-                    question: "1. Print numbers 1 to 5 using simple loop",
-                    sql: "<b>DECLARE</b> i NUMBER := 1; <b>BEGIN</b> LOOP DBMS_OUTPUT.PUT_LINE(i); i := i + 1; EXIT WHEN i > 5; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/1.png"
-                },
-                {
-                    question: "2. Display numbers 10 to 1",
-                    sql: "<b>DECLARE</b> i NUMBER := 10; <b>BEGIN</b> LOOP DBMS_OUTPUT.PUT_LINE(i); i := i - 1; EXIT WHEN i < 1; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/2.png"
-                },
-                {
-                    question: "3. Sum 1 to 10",
-                    sql: "<b>DECLARE</b> i NUMBER := 1; s NUMBER := 0; <b>BEGIN</b> LOOP s := s + i; i := i + 1; EXIT WHEN i > 10; END LOOP; DBMS_OUTPUT.PUT_LINE(s); <b>END;</b>",
-                    image: "./outputs/loops/3.png"
-                },
-                {
-                    question: "4. Multiplication table using simple loop",
-                    sql: "<b>DECLARE</b> n NUMBER := 5; i NUMBER := 1; <b>BEGIN</b> LOOP DBMS_OUTPUT.PUT_LINE(n || '*' || i || '=' || (n*i)); i := i + 1; EXIT WHEN i > 10; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/4.png"
-                },
-                {
-                    question: "5. Even numbers 1 to 20",
-                    sql: "<b>DECLARE</b> i NUMBER := 1; <b>BEGIN</b> LOOP IF MOD(i,2)=0 THEN DBMS_OUTPUT.PUT_LINE(i); END IF; i := i + 1; EXIT WHEN i > 20; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/5.png"
-                },
-                {
-                    question: "6. Exit when number > 50",
-                    sql: "<b>DECLARE</b> i NUMBER := 1; <b>BEGIN</b> LOOP EXIT WHEN i > 50; DBMS_OUTPUT.PUT_LINE(i); i := i + 1; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/6.png"
-                },
-                {
-                    question: "7. Numbers 1 to 10 using WHILE",
-                    sql: "<b>DECLARE</b> i NUMBER := 1; <b>BEGIN</b> WHILE i <= 10 LOOP DBMS_OUTPUT.PUT_LINE(i); i := i + 1; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/7.png"
-                },
-                {
-                    question: "8. Factorial using WHILE",
-                    sql: "<b>DECLARE</b> n NUMBER := 5; f NUMBER := 1; <b>BEGIN</b> WHILE n > 0 LOOP f := f * n; n := n - 1; END LOOP; DBMS_OUTPUT.PUT_LINE(f); <b>END;</b>",
-                    image: "./outputs/loops/8.png"
-                },
-                {
-                    question: "9. Sum of digits",
-                    sql: "<b>DECLARE</b> n NUMBER := 123; s NUMBER := 0; <b>BEGIN</b> WHILE n > 0 LOOP s := s + MOD(n,10); n := TRUNC(n/10); END LOOP; DBMS_OUTPUT.PUT_LINE(s); <b>END;</b>",
-                    image: "./outputs/loops/9.png"
-                },
-                {
-                    question: "10. Reverse number",
-                    sql: "<b>DECLARE</b> n NUMBER := 123; r NUMBER := 0; <b>BEGIN</b> WHILE n > 0 LOOP r := r*10 + MOD(n,10); n := TRUNC(n/10); END LOOP; DBMS_OUTPUT.PUT_LINE(r); <b>END;</b>",
-                    image: "./outputs/loops/10.png"
-                },
-
-                {
-                    question: "11. Palindrome check",
-                    sql: "<b>DECLARE</b> n NUMBER := 121; temp NUMBER; r NUMBER := 0; <b>BEGIN</b> temp := n; WHILE n > 0 LOOP r := r*10 + MOD(n,10); n := TRUNC(n/10); END LOOP; IF temp = r THEN DBMS_OUTPUT.PUT_LINE('Palindrome'); ELSE DBMS_OUTPUT.PUT_LINE('Not Palindrome'); END IF; <b>END;</b>",
-                    image: "./outputs/loops/11.png"
-                },
-                {
-                    question: "12. Fibonacci series",
-                    sql: "<b>DECLARE</b> a NUMBER := 0; b NUMBER := 1; c NUMBER; i NUMBER := 1; <b>BEGIN</b> WHILE i <= 5 LOOP DBMS_OUTPUT.PUT_LINE(a); c := a + b; a := b; b := c; i := i + 1; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/12.png"
-                },
-                {
-                    question: "13. Numbers 1 to 10 using FOR",
-                    sql: "<b>BEGIN</b> FOR i IN 1..10 LOOP DBMS_OUTPUT.PUT_LINE(i); END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/13.png"
-                },
-
-                {
-                    question: "15. Sum first 10 numbers",
-                    sql: "<b>DECLARE</b> s NUMBER := 0; <b>BEGIN</b> FOR i IN 1..10 LOOP s := s + i; END LOOP; DBMS_OUTPUT.PUT_LINE(s); <b>END;</b>",
-                    image: "./outputs/loops/15.png"
-                },
-                {
-                    question: "16. Table of 5",
-                    sql: "<b>BEGIN</b> FOR i IN 1..10 LOOP DBMS_OUTPUT.PUT_LINE('5*'||i||'='||(5*i)); END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/16.png"
-                },
-                {
-                    question: "17. Squares 1 to 10",
-                    sql: "<b>BEGIN</b> FOR i IN 1..10 LOOP DBMS_OUTPUT.PUT_LINE(i*i); END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/17.png"
-                },
-                {
-                    question: "18. Odd numbers 1 to 50",
-                    sql: "<b>BEGIN</b> FOR i IN 1..50 LOOP IF MOD(i,2)!=0 THEN DBMS_OUTPUT.PUT_LINE(i); END IF; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/18.png"
-                },
-                {
-                    question: "19. Star pattern",
-                    sql: "<b>BEGIN</b> FOR i IN 1..4 LOOP FOR j IN 1..i LOOP DBMS_OUTPUT.PUT('*'); END LOOP; DBMS_OUTPUT.NEW_LINE; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/19.png"
-                },
-                {
-                    question: "20. Tables 1 to 5",
-                    sql: "<b>BEGIN</b> FOR i IN 1..5 LOOP FOR j IN 1..10 LOOP DBMS_OUTPUT.PUT_LINE(i||'*'||j||'='||(i*j)); END LOOP; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/20.png"
-                },
-                {
-                    question: "21. Number pattern",
-                    sql: "<b>BEGIN</b> FOR i IN 1..4 LOOP FOR j IN 1..i LOOP DBMS_OUTPUT.PUT(j); END LOOP; DBMS_OUTPUT.NEW_LINE; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/21.png"
-                },
-                {
-                    question: "22. Skip multiples of 4",
-                    sql: "<b>BEGIN</b> FOR i IN 1..20 LOOP IF MOD(i,4)=0 THEN CONTINUE; END IF; DBMS_OUTPUT.PUT_LINE(i); END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/22.png"
-                },
-                {
-                    question: "23. Stop when sum > 100",
-                    sql: "<b>DECLARE</b> s NUMBER := 0; <b>BEGIN</b> FOR i IN 1..100 LOOP s := s + i; EXIT WHEN s > 100; DBMS_OUTPUT.PUT_LINE(i); END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/23.png"
-                },
-                {
-                    question: "24. Exit when divisible by 7",
-                    sql: "<b>BEGIN</b> FOR i IN 1..50 LOOP IF MOD(i,7)=0 THEN EXIT; END IF; DBMS_OUTPUT.PUT_LINE(i); END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/24.png"
-                },
-                {
-                    question: "25. Display emp ids",
-                    sql: "<b>BEGIN</b> FOR rec IN (<b>SELECT</b> EMPNO <b>FROM</b> EMP) LOOP DBMS_OUTPUT.PUT_LINE(rec.EMPNO); END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/25.png"
-                },
-                {
-                    question: "26. Increase salary by 10%",
-                    sql: "<b>BEGIN</b> FOR rec IN (<b>SELECT</b> EMPNO, SAL <b>FROM</b> EMP) LOOP <b>UPDATE</b> EMP <b>SET</b> SAL = SAL * 1.1 <b>WHERE</b> EMPNO = rec.EMPNO; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/26.png"
-                },
-
-                {
-                    question: "30. Prime numbers 1 to 50",
-                    sql: "<b>DECLARE</b> i NUMBER; j NUMBER; flag NUMBER; <b>BEGIN</b> FOR i IN 2..50 LOOP flag := 0; FOR j IN 2..i-1 LOOP IF MOD(i,j)=0 THEN flag := 1; EXIT; END IF; END LOOP; IF flag = 0 THEN DBMS_OUTPUT.PUT_LINE(i); END IF; END LOOP; <b>END;</b>",
-                    image: "./outputs/loops/30.png"
-                }
-            ],
+    {
+        "question": "1. Print numbers 1 to 5 using simple loop",
+        "sql": "<b>DECLARE</b>\n  i NUMBER := 1;\n<b>BEGIN</b>\n  LOOP\n    DBMS_OUTPUT.PUT_LINE(i);\n    i := i + 1;\n    EXIT WHEN i > 5;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/1.png"
+    },
+    {
+        "question": "2. Display numbers 10 to 1",
+        "sql": "<b>DECLARE</b>\n  i NUMBER := 10;\n<b>BEGIN</b>\n  LOOP\n    DBMS_OUTPUT.PUT_LINE(i);\n    i := i - 1;\n    EXIT WHEN i < 1;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/2.png"
+    },
+    {
+        "question": "3. Sum 1 to 10",
+        "sql": "<b>DECLARE</b>\n  i NUMBER := 1;\n  s NUMBER := 0;\n<b>BEGIN</b>\n  LOOP\n    s := s + i;\n    i := i + 1;\n    EXIT WHEN i > 10;\n  END LOOP;\n  DBMS_OUTPUT.PUT_LINE(s);\n<b>END;</b>",
+        "image": "./outputs/loops/3.png"
+    },
+    {
+        "question": "4. Multiplication table using simple loop",
+        "sql": "<b>DECLARE</b>\n  n NUMBER := 5;\n  i NUMBER := 1;\n<b>BEGIN</b>\n  LOOP\n    DBMS_OUTPUT.PUT_LINE(n || '*' || i || '=' || (n*i));\n    i := i + 1;\n    EXIT WHEN i > 10;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/4.png"
+    },
+    {
+        "question": "5. Even numbers 1 to 20",
+        "sql": "<b>DECLARE</b>\n  i NUMBER := 1;\n<b>BEGIN</b>\n  LOOP\n    IF MOD(i,2)=0 THEN\n      DBMS_OUTPUT.PUT_LINE(i);\n    END IF;\n    i := i + 1;\n    EXIT WHEN i > 20;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/5.png"
+    },
+    {
+        "question": "6. Exit when number > 50",
+        "sql": "<b>DECLARE</b>\n  i NUMBER := 1;\n<b>BEGIN</b>\n  LOOP\n    EXIT WHEN i > 50;\n    DBMS_OUTPUT.PUT_LINE(i);\n    i := i + 1;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/6.png"
+    },
+    {
+        "question": "7. Numbers 1 to 10 using WHILE",
+        "sql": "<b>DECLARE</b>\n  i NUMBER := 1;\n<b>BEGIN</b>\n  WHILE i <= 10 LOOP\n    DBMS_OUTPUT.PUT_LINE(i);\n    i := i + 1;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/7.png"
+    },
+    {
+        "question": "8. Factorial using WHILE",
+        "sql": "<b>DECLARE</b>\n  n NUMBER := 5;\n  f NUMBER := 1;\n<b>BEGIN</b>\n  WHILE n > 0 LOOP\n    f := f * n;\n    n := n - 1;\n  END LOOP;\n  DBMS_OUTPUT.PUT_LINE(f);\n<b>END;</b>",
+        "image": "./outputs/loops/8.png"
+    },
+    {
+        "question": "9. Sum of digits",
+        "sql": "<b>DECLARE</b>\n  n NUMBER := 123;\n  s NUMBER := 0;\n<b>BEGIN</b>\n  WHILE n > 0 LOOP\n    s := s + MOD(n,10);\n    n := TRUNC(n/10);\n  END LOOP;\n  DBMS_OUTPUT.PUT_LINE(s);\n<b>END;</b>",
+        "image": "./outputs/loops/9.png"
+    },
+    {
+        "question": "10. Reverse number",
+        "sql": "<b>DECLARE</b>\n  n NUMBER := 123;\n  r NUMBER := 0;\n<b>BEGIN</b>\n  WHILE n > 0 LOOP\n    r := r*10 + MOD(n,10);\n    n := TRUNC(n/10);\n  END LOOP;\n  DBMS_OUTPUT.PUT_LINE(r);\n<b>END;</b>",
+        "image": "./outputs/loops/10.png"
+    },
+    {
+        "question": "11. Palindrome check",
+        "sql": "<b>DECLARE</b>\n  n NUMBER := 121;\n  temp NUMBER;\n  r NUMBER := 0;\n<b>BEGIN</b>\n  temp := n;\n  WHILE n > 0 LOOP\n    r := r*10 + MOD(n,10);\n    n := TRUNC(n/10);\n  END LOOP;\n  IF temp = r THEN\n    DBMS_OUTPUT.PUT_LINE('Palindrome');\n  ELSE\n    DBMS_OUTPUT.PUT_LINE('Not Palindrome');\n  END IF;\n<b>END;</b>",
+        "image": "./outputs/loops/11.png"
+    },
+    {
+        "question": "12. Fibonacci series",
+        "sql": "<b>DECLARE</b>\n  a NUMBER := 0;\n  b NUMBER := 1;\n  c NUMBER;\n  i NUMBER := 1;\n<b>BEGIN</b>\n  WHILE i <= 5 LOOP\n    DBMS_OUTPUT.PUT_LINE(a);\n    c := a + b;\n    a := b;\n    b := c;\n    i := i + 1;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/12.png"
+    },
+    {
+        "question": "13. Numbers 1 to 10 using FOR",
+        "sql": "<b>BEGIN</b>\n  FOR i IN 1..10 LOOP\n    DBMS_OUTPUT.PUT_LINE(i);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/13.png"
+    },
+    {
+        "question": "15. Sum first 10 numbers",
+        "sql": "<b>DECLARE</b>\n  s NUMBER := 0;\n<b>BEGIN</b>\n  FOR i IN 1..10 LOOP\n    s := s + i;\n  END LOOP;\n  DBMS_OUTPUT.PUT_LINE(s);\n<b>END;</b>",
+        "image": "./outputs/loops/15.png"
+    },
+    {
+        "question": "16. Table of 5",
+        "sql": "<b>BEGIN</b>\n  FOR i IN 1..10 LOOP\n    DBMS_OUTPUT.PUT_LINE('5*'||i||'='||(5*i));\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/16.png"
+    },
+    {
+        "question": "17. Squares 1 to 10",
+        "sql": "<b>BEGIN</b>\n  FOR i IN 1..10 LOOP\n    DBMS_OUTPUT.PUT_LINE(i*i);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/17.png"
+    },
+    {
+        "question": "18. Odd numbers 1 to 50",
+        "sql": "<b>BEGIN</b>\n  FOR i IN 1..50 LOOP\n    IF MOD(i,2)!=0 THEN\n      DBMS_OUTPUT.PUT_LINE(i);\n    END IF;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/18.png"
+    },
+    {
+        "question": "19. Star pattern",
+        "sql": "<b>BEGIN</b>\n  FOR i IN 1..4 LOOP\n    FOR j IN 1..i LOOP\n      DBMS_OUTPUT.PUT('*');\n    END LOOP;\n    DBMS_OUTPUT.NEW_LINE;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/19.png"
+    },
+    {
+        "question": "20. Tables 1 to 5",
+        "sql": "<b>BEGIN</b>\n  FOR i IN 1..5 LOOP\n    FOR j IN 1..10 LOOP\n      DBMS_OUTPUT.PUT_LINE(i||'*'||j||'='||(i*j));\n    END LOOP;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/20.png"
+    },
+    {
+        "question": "21. Number pattern",
+        "sql": "<b>BEGIN</b>\n  FOR i IN 1..4 LOOP\n    FOR j IN 1..i LOOP\n      DBMS_OUTPUT.PUT(j);\n    END LOOP;\n    DBMS_OUTPUT.NEW_LINE;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/21.png"
+    },
+    {
+        "question": "22. Skip multiples of 4",
+        "sql": "<b>BEGIN</b>\n  FOR i IN 1..20 LOOP\n    IF MOD(i,4)=0 THEN\n      CONTINUE;\n    END IF;\n    DBMS_OUTPUT.PUT_LINE(i);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/22.png"
+    },
+    {
+        "question": "23. Stop when sum > 100",
+        "sql": "<b>DECLARE</b>\n  s NUMBER := 0;\n<b>BEGIN</b>\n  FOR i IN 1..100 LOOP\n    s := s + i;\n    EXIT WHEN s > 100;\n    DBMS_OUTPUT.PUT_LINE(i);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/23.png"
+    },
+    {
+        "question": "24. Exit when divisible by 7",
+        "sql": "<b>BEGIN</b>\n  FOR i IN 1..50 LOOP\n    IF MOD(i,7)=0 THEN\n      EXIT;\n    END IF;\n    DBMS_OUTPUT.PUT_LINE(i);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/24.png"
+    },
+    {
+        "question": "25. Display emp ids",
+        "sql": "<b>BEGIN</b>\n  FOR rec IN (<b>SELECT</b> EMPNO <b>FROM</b> EMP) LOOP\n    DBMS_OUTPUT.PUT_LINE(rec.EMPNO);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/25.png"
+    },
+    {
+        "question": "26. Increase salary by 10%",
+        "sql": "<b>BEGIN</b>\n  FOR rec IN (<b>SELECT</b> EMPNO, SAL <b>FROM</b> EMP) LOOP\n    <b>UPDATE</b> EMP <b>SET</b> SAL = SAL * 1.1\n    <b>WHERE</b> EMPNO = rec.EMPNO;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/26.png"
+    },
+    {
+        "question": "30. Prime numbers 1 to 50",
+        "sql": "<b>DECLARE</b>\n  i NUMBER; j NUMBER; flag NUMBER;\n<b>BEGIN</b>\n  FOR i IN 2..50 LOOP\n    flag := 0;\n    FOR j IN 2..i-1 LOOP\n      IF MOD(i,j)=0 THEN\n        flag := 1;\n        EXIT;\n      END IF;\n    END LOOP;\n    IF flag = 0 THEN\n      DBMS_OUTPUT.PUT_LINE(i);\n    END IF;\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/loops/30.png"
+    }
+],
             "PLSQL: Types": [
                 {
-                    question: "1 fetch employee name for empno 7369",
-                    sql: "<b>DECLARE</b> name_var EMP.ENAME%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> ENAME <b>INTO</b> name_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>DBMS_OUTPUT.PUT_LINE</b>(name_var); <b>END</b>; /",
+                    question: "1 fetch employee name for empno 4300",
+                    sql: "<b>DECLARE</b> name_var EMP.ENAME%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> ENAME <b>INTO</b> name_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300; <b>DBMS_OUTPUT.PUT_LINE</b>(name_var); <b>END</b>; /",
                     image: "./outputs/plsqlTypes/1.png"
                 },
                 {
                     question: "2 retrieve salary and print",
-                    sql: "<b>DECLARE</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var); <b>END</b>; /",
+                    sql: "<b>DECLARE</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300; <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var); <b>END</b>; /",
                     image: "./outputs/plsqlTypes/2.png"
                 },
                 {
                     question: "3 fetch employee name and job",
-                    sql: "<b>DECLARE</b> name_var EMP.ENAME%<b>TYPE</b>; job_var EMP.JOB%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> ENAME, JOB <b>INTO</b> name_var, job_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>DBMS_OUTPUT.PUT_LINE</b>(name_var || ' ' || job_var); <b>END</b>; /",
+                    sql: "<b>DECLARE</b> name_var EMP.ENAME%<b>TYPE</b>; job_var EMP.JOB%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> ENAME, JOB <b>INTO</b> name_var, job_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300; <b>DBMS_OUTPUT.PUT_LINE</b>(name_var || ' ' || job_var); <b>END</b>; /",
                     image: "./outputs/plsqlTypes/3.png"
                 },
                 {
                     question: "4 display department number",
-                    sql: "<b>DECLARE</b> dept_var EMP.DEPTNO%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> DEPTNO <b>INTO</b> dept_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>DBMS_OUTPUT.PUT_LINE</b>(dept_var); <b>END</b>; /",
+                    sql: "<b>DECLARE</b> dept_var EMP.DEPTNO%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> DEPTNO <b>INTO</b> dept_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300; <b>DBMS_OUTPUT.PUT_LINE</b>(dept_var); <b>END</b>; /",
                     image: "./outputs/plsqlTypes/4.png"
                 },
                 {
                     question: "5 fetch hiredate",
-                    sql: "<b>DECLARE</b> d EMP.HIREDATE%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> HIREDATE <b>INTO</b> d <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>DBMS_OUTPUT.PUT_LINE</b>(d); <b>END</b>; /",
+                    sql: "<b>DECLARE</b> d EMP.HIREDATE%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> HIREDATE <b>INTO</b> d <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300; <b>DBMS_OUTPUT.PUT_LINE</b>(d); <b>END</b>; /",
                     image: "./outputs/plsqlTypes/5.png"
                 },
                 {
@@ -2181,22 +2166,22 @@
                 },
                 {
                     question: "8 %TYPE for name and job",
-                    sql: "<b>DECLARE</b> name_var EMP.ENAME%<b>TYPE</b> := 'ABC'; job_var EMP.JOB%<b>TYPE</b> := 'CLERK'; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(name_var || ' ' || job_var); <b>END</b>; /",
+                    sql: "<b>DECLARE</b> name_var EMP.ENAME%<b>TYPE</b> := 'jIYA'; job_var EMP.JOB%<b>TYPE</b> := 'CLERK'; <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>(name_var || ' ' || job_var); <b>END</b>; /",
                     image: "./outputs/plsqlTypes/8.png"
                 },
                 {
                     question: "9 fetch salary using %TYPE",
-                    sql: "<b>DECLARE</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var); <b>END</b>; /",
+                    sql: "<b>DECLARE</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300; <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var); <b>END</b>; /",
                     image: "./outputs/plsqlTypes/9.png"
                 },
                 {
                     question: "10 calculate annual salary",
-                    sql: "<b>DECLARE</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var*12); <b>END</b>; /",
+                    sql: "<b>DECLARE</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300; <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var*12); <b>END</b>; /",
                     image: "./outputs/plsqlTypes/10.png"
                 },
                 {
                     question: "11 update salary using %TYPE",
-                    sql: "<b>DECLARE</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 7369; <b>UPDATE</b> EMP <b>SET</b> SAL = sal_var + 500 <b>WHERE</b> EMPNO = 7369; <b>END</b>; /",
+                    sql: "<b>DECLARE</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = 4300; <b>UPDATE</b> EMP <b>SET</b> SAL = sal_var + 500 <b>WHERE</b> EMPNO = 7369; <b>END</b>; /",
                     image: "./outputs/plsqlTypes/11.png"
                 },
                 {
@@ -2286,114 +2271,114 @@
                 }
             ],
             "PLSQL: Cursors": [
-                {
-                    question: "1. Declare cursor to fetch all employees and display names",
-                    sql: "<b>DECLARE</b> CURSOR c1 <b>IS</b> SELECT ENAME FROM EMP; name_var EMP.ENAME%TYPE; <b>BEGIN</b> OPEN c1; LOOP FETCH c1 INTO name_var; EXIT WHEN c1%NOTFOUND; DBMS_OUTPUT.PUT_LINE(name_var); END LOOP; CLOSE c1; <b>END;</b>",
-                    image: "./outputs/cursors/1.png"
-                },
-                {
-                    question: "2. Fetch employee name and salary using cursor",
-                    sql: "<b>DECLARE</b> CURSOR c1 <b>IS</b> SELECT ENAME, SAL FROM EMP; name_var EMP.ENAME%TYPE; sal_var EMP.SAL%TYPE; <b>BEGIN</b> OPEN c1; LOOP FETCH c1 INTO name_var, sal_var; EXIT WHEN c1%NOTFOUND; DBMS_OUTPUT.PUT_LINE(name_var || ' ' || sal_var); END LOOP; CLOSE c1; <b>END;</b>",
-                    image: "./outputs/cursors/2.png"
-                },
-                {
-                    question: "3. Display employees with salary > 3000",
-                    sql: "<b>DECLARE</b> CURSOR c1 <b>IS</b> SELECT ENAME, SAL FROM EMP WHERE SAL > 3000; name_var EMP.ENAME%TYPE; sal_var EMP.SAL%TYPE; <b>BEGIN</b> OPEN c1; LOOP FETCH c1 INTO name_var, sal_var; EXIT WHEN c1%NOTFOUND; DBMS_OUTPUT.PUT_LINE(name_var || ' ' || sal_var); END LOOP; CLOSE c1; <b>END;</b>",
-                    image: "./outputs/cursors/3.png"
-                },
-                {
-                    question: "4. Count number of employees using cursor",
-                    sql: "<b>DECLARE</b> CURSOR c1 <b>IS</b> SELECT EMPNO FROM EMP; count_var NUMBER := 0; temp EMP.EMPNO%TYPE; <b>BEGIN</b> OPEN c1; LOOP FETCH c1 INTO temp; EXIT WHEN c1%NOTFOUND; count_var := count_var + 1; END LOOP; CLOSE c1; DBMS_OUTPUT.PUT_LINE(count_var); <b>END;</b>",
-                    image: "./outputs/cursors/4.png"
-                },
-                {
-                    question: "5. Calculate total salary using cursor",
-                    sql: "<b>DECLARE</b> CURSOR c1 <b>IS</b> SELECT SAL FROM EMP; total NUMBER := 0; sal_var EMP.SAL%TYPE; <b>BEGIN</b> OPEN c1; LOOP FETCH c1 INTO sal_var; EXIT WHEN c1%NOTFOUND; total := total + sal_var; END LOOP; CLOSE c1; DBMS_OUTPUT.PUT_LINE(total); <b>END;</b>",
-                    image: "./outputs/cursors/5.png"
-                },
-                {
-                    question: "6. Fetch records using OPEN FETCH CLOSE",
-                    sql: "<b>DECLARE</b> CURSOR c1 <b>IS</b> SELECT ENAME FROM EMP; name_var EMP.ENAME%TYPE; <b>BEGIN</b> OPEN c1; FETCH c1 INTO name_var; WHILE c1%FOUND LOOP DBMS_OUTPUT.PUT_LINE(name_var); FETCH c1 INTO name_var; END LOOP; CLOSE c1; <b>END;</b>",
-                    image: "./outputs/cursors/6.png"
-                },
-                {
-                    question: "7. Display all employee records using cursor FOR LOOP",
-                    sql: "<b>BEGIN</b> FOR rec IN (SELECT * FROM EMP) LOOP DBMS_OUTPUT.PUT_LINE(rec.ENAME || ' ' || rec.SAL); END LOOP; <b>END;</b>",
-                    image: "./outputs/cursors/7.png"
-                },
-                {
-                    question: "8. Display employee names and jobs using cursor FOR LOOP",
-                    sql: "<b>BEGIN</b> FOR rec IN (SELECT ENAME, JOB FROM EMP) LOOP DBMS_OUTPUT.PUT_LINE(rec.ENAME || ' ' || rec.JOB); END LOOP; <b>END;</b>",
-                    image: "./outputs/cursors/8.png"
-                },
-                {
-                    question: "9. Display employees from department 10",
-                    sql: "<b>BEGIN</b> FOR rec IN (SELECT * FROM EMP WHERE DEPTNO = 10) LOOP DBMS_OUTPUT.PUT_LINE(rec.ENAME); END LOOP; <b>END;</b>",
-                    image: "./outputs/cursors/9.png"
-                },
-                {
-                    question: "10. Calculate total salary using cursor FOR LOOP",
-                    sql: "<b>DECLARE</b> total NUMBER := 0; <b>BEGIN</b> FOR rec IN (SELECT SAL FROM EMP) LOOP total := total + rec.SAL; END LOOP; DBMS_OUTPUT.PUT_LINE(total); <b>END;</b>",
-                    image: "./outputs/cursors/10.png"
-                },
-                {
-                    question: "11. Employees with salary > average",
-                    sql: "<b>DECLARE</b> avg_sal NUMBER; <b>BEGIN</b> SELECT AVG(SAL) INTO avg_sal FROM EMP; FOR rec IN (SELECT ENAME, SAL FROM EMP WHERE SAL > avg_sal) LOOP DBMS_OUTPUT.PUT_LINE(rec.ENAME || ' ' || rec.SAL); END LOOP; <b>END;</b>",
-                    image: "./outputs/cursors/11.png"
-                },
-                {
-                    question: "12. Parameterized cursor for department",
-                    sql: "<b>DECLARE</b> CURSOR c1(dno NUMBER) <b>IS</b> SELECT ENAME FROM EMP WHERE DEPTNO = dno; name_var EMP.ENAME%TYPE; <b>BEGIN</b> OPEN c1(10); LOOP FETCH c1 INTO name_var; EXIT WHEN c1%NOTFOUND; DBMS_OUTPUT.PUT_LINE(name_var); END LOOP; CLOSE c1; <b>END;</b>",
-                    image: "./outputs/cursors/12.png"
-                }
-            ],
-            "Procedures & Functions": [
-                {
-                    question: "1 display \"Hello Oracle\"",
-                    sql: "<b>CREATE OR REPLACE PROCEDURE</b> hello_proc <b>IS</b> <b>BEGIN</b> <b>DBMS_OUTPUT.PUT_LINE</b>('Hello Oracle'); <b>END</b>; / <b>BEGIN</b> hello_proc; <b>END</b>; /",
-                    image: "./outputs/Procedures/1.png"
-                },
-                {
-                    question: "2 display employee name for given empno",
-                    sql: "<b>CREATE OR REPLACE PROCEDURE</b> emp_name_proc(p_empno <b>NUMBER</b>) <b>IS</b> name_var EMP.ENAME%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> ENAME <b>INTO</b> name_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_empno; <b>DBMS_OUTPUT.PUT_LINE</b>(name_var); <b>END</b>; / <b>BEGIN</b> emp_name_proc(4300); <b>END</b>; /",
-                    image: "./outputs/Procedures/2.png"
-                },
-                {
-                    question: "3 print salary of an employee",
-                    sql: "<b>CREATE OR REPLACE PROCEDURE</b> emp_sal_proc(p_empno <b>NUMBER</b>) <b>IS</b> sal_var EMP.SAL%<b>TYPE</b>; <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_empno; <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var); <b>END</b>; / <b>BEGIN</b> emp_sal_proc(4300); <b>END</b>; /",
-                    image: "./outputs/Procedures/3.png"
-                },
-                {
-                    question: "4 display all employees using cursor",
-                    sql: "<b>CREATE OR REPLACE PROCEDURE</b> all_emp_proc <b>IS</b> <b>CURSOR</b> c1 <b>IS</b> <b>SELECT</b> ENAME <b>FROM</b> EMP; name_var EMP.ENAME%<b>TYPE</b>; <b>BEGIN</b> <b>OPEN</b> c1; <b>LOOP</b> <b>FETCH</b> c1 <b>INTO</b> name_var; <b>EXIT WHEN</b> c1%<b>NOTFOUND</b>; <b>DBMS_OUTPUT.PUT_LINE</b>(name_var); <b>END LOOP</b>; <b>CLOSE</b> c1; <b>END</b>; / <b>BEGIN</b> all_emp_proc; <b>END</b>; /",
-                    image: "./outputs/Procedures/4.png"
-                },
-                {
-                    question: "5 display department details",
-                    sql: "<b>CREATE OR REPLACE PROCEDURE</b> dept_proc <b>IS</b> <b>BEGIN</b> <b>FOR</b> rec <b>IN</b> (<b>SELECT</b> * <b>FROM</b> DEPT) <b>LOOP</b> <b>DBMS_OUTPUT.PUT_LINE</b>(rec.DEPTNO || ' ' || rec.DNAME || ' ' || rec.LOC); <b>END LOOP</b>; <b>END</b>; / <b>BEGIN</b> dept_proc; <b>END</b>; /",
-                    image: "./outputs/Procedures/5.png"
-                },
-                {
-                    question: "6 procedure with IN parameter (emp details)",
-                    sql: "<b>CREATE OR REPLACE PROCEDURE</b> emp_details_proc(p_empno <b>NUMBER</b>) <b>IS</b> emp_rec EMP%<b>ROWTYPE</b>; <b>BEGIN</b> <b>SELECT</b> * <b>INTO</b> emp_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_empno; <b>DBMS_OUTPUT.PUT_LINE</b>(emp_rec.ENAME || ' ' || emp_rec.SAL || ' ' || emp_rec.JOB); <b>END</b>; / <b>BEGIN</b> emp_details_proc(4300); <b>END</b>; /",
-                    image: "./outputs/Procedures/6.png"
-                },
-                {
-                    question: "7 procedure for employees of a department",
-                    sql: "<b>CREATE OR REPLACE PROCEDURE</b> dept_emp_proc(p_deptno <b>NUMBER</b>) <b>IS</b> <b>BEGIN</b> <b>FOR</b> rec <b>IN</b> (<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = p_deptno) <b>LOOP</b> <b>DBMS_OUTPUT.PUT_LINE</b>(rec.ENAME); <b>END LOOP</b>; <b>END</b>; / <b>BEGIN</b> dept_emp_proc(10); <b>END</b>; /",
-                    image: "./outputs/Procedures/7.png"
-                },
-                {
-                    question: "8 employees earning more than given salary",
-                    sql: "<b>CREATE OR REPLACE PROCEDURE</b> sal_filter_proc(p_sal <b>NUMBER</b>) <b>IS</b> <b>BEGIN</b> <b>FOR</b> rec <b>IN</b> (<b>SELECT</b> ENAME, SAL <b>FROM</b> EMP <b>WHERE</b> SAL > p_sal) <b>LOOP</b> <b>DBMS_OUTPUT.PUT_LINE</b>(rec.ENAME || ' ' || rec.SAL); <b>END LOOP</b>; <b>END</b>; / <b>BEGIN</b> sal_filter_proc(2000); <b>END</b>; /",
-                    image: "./outputs/Procedures/8.png"
-                },
-                {
-                    question: "9 OUT parameter to return salary",
-                    sql: "<b>CREATE OR REPLACE PROCEDURE</b> get_sal_proc(p_empno <b>NUMBER</b>, sal_out <b>OUT NUMBER</b>) <b>IS</b> <b>BEGIN</b> <b>SELECT</b> SAL <b>INTO</b> sal_out <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_empno; <b>END</b>; / <b>DECLARE</b> s <b>NUMBER</b>; <b>BEGIN</b> get_sal_proc(4300, s); <b>DBMS_OUTPUT.PUT_LINE</b>(s); <b>END</b>; /",
-                    image: "./outputs/Procedures/9.png"
-                }
-            ],
+    {
+        "question": "1. Declare cursor to fetch all employees and display names",
+        "sql": "<b>DECLARE</b>\n  CURSOR c1 <b>IS</b> SELECT ENAME FROM EMP;\n  name_var EMP.ENAME%TYPE;\n<b>BEGIN</b>\n  OPEN c1;\n  LOOP\n    FETCH c1 INTO name_var;\n    EXIT WHEN c1%NOTFOUND;\n    DBMS_OUTPUT.PUT_LINE(name_var);\n  END LOOP;\n  CLOSE c1;\n<b>END;</b>",
+        "image": "./outputs/cursors/1.png"
+    },
+    {
+        "question": "2. Fetch employee name and salary using cursor",
+        "sql": "<b>DECLARE</b>\n  CURSOR c1 <b>IS</b> SELECT ENAME, SAL FROM EMP;\n  name_var EMP.ENAME%TYPE;\n  sal_var EMP.SAL%TYPE;\n<b>BEGIN</b>\n  OPEN c1;\n  LOOP\n    FETCH c1 INTO name_var, sal_var;\n    EXIT WHEN c1%NOTFOUND;\n    DBMS_OUTPUT.PUT_LINE(name_var || ' ' || sal_var);\n  END LOOP;\n  CLOSE c1;\n<b>END;</b>",
+        "image": "./outputs/cursors/2.png"
+    },
+    {
+        "question": "3. Display employees with salary > 3000",
+        "sql": "<b>DECLARE</b>\n  CURSOR c1 <b>IS</b> SELECT ENAME, SAL FROM EMP WHERE SAL > 3000;\n  name_var EMP.ENAME%TYPE;\n  sal_var EMP.SAL%TYPE;\n<b>BEGIN</b>\n  OPEN c1;\n  LOOP\n    FETCH c1 INTO name_var, sal_var;\n    EXIT WHEN c1%NOTFOUND;\n    DBMS_OUTPUT.PUT_LINE(name_var || ' ' || sal_var);\n  END LOOP;\n  CLOSE c1;\n<b>END;</b>",
+        "image": "./outputs/cursors/3.png"
+    },
+    {
+        "question": "4. Count number of employees using cursor",
+        "sql": "<b>DECLARE</b>\n  CURSOR c1 <b>IS</b> SELECT EMPNO FROM EMP;\n  count_var NUMBER := 0;\n  temp EMP.EMPNO%TYPE;\n<b>BEGIN</b>\n  OPEN c1;\n  LOOP\n    FETCH c1 INTO temp;\n    EXIT WHEN c1%NOTFOUND;\n    count_var := count_var + 1;\n  END LOOP;\n  CLOSE c1;\n  DBMS_OUTPUT.PUT_LINE(count_var);\n<b>END;</b>",
+        "image": "./outputs/cursors/4.png"
+    },
+    {
+        "question": "5. Calculate total salary using cursor",
+        "sql": "<b>DECLARE</b>\n  CURSOR c1 <b>IS</b> SELECT SAL FROM EMP;\n  total NUMBER := 0;\n  sal_var EMP.SAL%TYPE;\n<b>BEGIN</b>\n  OPEN c1;\n  LOOP\n    FETCH c1 INTO sal_var;\n    EXIT WHEN c1%NOTFOUND;\n    total := total + sal_var;\n  END LOOP;\n  CLOSE c1;\n  DBMS_OUTPUT.PUT_LINE(total);\n<b>END;</b>",
+        "image": "./outputs/cursors/5.png"
+    },
+    {
+        "question": "6. Fetch records using OPEN FETCH CLOSE",
+        "sql": "<b>DECLARE</b>\n  CURSOR c1 <b>IS</b> SELECT ENAME FROM EMP;\n  name_var EMP.ENAME%TYPE;\n<b>BEGIN</b>\n  OPEN c1;\n  FETCH c1 INTO name_var;\n  WHILE c1%FOUND LOOP\n    DBMS_OUTPUT.PUT_LINE(name_var);\n    FETCH c1 INTO name_var;\n  END LOOP;\n  CLOSE c1;\n<b>END;</b>",
+        "image": "./outputs/cursors/6.png"
+    },
+    {
+        "question": "7. Display all employee records using cursor FOR LOOP",
+        "sql": "<b>BEGIN</b>\n  FOR rec IN (SELECT * FROM EMP) LOOP\n    DBMS_OUTPUT.PUT_LINE(rec.ENAME || ' ' || rec.SAL);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/cursors/7.png"
+    },
+    {
+        "question": "8. Display employee names and jobs using cursor FOR LOOP",
+        "sql": "<b>BEGIN</b>\n  FOR rec IN (SELECT ENAME, JOB FROM EMP) LOOP\n    DBMS_OUTPUT.PUT_LINE(rec.ENAME || ' ' || rec.JOB);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/cursors/8.png"
+    },
+    {
+        "question": "9. Display employees from department 10",
+        "sql": "<b>BEGIN</b>\n  FOR rec IN (SELECT * FROM EMP WHERE DEPTNO = 10) LOOP\n    DBMS_OUTPUT.PUT_LINE(rec.ENAME);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/cursors/9.png"
+    },
+    {
+        "question": "10. Calculate total salary using cursor FOR LOOP",
+        "sql": "<b>DECLARE</b>\n  total NUMBER := 0;\n<b>BEGIN</b>\n  FOR rec IN (SELECT SAL FROM EMP) LOOP\n    total := total + rec.SAL;\n  END LOOP;\n  DBMS_OUTPUT.PUT_LINE(total);\n<b>END;</b>",
+        "image": "./outputs/cursors/10.png"
+    },
+    {
+        "question": "11. Employees with salary > average",
+        "sql": "<b>DECLARE</b>\n  avg_sal NUMBER;\n<b>BEGIN</b>\n  SELECT AVG(SAL) INTO avg_sal FROM EMP;\n  FOR rec IN (SELECT ENAME, SAL FROM EMP WHERE SAL > avg_sal) LOOP\n    DBMS_OUTPUT.PUT_LINE(rec.ENAME || ' ' || rec.SAL);\n  END LOOP;\n<b>END;</b>",
+        "image": "./outputs/cursors/11.png"
+    },
+    {
+        "question": "12. Parameterized cursor for department",
+        "sql": "<b>DECLARE</b>\n  CURSOR c1(dno NUMBER) <b>IS</b> SELECT ENAME FROM EMP WHERE DEPTNO = dno;\n  name_var EMP.ENAME%TYPE;\n<b>BEGIN</b>\n  OPEN c1(10);\n  LOOP\n    FETCH c1 INTO name_var;\n    EXIT WHEN c1%NOTFOUND;\n    DBMS_OUTPUT.PUT_LINE(name_var);\n  END LOOP;\n  CLOSE c1;\n<b>END;</b>",
+        "image": "./outputs/cursors/12.png"
+    }
+],
+            "Procedures & Functions":[
+    {
+        "question": "1 display \"Hello Oracle\"",
+        "sql": "<b>CREATE OR REPLACE PROCEDURE</b> hello_proc <b>IS</b>\n<b>BEGIN</b>\n  <b>DBMS_OUTPUT.PUT_LINE</b>('Hello Oracle');\n<b>END</b>;\n/\n\n<b>BEGIN</b>\n  hello_proc;\n<b>END</b>;\n/",
+        "image": "./outputs/Procedures/1.png"
+    },
+    {
+        "question": "2 display employee name for given empno",
+        "sql": "<b>CREATE OR REPLACE PROCEDURE</b> emp_name_proc(p_empno <b>NUMBER</b>) <b>IS</b>\n  name_var EMP.ENAME%<b>TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> ENAME <b>INTO</b> name_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_empno;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(name_var);\n<b>END</b>;\n/\n\n<b>BEGIN</b>\n  emp_name_proc(4300);\n<b>END</b>;\n/",
+        "image": "./outputs/Procedures/2.png"
+    },
+    {
+        "question": "3 print salary of an employee",
+        "sql": "<b>CREATE OR REPLACE PROCEDURE</b> emp_sal_proc(p_empno <b>NUMBER</b>) <b>IS</b>\n  sal_var EMP.SAL%<b>TYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> sal_var <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_empno;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(sal_var);\n<b>END</b>;\n/\n\n<b>BEGIN</b>\n  emp_sal_proc(4300);\n<b>END</b>;\n/",
+        "image": "./outputs/Procedures/3.png"
+    },
+    {
+        "question": "4 display all employees using cursor",
+        "sql": "<b>CREATE OR REPLACE PROCEDURE</b> all_emp_proc <b>IS</b>\n  <b>CURSOR</b> c1 <b>IS</b> <b>SELECT</b> ENAME <b>FROM</b> EMP;\n  name_var EMP.ENAME%<b>TYPE</b>;\n<b>BEGIN</b>\n  <b>OPEN</b> c1;\n  <b>LOOP</b>\n    <b>FETCH</b> c1 <b>INTO</b> name_var;\n    <b>EXIT WHEN</b> c1%<b>NOTFOUND</b>;\n    <b>DBMS_OUTPUT.PUT_LINE</b>(name_var);\n  <b>END LOOP</b>;\n  <b>CLOSE</b> c1;\n<b>END</b>;\n/\n\n<b>BEGIN</b>\n  all_emp_proc;\n<b>END</b>;\n/",
+        "image": "./outputs/Procedures/4.png"
+    },
+    {
+        "question": "5 display department details",
+        "sql": "<b>CREATE OR REPLACE PROCEDURE</b> dept_proc <b>IS</b>\n<b>BEGIN</b>\n  <b>FOR</b> rec <b>IN</b> (<b>SELECT</b> * <b>FROM</b> DEPT) <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(rec.DEPTNO || ' ' || rec.DNAME || ' ' || rec.LOC);\n  <b>END LOOP</b>;\n<b>END</b>;\n/\n\n<b>BEGIN</b>\n  dept_proc;\n<b>END</b>;\n/",
+        "image": "./outputs/Procedures/5.png"
+    },
+    {
+        "question": "6 procedure with IN parameter (emp details)",
+        "sql": "<b>CREATE OR REPLACE PROCEDURE</b> emp_details_proc(p_empno <b>NUMBER</b>) <b>IS</b>\n  emp_rec EMP%<b>ROWTYPE</b>;\n<b>BEGIN</b>\n  <b>SELECT</b> * <b>INTO</b> emp_rec <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_empno;\n  <b>DBMS_OUTPUT.PUT_LINE</b>(emp_rec.ENAME || ' ' || emp_rec.SAL || ' ' || emp_rec.JOB);\n<b>END</b>;\n/\n\n<b>BEGIN</b>\n  emp_details_proc(4300);\n<b>END</b>;\n/",
+        "image": "./outputs/Procedures/6.png"
+    },
+    {
+        "question": "7 procedure for employees of a department",
+        "sql": "<b>CREATE OR REPLACE PROCEDURE</b> dept_emp_proc(p_deptno <b>NUMBER</b>) <b>IS</b>\n<b>BEGIN</b>\n  <b>FOR</b> rec <b>IN</b> (<b>SELECT</b> ENAME <b>FROM</b> EMP <b>WHERE</b> DEPTNO = p_deptno) <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(rec.ENAME);\n  <b>END LOOP</b>;\n<b>END</b>;\n/\n\n<b>BEGIN</b>\n  dept_emp_proc(10);\n<b>END</b>;\n/",
+        "image": "./outputs/Procedures/7.png"
+    },
+    {
+        "question": "8 employees earning more than given salary",
+        "sql": "<b>CREATE OR REPLACE PROCEDURE</b> sal_filter_proc(p_sal <b>NUMBER</b>) <b>IS</b>\n<b>BEGIN</b>\n  <b>FOR</b> rec <b>IN</b> (<b>SELECT</b> ENAME, SAL <b>FROM</b> EMP <b>WHERE</b> SAL > p_sal) <b>LOOP</b>\n    <b>DBMS_OUTPUT.PUT_LINE</b>(rec.ENAME || ' ' || rec.SAL);\n  <b>END LOOP</b>;\n<b>END</b>;\n/\n\n<b>BEGIN</b>\n  sal_filter_proc(2000);\n<b>END</b>;\n/",
+        "image": "./outputs/Procedures/8.png"
+    },
+    {
+        "question": "9 OUT parameter to return salary",
+        "sql": "<b>CREATE OR REPLACE PROCEDURE</b> get_sal_proc(p_empno <b>NUMBER</b>, sal_out <b>OUT NUMBER</b>) <b>IS</b>\n<b>BEGIN</b>\n  <b>SELECT</b> SAL <b>INTO</b> sal_out <b>FROM</b> EMP <b>WHERE</b> EMPNO = p_empno;\n<b>END</b>;\n/\n\n<b>DECLARE</b>\n  s <b>NUMBER</b>;\n<b>BEGIN</b>\n  get_sal_proc(4300, s);\n  <b>DBMS_OUTPUT.PUT_LINE</b>(s);\n<b>END</b>;\n/",
+        "image": "./outputs/Procedures/9.png"
+    }
+],
             "PLSQL: Packages (I'll start this after understanding it a bit.)": [],
             "Exception Handling": [
                 {
