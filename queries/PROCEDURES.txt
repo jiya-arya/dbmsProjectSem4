@@ -1,0 +1,138 @@
+-- 1 display "Hello Oracle"
+CREATE OR REPLACE PROCEDURE hello_proc IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Hello Oracle');
+END;
+/
+
+-- to execute
+BEGIN
+    hello_proc;
+END;
+/
+
+-- 2 display employee name for given empno
+CREATE OR REPLACE PROCEDURE emp_name_proc(p_empno NUMBER) IS
+    name_var EMP.ENAME%TYPE;
+BEGIN
+    SELECT ENAME INTO name_var FROM EMP WHERE EMPNO = p_empno;
+    DBMS_OUTPUT.PUT_LINE(name_var);
+END;
+/
+
+-- to execute
+BEGIN
+    emp_name_proc(4300);
+END;
+/
+
+-- 3 print salary of an employee
+CREATE OR REPLACE PROCEDURE emp_sal_proc(p_empno NUMBER) IS
+    sal_var EMP.SAL%TYPE;
+BEGIN
+    SELECT SAL INTO sal_var FROM EMP WHERE EMPNO = p_empno;
+    DBMS_OUTPUT.PUT_LINE(sal_var);
+END;
+/
+
+-- to execute
+BEGIN
+    emp_sal_proc(4300);
+END;
+/
+
+-- 4 display all employees using cursor
+CREATE OR REPLACE PROCEDURE all_emp_proc IS
+    CURSOR c1 IS SELECT ENAME FROM EMP;
+    name_var EMP.ENAME%TYPE;
+BEGIN
+    OPEN c1;
+    LOOP
+        FETCH c1 INTO name_var;
+        EXIT WHEN c1%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE(name_var);
+    END LOOP;
+    CLOSE c1;
+END;
+/
+
+-- to execute
+BEGIN
+    all_emp_proc;
+END;
+/
+
+-- 5 display department details
+CREATE OR REPLACE PROCEDURE dept_proc IS
+BEGIN
+    FOR rec IN (SELECT * FROM DEPT) LOOP
+        DBMS_OUTPUT.PUT_LINE(rec.DEPTNO || ' ' || rec.DNAME || ' ' || rec.LOC);
+    END LOOP;
+END;
+/
+
+-- to execute
+BEGIN
+    dept_proc;
+END;
+/
+
+-- 6 procedure with IN parameter (emp details)
+CREATE OR REPLACE PROCEDURE emp_details_proc(p_empno NUMBER) IS
+    emp_rec EMP%ROWTYPE;
+BEGIN
+    SELECT * INTO emp_rec FROM EMP WHERE EMPNO = p_empno;
+    DBMS_OUTPUT.PUT_LINE(emp_rec.ENAME || ' ' || emp_rec.SAL || ' ' || emp_rec.JOB);
+END;
+/
+
+-- to execute
+BEGIN
+    emp_details_proc(4300);
+END;
+/
+
+-- 7 procedure for employees of a department
+CREATE OR REPLACE PROCEDURE dept_emp_proc(p_deptno NUMBER) IS
+BEGIN
+    FOR rec IN (SELECT ENAME FROM EMP WHERE DEPTNO = p_deptno) LOOP
+        DBMS_OUTPUT.PUT_LINE(rec.ENAME);
+    END LOOP;
+END;
+/
+
+-- to execute
+BEGIN
+    dept_emp_proc(10);
+END;
+/
+
+-- 8 employees earning more than given salary
+CREATE OR REPLACE PROCEDURE sal_filter_proc(p_sal NUMBER) IS
+BEGIN
+    FOR rec IN (SELECT ENAME, SAL FROM EMP WHERE SAL > p_sal) LOOP
+        DBMS_OUTPUT.PUT_LINE(rec.ENAME || ' ' || rec.SAL);
+    END LOOP;
+END;
+/
+
+-- to execute
+BEGIN
+    sal_filter_proc(2000);
+END;
+/
+
+-- 9 OUT parameter to return salary
+CREATE OR REPLACE PROCEDURE get_sal_proc(p_empno NUMBER, sal_out OUT NUMBER) IS
+BEGIN
+    SELECT SAL INTO sal_out FROM EMP WHERE EMPNO = p_empno;
+END;
+/
+
+DECLARE
+    s NUMBER;
+BEGIN
+    get_sal_proc(4300, s);
+    DBMS_OUTPUT.PUT_LINE(s);
+END;
+/

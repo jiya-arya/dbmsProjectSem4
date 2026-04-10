@@ -8,7 +8,7 @@ END;
 /
 
 INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (9300, 'TINA', 'ANALYST', 6566, TO_DATE('08-APR-2026','DD-MON-YYYY'), 4000, (null), 20);
+VALUES (4300, 'Jiya', 'ANALYST', 6566, TO_DATE('08-APR-2026','DD-MON-YYYY'), 4000, (null), 20);
 
 
 --2 Write a trigger that fires before inserting data into EMP table.
@@ -21,7 +21,7 @@ END;
 /
 
 INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (9400, 'ANITA', 'ANALYST', 7566, TO_DATE('08-APR-2026','DD-MON-YYYY'), 4000, (null), 20);
+VALUES (3400, 'janvi', 'ANALYST', 7599, TO_DATE('08-APR-2026','DD-MON-YYYY'), 4000, (null), 20);
 
 --3 Write a trigger that fires after deleting a record from EMP table.
 CREATE OR REPLACE TRIGGER emp_after_delete
@@ -32,7 +32,7 @@ BEGIN
 END;
 /
 
-DELETE FROM EMP WHERE EMPNO = 9400;
+DELETE FROM EMP WHERE EMPNO = 3400;
 
 --4 Write a trigger to prevent deletion from EMP table.
 CREATE OR REPLACE TRIGGER emp_prevent_delete
@@ -43,7 +43,7 @@ BEGIN
 END;
 /
 
-DELETE FROM EMP WHERE EMPNO = 8100;
+DELETE FROM EMP WHERE EMPNO = 4300;
 
 --5 Write a trigger to display a message when employee salary is updated.
 CREATE OR REPLACE TRIGGER emp_after_salary_update
@@ -53,9 +53,10 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Salary updated for employee');
 END;
 /
+
 UPDATE EMP
 SET SAL = SAL + 500
-WHERE EMPNO = 9400;
+WHERE EMPNO = 9300;
 
 --6 Write a row-level trigger to display old and new salary when salary is updated.
 CREATE OR REPLACE TRIGGER emp_salary_change
@@ -101,3 +102,13 @@ ALTER TRIGGER emp_prevent_delete DISABLE;
 
 DELETE FROM EMP
 WHERE EMPNO = 7876;
+
+
+DROP TRIGGER emp_insert_msg;
+DROP TRIGGER emp_before_insert;
+DROP TRIGGER emp_after_delete;
+DROP TRIGGER emp_prevent_delete;
+DROP TRIGGER emp_after_salary_update;
+DROP TRIGGER emp_salary_change;
+DROP TRIGGER emp_delete_audit;
+DROP TABLE EMP_AUDIT;

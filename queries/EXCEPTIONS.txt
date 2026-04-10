@@ -1,0 +1,244 @@
+-- 1
+DECLARE
+    emp_name emp.ename%TYPE;
+    emp_salary emp.sal%TYPE;
+    emp_number emp.empno%TYPE := 9999;
+BEGIN
+    SELECT ename, sal
+    INTO emp_name, emp_salary
+    FROM emp
+    WHERE empno = emp_number;
+    
+    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_name);
+    DBMS_OUTPUT.PUT_LINE('Salary: ' || emp_salary);
+
+EXCEPTION
+    -- Handle case when no employee is found
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No employee found with EMPNO = ' || emp_number);
+END;
+/
+
+-- 2
+DECLARE
+    emp_name emp.ename%TYPE;
+    emp_salary emp.sal%TYPE;
+BEGIN    
+    SELECT ename, sal
+    INTO emp_name, emp_salary
+    FROM emp
+    WHERE job = 'SALESMAN';
+   
+    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_name);
+    DBMS_OUTPUT.PUT_LINE('Salary: ' || emp_salary);
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No employee found with the specified criteria.');
+    
+    WHEN TOO_MANY_ROWS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: More than one employee found for the condition.');
+END;
+/
+
+--3
+DECLARE
+    emp_salary emp.sal%TYPE;
+    bonus NUMBER := 0;
+    result NUMBER;
+BEGIN
+    SELECT sal
+    INTO emp_salary
+    FROM emp
+    WHERE ename = 'SCOTT';
+
+    result := emp_salary / bonus;
+
+    DBMS_OUTPUT.PUT_LINE('Result: ' || result);
+
+EXCEPTION
+    WHEN ZERO_DIVIDE THEN
+        DBMS_OUTPUT.PUT_LINE('Error: Division by zero is not allowed.');
+END;
+/
+
+--5
+DECLARE
+    emp_salary emp.sal%TYPE;
+    divisor NUMBER := 0;  
+    result NUMBER;
+BEGIN
+    SELECT sal
+    INTO emp_salary
+    FROM emp
+    WHERE ename = 'SCOTT';
+
+    result := emp_salary / divisor;
+
+    DBMS_OUTPUT.PUT_LINE('Result: ' || result);
+
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);
+END;
+/
+
+--6
+DECLARE
+    emp_salary emp.sal%TYPE;
+    divisor NUMBER := 0;
+    result NUMBER;
+BEGIN
+    SELECT sal
+    INTO emp_salary
+    FROM emp
+    WHERE ename = 'SCOTT';
+
+    result := emp_salary / divisor;
+
+    DBMS_OUTPUT.PUT_LINE('Result: ' || result);
+
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);
+END;
+/
+
+--9
+DECLARE
+    emp_salary emp.sal%TYPE;
+BEGIN
+    SELECT sal
+    INTO emp_salary
+    FROM emp
+    WHERE ename = 'SCOTT';
+
+    IF emp_salary < 2000 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Salary is less than 2000');
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('Salary is OK: ' || emp_salary);
+
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);
+END;
+/
+
+-- 10
+DECLARE
+    emp_age NUMBER := 16;
+BEGIN
+    IF emp_age < 18 THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Employee age must be at least 18');
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('Employee age is valid: ' || emp_age);
+
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);
+END;
+/
+
+-- 12
+DECLARE
+    dept_number NUMBER := 80;
+    count_dept NUMBER;
+BEGIN
+    SELECT COUNT(*)
+    INTO count_dept
+    FROM dept
+    WHERE deptno = dept_number;
+
+    IF count_dept = 0 THEN
+        RAISE_APPLICATION_ERROR(-20003, 'Invalid department number: ' || dept_number);
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('Department number is valid: ' || dept_number);
+
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);
+END;
+/
+
+-- 13
+DECLARE
+    invalid_salary EXCEPTION;
+    salary NUMBER := 1500;
+BEGIN
+    IF salary < 2000 THEN
+        RAISE invalid_salary;
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('Salary is valid: ' || salary);
+
+EXCEPTION
+    WHEN invalid_salary THEN
+        DBMS_OUTPUT.PUT_LINE('Error: Salary cannot be less than 2000');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);
+END;
+/
+
+-- 16
+DECLARE
+    low_salary EXCEPTION;
+    invalid_age EXCEPTION;
+    salary NUMBER := 1500;
+    age NUMBER := 16;
+BEGIN
+    IF salary < 2000 THEN
+        RAISE low_salary;
+    END IF;
+
+    IF age < 18 THEN
+        RAISE invalid_age;
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('Salary and age are valid');
+
+EXCEPTION
+    WHEN low_salary THEN
+        DBMS_OUTPUT.PUT_LINE('Error: Salary cannot be less than 2000');
+    WHEN invalid_age THEN
+        DBMS_OUTPUT.PUT_LINE('Error: Employee must be at least 18 years old');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);
+        DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);
+END;
+/
+
+-- 18
+DECLARE
+    emp_salary emp.sal%TYPE;
+    divisor NUMBER := 0;
+    result NUMBER;
+BEGIN
+    BEGIN
+        SELECT sal
+        INTO emp_salary
+        FROM emp
+        WHERE ename = 'SCOTT';
+
+        result := emp_salary / divisor;
+
+        DBMS_OUTPUT.PUT_LINE('Result: ' || result);
+    
+    EXCEPTION
+        WHEN ZERO_DIVIDE THEN
+            DBMS_OUTPUT.PUT_LINE('Inner Block: Caught ZERO_DIVIDE, re-raising.');
+            RAISE;
+    END;
+
+EXCEPTION
+    WHEN ZERO_DIVIDE THEN
+        DBMS_OUTPUT.PUT_LINE('Outer Block: ZERO_DIVIDE handled again.');
+END;
+/
